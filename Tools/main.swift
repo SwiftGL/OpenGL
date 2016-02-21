@@ -675,7 +675,7 @@ func saneDelegate(delegate:KhronosXmlDelegate)
 
 
 if (Process.argc != 2) {
-    // Got this from Xcode? Add $(SRCROOT) to arguments in scheme.
+    // Got this from Xcode? Add $(SRCROOT)/OpenGL to arguments in scheme.
     print("\nusage: main.swift path_to_root\n")
     exit(1)
 }
