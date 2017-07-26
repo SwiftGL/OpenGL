@@ -30,7 +30,13 @@ extension OutputStream
     func write(_ string:String) {
         if string.isEmpty {return}
         let encodedDataArray = [UInt8](string.utf8)
-        write(encodedDataArray, maxLength: encodedDataArray.count)
+        let result = write(encodedDataArray, maxLength: encodedDataArray.count)
+        if result == -1 {
+            fatalError("Error: \(streamError!)")
+        }
+        else if result < encodedDataArray.count {
+            fatalError("Unable to fully write string")
+        }
     }
 }
 
@@ -276,7 +282,12 @@ func chomper(delegate:XMLParserDelegate, _ filename:String)
     assert(infile?.streamStatus == .open, "Unable to read \(filename)")
     let xmlParser = XMLParser(stream: infile!)
     xmlParser.delegate = delegate
-    xmlParser.parse()
+    let success = xmlParser.parse()
+
+    if (!success) {
+        fatalError("Error: \(xmlParser.parserError!)")
+    }
+
     infile!.close()
 }
 
