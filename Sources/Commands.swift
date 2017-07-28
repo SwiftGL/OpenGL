@@ -275,15 +275,15 @@ var glBindTexture_P:@convention(c)(GLenum, GLuint) -> Void = glBindTexture_L
 public func glBindTextureEXT(_ target:GLenum, _ texture:GLuint) {glBindTextureEXT_P(target, texture)}
 public func glBindTextureEXT(target:GLenum, texture:GLuint) {glBindTextureEXT_P(target, texture)}
 var glBindTextureEXT_P:@convention(c)(GLenum, GLuint) -> Void = glBindTextureEXT_L
+public func glBindTextures(_ first:GLuint, _ count:GLsizei, _ textures:UnsafePointer<GLuint>) {glBindTextures_P(first, count, textures)}
+public func glBindTextures(first:GLuint, count:GLsizei, textures:UnsafePointer<GLuint>) {glBindTextures_P(first, count, textures)}
+var glBindTextures_P:@convention(c)(GLuint, GLsizei, UnsafePointer<GLuint>) -> Void = glBindTextures_L
 public func glBindTextureUnit(_ unit:GLuint, _ texture:GLuint) {glBindTextureUnit_P(unit, texture)}
 public func glBindTextureUnit(unit:GLuint, texture:GLuint) {glBindTextureUnit_P(unit, texture)}
 var glBindTextureUnit_P:@convention(c)(GLuint, GLuint) -> Void = glBindTextureUnit_L
 public func glBindTextureUnitParameterEXT(_ unit:GLenum, _ value:GLenum) -> GLuint {return glBindTextureUnitParameterEXT_P(unit, value)}
 public func glBindTextureUnitParameterEXT(unit:GLenum, value:GLenum) -> GLuint {return glBindTextureUnitParameterEXT_P(unit, value)}
 var glBindTextureUnitParameterEXT_P:@convention(c)(GLenum, GLenum) -> GLuint = glBindTextureUnitParameterEXT_L
-public func glBindTextures(_ first:GLuint, _ count:GLsizei, _ textures:UnsafePointer<GLuint>) {glBindTextures_P(first, count, textures)}
-public func glBindTextures(first:GLuint, count:GLsizei, textures:UnsafePointer<GLuint>) {glBindTextures_P(first, count, textures)}
-var glBindTextures_P:@convention(c)(GLuint, GLsizei, UnsafePointer<GLuint>) -> Void = glBindTextures_L
 public func glBindTransformFeedback(_ target:GLenum, _ id:GLuint) {glBindTransformFeedback_P(target, id)}
 public func glBindTransformFeedback(target:GLenum, id:GLuint) {glBindTransformFeedback_P(target, id)}
 var glBindTransformFeedback_P:@convention(c)(GLenum, GLuint) -> Void = glBindTransformFeedback_L
@@ -374,36 +374,6 @@ var glBlendEquation_P:@convention(c)(GLenum) -> Void = glBlendEquation_L
 public func glBlendEquationEXT(_ mode:GLenum) {glBlendEquationEXT_P(mode)}
 public func glBlendEquationEXT(mode:GLenum) {glBlendEquationEXT_P(mode)}
 var glBlendEquationEXT_P:@convention(c)(GLenum) -> Void = glBlendEquationEXT_L
-public func glBlendEquationIndexedAMD(_ buf:GLuint, _ mode:GLenum) {glBlendEquationIndexedAMD_P(buf, mode)}
-public func glBlendEquationIndexedAMD(buf:GLuint, mode:GLenum) {glBlendEquationIndexedAMD_P(buf, mode)}
-var glBlendEquationIndexedAMD_P:@convention(c)(GLuint, GLenum) -> Void = glBlendEquationIndexedAMD_L
-public func glBlendEquationOES(_ mode:GLenum) {glBlendEquationOES_P(mode)}
-public func glBlendEquationOES(mode:GLenum) {glBlendEquationOES_P(mode)}
-var glBlendEquationOES_P:@convention(c)(GLenum) -> Void = glBlendEquationOES_L
-public func glBlendEquationSeparate(_ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparate_P(modeRGB, modeAlpha)}
-public func glBlendEquationSeparate(modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparate_P(modeRGB, modeAlpha)}
-var glBlendEquationSeparate_P:@convention(c)(GLenum, GLenum) -> Void = glBlendEquationSeparate_L
-public func glBlendEquationSeparateEXT(_ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateEXT_P(modeRGB, modeAlpha)}
-public func glBlendEquationSeparateEXT(modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateEXT_P(modeRGB, modeAlpha)}
-var glBlendEquationSeparateEXT_P:@convention(c)(GLenum, GLenum) -> Void = glBlendEquationSeparateEXT_L
-public func glBlendEquationSeparateIndexedAMD(_ buf:GLuint, _ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateIndexedAMD_P(buf, modeRGB, modeAlpha)}
-public func glBlendEquationSeparateIndexedAMD(buf:GLuint, modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateIndexedAMD_P(buf, modeRGB, modeAlpha)}
-var glBlendEquationSeparateIndexedAMD_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendEquationSeparateIndexedAMD_L
-public func glBlendEquationSeparateOES(_ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateOES_P(modeRGB, modeAlpha)}
-public func glBlendEquationSeparateOES(modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateOES_P(modeRGB, modeAlpha)}
-var glBlendEquationSeparateOES_P:@convention(c)(GLenum, GLenum) -> Void = glBlendEquationSeparateOES_L
-public func glBlendEquationSeparatei(_ buf:GLuint, _ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparatei_P(buf, modeRGB, modeAlpha)}
-public func glBlendEquationSeparatei(buf:GLuint, modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparatei_P(buf, modeRGB, modeAlpha)}
-var glBlendEquationSeparatei_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendEquationSeparatei_L
-public func glBlendEquationSeparateiARB(_ buf:GLuint, _ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateiARB_P(buf, modeRGB, modeAlpha)}
-public func glBlendEquationSeparateiARB(buf:GLuint, modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateiARB_P(buf, modeRGB, modeAlpha)}
-var glBlendEquationSeparateiARB_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendEquationSeparateiARB_L
-public func glBlendEquationSeparateiEXT(_ buf:GLuint, _ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateiEXT_P(buf, modeRGB, modeAlpha)}
-public func glBlendEquationSeparateiEXT(buf:GLuint, modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateiEXT_P(buf, modeRGB, modeAlpha)}
-var glBlendEquationSeparateiEXT_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendEquationSeparateiEXT_L
-public func glBlendEquationSeparateiOES(_ buf:GLuint, _ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateiOES_P(buf, modeRGB, modeAlpha)}
-public func glBlendEquationSeparateiOES(buf:GLuint, modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateiOES_P(buf, modeRGB, modeAlpha)}
-var glBlendEquationSeparateiOES_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendEquationSeparateiOES_L
 public func glBlendEquationi(_ buf:GLuint, _ mode:GLenum) {glBlendEquationi_P(buf, mode)}
 public func glBlendEquationi(buf:GLuint, mode:GLenum) {glBlendEquationi_P(buf, mode)}
 var glBlendEquationi_P:@convention(c)(GLuint, GLenum) -> Void = glBlendEquationi_L
@@ -413,42 +383,42 @@ var glBlendEquationiARB_P:@convention(c)(GLuint, GLenum) -> Void = glBlendEquati
 public func glBlendEquationiEXT(_ buf:GLuint, _ mode:GLenum) {glBlendEquationiEXT_P(buf, mode)}
 public func glBlendEquationiEXT(buf:GLuint, mode:GLenum) {glBlendEquationiEXT_P(buf, mode)}
 var glBlendEquationiEXT_P:@convention(c)(GLuint, GLenum) -> Void = glBlendEquationiEXT_L
+public func glBlendEquationIndexedAMD(_ buf:GLuint, _ mode:GLenum) {glBlendEquationIndexedAMD_P(buf, mode)}
+public func glBlendEquationIndexedAMD(buf:GLuint, mode:GLenum) {glBlendEquationIndexedAMD_P(buf, mode)}
+var glBlendEquationIndexedAMD_P:@convention(c)(GLuint, GLenum) -> Void = glBlendEquationIndexedAMD_L
 public func glBlendEquationiOES(_ buf:GLuint, _ mode:GLenum) {glBlendEquationiOES_P(buf, mode)}
 public func glBlendEquationiOES(buf:GLuint, mode:GLenum) {glBlendEquationiOES_P(buf, mode)}
 var glBlendEquationiOES_P:@convention(c)(GLuint, GLenum) -> Void = glBlendEquationiOES_L
+public func glBlendEquationOES(_ mode:GLenum) {glBlendEquationOES_P(mode)}
+public func glBlendEquationOES(mode:GLenum) {glBlendEquationOES_P(mode)}
+var glBlendEquationOES_P:@convention(c)(GLenum) -> Void = glBlendEquationOES_L
+public func glBlendEquationSeparate(_ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparate_P(modeRGB, modeAlpha)}
+public func glBlendEquationSeparate(modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparate_P(modeRGB, modeAlpha)}
+var glBlendEquationSeparate_P:@convention(c)(GLenum, GLenum) -> Void = glBlendEquationSeparate_L
+public func glBlendEquationSeparateEXT(_ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateEXT_P(modeRGB, modeAlpha)}
+public func glBlendEquationSeparateEXT(modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateEXT_P(modeRGB, modeAlpha)}
+var glBlendEquationSeparateEXT_P:@convention(c)(GLenum, GLenum) -> Void = glBlendEquationSeparateEXT_L
+public func glBlendEquationSeparatei(_ buf:GLuint, _ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparatei_P(buf, modeRGB, modeAlpha)}
+public func glBlendEquationSeparatei(buf:GLuint, modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparatei_P(buf, modeRGB, modeAlpha)}
+var glBlendEquationSeparatei_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendEquationSeparatei_L
+public func glBlendEquationSeparateiARB(_ buf:GLuint, _ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateiARB_P(buf, modeRGB, modeAlpha)}
+public func glBlendEquationSeparateiARB(buf:GLuint, modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateiARB_P(buf, modeRGB, modeAlpha)}
+var glBlendEquationSeparateiARB_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendEquationSeparateiARB_L
+public func glBlendEquationSeparateiEXT(_ buf:GLuint, _ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateiEXT_P(buf, modeRGB, modeAlpha)}
+public func glBlendEquationSeparateiEXT(buf:GLuint, modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateiEXT_P(buf, modeRGB, modeAlpha)}
+var glBlendEquationSeparateiEXT_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendEquationSeparateiEXT_L
+public func glBlendEquationSeparateIndexedAMD(_ buf:GLuint, _ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateIndexedAMD_P(buf, modeRGB, modeAlpha)}
+public func glBlendEquationSeparateIndexedAMD(buf:GLuint, modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateIndexedAMD_P(buf, modeRGB, modeAlpha)}
+var glBlendEquationSeparateIndexedAMD_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendEquationSeparateIndexedAMD_L
+public func glBlendEquationSeparateiOES(_ buf:GLuint, _ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateiOES_P(buf, modeRGB, modeAlpha)}
+public func glBlendEquationSeparateiOES(buf:GLuint, modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateiOES_P(buf, modeRGB, modeAlpha)}
+var glBlendEquationSeparateiOES_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendEquationSeparateiOES_L
+public func glBlendEquationSeparateOES(_ modeRGB:GLenum, _ modeAlpha:GLenum) {glBlendEquationSeparateOES_P(modeRGB, modeAlpha)}
+public func glBlendEquationSeparateOES(modeRGB:GLenum, modeAlpha:GLenum) {glBlendEquationSeparateOES_P(modeRGB, modeAlpha)}
+var glBlendEquationSeparateOES_P:@convention(c)(GLenum, GLenum) -> Void = glBlendEquationSeparateOES_L
 public func glBlendFunc(_ sfactor:GLenum, _ dfactor:GLenum) {glBlendFunc_P(sfactor, dfactor)}
 public func glBlendFunc(sfactor:GLenum, dfactor:GLenum) {glBlendFunc_P(sfactor, dfactor)}
 var glBlendFunc_P:@convention(c)(GLenum, GLenum) -> Void = glBlendFunc_L
-public func glBlendFuncIndexedAMD(_ buf:GLuint, _ src:GLenum, _ dst:GLenum) {glBlendFuncIndexedAMD_P(buf, src, dst)}
-public func glBlendFuncIndexedAMD(buf:GLuint, src:GLenum, dst:GLenum) {glBlendFuncIndexedAMD_P(buf, src, dst)}
-var glBlendFuncIndexedAMD_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendFuncIndexedAMD_L
-public func glBlendFuncSeparate(_ sfactorRGB:GLenum, _ dfactorRGB:GLenum, _ sfactorAlpha:GLenum, _ dfactorAlpha:GLenum) {glBlendFuncSeparate_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
-public func glBlendFuncSeparate(sfactorRGB:GLenum, dfactorRGB:GLenum, sfactorAlpha:GLenum, dfactorAlpha:GLenum) {glBlendFuncSeparate_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
-var glBlendFuncSeparate_P:@convention(c)(GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparate_L
-public func glBlendFuncSeparateEXT(_ sfactorRGB:GLenum, _ dfactorRGB:GLenum, _ sfactorAlpha:GLenum, _ dfactorAlpha:GLenum) {glBlendFuncSeparateEXT_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
-public func glBlendFuncSeparateEXT(sfactorRGB:GLenum, dfactorRGB:GLenum, sfactorAlpha:GLenum, dfactorAlpha:GLenum) {glBlendFuncSeparateEXT_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
-var glBlendFuncSeparateEXT_P:@convention(c)(GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateEXT_L
-public func glBlendFuncSeparateINGR(_ sfactorRGB:GLenum, _ dfactorRGB:GLenum, _ sfactorAlpha:GLenum, _ dfactorAlpha:GLenum) {glBlendFuncSeparateINGR_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
-public func glBlendFuncSeparateINGR(sfactorRGB:GLenum, dfactorRGB:GLenum, sfactorAlpha:GLenum, dfactorAlpha:GLenum) {glBlendFuncSeparateINGR_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
-var glBlendFuncSeparateINGR_P:@convention(c)(GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateINGR_L
-public func glBlendFuncSeparateIndexedAMD(_ buf:GLuint, _ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparateIndexedAMD_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
-public func glBlendFuncSeparateIndexedAMD(buf:GLuint, srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparateIndexedAMD_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
-var glBlendFuncSeparateIndexedAMD_P:@convention(c)(GLuint, GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateIndexedAMD_L
-public func glBlendFuncSeparateOES(_ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparateOES_P(srcRGB, dstRGB, srcAlpha, dstAlpha)}
-public func glBlendFuncSeparateOES(srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparateOES_P(srcRGB, dstRGB, srcAlpha, dstAlpha)}
-var glBlendFuncSeparateOES_P:@convention(c)(GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateOES_L
-public func glBlendFuncSeparatei(_ buf:GLuint, _ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparatei_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
-public func glBlendFuncSeparatei(buf:GLuint, srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparatei_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
-var glBlendFuncSeparatei_P:@convention(c)(GLuint, GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparatei_L
-public func glBlendFuncSeparateiARB(_ buf:GLuint, _ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparateiARB_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
-public func glBlendFuncSeparateiARB(buf:GLuint, srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparateiARB_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
-var glBlendFuncSeparateiARB_P:@convention(c)(GLuint, GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateiARB_L
-public func glBlendFuncSeparateiEXT(_ buf:GLuint, _ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparateiEXT_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
-public func glBlendFuncSeparateiEXT(buf:GLuint, srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparateiEXT_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
-var glBlendFuncSeparateiEXT_P:@convention(c)(GLuint, GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateiEXT_L
-public func glBlendFuncSeparateiOES(_ buf:GLuint, _ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparateiOES_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
-public func glBlendFuncSeparateiOES(buf:GLuint, srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparateiOES_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
-var glBlendFuncSeparateiOES_P:@convention(c)(GLuint, GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateiOES_L
 public func glBlendFunci(_ buf:GLuint, _ src:GLenum, _ dst:GLenum) {glBlendFunci_P(buf, src, dst)}
 public func glBlendFunci(buf:GLuint, src:GLenum, dst:GLenum) {glBlendFunci_P(buf, src, dst)}
 var glBlendFunci_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendFunci_L
@@ -458,9 +428,39 @@ var glBlendFunciARB_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendFu
 public func glBlendFunciEXT(_ buf:GLuint, _ src:GLenum, _ dst:GLenum) {glBlendFunciEXT_P(buf, src, dst)}
 public func glBlendFunciEXT(buf:GLuint, src:GLenum, dst:GLenum) {glBlendFunciEXT_P(buf, src, dst)}
 var glBlendFunciEXT_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendFunciEXT_L
+public func glBlendFuncIndexedAMD(_ buf:GLuint, _ src:GLenum, _ dst:GLenum) {glBlendFuncIndexedAMD_P(buf, src, dst)}
+public func glBlendFuncIndexedAMD(buf:GLuint, src:GLenum, dst:GLenum) {glBlendFuncIndexedAMD_P(buf, src, dst)}
+var glBlendFuncIndexedAMD_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendFuncIndexedAMD_L
 public func glBlendFunciOES(_ buf:GLuint, _ src:GLenum, _ dst:GLenum) {glBlendFunciOES_P(buf, src, dst)}
 public func glBlendFunciOES(buf:GLuint, src:GLenum, dst:GLenum) {glBlendFunciOES_P(buf, src, dst)}
 var glBlendFunciOES_P:@convention(c)(GLuint, GLenum, GLenum) -> Void = glBlendFunciOES_L
+public func glBlendFuncSeparate(_ sfactorRGB:GLenum, _ dfactorRGB:GLenum, _ sfactorAlpha:GLenum, _ dfactorAlpha:GLenum) {glBlendFuncSeparate_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
+public func glBlendFuncSeparate(sfactorRGB:GLenum, dfactorRGB:GLenum, sfactorAlpha:GLenum, dfactorAlpha:GLenum) {glBlendFuncSeparate_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
+var glBlendFuncSeparate_P:@convention(c)(GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparate_L
+public func glBlendFuncSeparateEXT(_ sfactorRGB:GLenum, _ dfactorRGB:GLenum, _ sfactorAlpha:GLenum, _ dfactorAlpha:GLenum) {glBlendFuncSeparateEXT_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
+public func glBlendFuncSeparateEXT(sfactorRGB:GLenum, dfactorRGB:GLenum, sfactorAlpha:GLenum, dfactorAlpha:GLenum) {glBlendFuncSeparateEXT_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
+var glBlendFuncSeparateEXT_P:@convention(c)(GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateEXT_L
+public func glBlendFuncSeparatei(_ buf:GLuint, _ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparatei_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
+public func glBlendFuncSeparatei(buf:GLuint, srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparatei_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
+var glBlendFuncSeparatei_P:@convention(c)(GLuint, GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparatei_L
+public func glBlendFuncSeparateiARB(_ buf:GLuint, _ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparateiARB_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
+public func glBlendFuncSeparateiARB(buf:GLuint, srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparateiARB_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
+var glBlendFuncSeparateiARB_P:@convention(c)(GLuint, GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateiARB_L
+public func glBlendFuncSeparateiEXT(_ buf:GLuint, _ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparateiEXT_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
+public func glBlendFuncSeparateiEXT(buf:GLuint, srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparateiEXT_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
+var glBlendFuncSeparateiEXT_P:@convention(c)(GLuint, GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateiEXT_L
+public func glBlendFuncSeparateIndexedAMD(_ buf:GLuint, _ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparateIndexedAMD_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
+public func glBlendFuncSeparateIndexedAMD(buf:GLuint, srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparateIndexedAMD_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
+var glBlendFuncSeparateIndexedAMD_P:@convention(c)(GLuint, GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateIndexedAMD_L
+public func glBlendFuncSeparateINGR(_ sfactorRGB:GLenum, _ dfactorRGB:GLenum, _ sfactorAlpha:GLenum, _ dfactorAlpha:GLenum) {glBlendFuncSeparateINGR_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
+public func glBlendFuncSeparateINGR(sfactorRGB:GLenum, dfactorRGB:GLenum, sfactorAlpha:GLenum, dfactorAlpha:GLenum) {glBlendFuncSeparateINGR_P(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha)}
+var glBlendFuncSeparateINGR_P:@convention(c)(GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateINGR_L
+public func glBlendFuncSeparateiOES(_ buf:GLuint, _ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparateiOES_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
+public func glBlendFuncSeparateiOES(buf:GLuint, srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparateiOES_P(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)}
+var glBlendFuncSeparateiOES_P:@convention(c)(GLuint, GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateiOES_L
+public func glBlendFuncSeparateOES(_ srcRGB:GLenum, _ dstRGB:GLenum, _ srcAlpha:GLenum, _ dstAlpha:GLenum) {glBlendFuncSeparateOES_P(srcRGB, dstRGB, srcAlpha, dstAlpha)}
+public func glBlendFuncSeparateOES(srcRGB:GLenum, dstRGB:GLenum, srcAlpha:GLenum, dstAlpha:GLenum) {glBlendFuncSeparateOES_P(srcRGB, dstRGB, srcAlpha, dstAlpha)}
+var glBlendFuncSeparateOES_P:@convention(c)(GLenum, GLenum, GLenum, GLenum) -> Void = glBlendFuncSeparateOES_L
 public func glBlendParameteriNV(_ pname:GLenum, _ value:GLint) {glBlendParameteriNV_P(pname, value)}
 public func glBlendParameteriNV(pname:GLenum, value:GLint) {glBlendParameteriNV_P(pname, value)}
 var glBlendParameteriNV_P:@convention(c)(GLenum, GLint) -> Void = glBlendParameteriNV_L
@@ -548,9 +548,6 @@ var glClearAccumxOES_P:@convention(c)(GLfixed, GLfixed, GLfixed, GLfixed) -> Voi
 public func glClearBufferData(_ target:GLenum, _ internalformat:GLenum, _ format:GLenum, _ type:GLenum, _ data:UnsafeRawPointer) {glClearBufferData_P(target, internalformat, format, type, data)}
 public func glClearBufferData(target:GLenum, internalformat:GLenum, format:GLenum, type:GLenum, data:UnsafeRawPointer) {glClearBufferData_P(target, internalformat, format, type, data)}
 var glClearBufferData_P:@convention(c)(GLenum, GLenum, GLenum, GLenum, UnsafeRawPointer) -> Void = glClearBufferData_L
-public func glClearBufferSubData(_ target:GLenum, _ internalformat:GLenum, _ offset:GLintptr, _ size:GLsizeiptr, _ format:GLenum, _ type:GLenum, _ data:UnsafeRawPointer) {glClearBufferSubData_P(target, internalformat, offset, size, format, type, data)}
-public func glClearBufferSubData(target:GLenum, internalformat:GLenum, offset:GLintptr, size:GLsizeiptr, format:GLenum, type:GLenum, data:UnsafeRawPointer) {glClearBufferSubData_P(target, internalformat, offset, size, format, type, data)}
-var glClearBufferSubData_P:@convention(c)(GLenum, GLenum, GLintptr, GLsizeiptr, GLenum, GLenum, UnsafeRawPointer) -> Void = glClearBufferSubData_L
 public func glClearBufferfi(_ buffer:GLenum, _ drawbuffer:GLint, _ depth:GLfloat, _ stencil:GLint) {glClearBufferfi_P(buffer, drawbuffer, depth, stencil)}
 public func glClearBufferfi(buffer:GLenum, drawbuffer:GLint, depth:GLfloat, stencil:GLint) {glClearBufferfi_P(buffer, drawbuffer, depth, stencil)}
 var glClearBufferfi_P:@convention(c)(GLenum, GLint, GLfloat, GLint) -> Void = glClearBufferfi_L
@@ -560,6 +557,9 @@ var glClearBufferfv_P:@convention(c)(GLenum, GLint, UnsafePointer<GLfloat>) -> V
 public func glClearBufferiv(_ buffer:GLenum, _ drawbuffer:GLint, _ value:UnsafePointer<GLint>) {glClearBufferiv_P(buffer, drawbuffer, value)}
 public func glClearBufferiv(buffer:GLenum, drawbuffer:GLint, value:UnsafePointer<GLint>) {glClearBufferiv_P(buffer, drawbuffer, value)}
 var glClearBufferiv_P:@convention(c)(GLenum, GLint, UnsafePointer<GLint>) -> Void = glClearBufferiv_L
+public func glClearBufferSubData(_ target:GLenum, _ internalformat:GLenum, _ offset:GLintptr, _ size:GLsizeiptr, _ format:GLenum, _ type:GLenum, _ data:UnsafeRawPointer) {glClearBufferSubData_P(target, internalformat, offset, size, format, type, data)}
+public func glClearBufferSubData(target:GLenum, internalformat:GLenum, offset:GLintptr, size:GLsizeiptr, format:GLenum, type:GLenum, data:UnsafeRawPointer) {glClearBufferSubData_P(target, internalformat, offset, size, format, type, data)}
+var glClearBufferSubData_P:@convention(c)(GLenum, GLenum, GLintptr, GLsizeiptr, GLenum, GLenum, UnsafeRawPointer) -> Void = glClearBufferSubData_L
 public func glClearBufferuiv(_ buffer:GLenum, _ drawbuffer:GLint, _ value:UnsafePointer<GLuint>) {glClearBufferuiv_P(buffer, drawbuffer, value)}
 public func glClearBufferuiv(buffer:GLenum, drawbuffer:GLint, value:UnsafePointer<GLuint>) {glClearBufferuiv_P(buffer, drawbuffer, value)}
 var glClearBufferuiv_P:@convention(c)(GLenum, GLint, UnsafePointer<GLuint>) -> Void = glClearBufferuiv_L
@@ -689,15 +689,15 @@ var glColor3dv_P:@convention(c)(UnsafePointer<GLdouble>) -> Void = glColor3dv_L
 public func glColor3f(_ red:GLfloat, _ green:GLfloat, _ blue:GLfloat) {glColor3f_P(red, green, blue)}
 public func glColor3f(red:GLfloat, green:GLfloat, blue:GLfloat) {glColor3f_P(red, green, blue)}
 var glColor3f_P:@convention(c)(GLfloat, GLfloat, GLfloat) -> Void = glColor3f_L
+public func glColor3fv(_ v:UnsafePointer<GLfloat>) {glColor3fv_P(v)}
+public func glColor3fv(v:UnsafePointer<GLfloat>) {glColor3fv_P(v)}
+var glColor3fv_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glColor3fv_L
 public func glColor3fVertex3fSUN(_ r:GLfloat, _ g:GLfloat, _ b:GLfloat, _ x:GLfloat, _ y:GLfloat, _ z:GLfloat) {glColor3fVertex3fSUN_P(r, g, b, x, y, z)}
 public func glColor3fVertex3fSUN(r:GLfloat, g:GLfloat, b:GLfloat, x:GLfloat, y:GLfloat, z:GLfloat) {glColor3fVertex3fSUN_P(r, g, b, x, y, z)}
 var glColor3fVertex3fSUN_P:@convention(c)(GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat) -> Void = glColor3fVertex3fSUN_L
 public func glColor3fVertex3fvSUN(_ c:UnsafePointer<GLfloat>, _ v:UnsafePointer<GLfloat>) {glColor3fVertex3fvSUN_P(c, v)}
 public func glColor3fVertex3fvSUN(c:UnsafePointer<GLfloat>, v:UnsafePointer<GLfloat>) {glColor3fVertex3fvSUN_P(c, v)}
 var glColor3fVertex3fvSUN_P:@convention(c)(UnsafePointer<GLfloat>, UnsafePointer<GLfloat>) -> Void = glColor3fVertex3fvSUN_L
-public func glColor3fv(_ v:UnsafePointer<GLfloat>) {glColor3fv_P(v)}
-public func glColor3fv(v:UnsafePointer<GLfloat>) {glColor3fv_P(v)}
-var glColor3fv_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glColor3fv_L
 public func glColor3hNV(_ red:GLhalfNV, _ green:GLhalfNV, _ blue:GLhalfNV) {glColor3hNV_P(red, green, blue)}
 public func glColor3hNV(red:GLhalfNV, green:GLhalfNV, blue:GLhalfNV) {glColor3hNV_P(red, green, blue)}
 var glColor3hNV_P:@convention(c)(GLhalfNV, GLhalfNV, GLhalfNV) -> Void = glColor3hNV_L
@@ -785,6 +785,9 @@ var glColor4sv_P:@convention(c)(UnsafePointer<GLshort>) -> Void = glColor4sv_L
 public func glColor4ub(_ red:GLubyte, _ green:GLubyte, _ blue:GLubyte, _ alpha:GLubyte) {glColor4ub_P(red, green, blue, alpha)}
 public func glColor4ub(red:GLubyte, green:GLubyte, blue:GLubyte, alpha:GLubyte) {glColor4ub_P(red, green, blue, alpha)}
 var glColor4ub_P:@convention(c)(GLubyte, GLubyte, GLubyte, GLubyte) -> Void = glColor4ub_L
+public func glColor4ubv(_ v:UnsafePointer<GLubyte>) {glColor4ubv_P(v)}
+public func glColor4ubv(v:UnsafePointer<GLubyte>) {glColor4ubv_P(v)}
+var glColor4ubv_P:@convention(c)(UnsafePointer<GLubyte>) -> Void = glColor4ubv_L
 public func glColor4ubVertex2fSUN(_ r:GLubyte, _ g:GLubyte, _ b:GLubyte, _ a:GLubyte, _ x:GLfloat, _ y:GLfloat) {glColor4ubVertex2fSUN_P(r, g, b, a, x, y)}
 public func glColor4ubVertex2fSUN(r:GLubyte, g:GLubyte, b:GLubyte, a:GLubyte, x:GLfloat, y:GLfloat) {glColor4ubVertex2fSUN_P(r, g, b, a, x, y)}
 var glColor4ubVertex2fSUN_P:@convention(c)(GLubyte, GLubyte, GLubyte, GLubyte, GLfloat, GLfloat) -> Void = glColor4ubVertex2fSUN_L
@@ -797,9 +800,6 @@ var glColor4ubVertex3fSUN_P:@convention(c)(GLubyte, GLubyte, GLubyte, GLubyte, G
 public func glColor4ubVertex3fvSUN(_ c:UnsafePointer<GLubyte>, _ v:UnsafePointer<GLfloat>) {glColor4ubVertex3fvSUN_P(c, v)}
 public func glColor4ubVertex3fvSUN(c:UnsafePointer<GLubyte>, v:UnsafePointer<GLfloat>) {glColor4ubVertex3fvSUN_P(c, v)}
 var glColor4ubVertex3fvSUN_P:@convention(c)(UnsafePointer<GLubyte>, UnsafePointer<GLfloat>) -> Void = glColor4ubVertex3fvSUN_L
-public func glColor4ubv(_ v:UnsafePointer<GLubyte>) {glColor4ubv_P(v)}
-public func glColor4ubv(v:UnsafePointer<GLubyte>) {glColor4ubv_P(v)}
-var glColor4ubv_P:@convention(c)(UnsafePointer<GLubyte>) -> Void = glColor4ubv_L
 public func glColor4ui(_ red:GLuint, _ green:GLuint, _ blue:GLuint, _ alpha:GLuint) {glColor4ui_P(red, green, blue, alpha)}
 public func glColor4ui(red:GLuint, green:GLuint, blue:GLuint, alpha:GLuint) {glColor4ui_P(red, green, blue, alpha)}
 var glColor4ui_P:@convention(c)(GLuint, GLuint, GLuint, GLuint) -> Void = glColor4ui_L
@@ -836,15 +836,15 @@ var glColorFragmentOp3ATI_P:@convention(c)(GLenum, GLuint, GLuint, GLuint, GLuin
 public func glColorMask(_ red:GLboolean, _ green:GLboolean, _ blue:GLboolean, _ alpha:GLboolean) {glColorMask_P(red, green, blue, alpha)}
 public func glColorMask(red:GLboolean, green:GLboolean, blue:GLboolean, alpha:GLboolean) {glColorMask_P(red, green, blue, alpha)}
 var glColorMask_P:@convention(c)(GLboolean, GLboolean, GLboolean, GLboolean) -> Void = glColorMask_L
-public func glColorMaskIndexedEXT(_ index:GLuint, _ r:GLboolean, _ g:GLboolean, _ b:GLboolean, _ a:GLboolean) {glColorMaskIndexedEXT_P(index, r, g, b, a)}
-public func glColorMaskIndexedEXT(index:GLuint, r:GLboolean, g:GLboolean, b:GLboolean, a:GLboolean) {glColorMaskIndexedEXT_P(index, r, g, b, a)}
-var glColorMaskIndexedEXT_P:@convention(c)(GLuint, GLboolean, GLboolean, GLboolean, GLboolean) -> Void = glColorMaskIndexedEXT_L
 public func glColorMaski(_ index:GLuint, _ r:GLboolean, _ g:GLboolean, _ b:GLboolean, _ a:GLboolean) {glColorMaski_P(index, r, g, b, a)}
 public func glColorMaski(index:GLuint, r:GLboolean, g:GLboolean, b:GLboolean, a:GLboolean) {glColorMaski_P(index, r, g, b, a)}
 var glColorMaski_P:@convention(c)(GLuint, GLboolean, GLboolean, GLboolean, GLboolean) -> Void = glColorMaski_L
 public func glColorMaskiEXT(_ index:GLuint, _ r:GLboolean, _ g:GLboolean, _ b:GLboolean, _ a:GLboolean) {glColorMaskiEXT_P(index, r, g, b, a)}
 public func glColorMaskiEXT(index:GLuint, r:GLboolean, g:GLboolean, b:GLboolean, a:GLboolean) {glColorMaskiEXT_P(index, r, g, b, a)}
 var glColorMaskiEXT_P:@convention(c)(GLuint, GLboolean, GLboolean, GLboolean, GLboolean) -> Void = glColorMaskiEXT_L
+public func glColorMaskIndexedEXT(_ index:GLuint, _ r:GLboolean, _ g:GLboolean, _ b:GLboolean, _ a:GLboolean) {glColorMaskIndexedEXT_P(index, r, g, b, a)}
+public func glColorMaskIndexedEXT(index:GLuint, r:GLboolean, g:GLboolean, b:GLboolean, a:GLboolean) {glColorMaskIndexedEXT_P(index, r, g, b, a)}
+var glColorMaskIndexedEXT_P:@convention(c)(GLuint, GLboolean, GLboolean, GLboolean, GLboolean) -> Void = glColorMaskIndexedEXT_L
 public func glColorMaskiOES(_ index:GLuint, _ r:GLboolean, _ g:GLboolean, _ b:GLboolean, _ a:GLboolean) {glColorMaskiOES_P(index, r, g, b, a)}
 public func glColorMaskiOES(index:GLuint, r:GLboolean, g:GLboolean, b:GLboolean, a:GLboolean) {glColorMaskiOES_P(index, r, g, b, a)}
 var glColorMaskiOES_P:@convention(c)(GLuint, GLboolean, GLboolean, GLboolean, GLboolean) -> Void = glColorMaskiOES_L
@@ -1196,18 +1196,6 @@ var glCopyTextureSubImage3D_P:@convention(c)(GLuint, GLint, GLint, GLint, GLint,
 public func glCopyTextureSubImage3DEXT(_ texture:GLuint, _ target:GLenum, _ level:GLint, _ xoffset:GLint, _ yoffset:GLint, _ zoffset:GLint, _ x:GLint, _ y:GLint, _ width:GLsizei, _ height:GLsizei) {glCopyTextureSubImage3DEXT_P(texture, target, level, xoffset, yoffset, zoffset, x, y, width, height)}
 public func glCopyTextureSubImage3DEXT(texture:GLuint, target:GLenum, level:GLint, xoffset:GLint, yoffset:GLint, zoffset:GLint, x:GLint, y:GLint, width:GLsizei, height:GLsizei) {glCopyTextureSubImage3DEXT_P(texture, target, level, xoffset, yoffset, zoffset, x, y, width, height)}
 var glCopyTextureSubImage3DEXT_P:@convention(c)(GLuint, GLenum, GLint, GLint, GLint, GLint, GLint, GLint, GLsizei, GLsizei) -> Void = glCopyTextureSubImage3DEXT_L
-public func glCoverFillPathInstancedNV(_ numPaths:GLsizei, _ pathNameType:GLenum, _ paths:UnsafeRawPointer, _ pathBase:GLuint, _ coverMode:GLenum, _ transformType:GLenum, _ transformValues:UnsafePointer<GLfloat>) {glCoverFillPathInstancedNV_P(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues)}
-public func glCoverFillPathInstancedNV(numPaths:GLsizei, pathNameType:GLenum, paths:UnsafeRawPointer, pathBase:GLuint, coverMode:GLenum, transformType:GLenum, transformValues:UnsafePointer<GLfloat>) {glCoverFillPathInstancedNV_P(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues)}
-var glCoverFillPathInstancedNV_P:@convention(c)(GLsizei, GLenum, UnsafeRawPointer, GLuint, GLenum, GLenum, UnsafePointer<GLfloat>) -> Void = glCoverFillPathInstancedNV_L
-public func glCoverFillPathNV(_ path:GLuint, _ coverMode:GLenum) {glCoverFillPathNV_P(path, coverMode)}
-public func glCoverFillPathNV(path:GLuint, coverMode:GLenum) {glCoverFillPathNV_P(path, coverMode)}
-var glCoverFillPathNV_P:@convention(c)(GLuint, GLenum) -> Void = glCoverFillPathNV_L
-public func glCoverStrokePathInstancedNV(_ numPaths:GLsizei, _ pathNameType:GLenum, _ paths:UnsafeRawPointer, _ pathBase:GLuint, _ coverMode:GLenum, _ transformType:GLenum, _ transformValues:UnsafePointer<GLfloat>) {glCoverStrokePathInstancedNV_P(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues)}
-public func glCoverStrokePathInstancedNV(numPaths:GLsizei, pathNameType:GLenum, paths:UnsafeRawPointer, pathBase:GLuint, coverMode:GLenum, transformType:GLenum, transformValues:UnsafePointer<GLfloat>) {glCoverStrokePathInstancedNV_P(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues)}
-var glCoverStrokePathInstancedNV_P:@convention(c)(GLsizei, GLenum, UnsafeRawPointer, GLuint, GLenum, GLenum, UnsafePointer<GLfloat>) -> Void = glCoverStrokePathInstancedNV_L
-public func glCoverStrokePathNV(_ path:GLuint, _ coverMode:GLenum) {glCoverStrokePathNV_P(path, coverMode)}
-public func glCoverStrokePathNV(path:GLuint, coverMode:GLenum) {glCoverStrokePathNV_P(path, coverMode)}
-var glCoverStrokePathNV_P:@convention(c)(GLuint, GLenum) -> Void = glCoverStrokePathNV_L
 public func glCoverageMaskNV(_ mask:GLboolean) {glCoverageMaskNV_P(mask)}
 public func glCoverageMaskNV(mask:GLboolean) {glCoverageMaskNV_P(mask)}
 var glCoverageMaskNV_P:@convention(c)(GLboolean) -> Void = glCoverageMaskNV_L
@@ -1220,6 +1208,18 @@ var glCoverageModulationTableNV_P:@convention(c)(GLsizei, UnsafePointer<GLfloat>
 public func glCoverageOperationNV(_ operation:GLenum) {glCoverageOperationNV_P(operation)}
 public func glCoverageOperationNV(operation:GLenum) {glCoverageOperationNV_P(operation)}
 var glCoverageOperationNV_P:@convention(c)(GLenum) -> Void = glCoverageOperationNV_L
+public func glCoverFillPathInstancedNV(_ numPaths:GLsizei, _ pathNameType:GLenum, _ paths:UnsafeRawPointer, _ pathBase:GLuint, _ coverMode:GLenum, _ transformType:GLenum, _ transformValues:UnsafePointer<GLfloat>) {glCoverFillPathInstancedNV_P(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues)}
+public func glCoverFillPathInstancedNV(numPaths:GLsizei, pathNameType:GLenum, paths:UnsafeRawPointer, pathBase:GLuint, coverMode:GLenum, transformType:GLenum, transformValues:UnsafePointer<GLfloat>) {glCoverFillPathInstancedNV_P(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues)}
+var glCoverFillPathInstancedNV_P:@convention(c)(GLsizei, GLenum, UnsafeRawPointer, GLuint, GLenum, GLenum, UnsafePointer<GLfloat>) -> Void = glCoverFillPathInstancedNV_L
+public func glCoverFillPathNV(_ path:GLuint, _ coverMode:GLenum) {glCoverFillPathNV_P(path, coverMode)}
+public func glCoverFillPathNV(path:GLuint, coverMode:GLenum) {glCoverFillPathNV_P(path, coverMode)}
+var glCoverFillPathNV_P:@convention(c)(GLuint, GLenum) -> Void = glCoverFillPathNV_L
+public func glCoverStrokePathInstancedNV(_ numPaths:GLsizei, _ pathNameType:GLenum, _ paths:UnsafeRawPointer, _ pathBase:GLuint, _ coverMode:GLenum, _ transformType:GLenum, _ transformValues:UnsafePointer<GLfloat>) {glCoverStrokePathInstancedNV_P(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues)}
+public func glCoverStrokePathInstancedNV(numPaths:GLsizei, pathNameType:GLenum, paths:UnsafeRawPointer, pathBase:GLuint, coverMode:GLenum, transformType:GLenum, transformValues:UnsafePointer<GLfloat>) {glCoverStrokePathInstancedNV_P(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues)}
+var glCoverStrokePathInstancedNV_P:@convention(c)(GLsizei, GLenum, UnsafeRawPointer, GLuint, GLenum, GLenum, UnsafePointer<GLfloat>) -> Void = glCoverStrokePathInstancedNV_L
+public func glCoverStrokePathNV(_ path:GLuint, _ coverMode:GLenum) {glCoverStrokePathNV_P(path, coverMode)}
+public func glCoverStrokePathNV(path:GLuint, coverMode:GLenum) {glCoverStrokePathNV_P(path, coverMode)}
+var glCoverStrokePathNV_P:@convention(c)(GLuint, GLenum) -> Void = glCoverStrokePathNV_L
 public func glCreateBuffers(_ n:GLsizei, _ buffers:UnsafeMutablePointer<GLuint>) {glCreateBuffers_P(n, buffers)}
 public func glCreateBuffers(n:GLsizei, buffers:UnsafeMutablePointer<GLuint>) {glCreateBuffers_P(n, buffers)}
 var glCreateBuffers_P:@convention(c)(GLsizei, UnsafeMutablePointer<GLuint>) -> Void = glCreateBuffers_L
@@ -1329,15 +1329,15 @@ var glDebugMessageInsertARB_P:@convention(c)(GLenum, GLenum, GLuint, GLenum, GLs
 public func glDebugMessageInsertKHR(_ source:GLenum, _ type:GLenum, _ id:GLuint, _ severity:GLenum, _ length:GLsizei, _ buf:UnsafePointer<GLchar>) {glDebugMessageInsertKHR_P(source, type, id, severity, length, buf)}
 public func glDebugMessageInsertKHR(source:GLenum, type:GLenum, id:GLuint, severity:GLenum, length:GLsizei, buf:UnsafePointer<GLchar>) {glDebugMessageInsertKHR_P(source, type, id, severity, length, buf)}
 var glDebugMessageInsertKHR_P:@convention(c)(GLenum, GLenum, GLuint, GLenum, GLsizei, UnsafePointer<GLchar>) -> Void = glDebugMessageInsertKHR_L
-public func glDeformSGIX(_ mask:GLbitfield) {glDeformSGIX_P(mask)}
-public func glDeformSGIX(mask:GLbitfield) {glDeformSGIX_P(mask)}
-var glDeformSGIX_P:@convention(c)(GLbitfield) -> Void = glDeformSGIX_L
 public func glDeformationMap3dSGIX(_ target:GLenum, _ u1:GLdouble, _ u2:GLdouble, _ ustride:GLint, _ uorder:GLint, _ v1:GLdouble, _ v2:GLdouble, _ vstride:GLint, _ vorder:GLint, _ w1:GLdouble, _ w2:GLdouble, _ wstride:GLint, _ worder:GLint, _ points:UnsafePointer<GLdouble>) {glDeformationMap3dSGIX_P(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, w1, w2, wstride, worder, points)}
 public func glDeformationMap3dSGIX(target:GLenum, u1:GLdouble, u2:GLdouble, ustride:GLint, uorder:GLint, v1:GLdouble, v2:GLdouble, vstride:GLint, vorder:GLint, w1:GLdouble, w2:GLdouble, wstride:GLint, worder:GLint, points:UnsafePointer<GLdouble>) {glDeformationMap3dSGIX_P(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, w1, w2, wstride, worder, points)}
 var glDeformationMap3dSGIX_P:@convention(c)(GLenum, GLdouble, GLdouble, GLint, GLint, GLdouble, GLdouble, GLint, GLint, GLdouble, GLdouble, GLint, GLint, UnsafePointer<GLdouble>) -> Void = glDeformationMap3dSGIX_L
 public func glDeformationMap3fSGIX(_ target:GLenum, _ u1:GLfloat, _ u2:GLfloat, _ ustride:GLint, _ uorder:GLint, _ v1:GLfloat, _ v2:GLfloat, _ vstride:GLint, _ vorder:GLint, _ w1:GLfloat, _ w2:GLfloat, _ wstride:GLint, _ worder:GLint, _ points:UnsafePointer<GLfloat>) {glDeformationMap3fSGIX_P(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, w1, w2, wstride, worder, points)}
 public func glDeformationMap3fSGIX(target:GLenum, u1:GLfloat, u2:GLfloat, ustride:GLint, uorder:GLint, v1:GLfloat, v2:GLfloat, vstride:GLint, vorder:GLint, w1:GLfloat, w2:GLfloat, wstride:GLint, worder:GLint, points:UnsafePointer<GLfloat>) {glDeformationMap3fSGIX_P(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, w1, w2, wstride, worder, points)}
 var glDeformationMap3fSGIX_P:@convention(c)(GLenum, GLfloat, GLfloat, GLint, GLint, GLfloat, GLfloat, GLint, GLint, GLfloat, GLfloat, GLint, GLint, UnsafePointer<GLfloat>) -> Void = glDeformationMap3fSGIX_L
+public func glDeformSGIX(_ mask:GLbitfield) {glDeformSGIX_P(mask)}
+public func glDeformSGIX(mask:GLbitfield) {glDeformSGIX_P(mask)}
+var glDeformSGIX_P:@convention(c)(GLbitfield) -> Void = glDeformSGIX_L
 public func glDeleteAsyncMarkersSGIX(_ marker:GLuint, _ range:GLsizei) {glDeleteAsyncMarkersSGIX_P(marker, range)}
 public func glDeleteAsyncMarkersSGIX(marker:GLuint, range:GLsizei) {glDeleteAsyncMarkersSGIX_P(marker, range)}
 var glDeleteAsyncMarkersSGIX_P:@convention(c)(GLuint, GLsizei) -> Void = glDeleteAsyncMarkersSGIX_L
@@ -1464,12 +1464,12 @@ var glDeleteVertexArraysOES_P:@convention(c)(GLsizei, UnsafePointer<GLuint>) -> 
 public func glDeleteVertexShaderEXT(_ id:GLuint) {glDeleteVertexShaderEXT_P(id)}
 public func glDeleteVertexShaderEXT(id:GLuint) {glDeleteVertexShaderEXT_P(id)}
 var glDeleteVertexShaderEXT_P:@convention(c)(GLuint) -> Void = glDeleteVertexShaderEXT_L
-public func glDepthBoundsEXT(_ zmin:GLclampd, _ zmax:GLclampd) {glDepthBoundsEXT_P(zmin, zmax)}
-public func glDepthBoundsEXT(zmin:GLclampd, zmax:GLclampd) {glDepthBoundsEXT_P(zmin, zmax)}
-var glDepthBoundsEXT_P:@convention(c)(GLclampd, GLclampd) -> Void = glDepthBoundsEXT_L
 public func glDepthBoundsdNV(_ zmin:GLdouble, _ zmax:GLdouble) {glDepthBoundsdNV_P(zmin, zmax)}
 public func glDepthBoundsdNV(zmin:GLdouble, zmax:GLdouble) {glDepthBoundsdNV_P(zmin, zmax)}
 var glDepthBoundsdNV_P:@convention(c)(GLdouble, GLdouble) -> Void = glDepthBoundsdNV_L
+public func glDepthBoundsEXT(_ zmin:GLclampd, _ zmax:GLclampd) {glDepthBoundsEXT_P(zmin, zmax)}
+public func glDepthBoundsEXT(zmin:GLclampd, zmax:GLclampd) {glDepthBoundsEXT_P(zmin, zmax)}
+var glDepthBoundsEXT_P:@convention(c)(GLclampd, GLclampd) -> Void = glDepthBoundsEXT_L
 public func glDepthFunc(_ fn:GLenum) {glDepthFunc_P(fn)}
 public func glDepthFunc(fn:GLenum) {glDepthFunc_P(fn)}
 var glDepthFunc_P:@convention(c)(GLenum) -> Void = glDepthFunc_L
@@ -1485,12 +1485,6 @@ var glDepthRangeArrayfvNV_P:@convention(c)(GLuint, GLsizei, UnsafePointer<GLfloa
 public func glDepthRangeArrayv(_ first:GLuint, _ count:GLsizei, _ v:UnsafePointer<GLdouble>) {glDepthRangeArrayv_P(first, count, v)}
 public func glDepthRangeArrayv(first:GLuint, count:GLsizei, v:UnsafePointer<GLdouble>) {glDepthRangeArrayv_P(first, count, v)}
 var glDepthRangeArrayv_P:@convention(c)(GLuint, GLsizei, UnsafePointer<GLdouble>) -> Void = glDepthRangeArrayv_L
-public func glDepthRangeIndexed(_ index:GLuint, _ n:GLdouble, _ f:GLdouble) {glDepthRangeIndexed_P(index, n, f)}
-public func glDepthRangeIndexed(index:GLuint, n:GLdouble, f:GLdouble) {glDepthRangeIndexed_P(index, n, f)}
-var glDepthRangeIndexed_P:@convention(c)(GLuint, GLdouble, GLdouble) -> Void = glDepthRangeIndexed_L
-public func glDepthRangeIndexedfNV(_ index:GLuint, _ n:GLfloat, _ f:GLfloat) {glDepthRangeIndexedfNV_P(index, n, f)}
-public func glDepthRangeIndexedfNV(index:GLuint, n:GLfloat, f:GLfloat) {glDepthRangeIndexedfNV_P(index, n, f)}
-var glDepthRangeIndexedfNV_P:@convention(c)(GLuint, GLfloat, GLfloat) -> Void = glDepthRangeIndexedfNV_L
 public func glDepthRangedNV(_ zNear:GLdouble, _ zFar:GLdouble) {glDepthRangedNV_P(zNear, zFar)}
 public func glDepthRangedNV(zNear:GLdouble, zFar:GLdouble) {glDepthRangedNV_P(zNear, zFar)}
 var glDepthRangedNV_P:@convention(c)(GLdouble, GLdouble) -> Void = glDepthRangedNV_L
@@ -1500,6 +1494,12 @@ var glDepthRangef_P:@convention(c)(GLfloat, GLfloat) -> Void = glDepthRangef_L
 public func glDepthRangefOES(_ n:GLclampf, _ f:GLclampf) {glDepthRangefOES_P(n, f)}
 public func glDepthRangefOES(n:GLclampf, f:GLclampf) {glDepthRangefOES_P(n, f)}
 var glDepthRangefOES_P:@convention(c)(GLclampf, GLclampf) -> Void = glDepthRangefOES_L
+public func glDepthRangeIndexed(_ index:GLuint, _ n:GLdouble, _ f:GLdouble) {glDepthRangeIndexed_P(index, n, f)}
+public func glDepthRangeIndexed(index:GLuint, n:GLdouble, f:GLdouble) {glDepthRangeIndexed_P(index, n, f)}
+var glDepthRangeIndexed_P:@convention(c)(GLuint, GLdouble, GLdouble) -> Void = glDepthRangeIndexed_L
+public func glDepthRangeIndexedfNV(_ index:GLuint, _ n:GLfloat, _ f:GLfloat) {glDepthRangeIndexedfNV_P(index, n, f)}
+public func glDepthRangeIndexedfNV(index:GLuint, n:GLfloat, f:GLfloat) {glDepthRangeIndexedfNV_P(index, n, f)}
+var glDepthRangeIndexedfNV_P:@convention(c)(GLuint, GLfloat, GLfloat) -> Void = glDepthRangeIndexedfNV_L
 public func glDepthRangex(_ n:GLfixed, _ f:GLfixed) {glDepthRangex_P(n, f)}
 public func glDepthRangex(n:GLfixed, f:GLfixed) {glDepthRangex_P(n, f)}
 var glDepthRangex_P:@convention(c)(GLfixed, GLfixed) -> Void = glDepthRangex_L
@@ -1521,18 +1521,30 @@ var glDisable_P:@convention(c)(GLenum) -> Void = glDisable_L
 public func glDisableClientState(_ array:GLenum) {glDisableClientState_P(array)}
 public func glDisableClientState(array:GLenum) {glDisableClientState_P(array)}
 var glDisableClientState_P:@convention(c)(GLenum) -> Void = glDisableClientState_L
-public func glDisableClientStateIndexedEXT(_ array:GLenum, _ index:GLuint) {glDisableClientStateIndexedEXT_P(array, index)}
-public func glDisableClientStateIndexedEXT(array:GLenum, index:GLuint) {glDisableClientStateIndexedEXT_P(array, index)}
-var glDisableClientStateIndexedEXT_P:@convention(c)(GLenum, GLuint) -> Void = glDisableClientStateIndexedEXT_L
 public func glDisableClientStateiEXT(_ array:GLenum, _ index:GLuint) {glDisableClientStateiEXT_P(array, index)}
 public func glDisableClientStateiEXT(array:GLenum, index:GLuint) {glDisableClientStateiEXT_P(array, index)}
 var glDisableClientStateiEXT_P:@convention(c)(GLenum, GLuint) -> Void = glDisableClientStateiEXT_L
+public func glDisableClientStateIndexedEXT(_ array:GLenum, _ index:GLuint) {glDisableClientStateIndexedEXT_P(array, index)}
+public func glDisableClientStateIndexedEXT(array:GLenum, index:GLuint) {glDisableClientStateIndexedEXT_P(array, index)}
+var glDisableClientStateIndexedEXT_P:@convention(c)(GLenum, GLuint) -> Void = glDisableClientStateIndexedEXT_L
 public func glDisableDriverControlQCOM(_ driverControl:GLuint) {glDisableDriverControlQCOM_P(driverControl)}
 public func glDisableDriverControlQCOM(driverControl:GLuint) {glDisableDriverControlQCOM_P(driverControl)}
 var glDisableDriverControlQCOM_P:@convention(c)(GLuint) -> Void = glDisableDriverControlQCOM_L
+public func glDisablei(_ target:GLenum, _ index:GLuint) {glDisablei_P(target, index)}
+public func glDisablei(target:GLenum, index:GLuint) {glDisablei_P(target, index)}
+var glDisablei_P:@convention(c)(GLenum, GLuint) -> Void = glDisablei_L
+public func glDisableiEXT(_ target:GLenum, _ index:GLuint) {glDisableiEXT_P(target, index)}
+public func glDisableiEXT(target:GLenum, index:GLuint) {glDisableiEXT_P(target, index)}
+var glDisableiEXT_P:@convention(c)(GLenum, GLuint) -> Void = glDisableiEXT_L
 public func glDisableIndexedEXT(_ target:GLenum, _ index:GLuint) {glDisableIndexedEXT_P(target, index)}
 public func glDisableIndexedEXT(target:GLenum, index:GLuint) {glDisableIndexedEXT_P(target, index)}
 var glDisableIndexedEXT_P:@convention(c)(GLenum, GLuint) -> Void = glDisableIndexedEXT_L
+public func glDisableiNV(_ target:GLenum, _ index:GLuint) {glDisableiNV_P(target, index)}
+public func glDisableiNV(target:GLenum, index:GLuint) {glDisableiNV_P(target, index)}
+var glDisableiNV_P:@convention(c)(GLenum, GLuint) -> Void = glDisableiNV_L
+public func glDisableiOES(_ target:GLenum, _ index:GLuint) {glDisableiOES_P(target, index)}
+public func glDisableiOES(target:GLenum, index:GLuint) {glDisableiOES_P(target, index)}
+var glDisableiOES_P:@convention(c)(GLenum, GLuint) -> Void = glDisableiOES_L
 public func glDisableVariantClientStateEXT(_ id:GLuint) {glDisableVariantClientStateEXT_P(id)}
 public func glDisableVariantClientStateEXT(id:GLuint) {glDisableVariantClientStateEXT_P(id)}
 var glDisableVariantClientStateEXT_P:@convention(c)(GLuint) -> Void = glDisableVariantClientStateEXT_L
@@ -1554,18 +1566,6 @@ var glDisableVertexAttribArray_P:@convention(c)(GLuint) -> Void = glDisableVerte
 public func glDisableVertexAttribArrayARB(_ index:GLuint) {glDisableVertexAttribArrayARB_P(index)}
 public func glDisableVertexAttribArrayARB(index:GLuint) {glDisableVertexAttribArrayARB_P(index)}
 var glDisableVertexAttribArrayARB_P:@convention(c)(GLuint) -> Void = glDisableVertexAttribArrayARB_L
-public func glDisablei(_ target:GLenum, _ index:GLuint) {glDisablei_P(target, index)}
-public func glDisablei(target:GLenum, index:GLuint) {glDisablei_P(target, index)}
-var glDisablei_P:@convention(c)(GLenum, GLuint) -> Void = glDisablei_L
-public func glDisableiEXT(_ target:GLenum, _ index:GLuint) {glDisableiEXT_P(target, index)}
-public func glDisableiEXT(target:GLenum, index:GLuint) {glDisableiEXT_P(target, index)}
-var glDisableiEXT_P:@convention(c)(GLenum, GLuint) -> Void = glDisableiEXT_L
-public func glDisableiNV(_ target:GLenum, _ index:GLuint) {glDisableiNV_P(target, index)}
-public func glDisableiNV(target:GLenum, index:GLuint) {glDisableiNV_P(target, index)}
-var glDisableiNV_P:@convention(c)(GLenum, GLuint) -> Void = glDisableiNV_L
-public func glDisableiOES(_ target:GLenum, _ index:GLuint) {glDisableiOES_P(target, index)}
-public func glDisableiOES(target:GLenum, index:GLuint) {glDisableiOES_P(target, index)}
-var glDisableiOES_P:@convention(c)(GLenum, GLuint) -> Void = glDisableiOES_L
 public func glDiscardFramebufferEXT(_ target:GLenum, _ numAttachments:GLsizei, _ attachments:UnsafePointer<GLenum>) {glDiscardFramebufferEXT_P(target, numAttachments, attachments)}
 public func glDiscardFramebufferEXT(target:GLenum, numAttachments:GLsizei, attachments:UnsafePointer<GLenum>) {glDiscardFramebufferEXT_P(target, numAttachments, attachments)}
 var glDiscardFramebufferEXT_P:@convention(c)(GLenum, GLsizei, UnsafePointer<GLenum>) -> Void = glDiscardFramebufferEXT_L
@@ -1767,12 +1767,6 @@ var glDrawTransformFeedbackStream_P:@convention(c)(GLenum, GLuint, GLuint) -> Vo
 public func glDrawTransformFeedbackStreamInstanced(_ mode:GLenum, _ id:GLuint, _ stream:GLuint, _ instancecount:GLsizei) {glDrawTransformFeedbackStreamInstanced_P(mode, id, stream, instancecount)}
 public func glDrawTransformFeedbackStreamInstanced(mode:GLenum, id:GLuint, stream:GLuint, instancecount:GLsizei) {glDrawTransformFeedbackStreamInstanced_P(mode, id, stream, instancecount)}
 var glDrawTransformFeedbackStreamInstanced_P:@convention(c)(GLenum, GLuint, GLuint, GLsizei) -> Void = glDrawTransformFeedbackStreamInstanced_L
-public func glEGLImageTargetRenderbufferStorageOES(_ target:GLenum, _ image:GLeglImageOES) {glEGLImageTargetRenderbufferStorageOES_P(target, image)}
-public func glEGLImageTargetRenderbufferStorageOES(target:GLenum, image:GLeglImageOES) {glEGLImageTargetRenderbufferStorageOES_P(target, image)}
-var glEGLImageTargetRenderbufferStorageOES_P:@convention(c)(GLenum, GLeglImageOES) -> Void = glEGLImageTargetRenderbufferStorageOES_L
-public func glEGLImageTargetTexture2DOES(_ target:GLenum, _ image:GLeglImageOES) {glEGLImageTargetTexture2DOES_P(target, image)}
-public func glEGLImageTargetTexture2DOES(target:GLenum, image:GLeglImageOES) {glEGLImageTargetTexture2DOES_P(target, image)}
-var glEGLImageTargetTexture2DOES_P:@convention(c)(GLenum, GLeglImageOES) -> Void = glEGLImageTargetTexture2DOES_L
 public func glEdgeFlag(_ flag:GLboolean) {glEdgeFlag_P(flag)}
 public func glEdgeFlag(flag:GLboolean) {glEdgeFlag_P(flag)}
 var glEdgeFlag_P:@convention(c)(GLboolean) -> Void = glEdgeFlag_L
@@ -1791,6 +1785,12 @@ var glEdgeFlagPointerListIBM_P:@convention(c)(GLint, UnsafeMutablePointer<Unsafe
 public func glEdgeFlagv(_ flag:UnsafePointer<GLboolean>) {glEdgeFlagv_P(flag)}
 public func glEdgeFlagv(flag:UnsafePointer<GLboolean>) {glEdgeFlagv_P(flag)}
 var glEdgeFlagv_P:@convention(c)(UnsafePointer<GLboolean>) -> Void = glEdgeFlagv_L
+public func glEGLImageTargetRenderbufferStorageOES(_ target:GLenum, _ image:GLeglImageOES) {glEGLImageTargetRenderbufferStorageOES_P(target, image)}
+public func glEGLImageTargetRenderbufferStorageOES(target:GLenum, image:GLeglImageOES) {glEGLImageTargetRenderbufferStorageOES_P(target, image)}
+var glEGLImageTargetRenderbufferStorageOES_P:@convention(c)(GLenum, GLeglImageOES) -> Void = glEGLImageTargetRenderbufferStorageOES_L
+public func glEGLImageTargetTexture2DOES(_ target:GLenum, _ image:GLeglImageOES) {glEGLImageTargetTexture2DOES_P(target, image)}
+public func glEGLImageTargetTexture2DOES(target:GLenum, image:GLeglImageOES) {glEGLImageTargetTexture2DOES_P(target, image)}
+var glEGLImageTargetTexture2DOES_P:@convention(c)(GLenum, GLeglImageOES) -> Void = glEGLImageTargetTexture2DOES_L
 public func glElementPointerAPPLE(_ type:GLenum, _ pointer:UnsafeRawPointer) {glElementPointerAPPLE_P(type, pointer)}
 public func glElementPointerAPPLE(type:GLenum, pointer:UnsafeRawPointer) {glElementPointerAPPLE_P(type, pointer)}
 var glElementPointerAPPLE_P:@convention(c)(GLenum, UnsafeRawPointer) -> Void = glElementPointerAPPLE_L
@@ -1803,18 +1803,30 @@ var glEnable_P:@convention(c)(GLenum) -> Void = glEnable_L
 public func glEnableClientState(_ array:GLenum) {glEnableClientState_P(array)}
 public func glEnableClientState(array:GLenum) {glEnableClientState_P(array)}
 var glEnableClientState_P:@convention(c)(GLenum) -> Void = glEnableClientState_L
-public func glEnableClientStateIndexedEXT(_ array:GLenum, _ index:GLuint) {glEnableClientStateIndexedEXT_P(array, index)}
-public func glEnableClientStateIndexedEXT(array:GLenum, index:GLuint) {glEnableClientStateIndexedEXT_P(array, index)}
-var glEnableClientStateIndexedEXT_P:@convention(c)(GLenum, GLuint) -> Void = glEnableClientStateIndexedEXT_L
 public func glEnableClientStateiEXT(_ array:GLenum, _ index:GLuint) {glEnableClientStateiEXT_P(array, index)}
 public func glEnableClientStateiEXT(array:GLenum, index:GLuint) {glEnableClientStateiEXT_P(array, index)}
 var glEnableClientStateiEXT_P:@convention(c)(GLenum, GLuint) -> Void = glEnableClientStateiEXT_L
+public func glEnableClientStateIndexedEXT(_ array:GLenum, _ index:GLuint) {glEnableClientStateIndexedEXT_P(array, index)}
+public func glEnableClientStateIndexedEXT(array:GLenum, index:GLuint) {glEnableClientStateIndexedEXT_P(array, index)}
+var glEnableClientStateIndexedEXT_P:@convention(c)(GLenum, GLuint) -> Void = glEnableClientStateIndexedEXT_L
 public func glEnableDriverControlQCOM(_ driverControl:GLuint) {glEnableDriverControlQCOM_P(driverControl)}
 public func glEnableDriverControlQCOM(driverControl:GLuint) {glEnableDriverControlQCOM_P(driverControl)}
 var glEnableDriverControlQCOM_P:@convention(c)(GLuint) -> Void = glEnableDriverControlQCOM_L
+public func glEnablei(_ target:GLenum, _ index:GLuint) {glEnablei_P(target, index)}
+public func glEnablei(target:GLenum, index:GLuint) {glEnablei_P(target, index)}
+var glEnablei_P:@convention(c)(GLenum, GLuint) -> Void = glEnablei_L
+public func glEnableiEXT(_ target:GLenum, _ index:GLuint) {glEnableiEXT_P(target, index)}
+public func glEnableiEXT(target:GLenum, index:GLuint) {glEnableiEXT_P(target, index)}
+var glEnableiEXT_P:@convention(c)(GLenum, GLuint) -> Void = glEnableiEXT_L
 public func glEnableIndexedEXT(_ target:GLenum, _ index:GLuint) {glEnableIndexedEXT_P(target, index)}
 public func glEnableIndexedEXT(target:GLenum, index:GLuint) {glEnableIndexedEXT_P(target, index)}
 var glEnableIndexedEXT_P:@convention(c)(GLenum, GLuint) -> Void = glEnableIndexedEXT_L
+public func glEnableiNV(_ target:GLenum, _ index:GLuint) {glEnableiNV_P(target, index)}
+public func glEnableiNV(target:GLenum, index:GLuint) {glEnableiNV_P(target, index)}
+var glEnableiNV_P:@convention(c)(GLenum, GLuint) -> Void = glEnableiNV_L
+public func glEnableiOES(_ target:GLenum, _ index:GLuint) {glEnableiOES_P(target, index)}
+public func glEnableiOES(target:GLenum, index:GLuint) {glEnableiOES_P(target, index)}
+var glEnableiOES_P:@convention(c)(GLenum, GLuint) -> Void = glEnableiOES_L
 public func glEnableVariantClientStateEXT(_ id:GLuint) {glEnableVariantClientStateEXT_P(id)}
 public func glEnableVariantClientStateEXT(id:GLuint) {glEnableVariantClientStateEXT_P(id)}
 var glEnableVariantClientStateEXT_P:@convention(c)(GLuint) -> Void = glEnableVariantClientStateEXT_L
@@ -1836,18 +1848,6 @@ var glEnableVertexAttribArray_P:@convention(c)(GLuint) -> Void = glEnableVertexA
 public func glEnableVertexAttribArrayARB(_ index:GLuint) {glEnableVertexAttribArrayARB_P(index)}
 public func glEnableVertexAttribArrayARB(index:GLuint) {glEnableVertexAttribArrayARB_P(index)}
 var glEnableVertexAttribArrayARB_P:@convention(c)(GLuint) -> Void = glEnableVertexAttribArrayARB_L
-public func glEnablei(_ target:GLenum, _ index:GLuint) {glEnablei_P(target, index)}
-public func glEnablei(target:GLenum, index:GLuint) {glEnablei_P(target, index)}
-var glEnablei_P:@convention(c)(GLenum, GLuint) -> Void = glEnablei_L
-public func glEnableiEXT(_ target:GLenum, _ index:GLuint) {glEnableiEXT_P(target, index)}
-public func glEnableiEXT(target:GLenum, index:GLuint) {glEnableiEXT_P(target, index)}
-var glEnableiEXT_P:@convention(c)(GLenum, GLuint) -> Void = glEnableiEXT_L
-public func glEnableiNV(_ target:GLenum, _ index:GLuint) {glEnableiNV_P(target, index)}
-public func glEnableiNV(target:GLenum, index:GLuint) {glEnableiNV_P(target, index)}
-var glEnableiNV_P:@convention(c)(GLenum, GLuint) -> Void = glEnableiNV_L
-public func glEnableiOES(_ target:GLenum, _ index:GLuint) {glEnableiOES_P(target, index)}
-public func glEnableiOES(target:GLenum, index:GLuint) {glEnableiOES_P(target, index)}
-var glEnableiOES_P:@convention(c)(GLenum, GLuint) -> Void = glEnableiOES_L
 public func glEnd() {glEnd_P()}
 var glEnd_P:@convention(c)() -> Void = glEnd_L
 public func glEndConditionalRender() {glEndConditionalRender_P()}
@@ -1983,12 +1983,12 @@ var glExtGetTexturesQCOM_P:@convention(c)(UnsafeMutablePointer<GLuint>, GLint, U
 public func glExtIsProgramBinaryQCOM(_ program:GLuint) -> GLboolean {return glExtIsProgramBinaryQCOM_P(program)}
 public func glExtIsProgramBinaryQCOM(program:GLuint) -> GLboolean {return glExtIsProgramBinaryQCOM_P(program)}
 var glExtIsProgramBinaryQCOM_P:@convention(c)(GLuint) -> GLboolean = glExtIsProgramBinaryQCOM_L
-public func glExtTexObjectStateOverrideiQCOM(_ target:GLenum, _ pname:GLenum, _ param:GLint) {glExtTexObjectStateOverrideiQCOM_P(target, pname, param)}
-public func glExtTexObjectStateOverrideiQCOM(target:GLenum, pname:GLenum, param:GLint) {glExtTexObjectStateOverrideiQCOM_P(target, pname, param)}
-var glExtTexObjectStateOverrideiQCOM_P:@convention(c)(GLenum, GLenum, GLint) -> Void = glExtTexObjectStateOverrideiQCOM_L
 public func glExtractComponentEXT(_ res:GLuint, _ src:GLuint, _ num:GLuint) {glExtractComponentEXT_P(res, src, num)}
 public func glExtractComponentEXT(res:GLuint, src:GLuint, num:GLuint) {glExtractComponentEXT_P(res, src, num)}
 var glExtractComponentEXT_P:@convention(c)(GLuint, GLuint, GLuint) -> Void = glExtractComponentEXT_L
+public func glExtTexObjectStateOverrideiQCOM(_ target:GLenum, _ pname:GLenum, _ param:GLint) {glExtTexObjectStateOverrideiQCOM_P(target, pname, param)}
+public func glExtTexObjectStateOverrideiQCOM(target:GLenum, pname:GLenum, param:GLint) {glExtTexObjectStateOverrideiQCOM_P(target, pname, param)}
+var glExtTexObjectStateOverrideiQCOM_P:@convention(c)(GLenum, GLenum, GLint) -> Void = glExtTexObjectStateOverrideiQCOM_L
 public func glFeedbackBuffer(_ size:GLsizei, _ type:GLenum, _ buffer:UnsafeMutablePointer<GLfloat>) {glFeedbackBuffer_P(size, type, buffer)}
 public func glFeedbackBuffer(size:GLsizei, type:GLenum, buffer:UnsafeMutablePointer<GLfloat>) {glFeedbackBuffer_P(size, type, buffer)}
 var glFeedbackBuffer_P:@convention(c)(GLsizei, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glFeedbackBuffer_L
@@ -2050,18 +2050,6 @@ public func glFlushVertexArrayRangeAPPLE(length:GLsizei, pointer:UnsafeMutableRa
 var glFlushVertexArrayRangeAPPLE_P:@convention(c)(GLsizei, UnsafeMutableRawPointer) -> Void = glFlushVertexArrayRangeAPPLE_L
 public func glFlushVertexArrayRangeNV() {glFlushVertexArrayRangeNV_P()}
 var glFlushVertexArrayRangeNV_P:@convention(c)() -> Void = glFlushVertexArrayRangeNV_L
-public func glFogCoordFormatNV(_ type:GLenum, _ stride:GLsizei) {glFogCoordFormatNV_P(type, stride)}
-public func glFogCoordFormatNV(type:GLenum, stride:GLsizei) {glFogCoordFormatNV_P(type, stride)}
-var glFogCoordFormatNV_P:@convention(c)(GLenum, GLsizei) -> Void = glFogCoordFormatNV_L
-public func glFogCoordPointer(_ type:GLenum, _ stride:GLsizei, _ pointer:UnsafeRawPointer) {glFogCoordPointer_P(type, stride, pointer)}
-public func glFogCoordPointer(type:GLenum, stride:GLsizei, pointer:UnsafeRawPointer) {glFogCoordPointer_P(type, stride, pointer)}
-var glFogCoordPointer_P:@convention(c)(GLenum, GLsizei, UnsafeRawPointer) -> Void = glFogCoordPointer_L
-public func glFogCoordPointerEXT(_ type:GLenum, _ stride:GLsizei, _ pointer:UnsafeRawPointer) {glFogCoordPointerEXT_P(type, stride, pointer)}
-public func glFogCoordPointerEXT(type:GLenum, stride:GLsizei, pointer:UnsafeRawPointer) {glFogCoordPointerEXT_P(type, stride, pointer)}
-var glFogCoordPointerEXT_P:@convention(c)(GLenum, GLsizei, UnsafeRawPointer) -> Void = glFogCoordPointerEXT_L
-public func glFogCoordPointerListIBM(_ type:GLenum, _ stride:GLint, _ pointer:UnsafeMutablePointer<UnsafeRawPointer>, _ ptrstride:GLint) {glFogCoordPointerListIBM_P(type, stride, pointer, ptrstride)}
-public func glFogCoordPointerListIBM(type:GLenum, stride:GLint, pointer:UnsafeMutablePointer<UnsafeRawPointer>, ptrstride:GLint) {glFogCoordPointerListIBM_P(type, stride, pointer, ptrstride)}
-var glFogCoordPointerListIBM_P:@convention(c)(GLenum, GLint, UnsafeMutablePointer<UnsafeRawPointer>, GLint) -> Void = glFogCoordPointerListIBM_L
 public func glFogCoordd(_ coord:GLdouble) {glFogCoordd_P(coord)}
 public func glFogCoordd(coord:GLdouble) {glFogCoordd_P(coord)}
 var glFogCoordd_P:@convention(c)(GLdouble) -> Void = glFogCoordd_L
@@ -2080,6 +2068,9 @@ var glFogCoordf_P:@convention(c)(GLfloat) -> Void = glFogCoordf_L
 public func glFogCoordfEXT(_ coord:GLfloat) {glFogCoordfEXT_P(coord)}
 public func glFogCoordfEXT(coord:GLfloat) {glFogCoordfEXT_P(coord)}
 var glFogCoordfEXT_P:@convention(c)(GLfloat) -> Void = glFogCoordfEXT_L
+public func glFogCoordFormatNV(_ type:GLenum, _ stride:GLsizei) {glFogCoordFormatNV_P(type, stride)}
+public func glFogCoordFormatNV(type:GLenum, stride:GLsizei) {glFogCoordFormatNV_P(type, stride)}
+var glFogCoordFormatNV_P:@convention(c)(GLenum, GLsizei) -> Void = glFogCoordFormatNV_L
 public func glFogCoordfv(_ coord:UnsafePointer<GLfloat>) {glFogCoordfv_P(coord)}
 public func glFogCoordfv(coord:UnsafePointer<GLfloat>) {glFogCoordfv_P(coord)}
 var glFogCoordfv_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glFogCoordfv_L
@@ -2092,12 +2083,21 @@ var glFogCoordhNV_P:@convention(c)(GLhalfNV) -> Void = glFogCoordhNV_L
 public func glFogCoordhvNV(_ fog:UnsafePointer<GLhalfNV>) {glFogCoordhvNV_P(fog)}
 public func glFogCoordhvNV(fog:UnsafePointer<GLhalfNV>) {glFogCoordhvNV_P(fog)}
 var glFogCoordhvNV_P:@convention(c)(UnsafePointer<GLhalfNV>) -> Void = glFogCoordhvNV_L
-public func glFogFuncSGIS(_ n:GLsizei, _ points:UnsafePointer<GLfloat>) {glFogFuncSGIS_P(n, points)}
-public func glFogFuncSGIS(n:GLsizei, points:UnsafePointer<GLfloat>) {glFogFuncSGIS_P(n, points)}
-var glFogFuncSGIS_P:@convention(c)(GLsizei, UnsafePointer<GLfloat>) -> Void = glFogFuncSGIS_L
+public func glFogCoordPointer(_ type:GLenum, _ stride:GLsizei, _ pointer:UnsafeRawPointer) {glFogCoordPointer_P(type, stride, pointer)}
+public func glFogCoordPointer(type:GLenum, stride:GLsizei, pointer:UnsafeRawPointer) {glFogCoordPointer_P(type, stride, pointer)}
+var glFogCoordPointer_P:@convention(c)(GLenum, GLsizei, UnsafeRawPointer) -> Void = glFogCoordPointer_L
+public func glFogCoordPointerEXT(_ type:GLenum, _ stride:GLsizei, _ pointer:UnsafeRawPointer) {glFogCoordPointerEXT_P(type, stride, pointer)}
+public func glFogCoordPointerEXT(type:GLenum, stride:GLsizei, pointer:UnsafeRawPointer) {glFogCoordPointerEXT_P(type, stride, pointer)}
+var glFogCoordPointerEXT_P:@convention(c)(GLenum, GLsizei, UnsafeRawPointer) -> Void = glFogCoordPointerEXT_L
+public func glFogCoordPointerListIBM(_ type:GLenum, _ stride:GLint, _ pointer:UnsafeMutablePointer<UnsafeRawPointer>, _ ptrstride:GLint) {glFogCoordPointerListIBM_P(type, stride, pointer, ptrstride)}
+public func glFogCoordPointerListIBM(type:GLenum, stride:GLint, pointer:UnsafeMutablePointer<UnsafeRawPointer>, ptrstride:GLint) {glFogCoordPointerListIBM_P(type, stride, pointer, ptrstride)}
+var glFogCoordPointerListIBM_P:@convention(c)(GLenum, GLint, UnsafeMutablePointer<UnsafeRawPointer>, GLint) -> Void = glFogCoordPointerListIBM_L
 public func glFogf(_ pname:GLenum, _ param:GLfloat) {glFogf_P(pname, param)}
 public func glFogf(pname:GLenum, param:GLfloat) {glFogf_P(pname, param)}
 var glFogf_P:@convention(c)(GLenum, GLfloat) -> Void = glFogf_L
+public func glFogFuncSGIS(_ n:GLsizei, _ points:UnsafePointer<GLfloat>) {glFogFuncSGIS_P(n, points)}
+public func glFogFuncSGIS(n:GLsizei, points:UnsafePointer<GLfloat>) {glFogFuncSGIS_P(n, points)}
+var glFogFuncSGIS_P:@convention(c)(GLsizei, UnsafePointer<GLfloat>) -> Void = glFogFuncSGIS_L
 public func glFogfv(_ pname:GLenum, _ params:UnsafePointer<GLfloat>) {glFogfv_P(pname, params)}
 public func glFogfv(pname:GLenum, params:UnsafePointer<GLfloat>) {glFogfv_P(pname, params)}
 var glFogfv_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glFogfv_L
@@ -2125,18 +2125,6 @@ var glFragmentColorMaterialSGIX_P:@convention(c)(GLenum, GLenum) -> Void = glFra
 public func glFragmentCoverageColorNV(_ color:GLuint) {glFragmentCoverageColorNV_P(color)}
 public func glFragmentCoverageColorNV(color:GLuint) {glFragmentCoverageColorNV_P(color)}
 var glFragmentCoverageColorNV_P:@convention(c)(GLuint) -> Void = glFragmentCoverageColorNV_L
-public func glFragmentLightModelfSGIX(_ pname:GLenum, _ param:GLfloat) {glFragmentLightModelfSGIX_P(pname, param)}
-public func glFragmentLightModelfSGIX(pname:GLenum, param:GLfloat) {glFragmentLightModelfSGIX_P(pname, param)}
-var glFragmentLightModelfSGIX_P:@convention(c)(GLenum, GLfloat) -> Void = glFragmentLightModelfSGIX_L
-public func glFragmentLightModelfvSGIX(_ pname:GLenum, _ params:UnsafePointer<GLfloat>) {glFragmentLightModelfvSGIX_P(pname, params)}
-public func glFragmentLightModelfvSGIX(pname:GLenum, params:UnsafePointer<GLfloat>) {glFragmentLightModelfvSGIX_P(pname, params)}
-var glFragmentLightModelfvSGIX_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glFragmentLightModelfvSGIX_L
-public func glFragmentLightModeliSGIX(_ pname:GLenum, _ param:GLint) {glFragmentLightModeliSGIX_P(pname, param)}
-public func glFragmentLightModeliSGIX(pname:GLenum, param:GLint) {glFragmentLightModeliSGIX_P(pname, param)}
-var glFragmentLightModeliSGIX_P:@convention(c)(GLenum, GLint) -> Void = glFragmentLightModeliSGIX_L
-public func glFragmentLightModelivSGIX(_ pname:GLenum, _ params:UnsafePointer<GLint>) {glFragmentLightModelivSGIX_P(pname, params)}
-public func glFragmentLightModelivSGIX(pname:GLenum, params:UnsafePointer<GLint>) {glFragmentLightModelivSGIX_P(pname, params)}
-var glFragmentLightModelivSGIX_P:@convention(c)(GLenum, UnsafePointer<GLint>) -> Void = glFragmentLightModelivSGIX_L
 public func glFragmentLightfSGIX(_ light:GLenum, _ pname:GLenum, _ param:GLfloat) {glFragmentLightfSGIX_P(light, pname, param)}
 public func glFragmentLightfSGIX(light:GLenum, pname:GLenum, param:GLfloat) {glFragmentLightfSGIX_P(light, pname, param)}
 var glFragmentLightfSGIX_P:@convention(c)(GLenum, GLenum, GLfloat) -> Void = glFragmentLightfSGIX_L
@@ -2149,6 +2137,18 @@ var glFragmentLightiSGIX_P:@convention(c)(GLenum, GLenum, GLint) -> Void = glFra
 public func glFragmentLightivSGIX(_ light:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glFragmentLightivSGIX_P(light, pname, params)}
 public func glFragmentLightivSGIX(light:GLenum, pname:GLenum, params:UnsafePointer<GLint>) {glFragmentLightivSGIX_P(light, pname, params)}
 var glFragmentLightivSGIX_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLint>) -> Void = glFragmentLightivSGIX_L
+public func glFragmentLightModelfSGIX(_ pname:GLenum, _ param:GLfloat) {glFragmentLightModelfSGIX_P(pname, param)}
+public func glFragmentLightModelfSGIX(pname:GLenum, param:GLfloat) {glFragmentLightModelfSGIX_P(pname, param)}
+var glFragmentLightModelfSGIX_P:@convention(c)(GLenum, GLfloat) -> Void = glFragmentLightModelfSGIX_L
+public func glFragmentLightModelfvSGIX(_ pname:GLenum, _ params:UnsafePointer<GLfloat>) {glFragmentLightModelfvSGIX_P(pname, params)}
+public func glFragmentLightModelfvSGIX(pname:GLenum, params:UnsafePointer<GLfloat>) {glFragmentLightModelfvSGIX_P(pname, params)}
+var glFragmentLightModelfvSGIX_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glFragmentLightModelfvSGIX_L
+public func glFragmentLightModeliSGIX(_ pname:GLenum, _ param:GLint) {glFragmentLightModeliSGIX_P(pname, param)}
+public func glFragmentLightModeliSGIX(pname:GLenum, param:GLint) {glFragmentLightModeliSGIX_P(pname, param)}
+var glFragmentLightModeliSGIX_P:@convention(c)(GLenum, GLint) -> Void = glFragmentLightModeliSGIX_L
+public func glFragmentLightModelivSGIX(_ pname:GLenum, _ params:UnsafePointer<GLint>) {glFragmentLightModelivSGIX_P(pname, params)}
+public func glFragmentLightModelivSGIX(pname:GLenum, params:UnsafePointer<GLint>) {glFragmentLightModelivSGIX_P(pname, params)}
+var glFragmentLightModelivSGIX_P:@convention(c)(GLenum, UnsafePointer<GLint>) -> Void = glFragmentLightModelivSGIX_L
 public func glFragmentMaterialfSGIX(_ face:GLenum, _ pname:GLenum, _ param:GLfloat) {glFragmentMaterialfSGIX_P(face, pname, param)}
 public func glFragmentMaterialfSGIX(face:GLenum, pname:GLenum, param:GLfloat) {glFragmentMaterialfSGIX_P(face, pname, param)}
 var glFragmentMaterialfSGIX_P:@convention(c)(GLenum, GLenum, GLfloat) -> Void = glFragmentMaterialfSGIX_L
@@ -2161,11 +2161,6 @@ var glFragmentMaterialiSGIX_P:@convention(c)(GLenum, GLenum, GLint) -> Void = gl
 public func glFragmentMaterialivSGIX(_ face:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glFragmentMaterialivSGIX_P(face, pname, params)}
 public func glFragmentMaterialivSGIX(face:GLenum, pname:GLenum, params:UnsafePointer<GLint>) {glFragmentMaterialivSGIX_P(face, pname, params)}
 var glFragmentMaterialivSGIX_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLint>) -> Void = glFragmentMaterialivSGIX_L
-public func glFrameTerminatorGREMEDY() {glFrameTerminatorGREMEDY_P()}
-var glFrameTerminatorGREMEDY_P:@convention(c)() -> Void = glFrameTerminatorGREMEDY_L
-public func glFrameZoomSGIX(_ factor:GLint) {glFrameZoomSGIX_P(factor)}
-public func glFrameZoomSGIX(factor:GLint) {glFrameZoomSGIX_P(factor)}
-var glFrameZoomSGIX_P:@convention(c)(GLint) -> Void = glFrameZoomSGIX_L
 public func glFramebufferDrawBufferEXT(_ framebuffer:GLuint, _ mode:GLenum) {glFramebufferDrawBufferEXT_P(framebuffer, mode)}
 public func glFramebufferDrawBufferEXT(framebuffer:GLuint, mode:GLenum) {glFramebufferDrawBufferEXT_P(framebuffer, mode)}
 var glFramebufferDrawBufferEXT_P:@convention(c)(GLuint, GLenum) -> Void = glFramebufferDrawBufferEXT_L
@@ -2256,6 +2251,11 @@ var glFramebufferTextureMultiviewOVR_P:@convention(c)(GLenum, GLenum, GLuint, GL
 public func glFramebufferTextureOES(_ target:GLenum, _ attachment:GLenum, _ texture:GLuint, _ level:GLint) {glFramebufferTextureOES_P(target, attachment, texture, level)}
 public func glFramebufferTextureOES(target:GLenum, attachment:GLenum, texture:GLuint, level:GLint) {glFramebufferTextureOES_P(target, attachment, texture, level)}
 var glFramebufferTextureOES_P:@convention(c)(GLenum, GLenum, GLuint, GLint) -> Void = glFramebufferTextureOES_L
+public func glFrameTerminatorGREMEDY() {glFrameTerminatorGREMEDY_P()}
+var glFrameTerminatorGREMEDY_P:@convention(c)() -> Void = glFrameTerminatorGREMEDY_L
+public func glFrameZoomSGIX(_ factor:GLint) {glFrameZoomSGIX_P(factor)}
+public func glFrameZoomSGIX(factor:GLint) {glFrameZoomSGIX_P(factor)}
+var glFrameZoomSGIX_P:@convention(c)(GLint) -> Void = glFrameZoomSGIX_L
 public func glFreeObjectBufferATI(_ buffer:GLuint) {glFreeObjectBufferATI_P(buffer)}
 public func glFreeObjectBufferATI(buffer:GLuint) {glFreeObjectBufferATI_P(buffer)}
 var glFreeObjectBufferATI_P:@convention(c)(GLuint) -> Void = glFreeObjectBufferATI_L
@@ -2286,6 +2286,24 @@ var glGenBuffers_P:@convention(c)(GLsizei, UnsafeMutablePointer<GLuint>) -> Void
 public func glGenBuffersARB(_ n:GLsizei, _ buffers:UnsafeMutablePointer<GLuint>) {glGenBuffersARB_P(n, buffers)}
 public func glGenBuffersARB(n:GLsizei, buffers:UnsafeMutablePointer<GLuint>) {glGenBuffersARB_P(n, buffers)}
 var glGenBuffersARB_P:@convention(c)(GLsizei, UnsafeMutablePointer<GLuint>) -> Void = glGenBuffersARB_L
+public func glGenerateMipmap(_ target:GLenum) {glGenerateMipmap_P(target)}
+public func glGenerateMipmap(target:GLenum) {glGenerateMipmap_P(target)}
+var glGenerateMipmap_P:@convention(c)(GLenum) -> Void = glGenerateMipmap_L
+public func glGenerateMipmapEXT(_ target:GLenum) {glGenerateMipmapEXT_P(target)}
+public func glGenerateMipmapEXT(target:GLenum) {glGenerateMipmapEXT_P(target)}
+var glGenerateMipmapEXT_P:@convention(c)(GLenum) -> Void = glGenerateMipmapEXT_L
+public func glGenerateMipmapOES(_ target:GLenum) {glGenerateMipmapOES_P(target)}
+public func glGenerateMipmapOES(target:GLenum) {glGenerateMipmapOES_P(target)}
+var glGenerateMipmapOES_P:@convention(c)(GLenum) -> Void = glGenerateMipmapOES_L
+public func glGenerateMultiTexMipmapEXT(_ texunit:GLenum, _ target:GLenum) {glGenerateMultiTexMipmapEXT_P(texunit, target)}
+public func glGenerateMultiTexMipmapEXT(texunit:GLenum, target:GLenum) {glGenerateMultiTexMipmapEXT_P(texunit, target)}
+var glGenerateMultiTexMipmapEXT_P:@convention(c)(GLenum, GLenum) -> Void = glGenerateMultiTexMipmapEXT_L
+public func glGenerateTextureMipmap(_ texture:GLuint) {glGenerateTextureMipmap_P(texture)}
+public func glGenerateTextureMipmap(texture:GLuint) {glGenerateTextureMipmap_P(texture)}
+var glGenerateTextureMipmap_P:@convention(c)(GLuint) -> Void = glGenerateTextureMipmap_L
+public func glGenerateTextureMipmapEXT(_ texture:GLuint, _ target:GLenum) {glGenerateTextureMipmapEXT_P(texture, target)}
+public func glGenerateTextureMipmapEXT(texture:GLuint, target:GLenum) {glGenerateTextureMipmapEXT_P(texture, target)}
+var glGenerateTextureMipmapEXT_P:@convention(c)(GLuint, GLenum) -> Void = glGenerateTextureMipmapEXT_L
 public func glGenFencesAPPLE(_ n:GLsizei, _ fences:UnsafeMutablePointer<GLuint>) {glGenFencesAPPLE_P(n, fences)}
 public func glGenFencesAPPLE(n:GLsizei, fences:UnsafeMutablePointer<GLuint>) {glGenFencesAPPLE_P(n, fences)}
 var glGenFencesAPPLE_P:@convention(c)(GLsizei, UnsafeMutablePointer<GLuint>) -> Void = glGenFencesAPPLE_L
@@ -2379,24 +2397,6 @@ var glGenVertexArraysOES_P:@convention(c)(GLsizei, UnsafeMutablePointer<GLuint>)
 public func glGenVertexShadersEXT(_ range:GLuint) -> GLuint {return glGenVertexShadersEXT_P(range)}
 public func glGenVertexShadersEXT(range:GLuint) -> GLuint {return glGenVertexShadersEXT_P(range)}
 var glGenVertexShadersEXT_P:@convention(c)(GLuint) -> GLuint = glGenVertexShadersEXT_L
-public func glGenerateMipmap(_ target:GLenum) {glGenerateMipmap_P(target)}
-public func glGenerateMipmap(target:GLenum) {glGenerateMipmap_P(target)}
-var glGenerateMipmap_P:@convention(c)(GLenum) -> Void = glGenerateMipmap_L
-public func glGenerateMipmapEXT(_ target:GLenum) {glGenerateMipmapEXT_P(target)}
-public func glGenerateMipmapEXT(target:GLenum) {glGenerateMipmapEXT_P(target)}
-var glGenerateMipmapEXT_P:@convention(c)(GLenum) -> Void = glGenerateMipmapEXT_L
-public func glGenerateMipmapOES(_ target:GLenum) {glGenerateMipmapOES_P(target)}
-public func glGenerateMipmapOES(target:GLenum) {glGenerateMipmapOES_P(target)}
-var glGenerateMipmapOES_P:@convention(c)(GLenum) -> Void = glGenerateMipmapOES_L
-public func glGenerateMultiTexMipmapEXT(_ texunit:GLenum, _ target:GLenum) {glGenerateMultiTexMipmapEXT_P(texunit, target)}
-public func glGenerateMultiTexMipmapEXT(texunit:GLenum, target:GLenum) {glGenerateMultiTexMipmapEXT_P(texunit, target)}
-var glGenerateMultiTexMipmapEXT_P:@convention(c)(GLenum, GLenum) -> Void = glGenerateMultiTexMipmapEXT_L
-public func glGenerateTextureMipmap(_ texture:GLuint) {glGenerateTextureMipmap_P(texture)}
-public func glGenerateTextureMipmap(texture:GLuint) {glGenerateTextureMipmap_P(texture)}
-var glGenerateTextureMipmap_P:@convention(c)(GLuint) -> Void = glGenerateTextureMipmap_L
-public func glGenerateTextureMipmapEXT(_ texture:GLuint, _ target:GLenum) {glGenerateTextureMipmapEXT_P(texture, target)}
-public func glGenerateTextureMipmapEXT(texture:GLuint, target:GLenum) {glGenerateTextureMipmapEXT_P(texture, target)}
-var glGenerateTextureMipmapEXT_P:@convention(c)(GLuint, GLenum) -> Void = glGenerateTextureMipmapEXT_L
 public func glGetActiveAtomicCounterBufferiv(_ program:GLuint, _ bufferIndex:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetActiveAtomicCounterBufferiv_P(program, bufferIndex, pname, params)}
 public func glGetActiveAtomicCounterBufferiv(program:GLuint, bufferIndex:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetActiveAtomicCounterBufferiv_P(program, bufferIndex, pname, params)}
 var glGetActiveAtomicCounterBufferiv_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetActiveAtomicCounterBufferiv_L
@@ -2409,24 +2409,24 @@ var glGetActiveAttribARB_P:@convention(c)(GLhandleARB, GLuint, GLsizei, UnsafeMu
 public func glGetActiveSubroutineName(_ program:GLuint, _ shadertype:GLenum, _ index:GLuint, _ bufsize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ name:UnsafeMutablePointer<GLchar>) {glGetActiveSubroutineName_P(program, shadertype, index, bufsize, length, name)}
 public func glGetActiveSubroutineName(program:GLuint, shadertype:GLenum, index:GLuint, bufsize:GLsizei, length:UnsafeMutablePointer<GLsizei>, name:UnsafeMutablePointer<GLchar>) {glGetActiveSubroutineName_P(program, shadertype, index, bufsize, length, name)}
 var glGetActiveSubroutineName_P:@convention(c)(GLuint, GLenum, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetActiveSubroutineName_L
-public func glGetActiveSubroutineUniformName(_ program:GLuint, _ shadertype:GLenum, _ index:GLuint, _ bufsize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ name:UnsafeMutablePointer<GLchar>) {glGetActiveSubroutineUniformName_P(program, shadertype, index, bufsize, length, name)}
-public func glGetActiveSubroutineUniformName(program:GLuint, shadertype:GLenum, index:GLuint, bufsize:GLsizei, length:UnsafeMutablePointer<GLsizei>, name:UnsafeMutablePointer<GLchar>) {glGetActiveSubroutineUniformName_P(program, shadertype, index, bufsize, length, name)}
-var glGetActiveSubroutineUniformName_P:@convention(c)(GLuint, GLenum, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetActiveSubroutineUniformName_L
 public func glGetActiveSubroutineUniformiv(_ program:GLuint, _ shadertype:GLenum, _ index:GLuint, _ pname:GLenum, _ values:UnsafeMutablePointer<GLint>) {glGetActiveSubroutineUniformiv_P(program, shadertype, index, pname, values)}
 public func glGetActiveSubroutineUniformiv(program:GLuint, shadertype:GLenum, index:GLuint, pname:GLenum, values:UnsafeMutablePointer<GLint>) {glGetActiveSubroutineUniformiv_P(program, shadertype, index, pname, values)}
 var glGetActiveSubroutineUniformiv_P:@convention(c)(GLuint, GLenum, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetActiveSubroutineUniformiv_L
+public func glGetActiveSubroutineUniformName(_ program:GLuint, _ shadertype:GLenum, _ index:GLuint, _ bufsize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ name:UnsafeMutablePointer<GLchar>) {glGetActiveSubroutineUniformName_P(program, shadertype, index, bufsize, length, name)}
+public func glGetActiveSubroutineUniformName(program:GLuint, shadertype:GLenum, index:GLuint, bufsize:GLsizei, length:UnsafeMutablePointer<GLsizei>, name:UnsafeMutablePointer<GLchar>) {glGetActiveSubroutineUniformName_P(program, shadertype, index, bufsize, length, name)}
+var glGetActiveSubroutineUniformName_P:@convention(c)(GLuint, GLenum, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetActiveSubroutineUniformName_L
 public func glGetActiveUniform(_ program:GLuint, _ index:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ size:UnsafeMutablePointer<GLint>, _ type:UnsafeMutablePointer<GLenum>, _ name:UnsafeMutablePointer<GLchar>) {glGetActiveUniform_P(program, index, bufSize, length, size, type, name)}
 public func glGetActiveUniform(program:GLuint, index:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, size:UnsafeMutablePointer<GLint>, type:UnsafeMutablePointer<GLenum>, name:UnsafeMutablePointer<GLchar>) {glGetActiveUniform_P(program, index, bufSize, length, size, type, name)}
 var glGetActiveUniform_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLint>, UnsafeMutablePointer<GLenum>, UnsafeMutablePointer<GLchar>) -> Void = glGetActiveUniform_L
 public func glGetActiveUniformARB(_ programObj:GLhandleARB, _ index:GLuint, _ maxLength:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ size:UnsafeMutablePointer<GLint>, _ type:UnsafeMutablePointer<GLenum>, _ name:UnsafeMutablePointer<GLcharARB>) {glGetActiveUniformARB_P(programObj, index, maxLength, length, size, type, name)}
 public func glGetActiveUniformARB(programObj:GLhandleARB, index:GLuint, maxLength:GLsizei, length:UnsafeMutablePointer<GLsizei>, size:UnsafeMutablePointer<GLint>, type:UnsafeMutablePointer<GLenum>, name:UnsafeMutablePointer<GLcharARB>) {glGetActiveUniformARB_P(programObj, index, maxLength, length, size, type, name)}
 var glGetActiveUniformARB_P:@convention(c)(GLhandleARB, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLint>, UnsafeMutablePointer<GLenum>, UnsafeMutablePointer<GLcharARB>) -> Void = glGetActiveUniformARB_L
-public func glGetActiveUniformBlockName(_ program:GLuint, _ uniformBlockIndex:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ uniformBlockName:UnsafeMutablePointer<GLchar>) {glGetActiveUniformBlockName_P(program, uniformBlockIndex, bufSize, length, uniformBlockName)}
-public func glGetActiveUniformBlockName(program:GLuint, uniformBlockIndex:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, uniformBlockName:UnsafeMutablePointer<GLchar>) {glGetActiveUniformBlockName_P(program, uniformBlockIndex, bufSize, length, uniformBlockName)}
-var glGetActiveUniformBlockName_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetActiveUniformBlockName_L
 public func glGetActiveUniformBlockiv(_ program:GLuint, _ uniformBlockIndex:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetActiveUniformBlockiv_P(program, uniformBlockIndex, pname, params)}
 public func glGetActiveUniformBlockiv(program:GLuint, uniformBlockIndex:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetActiveUniformBlockiv_P(program, uniformBlockIndex, pname, params)}
 var glGetActiveUniformBlockiv_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetActiveUniformBlockiv_L
+public func glGetActiveUniformBlockName(_ program:GLuint, _ uniformBlockIndex:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ uniformBlockName:UnsafeMutablePointer<GLchar>) {glGetActiveUniformBlockName_P(program, uniformBlockIndex, bufSize, length, uniformBlockName)}
+public func glGetActiveUniformBlockName(program:GLuint, uniformBlockIndex:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, uniformBlockName:UnsafeMutablePointer<GLchar>) {glGetActiveUniformBlockName_P(program, uniformBlockIndex, bufSize, length, uniformBlockName)}
+var glGetActiveUniformBlockName_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetActiveUniformBlockName_L
 public func glGetActiveUniformName(_ program:GLuint, _ uniformIndex:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ uniformName:UnsafeMutablePointer<GLchar>) {glGetActiveUniformName_P(program, uniformIndex, bufSize, length, uniformName)}
 public func glGetActiveUniformName(program:GLuint, uniformIndex:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, uniformName:UnsafeMutablePointer<GLchar>) {glGetActiveUniformName_P(program, uniformIndex, bufSize, length, uniformName)}
 var glGetActiveUniformName_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetActiveUniformName_L
@@ -2454,12 +2454,12 @@ var glGetAttribLocation_P:@convention(c)(GLuint, UnsafePointer<GLchar>) -> GLint
 public func glGetAttribLocationARB(_ programObj:GLhandleARB, _ name:UnsafePointer<GLcharARB>) -> GLint {return glGetAttribLocationARB_P(programObj, name)}
 public func glGetAttribLocationARB(programObj:GLhandleARB, name:UnsafePointer<GLcharARB>) -> GLint {return glGetAttribLocationARB_P(programObj, name)}
 var glGetAttribLocationARB_P:@convention(c)(GLhandleARB, UnsafePointer<GLcharARB>) -> GLint = glGetAttribLocationARB_L
-public func glGetBooleanIndexedvEXT(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLboolean>) {glGetBooleanIndexedvEXT_P(target, index, data)}
-public func glGetBooleanIndexedvEXT(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLboolean>) {glGetBooleanIndexedvEXT_P(target, index, data)}
-var glGetBooleanIndexedvEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLboolean>) -> Void = glGetBooleanIndexedvEXT_L
 public func glGetBooleani_v(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLboolean>) {glGetBooleani_v_P(target, index, data)}
 public func glGetBooleani_v(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLboolean>) {glGetBooleani_v_P(target, index, data)}
 var glGetBooleani_v_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLboolean>) -> Void = glGetBooleani_v_L
+public func glGetBooleanIndexedvEXT(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLboolean>) {glGetBooleanIndexedvEXT_P(target, index, data)}
+public func glGetBooleanIndexedvEXT(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLboolean>) {glGetBooleanIndexedvEXT_P(target, index, data)}
+var glGetBooleanIndexedvEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLboolean>) -> Void = glGetBooleanIndexedvEXT_L
 public func glGetBooleanv(_ pname:GLenum, _ data:UnsafeMutablePointer<GLboolean>) {glGetBooleanv_P(pname, data)}
 public func glGetBooleanv(pname:GLenum, data:UnsafeMutablePointer<GLboolean>) {glGetBooleanv_P(pname, data)}
 var glGetBooleanv_P:@convention(c)(GLenum, UnsafeMutablePointer<GLboolean>) -> Void = glGetBooleanv_L
@@ -2607,24 +2607,24 @@ var glGetDebugMessageLogKHR_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePoint
 public func glGetDetailTexFuncSGIS(_ target:GLenum, _ points:UnsafeMutablePointer<GLfloat>) {glGetDetailTexFuncSGIS_P(target, points)}
 public func glGetDetailTexFuncSGIS(target:GLenum, points:UnsafeMutablePointer<GLfloat>) {glGetDetailTexFuncSGIS_P(target, points)}
 var glGetDetailTexFuncSGIS_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetDetailTexFuncSGIS_L
-public func glGetDoubleIndexedvEXT(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLdouble>) {glGetDoubleIndexedvEXT_P(target, index, data)}
-public func glGetDoubleIndexedvEXT(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLdouble>) {glGetDoubleIndexedvEXT_P(target, index, data)}
-var glGetDoubleIndexedvEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLdouble>) -> Void = glGetDoubleIndexedvEXT_L
 public func glGetDoublei_v(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLdouble>) {glGetDoublei_v_P(target, index, data)}
 public func glGetDoublei_v(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLdouble>) {glGetDoublei_v_P(target, index, data)}
 var glGetDoublei_v_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLdouble>) -> Void = glGetDoublei_v_L
 public func glGetDoublei_vEXT(_ pname:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLdouble>) {glGetDoublei_vEXT_P(pname, index, params)}
 public func glGetDoublei_vEXT(pname:GLenum, index:GLuint, params:UnsafeMutablePointer<GLdouble>) {glGetDoublei_vEXT_P(pname, index, params)}
 var glGetDoublei_vEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLdouble>) -> Void = glGetDoublei_vEXT_L
+public func glGetDoubleIndexedvEXT(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLdouble>) {glGetDoubleIndexedvEXT_P(target, index, data)}
+public func glGetDoubleIndexedvEXT(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLdouble>) {glGetDoubleIndexedvEXT_P(target, index, data)}
+var glGetDoubleIndexedvEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLdouble>) -> Void = glGetDoubleIndexedvEXT_L
 public func glGetDoublev(_ pname:GLenum, _ data:UnsafeMutablePointer<GLdouble>) {glGetDoublev_P(pname, data)}
 public func glGetDoublev(pname:GLenum, data:UnsafeMutablePointer<GLdouble>) {glGetDoublev_P(pname, data)}
 var glGetDoublev_P:@convention(c)(GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetDoublev_L
-public func glGetDriverControlStringQCOM(_ driverControl:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ driverControlString:UnsafeMutablePointer<GLchar>) {glGetDriverControlStringQCOM_P(driverControl, bufSize, length, driverControlString)}
-public func glGetDriverControlStringQCOM(driverControl:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, driverControlString:UnsafeMutablePointer<GLchar>) {glGetDriverControlStringQCOM_P(driverControl, bufSize, length, driverControlString)}
-var glGetDriverControlStringQCOM_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetDriverControlStringQCOM_L
 public func glGetDriverControlsQCOM(_ num:UnsafeMutablePointer<GLint>, _ size:GLsizei, _ driverControls:UnsafeMutablePointer<GLuint>) {glGetDriverControlsQCOM_P(num, size, driverControls)}
 public func glGetDriverControlsQCOM(num:UnsafeMutablePointer<GLint>, size:GLsizei, driverControls:UnsafeMutablePointer<GLuint>) {glGetDriverControlsQCOM_P(num, size, driverControls)}
 var glGetDriverControlsQCOM_P:@convention(c)(UnsafeMutablePointer<GLint>, GLsizei, UnsafeMutablePointer<GLuint>) -> Void = glGetDriverControlsQCOM_L
+public func glGetDriverControlStringQCOM(_ driverControl:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ driverControlString:UnsafeMutablePointer<GLchar>) {glGetDriverControlStringQCOM_P(driverControl, bufSize, length, driverControlString)}
+public func glGetDriverControlStringQCOM(driverControl:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, driverControlString:UnsafeMutablePointer<GLchar>) {glGetDriverControlStringQCOM_P(driverControl, bufSize, length, driverControlString)}
+var glGetDriverControlStringQCOM_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetDriverControlStringQCOM_L
 public func glGetError() -> GLenum {return glGetError_P()}
 var glGetError_P:@convention(c)() -> GLenum = glGetError_L
 public func glGetFenceivNV(_ fence:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetFenceivNV_P(fence, pname, params)}
@@ -2645,9 +2645,6 @@ var glGetFixedv_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfixed>) -> Void 
 public func glGetFixedvOES(_ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetFixedvOES_P(pname, params)}
 public func glGetFixedvOES(pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetFixedvOES_P(pname, params)}
 var glGetFixedvOES_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetFixedvOES_L
-public func glGetFloatIndexedvEXT(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLfloat>) {glGetFloatIndexedvEXT_P(target, index, data)}
-public func glGetFloatIndexedvEXT(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLfloat>) {glGetFloatIndexedvEXT_P(target, index, data)}
-var glGetFloatIndexedvEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetFloatIndexedvEXT_L
 public func glGetFloati_v(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLfloat>) {glGetFloati_v_P(target, index, data)}
 public func glGetFloati_v(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLfloat>) {glGetFloati_v_P(target, index, data)}
 var glGetFloati_v_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetFloati_v_L
@@ -2657,6 +2654,9 @@ var glGetFloati_vEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLflo
 public func glGetFloati_vNV(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLfloat>) {glGetFloati_vNV_P(target, index, data)}
 public func glGetFloati_vNV(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLfloat>) {glGetFloati_vNV_P(target, index, data)}
 var glGetFloati_vNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetFloati_vNV_L
+public func glGetFloatIndexedvEXT(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLfloat>) {glGetFloatIndexedvEXT_P(target, index, data)}
+public func glGetFloatIndexedvEXT(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLfloat>) {glGetFloatIndexedvEXT_P(target, index, data)}
+var glGetFloatIndexedvEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetFloatIndexedvEXT_L
 public func glGetFloatv(_ pname:GLenum, _ data:UnsafeMutablePointer<GLfloat>) {glGetFloatv_P(pname, data)}
 public func glGetFloatv(pname:GLenum, data:UnsafeMutablePointer<GLfloat>) {glGetFloatv_P(pname, data)}
 var glGetFloatv_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetFloatv_L
@@ -2760,15 +2760,15 @@ var glGetInteger64v_P:@convention(c)(GLenum, UnsafeMutablePointer<GLint64>) -> V
 public func glGetInteger64vAPPLE(_ pname:GLenum, _ params:UnsafeMutablePointer<GLint64>) {glGetInteger64vAPPLE_P(pname, params)}
 public func glGetInteger64vAPPLE(pname:GLenum, params:UnsafeMutablePointer<GLint64>) {glGetInteger64vAPPLE_P(pname, params)}
 var glGetInteger64vAPPLE_P:@convention(c)(GLenum, UnsafeMutablePointer<GLint64>) -> Void = glGetInteger64vAPPLE_L
-public func glGetIntegerIndexedvEXT(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLint>) {glGetIntegerIndexedvEXT_P(target, index, data)}
-public func glGetIntegerIndexedvEXT(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLint>) {glGetIntegerIndexedvEXT_P(target, index, data)}
-var glGetIntegerIndexedvEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetIntegerIndexedvEXT_L
 public func glGetIntegeri_v(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLint>) {glGetIntegeri_v_P(target, index, data)}
 public func glGetIntegeri_v(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLint>) {glGetIntegeri_v_P(target, index, data)}
 var glGetIntegeri_v_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetIntegeri_v_L
 public func glGetIntegeri_vEXT(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLint>) {glGetIntegeri_vEXT_P(target, index, data)}
 public func glGetIntegeri_vEXT(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLint>) {glGetIntegeri_vEXT_P(target, index, data)}
 var glGetIntegeri_vEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetIntegeri_vEXT_L
+public func glGetIntegerIndexedvEXT(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<GLint>) {glGetIntegerIndexedvEXT_P(target, index, data)}
+public func glGetIntegerIndexedvEXT(target:GLenum, index:GLuint, data:UnsafeMutablePointer<GLint>) {glGetIntegerIndexedvEXT_P(target, index, data)}
+var glGetIntegerIndexedvEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetIntegerIndexedvEXT_L
 public func glGetIntegerui64i_vNV(_ value:GLenum, _ index:GLuint, _ result:UnsafeMutablePointer<GLuint64EXT>) {glGetIntegerui64i_vNV_P(value, index, result)}
 public func glGetIntegerui64i_vNV(value:GLenum, index:GLuint, result:UnsafeMutablePointer<GLuint64EXT>) {glGetIntegerui64i_vNV_P(value, index, result)}
 var glGetIntegerui64i_vNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLuint64EXT>) -> Void = glGetIntegerui64i_vNV_L
@@ -2778,15 +2778,15 @@ var glGetIntegerui64vNV_P:@convention(c)(GLenum, UnsafeMutablePointer<GLuint64EX
 public func glGetIntegerv(_ pname:GLenum, _ data:UnsafeMutablePointer<GLint>) {glGetIntegerv_P(pname, data)}
 public func glGetIntegerv(pname:GLenum, data:UnsafeMutablePointer<GLint>) {glGetIntegerv_P(pname, data)}
 var glGetIntegerv_P:@convention(c)(GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetIntegerv_L
-public func glGetInternalformatSampleivNV(_ target:GLenum, _ internalformat:GLenum, _ samples:GLsizei, _ pname:GLenum, _ bufSize:GLsizei, _ params:UnsafeMutablePointer<GLint>) {glGetInternalformatSampleivNV_P(target, internalformat, samples, pname, bufSize, params)}
-public func glGetInternalformatSampleivNV(target:GLenum, internalformat:GLenum, samples:GLsizei, pname:GLenum, bufSize:GLsizei, params:UnsafeMutablePointer<GLint>) {glGetInternalformatSampleivNV_P(target, internalformat, samples, pname, bufSize, params)}
-var glGetInternalformatSampleivNV_P:@convention(c)(GLenum, GLenum, GLsizei, GLenum, GLsizei, UnsafeMutablePointer<GLint>) -> Void = glGetInternalformatSampleivNV_L
 public func glGetInternalformati64v(_ target:GLenum, _ internalformat:GLenum, _ pname:GLenum, _ bufSize:GLsizei, _ params:UnsafeMutablePointer<GLint64>) {glGetInternalformati64v_P(target, internalformat, pname, bufSize, params)}
 public func glGetInternalformati64v(target:GLenum, internalformat:GLenum, pname:GLenum, bufSize:GLsizei, params:UnsafeMutablePointer<GLint64>) {glGetInternalformati64v_P(target, internalformat, pname, bufSize, params)}
 var glGetInternalformati64v_P:@convention(c)(GLenum, GLenum, GLenum, GLsizei, UnsafeMutablePointer<GLint64>) -> Void = glGetInternalformati64v_L
 public func glGetInternalformativ(_ target:GLenum, _ internalformat:GLenum, _ pname:GLenum, _ bufSize:GLsizei, _ params:UnsafeMutablePointer<GLint>) {glGetInternalformativ_P(target, internalformat, pname, bufSize, params)}
 public func glGetInternalformativ(target:GLenum, internalformat:GLenum, pname:GLenum, bufSize:GLsizei, params:UnsafeMutablePointer<GLint>) {glGetInternalformativ_P(target, internalformat, pname, bufSize, params)}
 var glGetInternalformativ_P:@convention(c)(GLenum, GLenum, GLenum, GLsizei, UnsafeMutablePointer<GLint>) -> Void = glGetInternalformativ_L
+public func glGetInternalformatSampleivNV(_ target:GLenum, _ internalformat:GLenum, _ samples:GLsizei, _ pname:GLenum, _ bufSize:GLsizei, _ params:UnsafeMutablePointer<GLint>) {glGetInternalformatSampleivNV_P(target, internalformat, samples, pname, bufSize, params)}
+public func glGetInternalformatSampleivNV(target:GLenum, internalformat:GLenum, samples:GLsizei, pname:GLenum, bufSize:GLsizei, params:UnsafeMutablePointer<GLint>) {glGetInternalformatSampleivNV_P(target, internalformat, samples, pname, bufSize, params)}
+var glGetInternalformatSampleivNV_P:@convention(c)(GLenum, GLenum, GLsizei, GLenum, GLsizei, UnsafeMutablePointer<GLint>) -> Void = glGetInternalformatSampleivNV_L
 public func glGetInvariantBooleanvEXT(_ id:GLuint, _ value:GLenum, _ data:UnsafeMutablePointer<GLboolean>) {glGetInvariantBooleanvEXT_P(id, value, data)}
 public func glGetInvariantBooleanvEXT(id:GLuint, value:GLenum, data:UnsafeMutablePointer<GLboolean>) {glGetInvariantBooleanvEXT_P(id, value, data)}
 var glGetInvariantBooleanvEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLboolean>) -> Void = glGetInvariantBooleanvEXT_L
@@ -2835,12 +2835,6 @@ var glGetMapAttribParameterivNV_P:@convention(c)(GLenum, GLuint, GLenum, UnsafeM
 public func glGetMapControlPointsNV(_ target:GLenum, _ index:GLuint, _ type:GLenum, _ ustride:GLsizei, _ vstride:GLsizei, _ packed:GLboolean, _ points:UnsafeMutableRawPointer) {glGetMapControlPointsNV_P(target, index, type, ustride, vstride, packed, points)}
 public func glGetMapControlPointsNV(target:GLenum, index:GLuint, type:GLenum, ustride:GLsizei, vstride:GLsizei, packed:GLboolean, points:UnsafeMutableRawPointer) {glGetMapControlPointsNV_P(target, index, type, ustride, vstride, packed, points)}
 var glGetMapControlPointsNV_P:@convention(c)(GLenum, GLuint, GLenum, GLsizei, GLsizei, GLboolean, UnsafeMutableRawPointer) -> Void = glGetMapControlPointsNV_L
-public func glGetMapParameterfvNV(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetMapParameterfvNV_P(target, pname, params)}
-public func glGetMapParameterfvNV(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetMapParameterfvNV_P(target, pname, params)}
-var glGetMapParameterfvNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetMapParameterfvNV_L
-public func glGetMapParameterivNV(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetMapParameterivNV_P(target, pname, params)}
-public func glGetMapParameterivNV(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetMapParameterivNV_P(target, pname, params)}
-var glGetMapParameterivNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetMapParameterivNV_L
 public func glGetMapdv(_ target:GLenum, _ query:GLenum, _ v:UnsafeMutablePointer<GLdouble>) {glGetMapdv_P(target, query, v)}
 public func glGetMapdv(target:GLenum, query:GLenum, v:UnsafeMutablePointer<GLdouble>) {glGetMapdv_P(target, query, v)}
 var glGetMapdv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetMapdv_L
@@ -2850,6 +2844,12 @@ var glGetMapfv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -
 public func glGetMapiv(_ target:GLenum, _ query:GLenum, _ v:UnsafeMutablePointer<GLint>) {glGetMapiv_P(target, query, v)}
 public func glGetMapiv(target:GLenum, query:GLenum, v:UnsafeMutablePointer<GLint>) {glGetMapiv_P(target, query, v)}
 var glGetMapiv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetMapiv_L
+public func glGetMapParameterfvNV(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetMapParameterfvNV_P(target, pname, params)}
+public func glGetMapParameterfvNV(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetMapParameterfvNV_P(target, pname, params)}
+var glGetMapParameterfvNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetMapParameterfvNV_L
+public func glGetMapParameterivNV(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetMapParameterivNV_P(target, pname, params)}
+public func glGetMapParameterivNV(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetMapParameterivNV_P(target, pname, params)}
+var glGetMapParameterivNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetMapParameterivNV_L
 public func glGetMapxvOES(_ target:GLenum, _ query:GLenum, _ v:UnsafeMutablePointer<GLfixed>) {glGetMapxvOES_P(target, query, v)}
 public func glGetMapxvOES(target:GLenum, query:GLenum, v:UnsafeMutablePointer<GLfixed>) {glGetMapxvOES_P(target, query, v)}
 var glGetMapxvOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetMapxvOES_L
@@ -2886,6 +2886,12 @@ var glGetMinmaxParameteriv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer
 public func glGetMinmaxParameterivEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetMinmaxParameterivEXT_P(target, pname, params)}
 public func glGetMinmaxParameterivEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetMinmaxParameterivEXT_P(target, pname, params)}
 var glGetMinmaxParameterivEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetMinmaxParameterivEXT_L
+public func glGetMultisamplefv(_ pname:GLenum, _ index:GLuint, _ val:UnsafeMutablePointer<GLfloat>) {glGetMultisamplefv_P(pname, index, val)}
+public func glGetMultisamplefv(pname:GLenum, index:GLuint, val:UnsafeMutablePointer<GLfloat>) {glGetMultisamplefv_P(pname, index, val)}
+var glGetMultisamplefv_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetMultisamplefv_L
+public func glGetMultisamplefvNV(_ pname:GLenum, _ index:GLuint, _ val:UnsafeMutablePointer<GLfloat>) {glGetMultisamplefvNV_P(pname, index, val)}
+public func glGetMultisamplefvNV(pname:GLenum, index:GLuint, val:UnsafeMutablePointer<GLfloat>) {glGetMultisamplefvNV_P(pname, index, val)}
+var glGetMultisamplefvNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetMultisamplefvNV_L
 public func glGetMultiTexEnvfvEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetMultiTexEnvfvEXT_P(texunit, target, pname, params)}
 public func glGetMultiTexEnvfvEXT(texunit:GLenum, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetMultiTexEnvfvEXT_P(texunit, target, pname, params)}
 var glGetMultiTexEnvfvEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetMultiTexEnvfvEXT_L
@@ -2910,24 +2916,18 @@ var glGetMultiTexLevelParameterfvEXT_P:@convention(c)(GLenum, GLenum, GLint, GLe
 public func glGetMultiTexLevelParameterivEXT(_ texunit:GLenum, _ target:GLenum, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetMultiTexLevelParameterivEXT_P(texunit, target, level, pname, params)}
 public func glGetMultiTexLevelParameterivEXT(texunit:GLenum, target:GLenum, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetMultiTexLevelParameterivEXT_P(texunit, target, level, pname, params)}
 var glGetMultiTexLevelParameterivEXT_P:@convention(c)(GLenum, GLenum, GLint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetMultiTexLevelParameterivEXT_L
+public func glGetMultiTexParameterfvEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetMultiTexParameterfvEXT_P(texunit, target, pname, params)}
+public func glGetMultiTexParameterfvEXT(texunit:GLenum, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetMultiTexParameterfvEXT_P(texunit, target, pname, params)}
+var glGetMultiTexParameterfvEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetMultiTexParameterfvEXT_L
 public func glGetMultiTexParameterIivEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetMultiTexParameterIivEXT_P(texunit, target, pname, params)}
 public func glGetMultiTexParameterIivEXT(texunit:GLenum, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetMultiTexParameterIivEXT_P(texunit, target, pname, params)}
 var glGetMultiTexParameterIivEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetMultiTexParameterIivEXT_L
 public func glGetMultiTexParameterIuivEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetMultiTexParameterIuivEXT_P(texunit, target, pname, params)}
 public func glGetMultiTexParameterIuivEXT(texunit:GLenum, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetMultiTexParameterIuivEXT_P(texunit, target, pname, params)}
 var glGetMultiTexParameterIuivEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetMultiTexParameterIuivEXT_L
-public func glGetMultiTexParameterfvEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetMultiTexParameterfvEXT_P(texunit, target, pname, params)}
-public func glGetMultiTexParameterfvEXT(texunit:GLenum, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetMultiTexParameterfvEXT_P(texunit, target, pname, params)}
-var glGetMultiTexParameterfvEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetMultiTexParameterfvEXT_L
 public func glGetMultiTexParameterivEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetMultiTexParameterivEXT_P(texunit, target, pname, params)}
 public func glGetMultiTexParameterivEXT(texunit:GLenum, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetMultiTexParameterivEXT_P(texunit, target, pname, params)}
 var glGetMultiTexParameterivEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetMultiTexParameterivEXT_L
-public func glGetMultisamplefv(_ pname:GLenum, _ index:GLuint, _ val:UnsafeMutablePointer<GLfloat>) {glGetMultisamplefv_P(pname, index, val)}
-public func glGetMultisamplefv(pname:GLenum, index:GLuint, val:UnsafeMutablePointer<GLfloat>) {glGetMultisamplefv_P(pname, index, val)}
-var glGetMultisamplefv_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetMultisamplefv_L
-public func glGetMultisamplefvNV(_ pname:GLenum, _ index:GLuint, _ val:UnsafeMutablePointer<GLfloat>) {glGetMultisamplefvNV_P(pname, index, val)}
-public func glGetMultisamplefvNV(pname:GLenum, index:GLuint, val:UnsafeMutablePointer<GLfloat>) {glGetMultisamplefvNV_P(pname, index, val)}
-var glGetMultisamplefvNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetMultisamplefvNV_L
 public func glGetNamedBufferParameteri64v(_ buffer:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint64>) {glGetNamedBufferParameteri64v_P(buffer, pname, params)}
 public func glGetNamedBufferParameteri64v(buffer:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint64>) {glGetNamedBufferParameteri64v_P(buffer, pname, params)}
 var glGetNamedBufferParameteri64v_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint64>) -> Void = glGetNamedBufferParameteri64v_L
@@ -2964,24 +2964,24 @@ var glGetNamedFramebufferParameteriv_P:@convention(c)(GLuint, GLenum, UnsafeMuta
 public func glGetNamedFramebufferParameterivEXT(_ framebuffer:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetNamedFramebufferParameterivEXT_P(framebuffer, pname, params)}
 public func glGetNamedFramebufferParameterivEXT(framebuffer:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetNamedFramebufferParameterivEXT_P(framebuffer, pname, params)}
 var glGetNamedFramebufferParameterivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetNamedFramebufferParameterivEXT_L
-public func glGetNamedProgramLocalParameterIivEXT(_ program:GLuint, _ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLint>) {glGetNamedProgramLocalParameterIivEXT_P(program, target, index, params)}
-public func glGetNamedProgramLocalParameterIivEXT(program:GLuint, target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLint>) {glGetNamedProgramLocalParameterIivEXT_P(program, target, index, params)}
-var glGetNamedProgramLocalParameterIivEXT_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetNamedProgramLocalParameterIivEXT_L
-public func glGetNamedProgramLocalParameterIuivEXT(_ program:GLuint, _ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLuint>) {glGetNamedProgramLocalParameterIuivEXT_P(program, target, index, params)}
-public func glGetNamedProgramLocalParameterIuivEXT(program:GLuint, target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLuint>) {glGetNamedProgramLocalParameterIuivEXT_P(program, target, index, params)}
-var glGetNamedProgramLocalParameterIuivEXT_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeMutablePointer<GLuint>) -> Void = glGetNamedProgramLocalParameterIuivEXT_L
+public func glGetNamedProgramivEXT(_ program:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetNamedProgramivEXT_P(program, target, pname, params)}
+public func glGetNamedProgramivEXT(program:GLuint, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetNamedProgramivEXT_P(program, target, pname, params)}
+var glGetNamedProgramivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetNamedProgramivEXT_L
 public func glGetNamedProgramLocalParameterdvEXT(_ program:GLuint, _ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLdouble>) {glGetNamedProgramLocalParameterdvEXT_P(program, target, index, params)}
 public func glGetNamedProgramLocalParameterdvEXT(program:GLuint, target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLdouble>) {glGetNamedProgramLocalParameterdvEXT_P(program, target, index, params)}
 var glGetNamedProgramLocalParameterdvEXT_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeMutablePointer<GLdouble>) -> Void = glGetNamedProgramLocalParameterdvEXT_L
 public func glGetNamedProgramLocalParameterfvEXT(_ program:GLuint, _ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLfloat>) {glGetNamedProgramLocalParameterfvEXT_P(program, target, index, params)}
 public func glGetNamedProgramLocalParameterfvEXT(program:GLuint, target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLfloat>) {glGetNamedProgramLocalParameterfvEXT_P(program, target, index, params)}
 var glGetNamedProgramLocalParameterfvEXT_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetNamedProgramLocalParameterfvEXT_L
+public func glGetNamedProgramLocalParameterIivEXT(_ program:GLuint, _ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLint>) {glGetNamedProgramLocalParameterIivEXT_P(program, target, index, params)}
+public func glGetNamedProgramLocalParameterIivEXT(program:GLuint, target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLint>) {glGetNamedProgramLocalParameterIivEXT_P(program, target, index, params)}
+var glGetNamedProgramLocalParameterIivEXT_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetNamedProgramLocalParameterIivEXT_L
+public func glGetNamedProgramLocalParameterIuivEXT(_ program:GLuint, _ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLuint>) {glGetNamedProgramLocalParameterIuivEXT_P(program, target, index, params)}
+public func glGetNamedProgramLocalParameterIuivEXT(program:GLuint, target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLuint>) {glGetNamedProgramLocalParameterIuivEXT_P(program, target, index, params)}
+var glGetNamedProgramLocalParameterIuivEXT_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeMutablePointer<GLuint>) -> Void = glGetNamedProgramLocalParameterIuivEXT_L
 public func glGetNamedProgramStringEXT(_ program:GLuint, _ target:GLenum, _ pname:GLenum, _ string:UnsafeMutableRawPointer) {glGetNamedProgramStringEXT_P(program, target, pname, string)}
 public func glGetNamedProgramStringEXT(program:GLuint, target:GLenum, pname:GLenum, string:UnsafeMutableRawPointer) {glGetNamedProgramStringEXT_P(program, target, pname, string)}
 var glGetNamedProgramStringEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutableRawPointer) -> Void = glGetNamedProgramStringEXT_L
-public func glGetNamedProgramivEXT(_ program:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetNamedProgramivEXT_P(program, target, pname, params)}
-public func glGetNamedProgramivEXT(program:GLuint, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetNamedProgramivEXT_P(program, target, pname, params)}
-var glGetNamedProgramivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetNamedProgramivEXT_L
 public func glGetNamedRenderbufferParameteriv(_ renderbuffer:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetNamedRenderbufferParameteriv_P(renderbuffer, pname, params)}
 public func glGetNamedRenderbufferParameteriv(renderbuffer:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetNamedRenderbufferParameteriv_P(renderbuffer, pname, params)}
 var glGetNamedRenderbufferParameteriv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetNamedRenderbufferParameteriv_L
@@ -2994,744 +2994,6 @@ var glGetNamedStringARB_P:@convention(c)(GLint, UnsafePointer<GLchar>, GLsizei, 
 public func glGetNamedStringivARB(_ namelen:GLint, _ name:UnsafePointer<GLchar>, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetNamedStringivARB_P(namelen, name, pname, params)}
 public func glGetNamedStringivARB(namelen:GLint, name:UnsafePointer<GLchar>, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetNamedStringivARB_P(namelen, name, pname, params)}
 var glGetNamedStringivARB_P:@convention(c)(GLint, UnsafePointer<GLchar>, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetNamedStringivARB_L
-public func glGetNextPerfQueryIdINTEL(_ queryId:GLuint, _ nextQueryId:UnsafeMutablePointer<GLuint>) {glGetNextPerfQueryIdINTEL_P(queryId, nextQueryId)}
-public func glGetNextPerfQueryIdINTEL(queryId:GLuint, nextQueryId:UnsafeMutablePointer<GLuint>) {glGetNextPerfQueryIdINTEL_P(queryId, nextQueryId)}
-var glGetNextPerfQueryIdINTEL_P:@convention(c)(GLuint, UnsafeMutablePointer<GLuint>) -> Void = glGetNextPerfQueryIdINTEL_L
-public func glGetObjectBufferfvATI(_ buffer:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetObjectBufferfvATI_P(buffer, pname, params)}
-public func glGetObjectBufferfvATI(buffer:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetObjectBufferfvATI_P(buffer, pname, params)}
-var glGetObjectBufferfvATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetObjectBufferfvATI_L
-public func glGetObjectBufferivATI(_ buffer:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetObjectBufferivATI_P(buffer, pname, params)}
-public func glGetObjectBufferivATI(buffer:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetObjectBufferivATI_P(buffer, pname, params)}
-var glGetObjectBufferivATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetObjectBufferivATI_L
-public func glGetObjectLabel(_ identifier:GLenum, _ name:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ label:UnsafeMutablePointer<GLchar>) {glGetObjectLabel_P(identifier, name, bufSize, length, label)}
-public func glGetObjectLabel(identifier:GLenum, name:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, label:UnsafeMutablePointer<GLchar>) {glGetObjectLabel_P(identifier, name, bufSize, length, label)}
-var glGetObjectLabel_P:@convention(c)(GLenum, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetObjectLabel_L
-public func glGetObjectLabelEXT(_ type:GLenum, _ object:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ label:UnsafeMutablePointer<GLchar>) {glGetObjectLabelEXT_P(type, object, bufSize, length, label)}
-public func glGetObjectLabelEXT(type:GLenum, object:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, label:UnsafeMutablePointer<GLchar>) {glGetObjectLabelEXT_P(type, object, bufSize, length, label)}
-var glGetObjectLabelEXT_P:@convention(c)(GLenum, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetObjectLabelEXT_L
-public func glGetObjectLabelKHR(_ identifier:GLenum, _ name:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ label:UnsafeMutablePointer<GLchar>) {glGetObjectLabelKHR_P(identifier, name, bufSize, length, label)}
-public func glGetObjectLabelKHR(identifier:GLenum, name:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, label:UnsafeMutablePointer<GLchar>) {glGetObjectLabelKHR_P(identifier, name, bufSize, length, label)}
-var glGetObjectLabelKHR_P:@convention(c)(GLenum, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetObjectLabelKHR_L
-public func glGetObjectParameterfvARB(_ obj:GLhandleARB, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetObjectParameterfvARB_P(obj, pname, params)}
-public func glGetObjectParameterfvARB(obj:GLhandleARB, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetObjectParameterfvARB_P(obj, pname, params)}
-var glGetObjectParameterfvARB_P:@convention(c)(GLhandleARB, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetObjectParameterfvARB_L
-public func glGetObjectParameterivAPPLE(_ objectType:GLenum, _ name:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetObjectParameterivAPPLE_P(objectType, name, pname, params)}
-public func glGetObjectParameterivAPPLE(objectType:GLenum, name:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetObjectParameterivAPPLE_P(objectType, name, pname, params)}
-var glGetObjectParameterivAPPLE_P:@convention(c)(GLenum, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetObjectParameterivAPPLE_L
-public func glGetObjectParameterivARB(_ obj:GLhandleARB, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetObjectParameterivARB_P(obj, pname, params)}
-public func glGetObjectParameterivARB(obj:GLhandleARB, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetObjectParameterivARB_P(obj, pname, params)}
-var glGetObjectParameterivARB_P:@convention(c)(GLhandleARB, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetObjectParameterivARB_L
-public func glGetObjectPtrLabel(_ ptr:UnsafeRawPointer, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ label:UnsafeMutablePointer<GLchar>) {glGetObjectPtrLabel_P(ptr, bufSize, length, label)}
-public func glGetObjectPtrLabel(ptr:UnsafeRawPointer, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, label:UnsafeMutablePointer<GLchar>) {glGetObjectPtrLabel_P(ptr, bufSize, length, label)}
-var glGetObjectPtrLabel_P:@convention(c)(UnsafeRawPointer, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetObjectPtrLabel_L
-public func glGetObjectPtrLabelKHR(_ ptr:UnsafeRawPointer, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ label:UnsafeMutablePointer<GLchar>) {glGetObjectPtrLabelKHR_P(ptr, bufSize, length, label)}
-public func glGetObjectPtrLabelKHR(ptr:UnsafeRawPointer, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, label:UnsafeMutablePointer<GLchar>) {glGetObjectPtrLabelKHR_P(ptr, bufSize, length, label)}
-var glGetObjectPtrLabelKHR_P:@convention(c)(UnsafeRawPointer, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetObjectPtrLabelKHR_L
-public func glGetOcclusionQueryivNV(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetOcclusionQueryivNV_P(id, pname, params)}
-public func glGetOcclusionQueryivNV(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetOcclusionQueryivNV_P(id, pname, params)}
-var glGetOcclusionQueryivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetOcclusionQueryivNV_L
-public func glGetOcclusionQueryuivNV(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetOcclusionQueryuivNV_P(id, pname, params)}
-public func glGetOcclusionQueryuivNV(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetOcclusionQueryuivNV_P(id, pname, params)}
-var glGetOcclusionQueryuivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetOcclusionQueryuivNV_L
-public func glGetPathColorGenfvNV(_ color:GLenum, _ pname:GLenum, _ value:UnsafeMutablePointer<GLfloat>) {glGetPathColorGenfvNV_P(color, pname, value)}
-public func glGetPathColorGenfvNV(color:GLenum, pname:GLenum, value:UnsafeMutablePointer<GLfloat>) {glGetPathColorGenfvNV_P(color, pname, value)}
-var glGetPathColorGenfvNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathColorGenfvNV_L
-public func glGetPathColorGenivNV(_ color:GLenum, _ pname:GLenum, _ value:UnsafeMutablePointer<GLint>) {glGetPathColorGenivNV_P(color, pname, value)}
-public func glGetPathColorGenivNV(color:GLenum, pname:GLenum, value:UnsafeMutablePointer<GLint>) {glGetPathColorGenivNV_P(color, pname, value)}
-var glGetPathColorGenivNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetPathColorGenivNV_L
-public func glGetPathCommandsNV(_ path:GLuint, _ commands:UnsafeMutablePointer<GLubyte>) {glGetPathCommandsNV_P(path, commands)}
-public func glGetPathCommandsNV(path:GLuint, commands:UnsafeMutablePointer<GLubyte>) {glGetPathCommandsNV_P(path, commands)}
-var glGetPathCommandsNV_P:@convention(c)(GLuint, UnsafeMutablePointer<GLubyte>) -> Void = glGetPathCommandsNV_L
-public func glGetPathCoordsNV(_ path:GLuint, _ coords:UnsafeMutablePointer<GLfloat>) {glGetPathCoordsNV_P(path, coords)}
-public func glGetPathCoordsNV(path:GLuint, coords:UnsafeMutablePointer<GLfloat>) {glGetPathCoordsNV_P(path, coords)}
-var glGetPathCoordsNV_P:@convention(c)(GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathCoordsNV_L
-public func glGetPathDashArrayNV(_ path:GLuint, _ dashArray:UnsafeMutablePointer<GLfloat>) {glGetPathDashArrayNV_P(path, dashArray)}
-public func glGetPathDashArrayNV(path:GLuint, dashArray:UnsafeMutablePointer<GLfloat>) {glGetPathDashArrayNV_P(path, dashArray)}
-var glGetPathDashArrayNV_P:@convention(c)(GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathDashArrayNV_L
-public func glGetPathLengthNV(_ path:GLuint, _ startSegment:GLsizei, _ numSegments:GLsizei) -> GLfloat {return glGetPathLengthNV_P(path, startSegment, numSegments)}
-public func glGetPathLengthNV(path:GLuint, startSegment:GLsizei, numSegments:GLsizei) -> GLfloat {return glGetPathLengthNV_P(path, startSegment, numSegments)}
-var glGetPathLengthNV_P:@convention(c)(GLuint, GLsizei, GLsizei) -> GLfloat = glGetPathLengthNV_L
-public func glGetPathMetricRangeNV(_ metricQueryMask:GLbitfield, _ firstPathName:GLuint, _ numPaths:GLsizei, _ stride:GLsizei, _ metrics:UnsafeMutablePointer<GLfloat>) {glGetPathMetricRangeNV_P(metricQueryMask, firstPathName, numPaths, stride, metrics)}
-public func glGetPathMetricRangeNV(metricQueryMask:GLbitfield, firstPathName:GLuint, numPaths:GLsizei, stride:GLsizei, metrics:UnsafeMutablePointer<GLfloat>) {glGetPathMetricRangeNV_P(metricQueryMask, firstPathName, numPaths, stride, metrics)}
-var glGetPathMetricRangeNV_P:@convention(c)(GLbitfield, GLuint, GLsizei, GLsizei, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathMetricRangeNV_L
-public func glGetPathMetricsNV(_ metricQueryMask:GLbitfield, _ numPaths:GLsizei, _ pathNameType:GLenum, _ paths:UnsafeRawPointer, _ pathBase:GLuint, _ stride:GLsizei, _ metrics:UnsafeMutablePointer<GLfloat>) {glGetPathMetricsNV_P(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, metrics)}
-public func glGetPathMetricsNV(metricQueryMask:GLbitfield, numPaths:GLsizei, pathNameType:GLenum, paths:UnsafeRawPointer, pathBase:GLuint, stride:GLsizei, metrics:UnsafeMutablePointer<GLfloat>) {glGetPathMetricsNV_P(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, metrics)}
-var glGetPathMetricsNV_P:@convention(c)(GLbitfield, GLsizei, GLenum, UnsafeRawPointer, GLuint, GLsizei, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathMetricsNV_L
-public func glGetPathParameterfvNV(_ path:GLuint, _ pname:GLenum, _ value:UnsafeMutablePointer<GLfloat>) {glGetPathParameterfvNV_P(path, pname, value)}
-public func glGetPathParameterfvNV(path:GLuint, pname:GLenum, value:UnsafeMutablePointer<GLfloat>) {glGetPathParameterfvNV_P(path, pname, value)}
-var glGetPathParameterfvNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathParameterfvNV_L
-public func glGetPathParameterivNV(_ path:GLuint, _ pname:GLenum, _ value:UnsafeMutablePointer<GLint>) {glGetPathParameterivNV_P(path, pname, value)}
-public func glGetPathParameterivNV(path:GLuint, pname:GLenum, value:UnsafeMutablePointer<GLint>) {glGetPathParameterivNV_P(path, pname, value)}
-var glGetPathParameterivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetPathParameterivNV_L
-public func glGetPathSpacingNV(_ pathListMode:GLenum, _ numPaths:GLsizei, _ pathNameType:GLenum, _ paths:UnsafeRawPointer, _ pathBase:GLuint, _ advanceScale:GLfloat, _ kerningScale:GLfloat, _ transformType:GLenum, _ returnedSpacing:UnsafeMutablePointer<GLfloat>) {glGetPathSpacingNV_P(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, returnedSpacing)}
-public func glGetPathSpacingNV(pathListMode:GLenum, numPaths:GLsizei, pathNameType:GLenum, paths:UnsafeRawPointer, pathBase:GLuint, advanceScale:GLfloat, kerningScale:GLfloat, transformType:GLenum, returnedSpacing:UnsafeMutablePointer<GLfloat>) {glGetPathSpacingNV_P(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, returnedSpacing)}
-var glGetPathSpacingNV_P:@convention(c)(GLenum, GLsizei, GLenum, UnsafeRawPointer, GLuint, GLfloat, GLfloat, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathSpacingNV_L
-public func glGetPathTexGenfvNV(_ texCoordSet:GLenum, _ pname:GLenum, _ value:UnsafeMutablePointer<GLfloat>) {glGetPathTexGenfvNV_P(texCoordSet, pname, value)}
-public func glGetPathTexGenfvNV(texCoordSet:GLenum, pname:GLenum, value:UnsafeMutablePointer<GLfloat>) {glGetPathTexGenfvNV_P(texCoordSet, pname, value)}
-var glGetPathTexGenfvNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathTexGenfvNV_L
-public func glGetPathTexGenivNV(_ texCoordSet:GLenum, _ pname:GLenum, _ value:UnsafeMutablePointer<GLint>) {glGetPathTexGenivNV_P(texCoordSet, pname, value)}
-public func glGetPathTexGenivNV(texCoordSet:GLenum, pname:GLenum, value:UnsafeMutablePointer<GLint>) {glGetPathTexGenivNV_P(texCoordSet, pname, value)}
-var glGetPathTexGenivNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetPathTexGenivNV_L
-public func glGetPerfCounterInfoINTEL(_ queryId:GLuint, _ counterId:GLuint, _ counterNameLength:GLuint, _ counterName:UnsafeMutablePointer<GLchar>, _ counterDescLength:GLuint, _ counterDesc:UnsafeMutablePointer<GLchar>, _ counterOffset:UnsafeMutablePointer<GLuint>, _ counterDataSize:UnsafeMutablePointer<GLuint>, _ counterTypeEnum:UnsafeMutablePointer<GLuint>, _ counterDataTypeEnum:UnsafeMutablePointer<GLuint>, _ rawCounterMaxValue:UnsafeMutablePointer<GLuint64>) {glGetPerfCounterInfoINTEL_P(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue)}
-public func glGetPerfCounterInfoINTEL(queryId:GLuint, counterId:GLuint, counterNameLength:GLuint, counterName:UnsafeMutablePointer<GLchar>, counterDescLength:GLuint, counterDesc:UnsafeMutablePointer<GLchar>, counterOffset:UnsafeMutablePointer<GLuint>, counterDataSize:UnsafeMutablePointer<GLuint>, counterTypeEnum:UnsafeMutablePointer<GLuint>, counterDataTypeEnum:UnsafeMutablePointer<GLuint>, rawCounterMaxValue:UnsafeMutablePointer<GLuint64>) {glGetPerfCounterInfoINTEL_P(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue)}
-var glGetPerfCounterInfoINTEL_P:@convention(c)(GLuint, GLuint, GLuint, UnsafeMutablePointer<GLchar>, GLuint, UnsafeMutablePointer<GLchar>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint64>) -> Void = glGetPerfCounterInfoINTEL_L
-public func glGetPerfMonitorCounterDataAMD(_ monitor:GLuint, _ pname:GLenum, _ dataSize:GLsizei, _ data:UnsafeMutablePointer<GLuint>, _ bytesWritten:UnsafeMutablePointer<GLint>) {glGetPerfMonitorCounterDataAMD_P(monitor, pname, dataSize, data, bytesWritten)}
-public func glGetPerfMonitorCounterDataAMD(monitor:GLuint, pname:GLenum, dataSize:GLsizei, data:UnsafeMutablePointer<GLuint>, bytesWritten:UnsafeMutablePointer<GLint>) {glGetPerfMonitorCounterDataAMD_P(monitor, pname, dataSize, data, bytesWritten)}
-var glGetPerfMonitorCounterDataAMD_P:@convention(c)(GLuint, GLenum, GLsizei, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLint>) -> Void = glGetPerfMonitorCounterDataAMD_L
-public func glGetPerfMonitorCounterInfoAMD(_ group:GLuint, _ counter:GLuint, _ pname:GLenum, _ data:UnsafeMutableRawPointer) {glGetPerfMonitorCounterInfoAMD_P(group, counter, pname, data)}
-public func glGetPerfMonitorCounterInfoAMD(group:GLuint, counter:GLuint, pname:GLenum, data:UnsafeMutableRawPointer) {glGetPerfMonitorCounterInfoAMD_P(group, counter, pname, data)}
-var glGetPerfMonitorCounterInfoAMD_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutableRawPointer) -> Void = glGetPerfMonitorCounterInfoAMD_L
-public func glGetPerfMonitorCounterStringAMD(_ group:GLuint, _ counter:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ counterString:UnsafeMutablePointer<GLchar>) {glGetPerfMonitorCounterStringAMD_P(group, counter, bufSize, length, counterString)}
-public func glGetPerfMonitorCounterStringAMD(group:GLuint, counter:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, counterString:UnsafeMutablePointer<GLchar>) {glGetPerfMonitorCounterStringAMD_P(group, counter, bufSize, length, counterString)}
-var glGetPerfMonitorCounterStringAMD_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetPerfMonitorCounterStringAMD_L
-public func glGetPerfMonitorCountersAMD(_ group:GLuint, _ numCounters:UnsafeMutablePointer<GLint>, _ maxActiveCounters:UnsafeMutablePointer<GLint>, _ counterSize:GLsizei, _ counters:UnsafeMutablePointer<GLuint>) {glGetPerfMonitorCountersAMD_P(group, numCounters, maxActiveCounters, counterSize, counters)}
-public func glGetPerfMonitorCountersAMD(group:GLuint, numCounters:UnsafeMutablePointer<GLint>, maxActiveCounters:UnsafeMutablePointer<GLint>, counterSize:GLsizei, counters:UnsafeMutablePointer<GLuint>) {glGetPerfMonitorCountersAMD_P(group, numCounters, maxActiveCounters, counterSize, counters)}
-var glGetPerfMonitorCountersAMD_P:@convention(c)(GLuint, UnsafeMutablePointer<GLint>, UnsafeMutablePointer<GLint>, GLsizei, UnsafeMutablePointer<GLuint>) -> Void = glGetPerfMonitorCountersAMD_L
-public func glGetPerfMonitorGroupStringAMD(_ group:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ groupString:UnsafeMutablePointer<GLchar>) {glGetPerfMonitorGroupStringAMD_P(group, bufSize, length, groupString)}
-public func glGetPerfMonitorGroupStringAMD(group:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, groupString:UnsafeMutablePointer<GLchar>) {glGetPerfMonitorGroupStringAMD_P(group, bufSize, length, groupString)}
-var glGetPerfMonitorGroupStringAMD_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetPerfMonitorGroupStringAMD_L
-public func glGetPerfMonitorGroupsAMD(_ numGroups:UnsafeMutablePointer<GLint>, _ groupsSize:GLsizei, _ groups:UnsafeMutablePointer<GLuint>) {glGetPerfMonitorGroupsAMD_P(numGroups, groupsSize, groups)}
-public func glGetPerfMonitorGroupsAMD(numGroups:UnsafeMutablePointer<GLint>, groupsSize:GLsizei, groups:UnsafeMutablePointer<GLuint>) {glGetPerfMonitorGroupsAMD_P(numGroups, groupsSize, groups)}
-var glGetPerfMonitorGroupsAMD_P:@convention(c)(UnsafeMutablePointer<GLint>, GLsizei, UnsafeMutablePointer<GLuint>) -> Void = glGetPerfMonitorGroupsAMD_L
-public func glGetPerfQueryDataINTEL(_ queryHandle:GLuint, _ flags:GLuint, _ dataSize:GLsizei, _ data:UnsafeMutableRawPointer, _ bytesWritten:UnsafeMutablePointer<GLuint>) {glGetPerfQueryDataINTEL_P(queryHandle, flags, dataSize, data, bytesWritten)}
-public func glGetPerfQueryDataINTEL(queryHandle:GLuint, flags:GLuint, dataSize:GLsizei, data:UnsafeMutableRawPointer, bytesWritten:UnsafeMutablePointer<GLuint>) {glGetPerfQueryDataINTEL_P(queryHandle, flags, dataSize, data, bytesWritten)}
-var glGetPerfQueryDataINTEL_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutableRawPointer, UnsafeMutablePointer<GLuint>) -> Void = glGetPerfQueryDataINTEL_L
-public func glGetPerfQueryIdByNameINTEL(_ queryName:UnsafeMutablePointer<GLchar>, _ queryId:UnsafeMutablePointer<GLuint>) {glGetPerfQueryIdByNameINTEL_P(queryName, queryId)}
-public func glGetPerfQueryIdByNameINTEL(queryName:UnsafeMutablePointer<GLchar>, queryId:UnsafeMutablePointer<GLuint>) {glGetPerfQueryIdByNameINTEL_P(queryName, queryId)}
-var glGetPerfQueryIdByNameINTEL_P:@convention(c)(UnsafeMutablePointer<GLchar>, UnsafeMutablePointer<GLuint>) -> Void = glGetPerfQueryIdByNameINTEL_L
-public func glGetPerfQueryInfoINTEL(_ queryId:GLuint, _ queryNameLength:GLuint, _ queryName:UnsafeMutablePointer<GLchar>, _ dataSize:UnsafeMutablePointer<GLuint>, _ noCounters:UnsafeMutablePointer<GLuint>, _ noInstances:UnsafeMutablePointer<GLuint>, _ capsMask:UnsafeMutablePointer<GLuint>) {glGetPerfQueryInfoINTEL_P(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask)}
-public func glGetPerfQueryInfoINTEL(queryId:GLuint, queryNameLength:GLuint, queryName:UnsafeMutablePointer<GLchar>, dataSize:UnsafeMutablePointer<GLuint>, noCounters:UnsafeMutablePointer<GLuint>, noInstances:UnsafeMutablePointer<GLuint>, capsMask:UnsafeMutablePointer<GLuint>) {glGetPerfQueryInfoINTEL_P(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask)}
-var glGetPerfQueryInfoINTEL_P:@convention(c)(GLuint, GLuint, UnsafeMutablePointer<GLchar>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>) -> Void = glGetPerfQueryInfoINTEL_L
-public func glGetPixelMapfv(_ map:GLenum, _ values:UnsafeMutablePointer<GLfloat>) {glGetPixelMapfv_P(map, values)}
-public func glGetPixelMapfv(map:GLenum, values:UnsafeMutablePointer<GLfloat>) {glGetPixelMapfv_P(map, values)}
-var glGetPixelMapfv_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPixelMapfv_L
-public func glGetPixelMapuiv(_ map:GLenum, _ values:UnsafeMutablePointer<GLuint>) {glGetPixelMapuiv_P(map, values)}
-public func glGetPixelMapuiv(map:GLenum, values:UnsafeMutablePointer<GLuint>) {glGetPixelMapuiv_P(map, values)}
-var glGetPixelMapuiv_P:@convention(c)(GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetPixelMapuiv_L
-public func glGetPixelMapusv(_ map:GLenum, _ values:UnsafeMutablePointer<GLushort>) {glGetPixelMapusv_P(map, values)}
-public func glGetPixelMapusv(map:GLenum, values:UnsafeMutablePointer<GLushort>) {glGetPixelMapusv_P(map, values)}
-var glGetPixelMapusv_P:@convention(c)(GLenum, UnsafeMutablePointer<GLushort>) -> Void = glGetPixelMapusv_L
-public func glGetPixelMapxv(_ map:GLenum, _ size:GLint, _ values:UnsafeMutablePointer<GLfixed>) {glGetPixelMapxv_P(map, size, values)}
-public func glGetPixelMapxv(map:GLenum, size:GLint, values:UnsafeMutablePointer<GLfixed>) {glGetPixelMapxv_P(map, size, values)}
-var glGetPixelMapxv_P:@convention(c)(GLenum, GLint, UnsafeMutablePointer<GLfixed>) -> Void = glGetPixelMapxv_L
-public func glGetPixelTexGenParameterfvSGIS(_ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetPixelTexGenParameterfvSGIS_P(pname, params)}
-public func glGetPixelTexGenParameterfvSGIS(pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetPixelTexGenParameterfvSGIS_P(pname, params)}
-var glGetPixelTexGenParameterfvSGIS_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPixelTexGenParameterfvSGIS_L
-public func glGetPixelTexGenParameterivSGIS(_ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetPixelTexGenParameterivSGIS_P(pname, params)}
-public func glGetPixelTexGenParameterivSGIS(pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetPixelTexGenParameterivSGIS_P(pname, params)}
-var glGetPixelTexGenParameterivSGIS_P:@convention(c)(GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetPixelTexGenParameterivSGIS_L
-public func glGetPixelTransformParameterfvEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetPixelTransformParameterfvEXT_P(target, pname, params)}
-public func glGetPixelTransformParameterfvEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetPixelTransformParameterfvEXT_P(target, pname, params)}
-var glGetPixelTransformParameterfvEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPixelTransformParameterfvEXT_L
-public func glGetPixelTransformParameterivEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetPixelTransformParameterivEXT_P(target, pname, params)}
-public func glGetPixelTransformParameterivEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetPixelTransformParameterivEXT_P(target, pname, params)}
-var glGetPixelTransformParameterivEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetPixelTransformParameterivEXT_L
-public func glGetPointerIndexedvEXT(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointerIndexedvEXT_P(target, index, data)}
-public func glGetPointerIndexedvEXT(target:GLenum, index:GLuint, data:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointerIndexedvEXT_P(target, index, data)}
-var glGetPointerIndexedvEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetPointerIndexedvEXT_L
-public func glGetPointeri_vEXT(_ pname:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointeri_vEXT_P(pname, index, params)}
-public func glGetPointeri_vEXT(pname:GLenum, index:GLuint, params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointeri_vEXT_P(pname, index, params)}
-var glGetPointeri_vEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetPointeri_vEXT_L
-public func glGetPointerv(_ pname:GLenum, _ params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointerv_P(pname, params)}
-public func glGetPointerv(pname:GLenum, params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointerv_P(pname, params)}
-var glGetPointerv_P:@convention(c)(GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetPointerv_L
-public func glGetPointervEXT(_ pname:GLenum, _ params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointervEXT_P(pname, params)}
-public func glGetPointervEXT(pname:GLenum, params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointervEXT_P(pname, params)}
-var glGetPointervEXT_P:@convention(c)(GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetPointervEXT_L
-public func glGetPointervKHR(_ pname:GLenum, _ params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointervKHR_P(pname, params)}
-public func glGetPointervKHR(pname:GLenum, params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointervKHR_P(pname, params)}
-var glGetPointervKHR_P:@convention(c)(GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetPointervKHR_L
-public func glGetPolygonStipple(_ mask:UnsafeMutablePointer<GLubyte>) {glGetPolygonStipple_P(mask)}
-public func glGetPolygonStipple(mask:UnsafeMutablePointer<GLubyte>) {glGetPolygonStipple_P(mask)}
-var glGetPolygonStipple_P:@convention(c)(UnsafeMutablePointer<GLubyte>) -> Void = glGetPolygonStipple_L
-public func glGetProgramBinary(_ program:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ binaryFormat:UnsafeMutablePointer<GLenum>, _ binary:UnsafeMutableRawPointer) {glGetProgramBinary_P(program, bufSize, length, binaryFormat, binary)}
-public func glGetProgramBinary(program:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, binaryFormat:UnsafeMutablePointer<GLenum>, binary:UnsafeMutableRawPointer) {glGetProgramBinary_P(program, bufSize, length, binaryFormat, binary)}
-var glGetProgramBinary_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLenum>, UnsafeMutableRawPointer) -> Void = glGetProgramBinary_L
-public func glGetProgramBinaryOES(_ program:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ binaryFormat:UnsafeMutablePointer<GLenum>, _ binary:UnsafeMutableRawPointer) {glGetProgramBinaryOES_P(program, bufSize, length, binaryFormat, binary)}
-public func glGetProgramBinaryOES(program:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, binaryFormat:UnsafeMutablePointer<GLenum>, binary:UnsafeMutableRawPointer) {glGetProgramBinaryOES_P(program, bufSize, length, binaryFormat, binary)}
-var glGetProgramBinaryOES_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLenum>, UnsafeMutableRawPointer) -> Void = glGetProgramBinaryOES_L
-public func glGetProgramEnvParameterIivNV(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLint>) {glGetProgramEnvParameterIivNV_P(target, index, params)}
-public func glGetProgramEnvParameterIivNV(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLint>) {glGetProgramEnvParameterIivNV_P(target, index, params)}
-var glGetProgramEnvParameterIivNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetProgramEnvParameterIivNV_L
-public func glGetProgramEnvParameterIuivNV(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLuint>) {glGetProgramEnvParameterIuivNV_P(target, index, params)}
-public func glGetProgramEnvParameterIuivNV(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLuint>) {glGetProgramEnvParameterIuivNV_P(target, index, params)}
-var glGetProgramEnvParameterIuivNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLuint>) -> Void = glGetProgramEnvParameterIuivNV_L
-public func glGetProgramEnvParameterdvARB(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLdouble>) {glGetProgramEnvParameterdvARB_P(target, index, params)}
-public func glGetProgramEnvParameterdvARB(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLdouble>) {glGetProgramEnvParameterdvARB_P(target, index, params)}
-var glGetProgramEnvParameterdvARB_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLdouble>) -> Void = glGetProgramEnvParameterdvARB_L
-public func glGetProgramEnvParameterfvARB(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLfloat>) {glGetProgramEnvParameterfvARB_P(target, index, params)}
-public func glGetProgramEnvParameterfvARB(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLfloat>) {glGetProgramEnvParameterfvARB_P(target, index, params)}
-var glGetProgramEnvParameterfvARB_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetProgramEnvParameterfvARB_L
-public func glGetProgramInfoLog(_ program:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramInfoLog_P(program, bufSize, length, infoLog)}
-public func glGetProgramInfoLog(program:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramInfoLog_P(program, bufSize, length, infoLog)}
-var glGetProgramInfoLog_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetProgramInfoLog_L
-public func glGetProgramInterfaceiv(_ program:GLuint, _ programInterface:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramInterfaceiv_P(program, programInterface, pname, params)}
-public func glGetProgramInterfaceiv(program:GLuint, programInterface:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramInterfaceiv_P(program, programInterface, pname, params)}
-var glGetProgramInterfaceiv_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramInterfaceiv_L
-public func glGetProgramLocalParameterIivNV(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLint>) {glGetProgramLocalParameterIivNV_P(target, index, params)}
-public func glGetProgramLocalParameterIivNV(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLint>) {glGetProgramLocalParameterIivNV_P(target, index, params)}
-var glGetProgramLocalParameterIivNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetProgramLocalParameterIivNV_L
-public func glGetProgramLocalParameterIuivNV(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLuint>) {glGetProgramLocalParameterIuivNV_P(target, index, params)}
-public func glGetProgramLocalParameterIuivNV(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLuint>) {glGetProgramLocalParameterIuivNV_P(target, index, params)}
-var glGetProgramLocalParameterIuivNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLuint>) -> Void = glGetProgramLocalParameterIuivNV_L
-public func glGetProgramLocalParameterdvARB(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLdouble>) {glGetProgramLocalParameterdvARB_P(target, index, params)}
-public func glGetProgramLocalParameterdvARB(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLdouble>) {glGetProgramLocalParameterdvARB_P(target, index, params)}
-var glGetProgramLocalParameterdvARB_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLdouble>) -> Void = glGetProgramLocalParameterdvARB_L
-public func glGetProgramLocalParameterfvARB(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLfloat>) {glGetProgramLocalParameterfvARB_P(target, index, params)}
-public func glGetProgramLocalParameterfvARB(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLfloat>) {glGetProgramLocalParameterfvARB_P(target, index, params)}
-var glGetProgramLocalParameterfvARB_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetProgramLocalParameterfvARB_L
-public func glGetProgramNamedParameterdvNV(_ id:GLuint, _ len:GLsizei, _ name:UnsafePointer<GLubyte>, _ params:UnsafeMutablePointer<GLdouble>) {glGetProgramNamedParameterdvNV_P(id, len, name, params)}
-public func glGetProgramNamedParameterdvNV(id:GLuint, len:GLsizei, name:UnsafePointer<GLubyte>, params:UnsafeMutablePointer<GLdouble>) {glGetProgramNamedParameterdvNV_P(id, len, name, params)}
-var glGetProgramNamedParameterdvNV_P:@convention(c)(GLuint, GLsizei, UnsafePointer<GLubyte>, UnsafeMutablePointer<GLdouble>) -> Void = glGetProgramNamedParameterdvNV_L
-public func glGetProgramNamedParameterfvNV(_ id:GLuint, _ len:GLsizei, _ name:UnsafePointer<GLubyte>, _ params:UnsafeMutablePointer<GLfloat>) {glGetProgramNamedParameterfvNV_P(id, len, name, params)}
-public func glGetProgramNamedParameterfvNV(id:GLuint, len:GLsizei, name:UnsafePointer<GLubyte>, params:UnsafeMutablePointer<GLfloat>) {glGetProgramNamedParameterfvNV_P(id, len, name, params)}
-var glGetProgramNamedParameterfvNV_P:@convention(c)(GLuint, GLsizei, UnsafePointer<GLubyte>, UnsafeMutablePointer<GLfloat>) -> Void = glGetProgramNamedParameterfvNV_L
-public func glGetProgramParameterdvNV(_ target:GLenum, _ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetProgramParameterdvNV_P(target, index, pname, params)}
-public func glGetProgramParameterdvNV(target:GLenum, index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetProgramParameterdvNV_P(target, index, pname, params)}
-var glGetProgramParameterdvNV_P:@convention(c)(GLenum, GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetProgramParameterdvNV_L
-public func glGetProgramParameterfvNV(_ target:GLenum, _ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetProgramParameterfvNV_P(target, index, pname, params)}
-public func glGetProgramParameterfvNV(target:GLenum, index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetProgramParameterfvNV_P(target, index, pname, params)}
-var glGetProgramParameterfvNV_P:@convention(c)(GLenum, GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetProgramParameterfvNV_L
-public func glGetProgramPipelineInfoLog(_ pipeline:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramPipelineInfoLog_P(pipeline, bufSize, length, infoLog)}
-public func glGetProgramPipelineInfoLog(pipeline:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramPipelineInfoLog_P(pipeline, bufSize, length, infoLog)}
-var glGetProgramPipelineInfoLog_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetProgramPipelineInfoLog_L
-public func glGetProgramPipelineInfoLogEXT(_ pipeline:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramPipelineInfoLogEXT_P(pipeline, bufSize, length, infoLog)}
-public func glGetProgramPipelineInfoLogEXT(pipeline:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramPipelineInfoLogEXT_P(pipeline, bufSize, length, infoLog)}
-var glGetProgramPipelineInfoLogEXT_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetProgramPipelineInfoLogEXT_L
-public func glGetProgramPipelineiv(_ pipeline:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramPipelineiv_P(pipeline, pname, params)}
-public func glGetProgramPipelineiv(pipeline:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramPipelineiv_P(pipeline, pname, params)}
-var glGetProgramPipelineiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramPipelineiv_L
-public func glGetProgramPipelineivEXT(_ pipeline:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramPipelineivEXT_P(pipeline, pname, params)}
-public func glGetProgramPipelineivEXT(pipeline:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramPipelineivEXT_P(pipeline, pname, params)}
-var glGetProgramPipelineivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramPipelineivEXT_L
-public func glGetProgramResourceIndex(_ program:GLuint, _ programInterface:GLenum, _ name:UnsafePointer<GLchar>) -> GLuint {return glGetProgramResourceIndex_P(program, programInterface, name)}
-public func glGetProgramResourceIndex(program:GLuint, programInterface:GLenum, name:UnsafePointer<GLchar>) -> GLuint {return glGetProgramResourceIndex_P(program, programInterface, name)}
-var glGetProgramResourceIndex_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLuint = glGetProgramResourceIndex_L
-public func glGetProgramResourceLocation(_ program:GLuint, _ programInterface:GLenum, _ name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocation_P(program, programInterface, name)}
-public func glGetProgramResourceLocation(program:GLuint, programInterface:GLenum, name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocation_P(program, programInterface, name)}
-var glGetProgramResourceLocation_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLint = glGetProgramResourceLocation_L
-public func glGetProgramResourceLocationIndex(_ program:GLuint, _ programInterface:GLenum, _ name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocationIndex_P(program, programInterface, name)}
-public func glGetProgramResourceLocationIndex(program:GLuint, programInterface:GLenum, name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocationIndex_P(program, programInterface, name)}
-var glGetProgramResourceLocationIndex_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLint = glGetProgramResourceLocationIndex_L
-public func glGetProgramResourceLocationIndexEXT(_ program:GLuint, _ programInterface:GLenum, _ name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocationIndexEXT_P(program, programInterface, name)}
-public func glGetProgramResourceLocationIndexEXT(program:GLuint, programInterface:GLenum, name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocationIndexEXT_P(program, programInterface, name)}
-var glGetProgramResourceLocationIndexEXT_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLint = glGetProgramResourceLocationIndexEXT_L
-public func glGetProgramResourceName(_ program:GLuint, _ programInterface:GLenum, _ index:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ name:UnsafeMutablePointer<GLchar>) {glGetProgramResourceName_P(program, programInterface, index, bufSize, length, name)}
-public func glGetProgramResourceName(program:GLuint, programInterface:GLenum, index:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, name:UnsafeMutablePointer<GLchar>) {glGetProgramResourceName_P(program, programInterface, index, bufSize, length, name)}
-var glGetProgramResourceName_P:@convention(c)(GLuint, GLenum, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetProgramResourceName_L
-public func glGetProgramResourcefvNV(_ program:GLuint, _ programInterface:GLenum, _ index:GLuint, _ propCount:GLsizei, _ props:UnsafePointer<GLenum>, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ params:UnsafeMutablePointer<GLfloat>) {glGetProgramResourcefvNV_P(program, programInterface, index, propCount, props, bufSize, length, params)}
-public func glGetProgramResourcefvNV(program:GLuint, programInterface:GLenum, index:GLuint, propCount:GLsizei, props:UnsafePointer<GLenum>, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, params:UnsafeMutablePointer<GLfloat>) {glGetProgramResourcefvNV_P(program, programInterface, index, propCount, props, bufSize, length, params)}
-var glGetProgramResourcefvNV_P:@convention(c)(GLuint, GLenum, GLuint, GLsizei, UnsafePointer<GLenum>, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLfloat>) -> Void = glGetProgramResourcefvNV_L
-public func glGetProgramResourceiv(_ program:GLuint, _ programInterface:GLenum, _ index:GLuint, _ propCount:GLsizei, _ props:UnsafePointer<GLenum>, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ params:UnsafeMutablePointer<GLint>) {glGetProgramResourceiv_P(program, programInterface, index, propCount, props, bufSize, length, params)}
-public func glGetProgramResourceiv(program:GLuint, programInterface:GLenum, index:GLuint, propCount:GLsizei, props:UnsafePointer<GLenum>, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, params:UnsafeMutablePointer<GLint>) {glGetProgramResourceiv_P(program, programInterface, index, propCount, props, bufSize, length, params)}
-var glGetProgramResourceiv_P:@convention(c)(GLuint, GLenum, GLuint, GLsizei, UnsafePointer<GLenum>, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLint>) -> Void = glGetProgramResourceiv_L
-public func glGetProgramStageiv(_ program:GLuint, _ shadertype:GLenum, _ pname:GLenum, _ values:UnsafeMutablePointer<GLint>) {glGetProgramStageiv_P(program, shadertype, pname, values)}
-public func glGetProgramStageiv(program:GLuint, shadertype:GLenum, pname:GLenum, values:UnsafeMutablePointer<GLint>) {glGetProgramStageiv_P(program, shadertype, pname, values)}
-var glGetProgramStageiv_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramStageiv_L
-public func glGetProgramStringARB(_ target:GLenum, _ pname:GLenum, _ string:UnsafeMutableRawPointer) {glGetProgramStringARB_P(target, pname, string)}
-public func glGetProgramStringARB(target:GLenum, pname:GLenum, string:UnsafeMutableRawPointer) {glGetProgramStringARB_P(target, pname, string)}
-var glGetProgramStringARB_P:@convention(c)(GLenum, GLenum, UnsafeMutableRawPointer) -> Void = glGetProgramStringARB_L
-public func glGetProgramStringNV(_ id:GLuint, _ pname:GLenum, _ program:UnsafeMutablePointer<GLubyte>) {glGetProgramStringNV_P(id, pname, program)}
-public func glGetProgramStringNV(id:GLuint, pname:GLenum, program:UnsafeMutablePointer<GLubyte>) {glGetProgramStringNV_P(id, pname, program)}
-var glGetProgramStringNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLubyte>) -> Void = glGetProgramStringNV_L
-public func glGetProgramSubroutineParameteruivNV(_ target:GLenum, _ index:GLuint, _ param:UnsafeMutablePointer<GLuint>) {glGetProgramSubroutineParameteruivNV_P(target, index, param)}
-public func glGetProgramSubroutineParameteruivNV(target:GLenum, index:GLuint, param:UnsafeMutablePointer<GLuint>) {glGetProgramSubroutineParameteruivNV_P(target, index, param)}
-var glGetProgramSubroutineParameteruivNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLuint>) -> Void = glGetProgramSubroutineParameteruivNV_L
-public func glGetProgramiv(_ program:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramiv_P(program, pname, params)}
-public func glGetProgramiv(program:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramiv_P(program, pname, params)}
-var glGetProgramiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramiv_L
-public func glGetProgramivARB(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramivARB_P(target, pname, params)}
-public func glGetProgramivARB(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramivARB_P(target, pname, params)}
-var glGetProgramivARB_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramivARB_L
-public func glGetProgramivNV(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramivNV_P(id, pname, params)}
-public func glGetProgramivNV(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramivNV_P(id, pname, params)}
-var glGetProgramivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramivNV_L
-public func glGetQueryBufferObjecti64v(_ id:GLuint, _ buffer:GLuint, _ pname:GLenum, _ offset:GLintptr) {glGetQueryBufferObjecti64v_P(id, buffer, pname, offset)}
-public func glGetQueryBufferObjecti64v(id:GLuint, buffer:GLuint, pname:GLenum, offset:GLintptr) {glGetQueryBufferObjecti64v_P(id, buffer, pname, offset)}
-var glGetQueryBufferObjecti64v_P:@convention(c)(GLuint, GLuint, GLenum, GLintptr) -> Void = glGetQueryBufferObjecti64v_L
-public func glGetQueryBufferObjectiv(_ id:GLuint, _ buffer:GLuint, _ pname:GLenum, _ offset:GLintptr) {glGetQueryBufferObjectiv_P(id, buffer, pname, offset)}
-public func glGetQueryBufferObjectiv(id:GLuint, buffer:GLuint, pname:GLenum, offset:GLintptr) {glGetQueryBufferObjectiv_P(id, buffer, pname, offset)}
-var glGetQueryBufferObjectiv_P:@convention(c)(GLuint, GLuint, GLenum, GLintptr) -> Void = glGetQueryBufferObjectiv_L
-public func glGetQueryBufferObjectui64v(_ id:GLuint, _ buffer:GLuint, _ pname:GLenum, _ offset:GLintptr) {glGetQueryBufferObjectui64v_P(id, buffer, pname, offset)}
-public func glGetQueryBufferObjectui64v(id:GLuint, buffer:GLuint, pname:GLenum, offset:GLintptr) {glGetQueryBufferObjectui64v_P(id, buffer, pname, offset)}
-var glGetQueryBufferObjectui64v_P:@convention(c)(GLuint, GLuint, GLenum, GLintptr) -> Void = glGetQueryBufferObjectui64v_L
-public func glGetQueryBufferObjectuiv(_ id:GLuint, _ buffer:GLuint, _ pname:GLenum, _ offset:GLintptr) {glGetQueryBufferObjectuiv_P(id, buffer, pname, offset)}
-public func glGetQueryBufferObjectuiv(id:GLuint, buffer:GLuint, pname:GLenum, offset:GLintptr) {glGetQueryBufferObjectuiv_P(id, buffer, pname, offset)}
-var glGetQueryBufferObjectuiv_P:@convention(c)(GLuint, GLuint, GLenum, GLintptr) -> Void = glGetQueryBufferObjectuiv_L
-public func glGetQueryIndexediv(_ target:GLenum, _ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryIndexediv_P(target, index, pname, params)}
-public func glGetQueryIndexediv(target:GLenum, index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryIndexediv_P(target, index, pname, params)}
-var glGetQueryIndexediv_P:@convention(c)(GLenum, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryIndexediv_L
-public func glGetQueryObjecti64v(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint64>) {glGetQueryObjecti64v_P(id, pname, params)}
-public func glGetQueryObjecti64v(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint64>) {glGetQueryObjecti64v_P(id, pname, params)}
-var glGetQueryObjecti64v_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint64>) -> Void = glGetQueryObjecti64v_L
-public func glGetQueryObjecti64vEXT(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint64>) {glGetQueryObjecti64vEXT_P(id, pname, params)}
-public func glGetQueryObjecti64vEXT(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint64>) {glGetQueryObjecti64vEXT_P(id, pname, params)}
-var glGetQueryObjecti64vEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint64>) -> Void = glGetQueryObjecti64vEXT_L
-public func glGetQueryObjectiv(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryObjectiv_P(id, pname, params)}
-public func glGetQueryObjectiv(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryObjectiv_P(id, pname, params)}
-var glGetQueryObjectiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryObjectiv_L
-public func glGetQueryObjectivARB(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryObjectivARB_P(id, pname, params)}
-public func glGetQueryObjectivARB(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryObjectivARB_P(id, pname, params)}
-var glGetQueryObjectivARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryObjectivARB_L
-public func glGetQueryObjectivEXT(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryObjectivEXT_P(id, pname, params)}
-public func glGetQueryObjectivEXT(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryObjectivEXT_P(id, pname, params)}
-var glGetQueryObjectivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryObjectivEXT_L
-public func glGetQueryObjectui64v(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint64>) {glGetQueryObjectui64v_P(id, pname, params)}
-public func glGetQueryObjectui64v(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint64>) {glGetQueryObjectui64v_P(id, pname, params)}
-var glGetQueryObjectui64v_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint64>) -> Void = glGetQueryObjectui64v_L
-public func glGetQueryObjectui64vEXT(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint64>) {glGetQueryObjectui64vEXT_P(id, pname, params)}
-public func glGetQueryObjectui64vEXT(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint64>) {glGetQueryObjectui64vEXT_P(id, pname, params)}
-var glGetQueryObjectui64vEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint64>) -> Void = glGetQueryObjectui64vEXT_L
-public func glGetQueryObjectuiv(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuiv_P(id, pname, params)}
-public func glGetQueryObjectuiv(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuiv_P(id, pname, params)}
-var glGetQueryObjectuiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetQueryObjectuiv_L
-public func glGetQueryObjectuivARB(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuivARB_P(id, pname, params)}
-public func glGetQueryObjectuivARB(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuivARB_P(id, pname, params)}
-var glGetQueryObjectuivARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetQueryObjectuivARB_L
-public func glGetQueryObjectuivEXT(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuivEXT_P(id, pname, params)}
-public func glGetQueryObjectuivEXT(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuivEXT_P(id, pname, params)}
-var glGetQueryObjectuivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetQueryObjectuivEXT_L
-public func glGetQueryiv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryiv_P(target, pname, params)}
-public func glGetQueryiv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryiv_P(target, pname, params)}
-var glGetQueryiv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryiv_L
-public func glGetQueryivARB(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryivARB_P(target, pname, params)}
-public func glGetQueryivARB(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryivARB_P(target, pname, params)}
-var glGetQueryivARB_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryivARB_L
-public func glGetQueryivEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryivEXT_P(target, pname, params)}
-public func glGetQueryivEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryivEXT_P(target, pname, params)}
-var glGetQueryivEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryivEXT_L
-public func glGetRenderbufferParameteriv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameteriv_P(target, pname, params)}
-public func glGetRenderbufferParameteriv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameteriv_P(target, pname, params)}
-var glGetRenderbufferParameteriv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetRenderbufferParameteriv_L
-public func glGetRenderbufferParameterivEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameterivEXT_P(target, pname, params)}
-public func glGetRenderbufferParameterivEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameterivEXT_P(target, pname, params)}
-var glGetRenderbufferParameterivEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetRenderbufferParameterivEXT_L
-public func glGetRenderbufferParameterivOES(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameterivOES_P(target, pname, params)}
-public func glGetRenderbufferParameterivOES(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameterivOES_P(target, pname, params)}
-var glGetRenderbufferParameterivOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetRenderbufferParameterivOES_L
-public func glGetSamplerParameterIiv(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIiv_P(sampler, pname, params)}
-public func glGetSamplerParameterIiv(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIiv_P(sampler, pname, params)}
-var glGetSamplerParameterIiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetSamplerParameterIiv_L
-public func glGetSamplerParameterIivEXT(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIivEXT_P(sampler, pname, params)}
-public func glGetSamplerParameterIivEXT(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIivEXT_P(sampler, pname, params)}
-var glGetSamplerParameterIivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetSamplerParameterIivEXT_L
-public func glGetSamplerParameterIivOES(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIivOES_P(sampler, pname, params)}
-public func glGetSamplerParameterIivOES(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIivOES_P(sampler, pname, params)}
-var glGetSamplerParameterIivOES_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetSamplerParameterIivOES_L
-public func glGetSamplerParameterIuiv(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuiv_P(sampler, pname, params)}
-public func glGetSamplerParameterIuiv(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuiv_P(sampler, pname, params)}
-var glGetSamplerParameterIuiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetSamplerParameterIuiv_L
-public func glGetSamplerParameterIuivEXT(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuivEXT_P(sampler, pname, params)}
-public func glGetSamplerParameterIuivEXT(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuivEXT_P(sampler, pname, params)}
-var glGetSamplerParameterIuivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetSamplerParameterIuivEXT_L
-public func glGetSamplerParameterIuivOES(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuivOES_P(sampler, pname, params)}
-public func glGetSamplerParameterIuivOES(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuivOES_P(sampler, pname, params)}
-var glGetSamplerParameterIuivOES_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetSamplerParameterIuivOES_L
-public func glGetSamplerParameterfv(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetSamplerParameterfv_P(sampler, pname, params)}
-public func glGetSamplerParameterfv(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetSamplerParameterfv_P(sampler, pname, params)}
-var glGetSamplerParameterfv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetSamplerParameterfv_L
-public func glGetSamplerParameteriv(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetSamplerParameteriv_P(sampler, pname, params)}
-public func glGetSamplerParameteriv(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetSamplerParameteriv_P(sampler, pname, params)}
-var glGetSamplerParameteriv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetSamplerParameteriv_L
-public func glGetSeparableFilter(_ target:GLenum, _ format:GLenum, _ type:GLenum, _ row:UnsafeMutableRawPointer, _ column:UnsafeMutableRawPointer, _ span:UnsafeMutableRawPointer) {glGetSeparableFilter_P(target, format, type, row, column, span)}
-public func glGetSeparableFilter(target:GLenum, format:GLenum, type:GLenum, row:UnsafeMutableRawPointer, column:UnsafeMutableRawPointer, span:UnsafeMutableRawPointer) {glGetSeparableFilter_P(target, format, type, row, column, span)}
-var glGetSeparableFilter_P:@convention(c)(GLenum, GLenum, GLenum, UnsafeMutableRawPointer, UnsafeMutableRawPointer, UnsafeMutableRawPointer) -> Void = glGetSeparableFilter_L
-public func glGetSeparableFilterEXT(_ target:GLenum, _ format:GLenum, _ type:GLenum, _ row:UnsafeMutableRawPointer, _ column:UnsafeMutableRawPointer, _ span:UnsafeMutableRawPointer) {glGetSeparableFilterEXT_P(target, format, type, row, column, span)}
-public func glGetSeparableFilterEXT(target:GLenum, format:GLenum, type:GLenum, row:UnsafeMutableRawPointer, column:UnsafeMutableRawPointer, span:UnsafeMutableRawPointer) {glGetSeparableFilterEXT_P(target, format, type, row, column, span)}
-var glGetSeparableFilterEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafeMutableRawPointer, UnsafeMutableRawPointer, UnsafeMutableRawPointer) -> Void = glGetSeparableFilterEXT_L
-public func glGetShaderInfoLog(_ shader:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ infoLog:UnsafeMutablePointer<GLchar>) {glGetShaderInfoLog_P(shader, bufSize, length, infoLog)}
-public func glGetShaderInfoLog(shader:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, infoLog:UnsafeMutablePointer<GLchar>) {glGetShaderInfoLog_P(shader, bufSize, length, infoLog)}
-var glGetShaderInfoLog_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetShaderInfoLog_L
-public func glGetShaderPrecisionFormat(_ shadertype:GLenum, _ precisiontype:GLenum, _ range:UnsafeMutablePointer<GLint>, _ precision:UnsafeMutablePointer<GLint>) {glGetShaderPrecisionFormat_P(shadertype, precisiontype, range, precision)}
-public func glGetShaderPrecisionFormat(shadertype:GLenum, precisiontype:GLenum, range:UnsafeMutablePointer<GLint>, precision:UnsafeMutablePointer<GLint>) {glGetShaderPrecisionFormat_P(shadertype, precisiontype, range, precision)}
-var glGetShaderPrecisionFormat_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>, UnsafeMutablePointer<GLint>) -> Void = glGetShaderPrecisionFormat_L
-public func glGetShaderSource(_ shader:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ source:UnsafeMutablePointer<GLchar>) {glGetShaderSource_P(shader, bufSize, length, source)}
-public func glGetShaderSource(shader:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, source:UnsafeMutablePointer<GLchar>) {glGetShaderSource_P(shader, bufSize, length, source)}
-var glGetShaderSource_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetShaderSource_L
-public func glGetShaderSourceARB(_ obj:GLhandleARB, _ maxLength:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ source:UnsafeMutablePointer<GLcharARB>) {glGetShaderSourceARB_P(obj, maxLength, length, source)}
-public func glGetShaderSourceARB(obj:GLhandleARB, maxLength:GLsizei, length:UnsafeMutablePointer<GLsizei>, source:UnsafeMutablePointer<GLcharARB>) {glGetShaderSourceARB_P(obj, maxLength, length, source)}
-var glGetShaderSourceARB_P:@convention(c)(GLhandleARB, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLcharARB>) -> Void = glGetShaderSourceARB_L
-public func glGetShaderiv(_ shader:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetShaderiv_P(shader, pname, params)}
-public func glGetShaderiv(shader:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetShaderiv_P(shader, pname, params)}
-var glGetShaderiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetShaderiv_L
-public func glGetSharpenTexFuncSGIS(_ target:GLenum, _ points:UnsafeMutablePointer<GLfloat>) {glGetSharpenTexFuncSGIS_P(target, points)}
-public func glGetSharpenTexFuncSGIS(target:GLenum, points:UnsafeMutablePointer<GLfloat>) {glGetSharpenTexFuncSGIS_P(target, points)}
-var glGetSharpenTexFuncSGIS_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetSharpenTexFuncSGIS_L
-public func glGetStageIndexNV(_ shadertype:GLenum) -> GLushort {return glGetStageIndexNV_P(shadertype)}
-public func glGetStageIndexNV(shadertype:GLenum) -> GLushort {return glGetStageIndexNV_P(shadertype)}
-var glGetStageIndexNV_P:@convention(c)(GLenum) -> GLushort = glGetStageIndexNV_L
-public func glGetString(_ name:GLenum) -> UnsafePointer<GLubyte> {return glGetString_P(name)}
-public func glGetString(name:GLenum) -> UnsafePointer<GLubyte> {return glGetString_P(name)}
-var glGetString_P:@convention(c)(GLenum) -> UnsafePointer<GLubyte> = glGetString_L
-public func glGetStringi(_ name:GLenum, _ index:GLuint) -> UnsafePointer<GLubyte> {return glGetStringi_P(name, index)}
-public func glGetStringi(name:GLenum, index:GLuint) -> UnsafePointer<GLubyte> {return glGetStringi_P(name, index)}
-var glGetStringi_P:@convention(c)(GLenum, GLuint) -> UnsafePointer<GLubyte> = glGetStringi_L
-public func glGetSubroutineIndex(_ program:GLuint, _ shadertype:GLenum, _ name:UnsafePointer<GLchar>) -> GLuint {return glGetSubroutineIndex_P(program, shadertype, name)}
-public func glGetSubroutineIndex(program:GLuint, shadertype:GLenum, name:UnsafePointer<GLchar>) -> GLuint {return glGetSubroutineIndex_P(program, shadertype, name)}
-var glGetSubroutineIndex_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLuint = glGetSubroutineIndex_L
-public func glGetSubroutineUniformLocation(_ program:GLuint, _ shadertype:GLenum, _ name:UnsafePointer<GLchar>) -> GLint {return glGetSubroutineUniformLocation_P(program, shadertype, name)}
-public func glGetSubroutineUniformLocation(program:GLuint, shadertype:GLenum, name:UnsafePointer<GLchar>) -> GLint {return glGetSubroutineUniformLocation_P(program, shadertype, name)}
-var glGetSubroutineUniformLocation_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLint = glGetSubroutineUniformLocation_L
-public func glGetSynciv(_ sync:GLsync, _ pname:GLenum, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ values:UnsafeMutablePointer<GLint>) {glGetSynciv_P(sync, pname, bufSize, length, values)}
-public func glGetSynciv(sync:GLsync, pname:GLenum, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, values:UnsafeMutablePointer<GLint>) {glGetSynciv_P(sync, pname, bufSize, length, values)}
-var glGetSynciv_P:@convention(c)(GLsync, GLenum, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLint>) -> Void = glGetSynciv_L
-public func glGetSyncivAPPLE(_ sync:GLsync, _ pname:GLenum, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ values:UnsafeMutablePointer<GLint>) {glGetSyncivAPPLE_P(sync, pname, bufSize, length, values)}
-public func glGetSyncivAPPLE(sync:GLsync, pname:GLenum, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, values:UnsafeMutablePointer<GLint>) {glGetSyncivAPPLE_P(sync, pname, bufSize, length, values)}
-var glGetSyncivAPPLE_P:@convention(c)(GLsync, GLenum, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLint>) -> Void = glGetSyncivAPPLE_L
-public func glGetTexBumpParameterfvATI(_ pname:GLenum, _ param:UnsafeMutablePointer<GLfloat>) {glGetTexBumpParameterfvATI_P(pname, param)}
-public func glGetTexBumpParameterfvATI(pname:GLenum, param:UnsafeMutablePointer<GLfloat>) {glGetTexBumpParameterfvATI_P(pname, param)}
-var glGetTexBumpParameterfvATI_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexBumpParameterfvATI_L
-public func glGetTexBumpParameterivATI(_ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetTexBumpParameterivATI_P(pname, param)}
-public func glGetTexBumpParameterivATI(pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetTexBumpParameterivATI_P(pname, param)}
-var glGetTexBumpParameterivATI_P:@convention(c)(GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexBumpParameterivATI_L
-public func glGetTexEnvfv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTexEnvfv_P(target, pname, params)}
-public func glGetTexEnvfv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTexEnvfv_P(target, pname, params)}
-var glGetTexEnvfv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexEnvfv_L
-public func glGetTexEnviv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexEnviv_P(target, pname, params)}
-public func glGetTexEnviv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexEnviv_P(target, pname, params)}
-var glGetTexEnviv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexEnviv_L
-public func glGetTexEnvxv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexEnvxv_P(target, pname, params)}
-public func glGetTexEnvxv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexEnvxv_P(target, pname, params)}
-var glGetTexEnvxv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexEnvxv_L
-public func glGetTexEnvxvOES(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexEnvxvOES_P(target, pname, params)}
-public func glGetTexEnvxvOES(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexEnvxvOES_P(target, pname, params)}
-var glGetTexEnvxvOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexEnvxvOES_L
-public func glGetTexFilterFuncSGIS(_ target:GLenum, _ filter:GLenum, _ weights:UnsafeMutablePointer<GLfloat>) {glGetTexFilterFuncSGIS_P(target, filter, weights)}
-public func glGetTexFilterFuncSGIS(target:GLenum, filter:GLenum, weights:UnsafeMutablePointer<GLfloat>) {glGetTexFilterFuncSGIS_P(target, filter, weights)}
-var glGetTexFilterFuncSGIS_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexFilterFuncSGIS_L
-public func glGetTexGendv(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetTexGendv_P(coord, pname, params)}
-public func glGetTexGendv(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetTexGendv_P(coord, pname, params)}
-var glGetTexGendv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetTexGendv_L
-public func glGetTexGenfv(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTexGenfv_P(coord, pname, params)}
-public func glGetTexGenfv(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTexGenfv_P(coord, pname, params)}
-var glGetTexGenfv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexGenfv_L
-public func glGetTexGenfvOES(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTexGenfvOES_P(coord, pname, params)}
-public func glGetTexGenfvOES(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTexGenfvOES_P(coord, pname, params)}
-var glGetTexGenfvOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexGenfvOES_L
-public func glGetTexGeniv(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexGeniv_P(coord, pname, params)}
-public func glGetTexGeniv(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexGeniv_P(coord, pname, params)}
-var glGetTexGeniv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexGeniv_L
-public func glGetTexGenivOES(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexGenivOES_P(coord, pname, params)}
-public func glGetTexGenivOES(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexGenivOES_P(coord, pname, params)}
-var glGetTexGenivOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexGenivOES_L
-public func glGetTexGenxvOES(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexGenxvOES_P(coord, pname, params)}
-public func glGetTexGenxvOES(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexGenxvOES_P(coord, pname, params)}
-var glGetTexGenxvOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexGenxvOES_L
-public func glGetTexImage(_ target:GLenum, _ level:GLint, _ format:GLenum, _ type:GLenum, _ pixels:UnsafeMutableRawPointer) {glGetTexImage_P(target, level, format, type, pixels)}
-public func glGetTexImage(target:GLenum, level:GLint, format:GLenum, type:GLenum, pixels:UnsafeMutableRawPointer) {glGetTexImage_P(target, level, format, type, pixels)}
-var glGetTexImage_P:@convention(c)(GLenum, GLint, GLenum, GLenum, UnsafeMutableRawPointer) -> Void = glGetTexImage_L
-public func glGetTexLevelParameterfv(_ target:GLenum, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTexLevelParameterfv_P(target, level, pname, params)}
-public func glGetTexLevelParameterfv(target:GLenum, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTexLevelParameterfv_P(target, level, pname, params)}
-var glGetTexLevelParameterfv_P:@convention(c)(GLenum, GLint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexLevelParameterfv_L
-public func glGetTexLevelParameteriv(_ target:GLenum, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexLevelParameteriv_P(target, level, pname, params)}
-public func glGetTexLevelParameteriv(target:GLenum, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexLevelParameteriv_P(target, level, pname, params)}
-var glGetTexLevelParameteriv_P:@convention(c)(GLenum, GLint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexLevelParameteriv_L
-public func glGetTexLevelParameterxvOES(_ target:GLenum, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexLevelParameterxvOES_P(target, level, pname, params)}
-public func glGetTexLevelParameterxvOES(target:GLenum, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexLevelParameterxvOES_P(target, level, pname, params)}
-var glGetTexLevelParameterxvOES_P:@convention(c)(GLenum, GLint, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexLevelParameterxvOES_L
-public func glGetTexParameterIiv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexParameterIiv_P(target, pname, params)}
-public func glGetTexParameterIiv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexParameterIiv_P(target, pname, params)}
-var glGetTexParameterIiv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexParameterIiv_L
-public func glGetTexParameterIivEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexParameterIivEXT_P(target, pname, params)}
-public func glGetTexParameterIivEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexParameterIivEXT_P(target, pname, params)}
-var glGetTexParameterIivEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexParameterIivEXT_L
-public func glGetTexParameterIivOES(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexParameterIivOES_P(target, pname, params)}
-public func glGetTexParameterIivOES(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexParameterIivOES_P(target, pname, params)}
-var glGetTexParameterIivOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexParameterIivOES_L
-public func glGetTexParameterIuiv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuiv_P(target, pname, params)}
-public func glGetTexParameterIuiv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuiv_P(target, pname, params)}
-var glGetTexParameterIuiv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetTexParameterIuiv_L
-public func glGetTexParameterIuivEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuivEXT_P(target, pname, params)}
-public func glGetTexParameterIuivEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuivEXT_P(target, pname, params)}
-var glGetTexParameterIuivEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetTexParameterIuivEXT_L
-public func glGetTexParameterIuivOES(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuivOES_P(target, pname, params)}
-public func glGetTexParameterIuivOES(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuivOES_P(target, pname, params)}
-var glGetTexParameterIuivOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetTexParameterIuivOES_L
-public func glGetTexParameterPointervAPPLE(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetTexParameterPointervAPPLE_P(target, pname, params)}
-public func glGetTexParameterPointervAPPLE(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetTexParameterPointervAPPLE_P(target, pname, params)}
-var glGetTexParameterPointervAPPLE_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetTexParameterPointervAPPLE_L
-public func glGetTexParameterfv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTexParameterfv_P(target, pname, params)}
-public func glGetTexParameterfv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTexParameterfv_P(target, pname, params)}
-var glGetTexParameterfv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexParameterfv_L
-public func glGetTexParameteriv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexParameteriv_P(target, pname, params)}
-public func glGetTexParameteriv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexParameteriv_P(target, pname, params)}
-var glGetTexParameteriv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexParameteriv_L
-public func glGetTexParameterxv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexParameterxv_P(target, pname, params)}
-public func glGetTexParameterxv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexParameterxv_P(target, pname, params)}
-var glGetTexParameterxv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexParameterxv_L
-public func glGetTexParameterxvOES(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexParameterxvOES_P(target, pname, params)}
-public func glGetTexParameterxvOES(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexParameterxvOES_P(target, pname, params)}
-var glGetTexParameterxvOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexParameterxvOES_L
-public func glGetTextureHandleARB(_ texture:GLuint) -> GLuint64 {return glGetTextureHandleARB_P(texture)}
-public func glGetTextureHandleARB(texture:GLuint) -> GLuint64 {return glGetTextureHandleARB_P(texture)}
-var glGetTextureHandleARB_P:@convention(c)(GLuint) -> GLuint64 = glGetTextureHandleARB_L
-public func glGetTextureHandleNV(_ texture:GLuint) -> GLuint64 {return glGetTextureHandleNV_P(texture)}
-public func glGetTextureHandleNV(texture:GLuint) -> GLuint64 {return glGetTextureHandleNV_P(texture)}
-var glGetTextureHandleNV_P:@convention(c)(GLuint) -> GLuint64 = glGetTextureHandleNV_L
-public func glGetTextureImage(_ texture:GLuint, _ level:GLint, _ format:GLenum, _ type:GLenum, _ bufSize:GLsizei, _ pixels:UnsafeMutableRawPointer) {glGetTextureImage_P(texture, level, format, type, bufSize, pixels)}
-public func glGetTextureImage(texture:GLuint, level:GLint, format:GLenum, type:GLenum, bufSize:GLsizei, pixels:UnsafeMutableRawPointer) {glGetTextureImage_P(texture, level, format, type, bufSize, pixels)}
-var glGetTextureImage_P:@convention(c)(GLuint, GLint, GLenum, GLenum, GLsizei, UnsafeMutableRawPointer) -> Void = glGetTextureImage_L
-public func glGetTextureImageEXT(_ texture:GLuint, _ target:GLenum, _ level:GLint, _ format:GLenum, _ type:GLenum, _ pixels:UnsafeMutableRawPointer) {glGetTextureImageEXT_P(texture, target, level, format, type, pixels)}
-public func glGetTextureImageEXT(texture:GLuint, target:GLenum, level:GLint, format:GLenum, type:GLenum, pixels:UnsafeMutableRawPointer) {glGetTextureImageEXT_P(texture, target, level, format, type, pixels)}
-var glGetTextureImageEXT_P:@convention(c)(GLuint, GLenum, GLint, GLenum, GLenum, UnsafeMutableRawPointer) -> Void = glGetTextureImageEXT_L
-public func glGetTextureLevelParameterfv(_ texture:GLuint, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTextureLevelParameterfv_P(texture, level, pname, params)}
-public func glGetTextureLevelParameterfv(texture:GLuint, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTextureLevelParameterfv_P(texture, level, pname, params)}
-var glGetTextureLevelParameterfv_P:@convention(c)(GLuint, GLint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTextureLevelParameterfv_L
-public func glGetTextureLevelParameterfvEXT(_ texture:GLuint, _ target:GLenum, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTextureLevelParameterfvEXT_P(texture, target, level, pname, params)}
-public func glGetTextureLevelParameterfvEXT(texture:GLuint, target:GLenum, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTextureLevelParameterfvEXT_P(texture, target, level, pname, params)}
-var glGetTextureLevelParameterfvEXT_P:@convention(c)(GLuint, GLenum, GLint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTextureLevelParameterfvEXT_L
-public func glGetTextureLevelParameteriv(_ texture:GLuint, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureLevelParameteriv_P(texture, level, pname, params)}
-public func glGetTextureLevelParameteriv(texture:GLuint, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureLevelParameteriv_P(texture, level, pname, params)}
-var glGetTextureLevelParameteriv_P:@convention(c)(GLuint, GLint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureLevelParameteriv_L
-public func glGetTextureLevelParameterivEXT(_ texture:GLuint, _ target:GLenum, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureLevelParameterivEXT_P(texture, target, level, pname, params)}
-public func glGetTextureLevelParameterivEXT(texture:GLuint, target:GLenum, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureLevelParameterivEXT_P(texture, target, level, pname, params)}
-var glGetTextureLevelParameterivEXT_P:@convention(c)(GLuint, GLenum, GLint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureLevelParameterivEXT_L
-public func glGetTextureParameterIiv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureParameterIiv_P(texture, pname, params)}
-public func glGetTextureParameterIiv(texture:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureParameterIiv_P(texture, pname, params)}
-var glGetTextureParameterIiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureParameterIiv_L
-public func glGetTextureParameterIivEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureParameterIivEXT_P(texture, target, pname, params)}
-public func glGetTextureParameterIivEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureParameterIivEXT_P(texture, target, pname, params)}
-var glGetTextureParameterIivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureParameterIivEXT_L
-public func glGetTextureParameterIuiv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetTextureParameterIuiv_P(texture, pname, params)}
-public func glGetTextureParameterIuiv(texture:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetTextureParameterIuiv_P(texture, pname, params)}
-var glGetTextureParameterIuiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetTextureParameterIuiv_L
-public func glGetTextureParameterIuivEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetTextureParameterIuivEXT_P(texture, target, pname, params)}
-public func glGetTextureParameterIuivEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetTextureParameterIuivEXT_P(texture, target, pname, params)}
-var glGetTextureParameterIuivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetTextureParameterIuivEXT_L
-public func glGetTextureParameterfv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTextureParameterfv_P(texture, pname, params)}
-public func glGetTextureParameterfv(texture:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTextureParameterfv_P(texture, pname, params)}
-var glGetTextureParameterfv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTextureParameterfv_L
-public func glGetTextureParameterfvEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTextureParameterfvEXT_P(texture, target, pname, params)}
-public func glGetTextureParameterfvEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTextureParameterfvEXT_P(texture, target, pname, params)}
-var glGetTextureParameterfvEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTextureParameterfvEXT_L
-public func glGetTextureParameteriv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureParameteriv_P(texture, pname, params)}
-public func glGetTextureParameteriv(texture:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureParameteriv_P(texture, pname, params)}
-var glGetTextureParameteriv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureParameteriv_L
-public func glGetTextureParameterivEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureParameterivEXT_P(texture, target, pname, params)}
-public func glGetTextureParameterivEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureParameterivEXT_P(texture, target, pname, params)}
-var glGetTextureParameterivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureParameterivEXT_L
-public func glGetTextureSamplerHandleARB(_ texture:GLuint, _ sampler:GLuint) -> GLuint64 {return glGetTextureSamplerHandleARB_P(texture, sampler)}
-public func glGetTextureSamplerHandleARB(texture:GLuint, sampler:GLuint) -> GLuint64 {return glGetTextureSamplerHandleARB_P(texture, sampler)}
-var glGetTextureSamplerHandleARB_P:@convention(c)(GLuint, GLuint) -> GLuint64 = glGetTextureSamplerHandleARB_L
-public func glGetTextureSamplerHandleNV(_ texture:GLuint, _ sampler:GLuint) -> GLuint64 {return glGetTextureSamplerHandleNV_P(texture, sampler)}
-public func glGetTextureSamplerHandleNV(texture:GLuint, sampler:GLuint) -> GLuint64 {return glGetTextureSamplerHandleNV_P(texture, sampler)}
-var glGetTextureSamplerHandleNV_P:@convention(c)(GLuint, GLuint) -> GLuint64 = glGetTextureSamplerHandleNV_L
-public func glGetTextureSubImage(_ texture:GLuint, _ level:GLint, _ xoffset:GLint, _ yoffset:GLint, _ zoffset:GLint, _ width:GLsizei, _ height:GLsizei, _ depth:GLsizei, _ format:GLenum, _ type:GLenum, _ bufSize:GLsizei, _ pixels:UnsafeMutableRawPointer) {glGetTextureSubImage_P(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, pixels)}
-public func glGetTextureSubImage(texture:GLuint, level:GLint, xoffset:GLint, yoffset:GLint, zoffset:GLint, width:GLsizei, height:GLsizei, depth:GLsizei, format:GLenum, type:GLenum, bufSize:GLsizei, pixels:UnsafeMutableRawPointer) {glGetTextureSubImage_P(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, pixels)}
-var glGetTextureSubImage_P:@convention(c)(GLuint, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, GLsizei, UnsafeMutableRawPointer) -> Void = glGetTextureSubImage_L
-public func glGetTrackMatrixivNV(_ target:GLenum, _ address:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTrackMatrixivNV_P(target, address, pname, params)}
-public func glGetTrackMatrixivNV(target:GLenum, address:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTrackMatrixivNV_P(target, address, pname, params)}
-var glGetTrackMatrixivNV_P:@convention(c)(GLenum, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTrackMatrixivNV_L
-public func glGetTransformFeedbackVarying(_ program:GLuint, _ index:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ size:UnsafeMutablePointer<GLsizei>, _ type:UnsafeMutablePointer<GLenum>, _ name:UnsafeMutablePointer<GLchar>) {glGetTransformFeedbackVarying_P(program, index, bufSize, length, size, type, name)}
-public func glGetTransformFeedbackVarying(program:GLuint, index:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, size:UnsafeMutablePointer<GLsizei>, type:UnsafeMutablePointer<GLenum>, name:UnsafeMutablePointer<GLchar>) {glGetTransformFeedbackVarying_P(program, index, bufSize, length, size, type, name)}
-var glGetTransformFeedbackVarying_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLenum>, UnsafeMutablePointer<GLchar>) -> Void = glGetTransformFeedbackVarying_L
-public func glGetTransformFeedbackVaryingEXT(_ program:GLuint, _ index:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ size:UnsafeMutablePointer<GLsizei>, _ type:UnsafeMutablePointer<GLenum>, _ name:UnsafeMutablePointer<GLchar>) {glGetTransformFeedbackVaryingEXT_P(program, index, bufSize, length, size, type, name)}
-public func glGetTransformFeedbackVaryingEXT(program:GLuint, index:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, size:UnsafeMutablePointer<GLsizei>, type:UnsafeMutablePointer<GLenum>, name:UnsafeMutablePointer<GLchar>) {glGetTransformFeedbackVaryingEXT_P(program, index, bufSize, length, size, type, name)}
-var glGetTransformFeedbackVaryingEXT_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLenum>, UnsafeMutablePointer<GLchar>) -> Void = glGetTransformFeedbackVaryingEXT_L
-public func glGetTransformFeedbackVaryingNV(_ program:GLuint, _ index:GLuint, _ location:UnsafeMutablePointer<GLint>) {glGetTransformFeedbackVaryingNV_P(program, index, location)}
-public func glGetTransformFeedbackVaryingNV(program:GLuint, index:GLuint, location:UnsafeMutablePointer<GLint>) {glGetTransformFeedbackVaryingNV_P(program, index, location)}
-var glGetTransformFeedbackVaryingNV_P:@convention(c)(GLuint, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetTransformFeedbackVaryingNV_L
-public func glGetTransformFeedbacki64_v(_ xfb:GLuint, _ pname:GLenum, _ index:GLuint, _ param:UnsafeMutablePointer<GLint64>) {glGetTransformFeedbacki64_v_P(xfb, pname, index, param)}
-public func glGetTransformFeedbacki64_v(xfb:GLuint, pname:GLenum, index:GLuint, param:UnsafeMutablePointer<GLint64>) {glGetTransformFeedbacki64_v_P(xfb, pname, index, param)}
-var glGetTransformFeedbacki64_v_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeMutablePointer<GLint64>) -> Void = glGetTransformFeedbacki64_v_L
-public func glGetTransformFeedbacki_v(_ xfb:GLuint, _ pname:GLenum, _ index:GLuint, _ param:UnsafeMutablePointer<GLint>) {glGetTransformFeedbacki_v_P(xfb, pname, index, param)}
-public func glGetTransformFeedbacki_v(xfb:GLuint, pname:GLenum, index:GLuint, param:UnsafeMutablePointer<GLint>) {glGetTransformFeedbacki_v_P(xfb, pname, index, param)}
-var glGetTransformFeedbacki_v_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetTransformFeedbacki_v_L
-public func glGetTransformFeedbackiv(_ xfb:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetTransformFeedbackiv_P(xfb, pname, param)}
-public func glGetTransformFeedbackiv(xfb:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetTransformFeedbackiv_P(xfb, pname, param)}
-var glGetTransformFeedbackiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTransformFeedbackiv_L
-public func glGetTranslatedShaderSourceANGLE(_ shader:GLuint, _ bufsize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ source:UnsafeMutablePointer<GLchar>) {glGetTranslatedShaderSourceANGLE_P(shader, bufsize, length, source)}
-public func glGetTranslatedShaderSourceANGLE(shader:GLuint, bufsize:GLsizei, length:UnsafeMutablePointer<GLsizei>, source:UnsafeMutablePointer<GLchar>) {glGetTranslatedShaderSourceANGLE_P(shader, bufsize, length, source)}
-var glGetTranslatedShaderSourceANGLE_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetTranslatedShaderSourceANGLE_L
-public func glGetUniformBlockIndex(_ program:GLuint, _ uniformBlockName:UnsafePointer<GLchar>) -> GLuint {return glGetUniformBlockIndex_P(program, uniformBlockName)}
-public func glGetUniformBlockIndex(program:GLuint, uniformBlockName:UnsafePointer<GLchar>) -> GLuint {return glGetUniformBlockIndex_P(program, uniformBlockName)}
-var glGetUniformBlockIndex_P:@convention(c)(GLuint, UnsafePointer<GLchar>) -> GLuint = glGetUniformBlockIndex_L
-public func glGetUniformBufferSizeEXT(_ program:GLuint, _ location:GLint) -> GLint {return glGetUniformBufferSizeEXT_P(program, location)}
-public func glGetUniformBufferSizeEXT(program:GLuint, location:GLint) -> GLint {return glGetUniformBufferSizeEXT_P(program, location)}
-var glGetUniformBufferSizeEXT_P:@convention(c)(GLuint, GLint) -> GLint = glGetUniformBufferSizeEXT_L
-public func glGetUniformIndices(_ program:GLuint, _ uniformCount:GLsizei, _ uniformNames:UnsafePointer<UnsafePointer<GLchar>>, _ uniformIndices:UnsafeMutablePointer<GLuint>) {glGetUniformIndices_P(program, uniformCount, uniformNames, uniformIndices)}
-public func glGetUniformIndices(program:GLuint, uniformCount:GLsizei, uniformNames:UnsafePointer<UnsafePointer<GLchar>>, uniformIndices:UnsafeMutablePointer<GLuint>) {glGetUniformIndices_P(program, uniformCount, uniformNames, uniformIndices)}
-var glGetUniformIndices_P:@convention(c)(GLuint, GLsizei, UnsafePointer<UnsafePointer<GLchar>>, UnsafeMutablePointer<GLuint>) -> Void = glGetUniformIndices_L
-public func glGetUniformLocation(_ program:GLuint, _ name:UnsafePointer<GLchar>) -> GLint {return glGetUniformLocation_P(program, name)}
-public func glGetUniformLocation(program:GLuint, name:UnsafePointer<GLchar>) -> GLint {return glGetUniformLocation_P(program, name)}
-var glGetUniformLocation_P:@convention(c)(GLuint, UnsafePointer<GLchar>) -> GLint = glGetUniformLocation_L
-public func glGetUniformLocationARB(_ programObj:GLhandleARB, _ name:UnsafePointer<GLcharARB>) -> GLint {return glGetUniformLocationARB_P(programObj, name)}
-public func glGetUniformLocationARB(programObj:GLhandleARB, name:UnsafePointer<GLcharARB>) -> GLint {return glGetUniformLocationARB_P(programObj, name)}
-var glGetUniformLocationARB_P:@convention(c)(GLhandleARB, UnsafePointer<GLcharARB>) -> GLint = glGetUniformLocationARB_L
-public func glGetUniformOffsetEXT(_ program:GLuint, _ location:GLint) -> GLintptr {return glGetUniformOffsetEXT_P(program, location)}
-public func glGetUniformOffsetEXT(program:GLuint, location:GLint) -> GLintptr {return glGetUniformOffsetEXT_P(program, location)}
-var glGetUniformOffsetEXT_P:@convention(c)(GLuint, GLint) -> GLintptr = glGetUniformOffsetEXT_L
-public func glGetUniformSubroutineuiv(_ shadertype:GLenum, _ location:GLint, _ params:UnsafeMutablePointer<GLuint>) {glGetUniformSubroutineuiv_P(shadertype, location, params)}
-public func glGetUniformSubroutineuiv(shadertype:GLenum, location:GLint, params:UnsafeMutablePointer<GLuint>) {glGetUniformSubroutineuiv_P(shadertype, location, params)}
-var glGetUniformSubroutineuiv_P:@convention(c)(GLenum, GLint, UnsafeMutablePointer<GLuint>) -> Void = glGetUniformSubroutineuiv_L
-public func glGetUniformdv(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLdouble>) {glGetUniformdv_P(program, location, params)}
-public func glGetUniformdv(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLdouble>) {glGetUniformdv_P(program, location, params)}
-var glGetUniformdv_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLdouble>) -> Void = glGetUniformdv_L
-public func glGetUniformfv(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLfloat>) {glGetUniformfv_P(program, location, params)}
-public func glGetUniformfv(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLfloat>) {glGetUniformfv_P(program, location, params)}
-var glGetUniformfv_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLfloat>) -> Void = glGetUniformfv_L
-public func glGetUniformfvARB(_ programObj:GLhandleARB, _ location:GLint, _ params:UnsafeMutablePointer<GLfloat>) {glGetUniformfvARB_P(programObj, location, params)}
-public func glGetUniformfvARB(programObj:GLhandleARB, location:GLint, params:UnsafeMutablePointer<GLfloat>) {glGetUniformfvARB_P(programObj, location, params)}
-var glGetUniformfvARB_P:@convention(c)(GLhandleARB, GLint, UnsafeMutablePointer<GLfloat>) -> Void = glGetUniformfvARB_L
-public func glGetUniformi64vARB(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLint64>) {glGetUniformi64vARB_P(program, location, params)}
-public func glGetUniformi64vARB(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLint64>) {glGetUniformi64vARB_P(program, location, params)}
-var glGetUniformi64vARB_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLint64>) -> Void = glGetUniformi64vARB_L
-public func glGetUniformi64vNV(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLint64EXT>) {glGetUniformi64vNV_P(program, location, params)}
-public func glGetUniformi64vNV(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLint64EXT>) {glGetUniformi64vNV_P(program, location, params)}
-var glGetUniformi64vNV_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLint64EXT>) -> Void = glGetUniformi64vNV_L
-public func glGetUniformiv(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLint>) {glGetUniformiv_P(program, location, params)}
-public func glGetUniformiv(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLint>) {glGetUniformiv_P(program, location, params)}
-var glGetUniformiv_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLint>) -> Void = glGetUniformiv_L
-public func glGetUniformivARB(_ programObj:GLhandleARB, _ location:GLint, _ params:UnsafeMutablePointer<GLint>) {glGetUniformivARB_P(programObj, location, params)}
-public func glGetUniformivARB(programObj:GLhandleARB, location:GLint, params:UnsafeMutablePointer<GLint>) {glGetUniformivARB_P(programObj, location, params)}
-var glGetUniformivARB_P:@convention(c)(GLhandleARB, GLint, UnsafeMutablePointer<GLint>) -> Void = glGetUniformivARB_L
-public func glGetUniformui64vARB(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLuint64>) {glGetUniformui64vARB_P(program, location, params)}
-public func glGetUniformui64vARB(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLuint64>) {glGetUniformui64vARB_P(program, location, params)}
-var glGetUniformui64vARB_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLuint64>) -> Void = glGetUniformui64vARB_L
-public func glGetUniformui64vNV(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLuint64EXT>) {glGetUniformui64vNV_P(program, location, params)}
-public func glGetUniformui64vNV(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLuint64EXT>) {glGetUniformui64vNV_P(program, location, params)}
-var glGetUniformui64vNV_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLuint64EXT>) -> Void = glGetUniformui64vNV_L
-public func glGetUniformuiv(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLuint>) {glGetUniformuiv_P(program, location, params)}
-public func glGetUniformuiv(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLuint>) {glGetUniformuiv_P(program, location, params)}
-var glGetUniformuiv_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLuint>) -> Void = glGetUniformuiv_L
-public func glGetUniformuivEXT(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLuint>) {glGetUniformuivEXT_P(program, location, params)}
-public func glGetUniformuivEXT(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLuint>) {glGetUniformuivEXT_P(program, location, params)}
-var glGetUniformuivEXT_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLuint>) -> Void = glGetUniformuivEXT_L
-public func glGetVariantArrayObjectfvATI(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVariantArrayObjectfvATI_P(id, pname, params)}
-public func glGetVariantArrayObjectfvATI(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVariantArrayObjectfvATI_P(id, pname, params)}
-var glGetVariantArrayObjectfvATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVariantArrayObjectfvATI_L
-public func glGetVariantArrayObjectivATI(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVariantArrayObjectivATI_P(id, pname, params)}
-public func glGetVariantArrayObjectivATI(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVariantArrayObjectivATI_P(id, pname, params)}
-var glGetVariantArrayObjectivATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVariantArrayObjectivATI_L
-public func glGetVariantBooleanvEXT(_ id:GLuint, _ value:GLenum, _ data:UnsafeMutablePointer<GLboolean>) {glGetVariantBooleanvEXT_P(id, value, data)}
-public func glGetVariantBooleanvEXT(id:GLuint, value:GLenum, data:UnsafeMutablePointer<GLboolean>) {glGetVariantBooleanvEXT_P(id, value, data)}
-var glGetVariantBooleanvEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLboolean>) -> Void = glGetVariantBooleanvEXT_L
-public func glGetVariantFloatvEXT(_ id:GLuint, _ value:GLenum, _ data:UnsafeMutablePointer<GLfloat>) {glGetVariantFloatvEXT_P(id, value, data)}
-public func glGetVariantFloatvEXT(id:GLuint, value:GLenum, data:UnsafeMutablePointer<GLfloat>) {glGetVariantFloatvEXT_P(id, value, data)}
-var glGetVariantFloatvEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVariantFloatvEXT_L
-public func glGetVariantIntegervEXT(_ id:GLuint, _ value:GLenum, _ data:UnsafeMutablePointer<GLint>) {glGetVariantIntegervEXT_P(id, value, data)}
-public func glGetVariantIntegervEXT(id:GLuint, value:GLenum, data:UnsafeMutablePointer<GLint>) {glGetVariantIntegervEXT_P(id, value, data)}
-var glGetVariantIntegervEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVariantIntegervEXT_L
-public func glGetVariantPointervEXT(_ id:GLuint, _ value:GLenum, _ data:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVariantPointervEXT_P(id, value, data)}
-public func glGetVariantPointervEXT(id:GLuint, value:GLenum, data:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVariantPointervEXT_P(id, value, data)}
-var glGetVariantPointervEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVariantPointervEXT_L
-public func glGetVaryingLocationNV(_ program:GLuint, _ name:UnsafePointer<GLchar>) -> GLint {return glGetVaryingLocationNV_P(program, name)}
-public func glGetVaryingLocationNV(program:GLuint, name:UnsafePointer<GLchar>) -> GLint {return glGetVaryingLocationNV_P(program, name)}
-var glGetVaryingLocationNV_P:@convention(c)(GLuint, UnsafePointer<GLchar>) -> GLint = glGetVaryingLocationNV_L
-public func glGetVertexArrayIndexed64iv(_ vaobj:GLuint, _ index:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint64>) {glGetVertexArrayIndexed64iv_P(vaobj, index, pname, param)}
-public func glGetVertexArrayIndexed64iv(vaobj:GLuint, index:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint64>) {glGetVertexArrayIndexed64iv_P(vaobj, index, pname, param)}
-var glGetVertexArrayIndexed64iv_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLint64>) -> Void = glGetVertexArrayIndexed64iv_L
-public func glGetVertexArrayIndexediv(_ vaobj:GLuint, _ index:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIndexediv_P(vaobj, index, pname, param)}
-public func glGetVertexArrayIndexediv(vaobj:GLuint, index:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIndexediv_P(vaobj, index, pname, param)}
-var glGetVertexArrayIndexediv_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexArrayIndexediv_L
-public func glGetVertexArrayIntegeri_vEXT(_ vaobj:GLuint, _ index:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIntegeri_vEXT_P(vaobj, index, pname, param)}
-public func glGetVertexArrayIntegeri_vEXT(vaobj:GLuint, index:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIntegeri_vEXT_P(vaobj, index, pname, param)}
-var glGetVertexArrayIntegeri_vEXT_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexArrayIntegeri_vEXT_L
-public func glGetVertexArrayIntegervEXT(_ vaobj:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIntegervEXT_P(vaobj, pname, param)}
-public func glGetVertexArrayIntegervEXT(vaobj:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIntegervEXT_P(vaobj, pname, param)}
-var glGetVertexArrayIntegervEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexArrayIntegervEXT_L
-public func glGetVertexArrayPointeri_vEXT(_ vaobj:GLuint, _ index:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexArrayPointeri_vEXT_P(vaobj, index, pname, param)}
-public func glGetVertexArrayPointeri_vEXT(vaobj:GLuint, index:GLuint, pname:GLenum, param:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexArrayPointeri_vEXT_P(vaobj, index, pname, param)}
-var glGetVertexArrayPointeri_vEXT_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVertexArrayPointeri_vEXT_L
-public func glGetVertexArrayPointervEXT(_ vaobj:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexArrayPointervEXT_P(vaobj, pname, param)}
-public func glGetVertexArrayPointervEXT(vaobj:GLuint, pname:GLenum, param:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexArrayPointervEXT_P(vaobj, pname, param)}
-var glGetVertexArrayPointervEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVertexArrayPointervEXT_L
-public func glGetVertexArrayiv(_ vaobj:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetVertexArrayiv_P(vaobj, pname, param)}
-public func glGetVertexArrayiv(vaobj:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetVertexArrayiv_P(vaobj, pname, param)}
-var glGetVertexArrayiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexArrayiv_L
-public func glGetVertexAttribArrayObjectfvATI(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribArrayObjectfvATI_P(index, pname, params)}
-public func glGetVertexAttribArrayObjectfvATI(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribArrayObjectfvATI_P(index, pname, params)}
-var glGetVertexAttribArrayObjectfvATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVertexAttribArrayObjectfvATI_L
-public func glGetVertexAttribArrayObjectivATI(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribArrayObjectivATI_P(index, pname, params)}
-public func glGetVertexAttribArrayObjectivATI(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribArrayObjectivATI_P(index, pname, params)}
-var glGetVertexAttribArrayObjectivATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribArrayObjectivATI_L
-public func glGetVertexAttribIiv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribIiv_P(index, pname, params)}
-public func glGetVertexAttribIiv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribIiv_P(index, pname, params)}
-var glGetVertexAttribIiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribIiv_L
-public func glGetVertexAttribIivEXT(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribIivEXT_P(index, pname, params)}
-public func glGetVertexAttribIivEXT(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribIivEXT_P(index, pname, params)}
-var glGetVertexAttribIivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribIivEXT_L
-public func glGetVertexAttribIuiv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetVertexAttribIuiv_P(index, pname, params)}
-public func glGetVertexAttribIuiv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetVertexAttribIuiv_P(index, pname, params)}
-var glGetVertexAttribIuiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetVertexAttribIuiv_L
-public func glGetVertexAttribIuivEXT(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetVertexAttribIuivEXT_P(index, pname, params)}
-public func glGetVertexAttribIuivEXT(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetVertexAttribIuivEXT_P(index, pname, params)}
-var glGetVertexAttribIuivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetVertexAttribIuivEXT_L
-public func glGetVertexAttribLdv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribLdv_P(index, pname, params)}
-public func glGetVertexAttribLdv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribLdv_P(index, pname, params)}
-var glGetVertexAttribLdv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVertexAttribLdv_L
-public func glGetVertexAttribLdvEXT(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribLdvEXT_P(index, pname, params)}
-public func glGetVertexAttribLdvEXT(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribLdvEXT_P(index, pname, params)}
-var glGetVertexAttribLdvEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVertexAttribLdvEXT_L
-public func glGetVertexAttribLi64vNV(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint64EXT>) {glGetVertexAttribLi64vNV_P(index, pname, params)}
-public func glGetVertexAttribLi64vNV(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint64EXT>) {glGetVertexAttribLi64vNV_P(index, pname, params)}
-var glGetVertexAttribLi64vNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint64EXT>) -> Void = glGetVertexAttribLi64vNV_L
-public func glGetVertexAttribLui64vARB(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint64EXT>) {glGetVertexAttribLui64vARB_P(index, pname, params)}
-public func glGetVertexAttribLui64vARB(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint64EXT>) {glGetVertexAttribLui64vARB_P(index, pname, params)}
-var glGetVertexAttribLui64vARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint64EXT>) -> Void = glGetVertexAttribLui64vARB_L
-public func glGetVertexAttribLui64vNV(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint64EXT>) {glGetVertexAttribLui64vNV_P(index, pname, params)}
-public func glGetVertexAttribLui64vNV(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint64EXT>) {glGetVertexAttribLui64vNV_P(index, pname, params)}
-var glGetVertexAttribLui64vNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint64EXT>) -> Void = glGetVertexAttribLui64vNV_L
-public func glGetVertexAttribPointerv(_ index:GLuint, _ pname:GLenum, _ pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointerv_P(index, pname, pointer)}
-public func glGetVertexAttribPointerv(index:GLuint, pname:GLenum, pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointerv_P(index, pname, pointer)}
-var glGetVertexAttribPointerv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVertexAttribPointerv_L
-public func glGetVertexAttribPointervARB(_ index:GLuint, _ pname:GLenum, _ pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointervARB_P(index, pname, pointer)}
-public func glGetVertexAttribPointervARB(index:GLuint, pname:GLenum, pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointervARB_P(index, pname, pointer)}
-var glGetVertexAttribPointervARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVertexAttribPointervARB_L
-public func glGetVertexAttribPointervNV(_ index:GLuint, _ pname:GLenum, _ pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointervNV_P(index, pname, pointer)}
-public func glGetVertexAttribPointervNV(index:GLuint, pname:GLenum, pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointervNV_P(index, pname, pointer)}
-var glGetVertexAttribPointervNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVertexAttribPointervNV_L
-public func glGetVertexAttribdv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdv_P(index, pname, params)}
-public func glGetVertexAttribdv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdv_P(index, pname, params)}
-var glGetVertexAttribdv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVertexAttribdv_L
-public func glGetVertexAttribdvARB(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdvARB_P(index, pname, params)}
-public func glGetVertexAttribdvARB(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdvARB_P(index, pname, params)}
-var glGetVertexAttribdvARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVertexAttribdvARB_L
-public func glGetVertexAttribdvNV(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdvNV_P(index, pname, params)}
-public func glGetVertexAttribdvNV(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdvNV_P(index, pname, params)}
-var glGetVertexAttribdvNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVertexAttribdvNV_L
-public func glGetVertexAttribfv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfv_P(index, pname, params)}
-public func glGetVertexAttribfv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfv_P(index, pname, params)}
-var glGetVertexAttribfv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVertexAttribfv_L
-public func glGetVertexAttribfvARB(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfvARB_P(index, pname, params)}
-public func glGetVertexAttribfvARB(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfvARB_P(index, pname, params)}
-var glGetVertexAttribfvARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVertexAttribfvARB_L
-public func glGetVertexAttribfvNV(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfvNV_P(index, pname, params)}
-public func glGetVertexAttribfvNV(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfvNV_P(index, pname, params)}
-var glGetVertexAttribfvNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVertexAttribfvNV_L
-public func glGetVertexAttribiv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribiv_P(index, pname, params)}
-public func glGetVertexAttribiv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribiv_P(index, pname, params)}
-var glGetVertexAttribiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribiv_L
-public func glGetVertexAttribivARB(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribivARB_P(index, pname, params)}
-public func glGetVertexAttribivARB(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribivARB_P(index, pname, params)}
-var glGetVertexAttribivARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribivARB_L
-public func glGetVertexAttribivNV(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribivNV_P(index, pname, params)}
-public func glGetVertexAttribivNV(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribivNV_P(index, pname, params)}
-var glGetVertexAttribivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribivNV_L
-public func glGetVideoCaptureStreamdvNV(_ video_capture_slot:GLuint, _ stream:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVideoCaptureStreamdvNV_P(video_capture_slot, stream, pname, params)}
-public func glGetVideoCaptureStreamdvNV(video_capture_slot:GLuint, stream:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVideoCaptureStreamdvNV_P(video_capture_slot, stream, pname, params)}
-var glGetVideoCaptureStreamdvNV_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVideoCaptureStreamdvNV_L
-public func glGetVideoCaptureStreamfvNV(_ video_capture_slot:GLuint, _ stream:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVideoCaptureStreamfvNV_P(video_capture_slot, stream, pname, params)}
-public func glGetVideoCaptureStreamfvNV(video_capture_slot:GLuint, stream:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVideoCaptureStreamfvNV_P(video_capture_slot, stream, pname, params)}
-var glGetVideoCaptureStreamfvNV_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVideoCaptureStreamfvNV_L
-public func glGetVideoCaptureStreamivNV(_ video_capture_slot:GLuint, _ stream:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVideoCaptureStreamivNV_P(video_capture_slot, stream, pname, params)}
-public func glGetVideoCaptureStreamivNV(video_capture_slot:GLuint, stream:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVideoCaptureStreamivNV_P(video_capture_slot, stream, pname, params)}
-var glGetVideoCaptureStreamivNV_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVideoCaptureStreamivNV_L
-public func glGetVideoCaptureivNV(_ video_capture_slot:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVideoCaptureivNV_P(video_capture_slot, pname, params)}
-public func glGetVideoCaptureivNV(video_capture_slot:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVideoCaptureivNV_P(video_capture_slot, pname, params)}
-var glGetVideoCaptureivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVideoCaptureivNV_L
-public func glGetVideoi64vNV(_ video_slot:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint64EXT>) {glGetVideoi64vNV_P(video_slot, pname, params)}
-public func glGetVideoi64vNV(video_slot:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint64EXT>) {glGetVideoi64vNV_P(video_slot, pname, params)}
-var glGetVideoi64vNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint64EXT>) -> Void = glGetVideoi64vNV_L
-public func glGetVideoivNV(_ video_slot:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVideoivNV_P(video_slot, pname, params)}
-public func glGetVideoivNV(video_slot:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVideoivNV_P(video_slot, pname, params)}
-var glGetVideoivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVideoivNV_L
-public func glGetVideoui64vNV(_ video_slot:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint64EXT>) {glGetVideoui64vNV_P(video_slot, pname, params)}
-public func glGetVideoui64vNV(video_slot:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint64EXT>) {glGetVideoui64vNV_P(video_slot, pname, params)}
-var glGetVideoui64vNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint64EXT>) -> Void = glGetVideoui64vNV_L
-public func glGetVideouivNV(_ video_slot:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetVideouivNV_P(video_slot, pname, params)}
-public func glGetVideouivNV(video_slot:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetVideouivNV_P(video_slot, pname, params)}
-var glGetVideouivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetVideouivNV_L
 public func glGetnColorTable(_ target:GLenum, _ format:GLenum, _ type:GLenum, _ bufSize:GLsizei, _ table:UnsafeMutableRawPointer) {glGetnColorTable_P(target, format, type, bufSize, table)}
 public func glGetnColorTable(target:GLenum, format:GLenum, type:GLenum, bufSize:GLsizei, table:UnsafeMutableRawPointer) {glGetnColorTable_P(target, format, type, bufSize, table)}
 var glGetnColorTable_P:@convention(c)(GLenum, GLenum, GLenum, GLsizei, UnsafeMutableRawPointer) -> Void = glGetnColorTable_L
@@ -3750,6 +3012,9 @@ var glGetnConvolutionFilter_P:@convention(c)(GLenum, GLenum, GLenum, GLsizei, Un
 public func glGetnConvolutionFilterARB(_ target:GLenum, _ format:GLenum, _ type:GLenum, _ bufSize:GLsizei, _ image:UnsafeMutableRawPointer) {glGetnConvolutionFilterARB_P(target, format, type, bufSize, image)}
 public func glGetnConvolutionFilterARB(target:GLenum, format:GLenum, type:GLenum, bufSize:GLsizei, image:UnsafeMutableRawPointer) {glGetnConvolutionFilterARB_P(target, format, type, bufSize, image)}
 var glGetnConvolutionFilterARB_P:@convention(c)(GLenum, GLenum, GLenum, GLsizei, UnsafeMutableRawPointer) -> Void = glGetnConvolutionFilterARB_L
+public func glGetNextPerfQueryIdINTEL(_ queryId:GLuint, _ nextQueryId:UnsafeMutablePointer<GLuint>) {glGetNextPerfQueryIdINTEL_P(queryId, nextQueryId)}
+public func glGetNextPerfQueryIdINTEL(queryId:GLuint, nextQueryId:UnsafeMutablePointer<GLuint>) {glGetNextPerfQueryIdINTEL_P(queryId, nextQueryId)}
+var glGetNextPerfQueryIdINTEL_P:@convention(c)(GLuint, UnsafeMutablePointer<GLuint>) -> Void = glGetNextPerfQueryIdINTEL_L
 public func glGetnHistogram(_ target:GLenum, _ reset:GLboolean, _ format:GLenum, _ type:GLenum, _ bufSize:GLsizei, _ values:UnsafeMutableRawPointer) {glGetnHistogram_P(target, reset, format, type, bufSize, values)}
 public func glGetnHistogram(target:GLenum, reset:GLboolean, format:GLenum, type:GLenum, bufSize:GLsizei, values:UnsafeMutableRawPointer) {glGetnHistogram_P(target, reset, format, type, bufSize, values)}
 var glGetnHistogram_P:@convention(c)(GLenum, GLboolean, GLenum, GLenum, GLsizei, UnsafeMutableRawPointer) -> Void = glGetnHistogram_L
@@ -3861,6 +3126,741 @@ var glGetnUniformuivARB_P:@convention(c)(GLuint, GLint, GLsizei, UnsafeMutablePo
 public func glGetnUniformuivKHR(_ program:GLuint, _ location:GLint, _ bufSize:GLsizei, _ params:UnsafeMutablePointer<GLuint>) {glGetnUniformuivKHR_P(program, location, bufSize, params)}
 public func glGetnUniformuivKHR(program:GLuint, location:GLint, bufSize:GLsizei, params:UnsafeMutablePointer<GLuint>) {glGetnUniformuivKHR_P(program, location, bufSize, params)}
 var glGetnUniformuivKHR_P:@convention(c)(GLuint, GLint, GLsizei, UnsafeMutablePointer<GLuint>) -> Void = glGetnUniformuivKHR_L
+public func glGetObjectBufferfvATI(_ buffer:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetObjectBufferfvATI_P(buffer, pname, params)}
+public func glGetObjectBufferfvATI(buffer:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetObjectBufferfvATI_P(buffer, pname, params)}
+var glGetObjectBufferfvATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetObjectBufferfvATI_L
+public func glGetObjectBufferivATI(_ buffer:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetObjectBufferivATI_P(buffer, pname, params)}
+public func glGetObjectBufferivATI(buffer:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetObjectBufferivATI_P(buffer, pname, params)}
+var glGetObjectBufferivATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetObjectBufferivATI_L
+public func glGetObjectLabel(_ identifier:GLenum, _ name:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ label:UnsafeMutablePointer<GLchar>) {glGetObjectLabel_P(identifier, name, bufSize, length, label)}
+public func glGetObjectLabel(identifier:GLenum, name:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, label:UnsafeMutablePointer<GLchar>) {glGetObjectLabel_P(identifier, name, bufSize, length, label)}
+var glGetObjectLabel_P:@convention(c)(GLenum, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetObjectLabel_L
+public func glGetObjectLabelEXT(_ type:GLenum, _ object:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ label:UnsafeMutablePointer<GLchar>) {glGetObjectLabelEXT_P(type, object, bufSize, length, label)}
+public func glGetObjectLabelEXT(type:GLenum, object:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, label:UnsafeMutablePointer<GLchar>) {glGetObjectLabelEXT_P(type, object, bufSize, length, label)}
+var glGetObjectLabelEXT_P:@convention(c)(GLenum, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetObjectLabelEXT_L
+public func glGetObjectLabelKHR(_ identifier:GLenum, _ name:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ label:UnsafeMutablePointer<GLchar>) {glGetObjectLabelKHR_P(identifier, name, bufSize, length, label)}
+public func glGetObjectLabelKHR(identifier:GLenum, name:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, label:UnsafeMutablePointer<GLchar>) {glGetObjectLabelKHR_P(identifier, name, bufSize, length, label)}
+var glGetObjectLabelKHR_P:@convention(c)(GLenum, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetObjectLabelKHR_L
+public func glGetObjectParameterfvARB(_ obj:GLhandleARB, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetObjectParameterfvARB_P(obj, pname, params)}
+public func glGetObjectParameterfvARB(obj:GLhandleARB, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetObjectParameterfvARB_P(obj, pname, params)}
+var glGetObjectParameterfvARB_P:@convention(c)(GLhandleARB, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetObjectParameterfvARB_L
+public func glGetObjectParameterivAPPLE(_ objectType:GLenum, _ name:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetObjectParameterivAPPLE_P(objectType, name, pname, params)}
+public func glGetObjectParameterivAPPLE(objectType:GLenum, name:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetObjectParameterivAPPLE_P(objectType, name, pname, params)}
+var glGetObjectParameterivAPPLE_P:@convention(c)(GLenum, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetObjectParameterivAPPLE_L
+public func glGetObjectParameterivARB(_ obj:GLhandleARB, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetObjectParameterivARB_P(obj, pname, params)}
+public func glGetObjectParameterivARB(obj:GLhandleARB, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetObjectParameterivARB_P(obj, pname, params)}
+var glGetObjectParameterivARB_P:@convention(c)(GLhandleARB, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetObjectParameterivARB_L
+public func glGetObjectPtrLabel(_ ptr:UnsafeRawPointer, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ label:UnsafeMutablePointer<GLchar>) {glGetObjectPtrLabel_P(ptr, bufSize, length, label)}
+public func glGetObjectPtrLabel(ptr:UnsafeRawPointer, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, label:UnsafeMutablePointer<GLchar>) {glGetObjectPtrLabel_P(ptr, bufSize, length, label)}
+var glGetObjectPtrLabel_P:@convention(c)(UnsafeRawPointer, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetObjectPtrLabel_L
+public func glGetObjectPtrLabelKHR(_ ptr:UnsafeRawPointer, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ label:UnsafeMutablePointer<GLchar>) {glGetObjectPtrLabelKHR_P(ptr, bufSize, length, label)}
+public func glGetObjectPtrLabelKHR(ptr:UnsafeRawPointer, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, label:UnsafeMutablePointer<GLchar>) {glGetObjectPtrLabelKHR_P(ptr, bufSize, length, label)}
+var glGetObjectPtrLabelKHR_P:@convention(c)(UnsafeRawPointer, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetObjectPtrLabelKHR_L
+public func glGetOcclusionQueryivNV(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetOcclusionQueryivNV_P(id, pname, params)}
+public func glGetOcclusionQueryivNV(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetOcclusionQueryivNV_P(id, pname, params)}
+var glGetOcclusionQueryivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetOcclusionQueryivNV_L
+public func glGetOcclusionQueryuivNV(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetOcclusionQueryuivNV_P(id, pname, params)}
+public func glGetOcclusionQueryuivNV(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetOcclusionQueryuivNV_P(id, pname, params)}
+var glGetOcclusionQueryuivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetOcclusionQueryuivNV_L
+public func glGetPathColorGenfvNV(_ color:GLenum, _ pname:GLenum, _ value:UnsafeMutablePointer<GLfloat>) {glGetPathColorGenfvNV_P(color, pname, value)}
+public func glGetPathColorGenfvNV(color:GLenum, pname:GLenum, value:UnsafeMutablePointer<GLfloat>) {glGetPathColorGenfvNV_P(color, pname, value)}
+var glGetPathColorGenfvNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathColorGenfvNV_L
+public func glGetPathColorGenivNV(_ color:GLenum, _ pname:GLenum, _ value:UnsafeMutablePointer<GLint>) {glGetPathColorGenivNV_P(color, pname, value)}
+public func glGetPathColorGenivNV(color:GLenum, pname:GLenum, value:UnsafeMutablePointer<GLint>) {glGetPathColorGenivNV_P(color, pname, value)}
+var glGetPathColorGenivNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetPathColorGenivNV_L
+public func glGetPathCommandsNV(_ path:GLuint, _ commands:UnsafeMutablePointer<GLubyte>) {glGetPathCommandsNV_P(path, commands)}
+public func glGetPathCommandsNV(path:GLuint, commands:UnsafeMutablePointer<GLubyte>) {glGetPathCommandsNV_P(path, commands)}
+var glGetPathCommandsNV_P:@convention(c)(GLuint, UnsafeMutablePointer<GLubyte>) -> Void = glGetPathCommandsNV_L
+public func glGetPathCoordsNV(_ path:GLuint, _ coords:UnsafeMutablePointer<GLfloat>) {glGetPathCoordsNV_P(path, coords)}
+public func glGetPathCoordsNV(path:GLuint, coords:UnsafeMutablePointer<GLfloat>) {glGetPathCoordsNV_P(path, coords)}
+var glGetPathCoordsNV_P:@convention(c)(GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathCoordsNV_L
+public func glGetPathDashArrayNV(_ path:GLuint, _ dashArray:UnsafeMutablePointer<GLfloat>) {glGetPathDashArrayNV_P(path, dashArray)}
+public func glGetPathDashArrayNV(path:GLuint, dashArray:UnsafeMutablePointer<GLfloat>) {glGetPathDashArrayNV_P(path, dashArray)}
+var glGetPathDashArrayNV_P:@convention(c)(GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathDashArrayNV_L
+public func glGetPathLengthNV(_ path:GLuint, _ startSegment:GLsizei, _ numSegments:GLsizei) -> GLfloat {return glGetPathLengthNV_P(path, startSegment, numSegments)}
+public func glGetPathLengthNV(path:GLuint, startSegment:GLsizei, numSegments:GLsizei) -> GLfloat {return glGetPathLengthNV_P(path, startSegment, numSegments)}
+var glGetPathLengthNV_P:@convention(c)(GLuint, GLsizei, GLsizei) -> GLfloat = glGetPathLengthNV_L
+public func glGetPathMetricRangeNV(_ metricQueryMask:GLbitfield, _ firstPathName:GLuint, _ numPaths:GLsizei, _ stride:GLsizei, _ metrics:UnsafeMutablePointer<GLfloat>) {glGetPathMetricRangeNV_P(metricQueryMask, firstPathName, numPaths, stride, metrics)}
+public func glGetPathMetricRangeNV(metricQueryMask:GLbitfield, firstPathName:GLuint, numPaths:GLsizei, stride:GLsizei, metrics:UnsafeMutablePointer<GLfloat>) {glGetPathMetricRangeNV_P(metricQueryMask, firstPathName, numPaths, stride, metrics)}
+var glGetPathMetricRangeNV_P:@convention(c)(GLbitfield, GLuint, GLsizei, GLsizei, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathMetricRangeNV_L
+public func glGetPathMetricsNV(_ metricQueryMask:GLbitfield, _ numPaths:GLsizei, _ pathNameType:GLenum, _ paths:UnsafeRawPointer, _ pathBase:GLuint, _ stride:GLsizei, _ metrics:UnsafeMutablePointer<GLfloat>) {glGetPathMetricsNV_P(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, metrics)}
+public func glGetPathMetricsNV(metricQueryMask:GLbitfield, numPaths:GLsizei, pathNameType:GLenum, paths:UnsafeRawPointer, pathBase:GLuint, stride:GLsizei, metrics:UnsafeMutablePointer<GLfloat>) {glGetPathMetricsNV_P(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, metrics)}
+var glGetPathMetricsNV_P:@convention(c)(GLbitfield, GLsizei, GLenum, UnsafeRawPointer, GLuint, GLsizei, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathMetricsNV_L
+public func glGetPathParameterfvNV(_ path:GLuint, _ pname:GLenum, _ value:UnsafeMutablePointer<GLfloat>) {glGetPathParameterfvNV_P(path, pname, value)}
+public func glGetPathParameterfvNV(path:GLuint, pname:GLenum, value:UnsafeMutablePointer<GLfloat>) {glGetPathParameterfvNV_P(path, pname, value)}
+var glGetPathParameterfvNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathParameterfvNV_L
+public func glGetPathParameterivNV(_ path:GLuint, _ pname:GLenum, _ value:UnsafeMutablePointer<GLint>) {glGetPathParameterivNV_P(path, pname, value)}
+public func glGetPathParameterivNV(path:GLuint, pname:GLenum, value:UnsafeMutablePointer<GLint>) {glGetPathParameterivNV_P(path, pname, value)}
+var glGetPathParameterivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetPathParameterivNV_L
+public func glGetPathSpacingNV(_ pathListMode:GLenum, _ numPaths:GLsizei, _ pathNameType:GLenum, _ paths:UnsafeRawPointer, _ pathBase:GLuint, _ advanceScale:GLfloat, _ kerningScale:GLfloat, _ transformType:GLenum, _ returnedSpacing:UnsafeMutablePointer<GLfloat>) {glGetPathSpacingNV_P(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, returnedSpacing)}
+public func glGetPathSpacingNV(pathListMode:GLenum, numPaths:GLsizei, pathNameType:GLenum, paths:UnsafeRawPointer, pathBase:GLuint, advanceScale:GLfloat, kerningScale:GLfloat, transformType:GLenum, returnedSpacing:UnsafeMutablePointer<GLfloat>) {glGetPathSpacingNV_P(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, returnedSpacing)}
+var glGetPathSpacingNV_P:@convention(c)(GLenum, GLsizei, GLenum, UnsafeRawPointer, GLuint, GLfloat, GLfloat, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathSpacingNV_L
+public func glGetPathTexGenfvNV(_ texCoordSet:GLenum, _ pname:GLenum, _ value:UnsafeMutablePointer<GLfloat>) {glGetPathTexGenfvNV_P(texCoordSet, pname, value)}
+public func glGetPathTexGenfvNV(texCoordSet:GLenum, pname:GLenum, value:UnsafeMutablePointer<GLfloat>) {glGetPathTexGenfvNV_P(texCoordSet, pname, value)}
+var glGetPathTexGenfvNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPathTexGenfvNV_L
+public func glGetPathTexGenivNV(_ texCoordSet:GLenum, _ pname:GLenum, _ value:UnsafeMutablePointer<GLint>) {glGetPathTexGenivNV_P(texCoordSet, pname, value)}
+public func glGetPathTexGenivNV(texCoordSet:GLenum, pname:GLenum, value:UnsafeMutablePointer<GLint>) {glGetPathTexGenivNV_P(texCoordSet, pname, value)}
+var glGetPathTexGenivNV_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetPathTexGenivNV_L
+public func glGetPerfCounterInfoINTEL(_ queryId:GLuint, _ counterId:GLuint, _ counterNameLength:GLuint, _ counterName:UnsafeMutablePointer<GLchar>, _ counterDescLength:GLuint, _ counterDesc:UnsafeMutablePointer<GLchar>, _ counterOffset:UnsafeMutablePointer<GLuint>, _ counterDataSize:UnsafeMutablePointer<GLuint>, _ counterTypeEnum:UnsafeMutablePointer<GLuint>, _ counterDataTypeEnum:UnsafeMutablePointer<GLuint>, _ rawCounterMaxValue:UnsafeMutablePointer<GLuint64>) {glGetPerfCounterInfoINTEL_P(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue)}
+public func glGetPerfCounterInfoINTEL(queryId:GLuint, counterId:GLuint, counterNameLength:GLuint, counterName:UnsafeMutablePointer<GLchar>, counterDescLength:GLuint, counterDesc:UnsafeMutablePointer<GLchar>, counterOffset:UnsafeMutablePointer<GLuint>, counterDataSize:UnsafeMutablePointer<GLuint>, counterTypeEnum:UnsafeMutablePointer<GLuint>, counterDataTypeEnum:UnsafeMutablePointer<GLuint>, rawCounterMaxValue:UnsafeMutablePointer<GLuint64>) {glGetPerfCounterInfoINTEL_P(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue)}
+var glGetPerfCounterInfoINTEL_P:@convention(c)(GLuint, GLuint, GLuint, UnsafeMutablePointer<GLchar>, GLuint, UnsafeMutablePointer<GLchar>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint64>) -> Void = glGetPerfCounterInfoINTEL_L
+public func glGetPerfMonitorCounterDataAMD(_ monitor:GLuint, _ pname:GLenum, _ dataSize:GLsizei, _ data:UnsafeMutablePointer<GLuint>, _ bytesWritten:UnsafeMutablePointer<GLint>) {glGetPerfMonitorCounterDataAMD_P(monitor, pname, dataSize, data, bytesWritten)}
+public func glGetPerfMonitorCounterDataAMD(monitor:GLuint, pname:GLenum, dataSize:GLsizei, data:UnsafeMutablePointer<GLuint>, bytesWritten:UnsafeMutablePointer<GLint>) {glGetPerfMonitorCounterDataAMD_P(monitor, pname, dataSize, data, bytesWritten)}
+var glGetPerfMonitorCounterDataAMD_P:@convention(c)(GLuint, GLenum, GLsizei, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLint>) -> Void = glGetPerfMonitorCounterDataAMD_L
+public func glGetPerfMonitorCounterInfoAMD(_ group:GLuint, _ counter:GLuint, _ pname:GLenum, _ data:UnsafeMutableRawPointer) {glGetPerfMonitorCounterInfoAMD_P(group, counter, pname, data)}
+public func glGetPerfMonitorCounterInfoAMD(group:GLuint, counter:GLuint, pname:GLenum, data:UnsafeMutableRawPointer) {glGetPerfMonitorCounterInfoAMD_P(group, counter, pname, data)}
+var glGetPerfMonitorCounterInfoAMD_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutableRawPointer) -> Void = glGetPerfMonitorCounterInfoAMD_L
+public func glGetPerfMonitorCountersAMD(_ group:GLuint, _ numCounters:UnsafeMutablePointer<GLint>, _ maxActiveCounters:UnsafeMutablePointer<GLint>, _ counterSize:GLsizei, _ counters:UnsafeMutablePointer<GLuint>) {glGetPerfMonitorCountersAMD_P(group, numCounters, maxActiveCounters, counterSize, counters)}
+public func glGetPerfMonitorCountersAMD(group:GLuint, numCounters:UnsafeMutablePointer<GLint>, maxActiveCounters:UnsafeMutablePointer<GLint>, counterSize:GLsizei, counters:UnsafeMutablePointer<GLuint>) {glGetPerfMonitorCountersAMD_P(group, numCounters, maxActiveCounters, counterSize, counters)}
+var glGetPerfMonitorCountersAMD_P:@convention(c)(GLuint, UnsafeMutablePointer<GLint>, UnsafeMutablePointer<GLint>, GLsizei, UnsafeMutablePointer<GLuint>) -> Void = glGetPerfMonitorCountersAMD_L
+public func glGetPerfMonitorCounterStringAMD(_ group:GLuint, _ counter:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ counterString:UnsafeMutablePointer<GLchar>) {glGetPerfMonitorCounterStringAMD_P(group, counter, bufSize, length, counterString)}
+public func glGetPerfMonitorCounterStringAMD(group:GLuint, counter:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, counterString:UnsafeMutablePointer<GLchar>) {glGetPerfMonitorCounterStringAMD_P(group, counter, bufSize, length, counterString)}
+var glGetPerfMonitorCounterStringAMD_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetPerfMonitorCounterStringAMD_L
+public func glGetPerfMonitorGroupsAMD(_ numGroups:UnsafeMutablePointer<GLint>, _ groupsSize:GLsizei, _ groups:UnsafeMutablePointer<GLuint>) {glGetPerfMonitorGroupsAMD_P(numGroups, groupsSize, groups)}
+public func glGetPerfMonitorGroupsAMD(numGroups:UnsafeMutablePointer<GLint>, groupsSize:GLsizei, groups:UnsafeMutablePointer<GLuint>) {glGetPerfMonitorGroupsAMD_P(numGroups, groupsSize, groups)}
+var glGetPerfMonitorGroupsAMD_P:@convention(c)(UnsafeMutablePointer<GLint>, GLsizei, UnsafeMutablePointer<GLuint>) -> Void = glGetPerfMonitorGroupsAMD_L
+public func glGetPerfMonitorGroupStringAMD(_ group:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ groupString:UnsafeMutablePointer<GLchar>) {glGetPerfMonitorGroupStringAMD_P(group, bufSize, length, groupString)}
+public func glGetPerfMonitorGroupStringAMD(group:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, groupString:UnsafeMutablePointer<GLchar>) {glGetPerfMonitorGroupStringAMD_P(group, bufSize, length, groupString)}
+var glGetPerfMonitorGroupStringAMD_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetPerfMonitorGroupStringAMD_L
+public func glGetPerfQueryDataINTEL(_ queryHandle:GLuint, _ flags:GLuint, _ dataSize:GLsizei, _ data:UnsafeMutableRawPointer, _ bytesWritten:UnsafeMutablePointer<GLuint>) {glGetPerfQueryDataINTEL_P(queryHandle, flags, dataSize, data, bytesWritten)}
+public func glGetPerfQueryDataINTEL(queryHandle:GLuint, flags:GLuint, dataSize:GLsizei, data:UnsafeMutableRawPointer, bytesWritten:UnsafeMutablePointer<GLuint>) {glGetPerfQueryDataINTEL_P(queryHandle, flags, dataSize, data, bytesWritten)}
+var glGetPerfQueryDataINTEL_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutableRawPointer, UnsafeMutablePointer<GLuint>) -> Void = glGetPerfQueryDataINTEL_L
+public func glGetPerfQueryIdByNameINTEL(_ queryName:UnsafeMutablePointer<GLchar>, _ queryId:UnsafeMutablePointer<GLuint>) {glGetPerfQueryIdByNameINTEL_P(queryName, queryId)}
+public func glGetPerfQueryIdByNameINTEL(queryName:UnsafeMutablePointer<GLchar>, queryId:UnsafeMutablePointer<GLuint>) {glGetPerfQueryIdByNameINTEL_P(queryName, queryId)}
+var glGetPerfQueryIdByNameINTEL_P:@convention(c)(UnsafeMutablePointer<GLchar>, UnsafeMutablePointer<GLuint>) -> Void = glGetPerfQueryIdByNameINTEL_L
+public func glGetPerfQueryInfoINTEL(_ queryId:GLuint, _ queryNameLength:GLuint, _ queryName:UnsafeMutablePointer<GLchar>, _ dataSize:UnsafeMutablePointer<GLuint>, _ noCounters:UnsafeMutablePointer<GLuint>, _ noInstances:UnsafeMutablePointer<GLuint>, _ capsMask:UnsafeMutablePointer<GLuint>) {glGetPerfQueryInfoINTEL_P(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask)}
+public func glGetPerfQueryInfoINTEL(queryId:GLuint, queryNameLength:GLuint, queryName:UnsafeMutablePointer<GLchar>, dataSize:UnsafeMutablePointer<GLuint>, noCounters:UnsafeMutablePointer<GLuint>, noInstances:UnsafeMutablePointer<GLuint>, capsMask:UnsafeMutablePointer<GLuint>) {glGetPerfQueryInfoINTEL_P(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask)}
+var glGetPerfQueryInfoINTEL_P:@convention(c)(GLuint, GLuint, UnsafeMutablePointer<GLchar>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint>) -> Void = glGetPerfQueryInfoINTEL_L
+public func glGetPixelMapfv(_ map:GLenum, _ values:UnsafeMutablePointer<GLfloat>) {glGetPixelMapfv_P(map, values)}
+public func glGetPixelMapfv(map:GLenum, values:UnsafeMutablePointer<GLfloat>) {glGetPixelMapfv_P(map, values)}
+var glGetPixelMapfv_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPixelMapfv_L
+public func glGetPixelMapuiv(_ map:GLenum, _ values:UnsafeMutablePointer<GLuint>) {glGetPixelMapuiv_P(map, values)}
+public func glGetPixelMapuiv(map:GLenum, values:UnsafeMutablePointer<GLuint>) {glGetPixelMapuiv_P(map, values)}
+var glGetPixelMapuiv_P:@convention(c)(GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetPixelMapuiv_L
+public func glGetPixelMapusv(_ map:GLenum, _ values:UnsafeMutablePointer<GLushort>) {glGetPixelMapusv_P(map, values)}
+public func glGetPixelMapusv(map:GLenum, values:UnsafeMutablePointer<GLushort>) {glGetPixelMapusv_P(map, values)}
+var glGetPixelMapusv_P:@convention(c)(GLenum, UnsafeMutablePointer<GLushort>) -> Void = glGetPixelMapusv_L
+public func glGetPixelMapxv(_ map:GLenum, _ size:GLint, _ values:UnsafeMutablePointer<GLfixed>) {glGetPixelMapxv_P(map, size, values)}
+public func glGetPixelMapxv(map:GLenum, size:GLint, values:UnsafeMutablePointer<GLfixed>) {glGetPixelMapxv_P(map, size, values)}
+var glGetPixelMapxv_P:@convention(c)(GLenum, GLint, UnsafeMutablePointer<GLfixed>) -> Void = glGetPixelMapxv_L
+public func glGetPixelTexGenParameterfvSGIS(_ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetPixelTexGenParameterfvSGIS_P(pname, params)}
+public func glGetPixelTexGenParameterfvSGIS(pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetPixelTexGenParameterfvSGIS_P(pname, params)}
+var glGetPixelTexGenParameterfvSGIS_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPixelTexGenParameterfvSGIS_L
+public func glGetPixelTexGenParameterivSGIS(_ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetPixelTexGenParameterivSGIS_P(pname, params)}
+public func glGetPixelTexGenParameterivSGIS(pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetPixelTexGenParameterivSGIS_P(pname, params)}
+var glGetPixelTexGenParameterivSGIS_P:@convention(c)(GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetPixelTexGenParameterivSGIS_L
+public func glGetPixelTransformParameterfvEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetPixelTransformParameterfvEXT_P(target, pname, params)}
+public func glGetPixelTransformParameterfvEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetPixelTransformParameterfvEXT_P(target, pname, params)}
+var glGetPixelTransformParameterfvEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetPixelTransformParameterfvEXT_L
+public func glGetPixelTransformParameterivEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetPixelTransformParameterivEXT_P(target, pname, params)}
+public func glGetPixelTransformParameterivEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetPixelTransformParameterivEXT_P(target, pname, params)}
+var glGetPixelTransformParameterivEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetPixelTransformParameterivEXT_L
+public func glGetPointeri_vEXT(_ pname:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointeri_vEXT_P(pname, index, params)}
+public func glGetPointeri_vEXT(pname:GLenum, index:GLuint, params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointeri_vEXT_P(pname, index, params)}
+var glGetPointeri_vEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetPointeri_vEXT_L
+public func glGetPointerIndexedvEXT(_ target:GLenum, _ index:GLuint, _ data:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointerIndexedvEXT_P(target, index, data)}
+public func glGetPointerIndexedvEXT(target:GLenum, index:GLuint, data:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointerIndexedvEXT_P(target, index, data)}
+var glGetPointerIndexedvEXT_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetPointerIndexedvEXT_L
+public func glGetPointerv(_ pname:GLenum, _ params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointerv_P(pname, params)}
+public func glGetPointerv(pname:GLenum, params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointerv_P(pname, params)}
+var glGetPointerv_P:@convention(c)(GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetPointerv_L
+public func glGetPointervEXT(_ pname:GLenum, _ params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointervEXT_P(pname, params)}
+public func glGetPointervEXT(pname:GLenum, params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointervEXT_P(pname, params)}
+var glGetPointervEXT_P:@convention(c)(GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetPointervEXT_L
+public func glGetPointervKHR(_ pname:GLenum, _ params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointervKHR_P(pname, params)}
+public func glGetPointervKHR(pname:GLenum, params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetPointervKHR_P(pname, params)}
+var glGetPointervKHR_P:@convention(c)(GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetPointervKHR_L
+public func glGetPolygonStipple(_ mask:UnsafeMutablePointer<GLubyte>) {glGetPolygonStipple_P(mask)}
+public func glGetPolygonStipple(mask:UnsafeMutablePointer<GLubyte>) {glGetPolygonStipple_P(mask)}
+var glGetPolygonStipple_P:@convention(c)(UnsafeMutablePointer<GLubyte>) -> Void = glGetPolygonStipple_L
+public func glGetProgramBinary(_ program:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ binaryFormat:UnsafeMutablePointer<GLenum>, _ binary:UnsafeMutableRawPointer) {glGetProgramBinary_P(program, bufSize, length, binaryFormat, binary)}
+public func glGetProgramBinary(program:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, binaryFormat:UnsafeMutablePointer<GLenum>, binary:UnsafeMutableRawPointer) {glGetProgramBinary_P(program, bufSize, length, binaryFormat, binary)}
+var glGetProgramBinary_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLenum>, UnsafeMutableRawPointer) -> Void = glGetProgramBinary_L
+public func glGetProgramBinaryOES(_ program:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ binaryFormat:UnsafeMutablePointer<GLenum>, _ binary:UnsafeMutableRawPointer) {glGetProgramBinaryOES_P(program, bufSize, length, binaryFormat, binary)}
+public func glGetProgramBinaryOES(program:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, binaryFormat:UnsafeMutablePointer<GLenum>, binary:UnsafeMutableRawPointer) {glGetProgramBinaryOES_P(program, bufSize, length, binaryFormat, binary)}
+var glGetProgramBinaryOES_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLenum>, UnsafeMutableRawPointer) -> Void = glGetProgramBinaryOES_L
+public func glGetProgramEnvParameterdvARB(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLdouble>) {glGetProgramEnvParameterdvARB_P(target, index, params)}
+public func glGetProgramEnvParameterdvARB(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLdouble>) {glGetProgramEnvParameterdvARB_P(target, index, params)}
+var glGetProgramEnvParameterdvARB_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLdouble>) -> Void = glGetProgramEnvParameterdvARB_L
+public func glGetProgramEnvParameterfvARB(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLfloat>) {glGetProgramEnvParameterfvARB_P(target, index, params)}
+public func glGetProgramEnvParameterfvARB(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLfloat>) {glGetProgramEnvParameterfvARB_P(target, index, params)}
+var glGetProgramEnvParameterfvARB_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetProgramEnvParameterfvARB_L
+public func glGetProgramEnvParameterIivNV(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLint>) {glGetProgramEnvParameterIivNV_P(target, index, params)}
+public func glGetProgramEnvParameterIivNV(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLint>) {glGetProgramEnvParameterIivNV_P(target, index, params)}
+var glGetProgramEnvParameterIivNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetProgramEnvParameterIivNV_L
+public func glGetProgramEnvParameterIuivNV(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLuint>) {glGetProgramEnvParameterIuivNV_P(target, index, params)}
+public func glGetProgramEnvParameterIuivNV(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLuint>) {glGetProgramEnvParameterIuivNV_P(target, index, params)}
+var glGetProgramEnvParameterIuivNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLuint>) -> Void = glGetProgramEnvParameterIuivNV_L
+public func glGetProgramInfoLog(_ program:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramInfoLog_P(program, bufSize, length, infoLog)}
+public func glGetProgramInfoLog(program:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramInfoLog_P(program, bufSize, length, infoLog)}
+var glGetProgramInfoLog_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetProgramInfoLog_L
+public func glGetProgramInterfaceiv(_ program:GLuint, _ programInterface:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramInterfaceiv_P(program, programInterface, pname, params)}
+public func glGetProgramInterfaceiv(program:GLuint, programInterface:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramInterfaceiv_P(program, programInterface, pname, params)}
+var glGetProgramInterfaceiv_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramInterfaceiv_L
+public func glGetProgramiv(_ program:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramiv_P(program, pname, params)}
+public func glGetProgramiv(program:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramiv_P(program, pname, params)}
+var glGetProgramiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramiv_L
+public func glGetProgramivARB(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramivARB_P(target, pname, params)}
+public func glGetProgramivARB(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramivARB_P(target, pname, params)}
+var glGetProgramivARB_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramivARB_L
+public func glGetProgramivNV(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramivNV_P(id, pname, params)}
+public func glGetProgramivNV(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramivNV_P(id, pname, params)}
+var glGetProgramivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramivNV_L
+public func glGetProgramLocalParameterdvARB(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLdouble>) {glGetProgramLocalParameterdvARB_P(target, index, params)}
+public func glGetProgramLocalParameterdvARB(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLdouble>) {glGetProgramLocalParameterdvARB_P(target, index, params)}
+var glGetProgramLocalParameterdvARB_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLdouble>) -> Void = glGetProgramLocalParameterdvARB_L
+public func glGetProgramLocalParameterfvARB(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLfloat>) {glGetProgramLocalParameterfvARB_P(target, index, params)}
+public func glGetProgramLocalParameterfvARB(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLfloat>) {glGetProgramLocalParameterfvARB_P(target, index, params)}
+var glGetProgramLocalParameterfvARB_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLfloat>) -> Void = glGetProgramLocalParameterfvARB_L
+public func glGetProgramLocalParameterIivNV(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLint>) {glGetProgramLocalParameterIivNV_P(target, index, params)}
+public func glGetProgramLocalParameterIivNV(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLint>) {glGetProgramLocalParameterIivNV_P(target, index, params)}
+var glGetProgramLocalParameterIivNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetProgramLocalParameterIivNV_L
+public func glGetProgramLocalParameterIuivNV(_ target:GLenum, _ index:GLuint, _ params:UnsafeMutablePointer<GLuint>) {glGetProgramLocalParameterIuivNV_P(target, index, params)}
+public func glGetProgramLocalParameterIuivNV(target:GLenum, index:GLuint, params:UnsafeMutablePointer<GLuint>) {glGetProgramLocalParameterIuivNV_P(target, index, params)}
+var glGetProgramLocalParameterIuivNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLuint>) -> Void = glGetProgramLocalParameterIuivNV_L
+public func glGetProgramNamedParameterdvNV(_ id:GLuint, _ len:GLsizei, _ name:UnsafePointer<GLubyte>, _ params:UnsafeMutablePointer<GLdouble>) {glGetProgramNamedParameterdvNV_P(id, len, name, params)}
+public func glGetProgramNamedParameterdvNV(id:GLuint, len:GLsizei, name:UnsafePointer<GLubyte>, params:UnsafeMutablePointer<GLdouble>) {glGetProgramNamedParameterdvNV_P(id, len, name, params)}
+var glGetProgramNamedParameterdvNV_P:@convention(c)(GLuint, GLsizei, UnsafePointer<GLubyte>, UnsafeMutablePointer<GLdouble>) -> Void = glGetProgramNamedParameterdvNV_L
+public func glGetProgramNamedParameterfvNV(_ id:GLuint, _ len:GLsizei, _ name:UnsafePointer<GLubyte>, _ params:UnsafeMutablePointer<GLfloat>) {glGetProgramNamedParameterfvNV_P(id, len, name, params)}
+public func glGetProgramNamedParameterfvNV(id:GLuint, len:GLsizei, name:UnsafePointer<GLubyte>, params:UnsafeMutablePointer<GLfloat>) {glGetProgramNamedParameterfvNV_P(id, len, name, params)}
+var glGetProgramNamedParameterfvNV_P:@convention(c)(GLuint, GLsizei, UnsafePointer<GLubyte>, UnsafeMutablePointer<GLfloat>) -> Void = glGetProgramNamedParameterfvNV_L
+public func glGetProgramParameterdvNV(_ target:GLenum, _ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetProgramParameterdvNV_P(target, index, pname, params)}
+public func glGetProgramParameterdvNV(target:GLenum, index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetProgramParameterdvNV_P(target, index, pname, params)}
+var glGetProgramParameterdvNV_P:@convention(c)(GLenum, GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetProgramParameterdvNV_L
+public func glGetProgramParameterfvNV(_ target:GLenum, _ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetProgramParameterfvNV_P(target, index, pname, params)}
+public func glGetProgramParameterfvNV(target:GLenum, index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetProgramParameterfvNV_P(target, index, pname, params)}
+var glGetProgramParameterfvNV_P:@convention(c)(GLenum, GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetProgramParameterfvNV_L
+public func glGetProgramPipelineInfoLog(_ pipeline:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramPipelineInfoLog_P(pipeline, bufSize, length, infoLog)}
+public func glGetProgramPipelineInfoLog(pipeline:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramPipelineInfoLog_P(pipeline, bufSize, length, infoLog)}
+var glGetProgramPipelineInfoLog_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetProgramPipelineInfoLog_L
+public func glGetProgramPipelineInfoLogEXT(_ pipeline:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramPipelineInfoLogEXT_P(pipeline, bufSize, length, infoLog)}
+public func glGetProgramPipelineInfoLogEXT(pipeline:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, infoLog:UnsafeMutablePointer<GLchar>) {glGetProgramPipelineInfoLogEXT_P(pipeline, bufSize, length, infoLog)}
+var glGetProgramPipelineInfoLogEXT_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetProgramPipelineInfoLogEXT_L
+public func glGetProgramPipelineiv(_ pipeline:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramPipelineiv_P(pipeline, pname, params)}
+public func glGetProgramPipelineiv(pipeline:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramPipelineiv_P(pipeline, pname, params)}
+var glGetProgramPipelineiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramPipelineiv_L
+public func glGetProgramPipelineivEXT(_ pipeline:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetProgramPipelineivEXT_P(pipeline, pname, params)}
+public func glGetProgramPipelineivEXT(pipeline:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetProgramPipelineivEXT_P(pipeline, pname, params)}
+var glGetProgramPipelineivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramPipelineivEXT_L
+public func glGetProgramResourcefvNV(_ program:GLuint, _ programInterface:GLenum, _ index:GLuint, _ propCount:GLsizei, _ props:UnsafePointer<GLenum>, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ params:UnsafeMutablePointer<GLfloat>) {glGetProgramResourcefvNV_P(program, programInterface, index, propCount, props, bufSize, length, params)}
+public func glGetProgramResourcefvNV(program:GLuint, programInterface:GLenum, index:GLuint, propCount:GLsizei, props:UnsafePointer<GLenum>, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, params:UnsafeMutablePointer<GLfloat>) {glGetProgramResourcefvNV_P(program, programInterface, index, propCount, props, bufSize, length, params)}
+var glGetProgramResourcefvNV_P:@convention(c)(GLuint, GLenum, GLuint, GLsizei, UnsafePointer<GLenum>, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLfloat>) -> Void = glGetProgramResourcefvNV_L
+public func glGetProgramResourceIndex(_ program:GLuint, _ programInterface:GLenum, _ name:UnsafePointer<GLchar>) -> GLuint {return glGetProgramResourceIndex_P(program, programInterface, name)}
+public func glGetProgramResourceIndex(program:GLuint, programInterface:GLenum, name:UnsafePointer<GLchar>) -> GLuint {return glGetProgramResourceIndex_P(program, programInterface, name)}
+var glGetProgramResourceIndex_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLuint = glGetProgramResourceIndex_L
+public func glGetProgramResourceiv(_ program:GLuint, _ programInterface:GLenum, _ index:GLuint, _ propCount:GLsizei, _ props:UnsafePointer<GLenum>, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ params:UnsafeMutablePointer<GLint>) {glGetProgramResourceiv_P(program, programInterface, index, propCount, props, bufSize, length, params)}
+public func glGetProgramResourceiv(program:GLuint, programInterface:GLenum, index:GLuint, propCount:GLsizei, props:UnsafePointer<GLenum>, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, params:UnsafeMutablePointer<GLint>) {glGetProgramResourceiv_P(program, programInterface, index, propCount, props, bufSize, length, params)}
+var glGetProgramResourceiv_P:@convention(c)(GLuint, GLenum, GLuint, GLsizei, UnsafePointer<GLenum>, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLint>) -> Void = glGetProgramResourceiv_L
+public func glGetProgramResourceLocation(_ program:GLuint, _ programInterface:GLenum, _ name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocation_P(program, programInterface, name)}
+public func glGetProgramResourceLocation(program:GLuint, programInterface:GLenum, name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocation_P(program, programInterface, name)}
+var glGetProgramResourceLocation_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLint = glGetProgramResourceLocation_L
+public func glGetProgramResourceLocationIndex(_ program:GLuint, _ programInterface:GLenum, _ name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocationIndex_P(program, programInterface, name)}
+public func glGetProgramResourceLocationIndex(program:GLuint, programInterface:GLenum, name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocationIndex_P(program, programInterface, name)}
+var glGetProgramResourceLocationIndex_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLint = glGetProgramResourceLocationIndex_L
+public func glGetProgramResourceLocationIndexEXT(_ program:GLuint, _ programInterface:GLenum, _ name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocationIndexEXT_P(program, programInterface, name)}
+public func glGetProgramResourceLocationIndexEXT(program:GLuint, programInterface:GLenum, name:UnsafePointer<GLchar>) -> GLint {return glGetProgramResourceLocationIndexEXT_P(program, programInterface, name)}
+var glGetProgramResourceLocationIndexEXT_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLint = glGetProgramResourceLocationIndexEXT_L
+public func glGetProgramResourceName(_ program:GLuint, _ programInterface:GLenum, _ index:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ name:UnsafeMutablePointer<GLchar>) {glGetProgramResourceName_P(program, programInterface, index, bufSize, length, name)}
+public func glGetProgramResourceName(program:GLuint, programInterface:GLenum, index:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, name:UnsafeMutablePointer<GLchar>) {glGetProgramResourceName_P(program, programInterface, index, bufSize, length, name)}
+var glGetProgramResourceName_P:@convention(c)(GLuint, GLenum, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetProgramResourceName_L
+public func glGetProgramStageiv(_ program:GLuint, _ shadertype:GLenum, _ pname:GLenum, _ values:UnsafeMutablePointer<GLint>) {glGetProgramStageiv_P(program, shadertype, pname, values)}
+public func glGetProgramStageiv(program:GLuint, shadertype:GLenum, pname:GLenum, values:UnsafeMutablePointer<GLint>) {glGetProgramStageiv_P(program, shadertype, pname, values)}
+var glGetProgramStageiv_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetProgramStageiv_L
+public func glGetProgramStringARB(_ target:GLenum, _ pname:GLenum, _ string:UnsafeMutableRawPointer) {glGetProgramStringARB_P(target, pname, string)}
+public func glGetProgramStringARB(target:GLenum, pname:GLenum, string:UnsafeMutableRawPointer) {glGetProgramStringARB_P(target, pname, string)}
+var glGetProgramStringARB_P:@convention(c)(GLenum, GLenum, UnsafeMutableRawPointer) -> Void = glGetProgramStringARB_L
+public func glGetProgramStringNV(_ id:GLuint, _ pname:GLenum, _ program:UnsafeMutablePointer<GLubyte>) {glGetProgramStringNV_P(id, pname, program)}
+public func glGetProgramStringNV(id:GLuint, pname:GLenum, program:UnsafeMutablePointer<GLubyte>) {glGetProgramStringNV_P(id, pname, program)}
+var glGetProgramStringNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLubyte>) -> Void = glGetProgramStringNV_L
+public func glGetProgramSubroutineParameteruivNV(_ target:GLenum, _ index:GLuint, _ param:UnsafeMutablePointer<GLuint>) {glGetProgramSubroutineParameteruivNV_P(target, index, param)}
+public func glGetProgramSubroutineParameteruivNV(target:GLenum, index:GLuint, param:UnsafeMutablePointer<GLuint>) {glGetProgramSubroutineParameteruivNV_P(target, index, param)}
+var glGetProgramSubroutineParameteruivNV_P:@convention(c)(GLenum, GLuint, UnsafeMutablePointer<GLuint>) -> Void = glGetProgramSubroutineParameteruivNV_L
+public func glGetQueryBufferObjecti64v(_ id:GLuint, _ buffer:GLuint, _ pname:GLenum, _ offset:GLintptr) {glGetQueryBufferObjecti64v_P(id, buffer, pname, offset)}
+public func glGetQueryBufferObjecti64v(id:GLuint, buffer:GLuint, pname:GLenum, offset:GLintptr) {glGetQueryBufferObjecti64v_P(id, buffer, pname, offset)}
+var glGetQueryBufferObjecti64v_P:@convention(c)(GLuint, GLuint, GLenum, GLintptr) -> Void = glGetQueryBufferObjecti64v_L
+public func glGetQueryBufferObjectiv(_ id:GLuint, _ buffer:GLuint, _ pname:GLenum, _ offset:GLintptr) {glGetQueryBufferObjectiv_P(id, buffer, pname, offset)}
+public func glGetQueryBufferObjectiv(id:GLuint, buffer:GLuint, pname:GLenum, offset:GLintptr) {glGetQueryBufferObjectiv_P(id, buffer, pname, offset)}
+var glGetQueryBufferObjectiv_P:@convention(c)(GLuint, GLuint, GLenum, GLintptr) -> Void = glGetQueryBufferObjectiv_L
+public func glGetQueryBufferObjectui64v(_ id:GLuint, _ buffer:GLuint, _ pname:GLenum, _ offset:GLintptr) {glGetQueryBufferObjectui64v_P(id, buffer, pname, offset)}
+public func glGetQueryBufferObjectui64v(id:GLuint, buffer:GLuint, pname:GLenum, offset:GLintptr) {glGetQueryBufferObjectui64v_P(id, buffer, pname, offset)}
+var glGetQueryBufferObjectui64v_P:@convention(c)(GLuint, GLuint, GLenum, GLintptr) -> Void = glGetQueryBufferObjectui64v_L
+public func glGetQueryBufferObjectuiv(_ id:GLuint, _ buffer:GLuint, _ pname:GLenum, _ offset:GLintptr) {glGetQueryBufferObjectuiv_P(id, buffer, pname, offset)}
+public func glGetQueryBufferObjectuiv(id:GLuint, buffer:GLuint, pname:GLenum, offset:GLintptr) {glGetQueryBufferObjectuiv_P(id, buffer, pname, offset)}
+var glGetQueryBufferObjectuiv_P:@convention(c)(GLuint, GLuint, GLenum, GLintptr) -> Void = glGetQueryBufferObjectuiv_L
+public func glGetQueryIndexediv(_ target:GLenum, _ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryIndexediv_P(target, index, pname, params)}
+public func glGetQueryIndexediv(target:GLenum, index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryIndexediv_P(target, index, pname, params)}
+var glGetQueryIndexediv_P:@convention(c)(GLenum, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryIndexediv_L
+public func glGetQueryiv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryiv_P(target, pname, params)}
+public func glGetQueryiv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryiv_P(target, pname, params)}
+var glGetQueryiv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryiv_L
+public func glGetQueryivARB(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryivARB_P(target, pname, params)}
+public func glGetQueryivARB(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryivARB_P(target, pname, params)}
+var glGetQueryivARB_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryivARB_L
+public func glGetQueryivEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryivEXT_P(target, pname, params)}
+public func glGetQueryivEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryivEXT_P(target, pname, params)}
+var glGetQueryivEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryivEXT_L
+public func glGetQueryObjecti64v(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint64>) {glGetQueryObjecti64v_P(id, pname, params)}
+public func glGetQueryObjecti64v(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint64>) {glGetQueryObjecti64v_P(id, pname, params)}
+var glGetQueryObjecti64v_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint64>) -> Void = glGetQueryObjecti64v_L
+public func glGetQueryObjecti64vEXT(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint64>) {glGetQueryObjecti64vEXT_P(id, pname, params)}
+public func glGetQueryObjecti64vEXT(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint64>) {glGetQueryObjecti64vEXT_P(id, pname, params)}
+var glGetQueryObjecti64vEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint64>) -> Void = glGetQueryObjecti64vEXT_L
+public func glGetQueryObjectiv(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryObjectiv_P(id, pname, params)}
+public func glGetQueryObjectiv(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryObjectiv_P(id, pname, params)}
+var glGetQueryObjectiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryObjectiv_L
+public func glGetQueryObjectivARB(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryObjectivARB_P(id, pname, params)}
+public func glGetQueryObjectivARB(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryObjectivARB_P(id, pname, params)}
+var glGetQueryObjectivARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryObjectivARB_L
+public func glGetQueryObjectivEXT(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetQueryObjectivEXT_P(id, pname, params)}
+public func glGetQueryObjectivEXT(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetQueryObjectivEXT_P(id, pname, params)}
+var glGetQueryObjectivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetQueryObjectivEXT_L
+public func glGetQueryObjectui64v(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint64>) {glGetQueryObjectui64v_P(id, pname, params)}
+public func glGetQueryObjectui64v(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint64>) {glGetQueryObjectui64v_P(id, pname, params)}
+var glGetQueryObjectui64v_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint64>) -> Void = glGetQueryObjectui64v_L
+public func glGetQueryObjectui64vEXT(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint64>) {glGetQueryObjectui64vEXT_P(id, pname, params)}
+public func glGetQueryObjectui64vEXT(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint64>) {glGetQueryObjectui64vEXT_P(id, pname, params)}
+var glGetQueryObjectui64vEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint64>) -> Void = glGetQueryObjectui64vEXT_L
+public func glGetQueryObjectuiv(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuiv_P(id, pname, params)}
+public func glGetQueryObjectuiv(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuiv_P(id, pname, params)}
+var glGetQueryObjectuiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetQueryObjectuiv_L
+public func glGetQueryObjectuivARB(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuivARB_P(id, pname, params)}
+public func glGetQueryObjectuivARB(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuivARB_P(id, pname, params)}
+var glGetQueryObjectuivARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetQueryObjectuivARB_L
+public func glGetQueryObjectuivEXT(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuivEXT_P(id, pname, params)}
+public func glGetQueryObjectuivEXT(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetQueryObjectuivEXT_P(id, pname, params)}
+var glGetQueryObjectuivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetQueryObjectuivEXT_L
+public func glGetRenderbufferParameteriv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameteriv_P(target, pname, params)}
+public func glGetRenderbufferParameteriv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameteriv_P(target, pname, params)}
+var glGetRenderbufferParameteriv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetRenderbufferParameteriv_L
+public func glGetRenderbufferParameterivEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameterivEXT_P(target, pname, params)}
+public func glGetRenderbufferParameterivEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameterivEXT_P(target, pname, params)}
+var glGetRenderbufferParameterivEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetRenderbufferParameterivEXT_L
+public func glGetRenderbufferParameterivOES(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameterivOES_P(target, pname, params)}
+public func glGetRenderbufferParameterivOES(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetRenderbufferParameterivOES_P(target, pname, params)}
+var glGetRenderbufferParameterivOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetRenderbufferParameterivOES_L
+public func glGetSamplerParameterfv(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetSamplerParameterfv_P(sampler, pname, params)}
+public func glGetSamplerParameterfv(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetSamplerParameterfv_P(sampler, pname, params)}
+var glGetSamplerParameterfv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetSamplerParameterfv_L
+public func glGetSamplerParameterIiv(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIiv_P(sampler, pname, params)}
+public func glGetSamplerParameterIiv(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIiv_P(sampler, pname, params)}
+var glGetSamplerParameterIiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetSamplerParameterIiv_L
+public func glGetSamplerParameterIivEXT(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIivEXT_P(sampler, pname, params)}
+public func glGetSamplerParameterIivEXT(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIivEXT_P(sampler, pname, params)}
+var glGetSamplerParameterIivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetSamplerParameterIivEXT_L
+public func glGetSamplerParameterIivOES(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIivOES_P(sampler, pname, params)}
+public func glGetSamplerParameterIivOES(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetSamplerParameterIivOES_P(sampler, pname, params)}
+var glGetSamplerParameterIivOES_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetSamplerParameterIivOES_L
+public func glGetSamplerParameterIuiv(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuiv_P(sampler, pname, params)}
+public func glGetSamplerParameterIuiv(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuiv_P(sampler, pname, params)}
+var glGetSamplerParameterIuiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetSamplerParameterIuiv_L
+public func glGetSamplerParameterIuivEXT(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuivEXT_P(sampler, pname, params)}
+public func glGetSamplerParameterIuivEXT(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuivEXT_P(sampler, pname, params)}
+var glGetSamplerParameterIuivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetSamplerParameterIuivEXT_L
+public func glGetSamplerParameterIuivOES(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuivOES_P(sampler, pname, params)}
+public func glGetSamplerParameterIuivOES(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetSamplerParameterIuivOES_P(sampler, pname, params)}
+var glGetSamplerParameterIuivOES_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetSamplerParameterIuivOES_L
+public func glGetSamplerParameteriv(_ sampler:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetSamplerParameteriv_P(sampler, pname, params)}
+public func glGetSamplerParameteriv(sampler:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetSamplerParameteriv_P(sampler, pname, params)}
+var glGetSamplerParameteriv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetSamplerParameteriv_L
+public func glGetSeparableFilter(_ target:GLenum, _ format:GLenum, _ type:GLenum, _ row:UnsafeMutableRawPointer, _ column:UnsafeMutableRawPointer, _ span:UnsafeMutableRawPointer) {glGetSeparableFilter_P(target, format, type, row, column, span)}
+public func glGetSeparableFilter(target:GLenum, format:GLenum, type:GLenum, row:UnsafeMutableRawPointer, column:UnsafeMutableRawPointer, span:UnsafeMutableRawPointer) {glGetSeparableFilter_P(target, format, type, row, column, span)}
+var glGetSeparableFilter_P:@convention(c)(GLenum, GLenum, GLenum, UnsafeMutableRawPointer, UnsafeMutableRawPointer, UnsafeMutableRawPointer) -> Void = glGetSeparableFilter_L
+public func glGetSeparableFilterEXT(_ target:GLenum, _ format:GLenum, _ type:GLenum, _ row:UnsafeMutableRawPointer, _ column:UnsafeMutableRawPointer, _ span:UnsafeMutableRawPointer) {glGetSeparableFilterEXT_P(target, format, type, row, column, span)}
+public func glGetSeparableFilterEXT(target:GLenum, format:GLenum, type:GLenum, row:UnsafeMutableRawPointer, column:UnsafeMutableRawPointer, span:UnsafeMutableRawPointer) {glGetSeparableFilterEXT_P(target, format, type, row, column, span)}
+var glGetSeparableFilterEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafeMutableRawPointer, UnsafeMutableRawPointer, UnsafeMutableRawPointer) -> Void = glGetSeparableFilterEXT_L
+public func glGetShaderInfoLog(_ shader:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ infoLog:UnsafeMutablePointer<GLchar>) {glGetShaderInfoLog_P(shader, bufSize, length, infoLog)}
+public func glGetShaderInfoLog(shader:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, infoLog:UnsafeMutablePointer<GLchar>) {glGetShaderInfoLog_P(shader, bufSize, length, infoLog)}
+var glGetShaderInfoLog_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetShaderInfoLog_L
+public func glGetShaderiv(_ shader:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetShaderiv_P(shader, pname, params)}
+public func glGetShaderiv(shader:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetShaderiv_P(shader, pname, params)}
+var glGetShaderiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetShaderiv_L
+public func glGetShaderPrecisionFormat(_ shadertype:GLenum, _ precisiontype:GLenum, _ range:UnsafeMutablePointer<GLint>, _ precision:UnsafeMutablePointer<GLint>) {glGetShaderPrecisionFormat_P(shadertype, precisiontype, range, precision)}
+public func glGetShaderPrecisionFormat(shadertype:GLenum, precisiontype:GLenum, range:UnsafeMutablePointer<GLint>, precision:UnsafeMutablePointer<GLint>) {glGetShaderPrecisionFormat_P(shadertype, precisiontype, range, precision)}
+var glGetShaderPrecisionFormat_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>, UnsafeMutablePointer<GLint>) -> Void = glGetShaderPrecisionFormat_L
+public func glGetShaderSource(_ shader:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ source:UnsafeMutablePointer<GLchar>) {glGetShaderSource_P(shader, bufSize, length, source)}
+public func glGetShaderSource(shader:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, source:UnsafeMutablePointer<GLchar>) {glGetShaderSource_P(shader, bufSize, length, source)}
+var glGetShaderSource_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetShaderSource_L
+public func glGetShaderSourceARB(_ obj:GLhandleARB, _ maxLength:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ source:UnsafeMutablePointer<GLcharARB>) {glGetShaderSourceARB_P(obj, maxLength, length, source)}
+public func glGetShaderSourceARB(obj:GLhandleARB, maxLength:GLsizei, length:UnsafeMutablePointer<GLsizei>, source:UnsafeMutablePointer<GLcharARB>) {glGetShaderSourceARB_P(obj, maxLength, length, source)}
+var glGetShaderSourceARB_P:@convention(c)(GLhandleARB, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLcharARB>) -> Void = glGetShaderSourceARB_L
+public func glGetSharpenTexFuncSGIS(_ target:GLenum, _ points:UnsafeMutablePointer<GLfloat>) {glGetSharpenTexFuncSGIS_P(target, points)}
+public func glGetSharpenTexFuncSGIS(target:GLenum, points:UnsafeMutablePointer<GLfloat>) {glGetSharpenTexFuncSGIS_P(target, points)}
+var glGetSharpenTexFuncSGIS_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetSharpenTexFuncSGIS_L
+public func glGetStageIndexNV(_ shadertype:GLenum) -> GLushort {return glGetStageIndexNV_P(shadertype)}
+public func glGetStageIndexNV(shadertype:GLenum) -> GLushort {return glGetStageIndexNV_P(shadertype)}
+var glGetStageIndexNV_P:@convention(c)(GLenum) -> GLushort = glGetStageIndexNV_L
+public func glGetString(_ name:GLenum) -> UnsafePointer<GLubyte> {return glGetString_P(name)}
+public func glGetString(name:GLenum) -> UnsafePointer<GLubyte> {return glGetString_P(name)}
+var glGetString_P:@convention(c)(GLenum) -> UnsafePointer<GLubyte> = glGetString_L
+public func glGetStringi(_ name:GLenum, _ index:GLuint) -> UnsafePointer<GLubyte> {return glGetStringi_P(name, index)}
+public func glGetStringi(name:GLenum, index:GLuint) -> UnsafePointer<GLubyte> {return glGetStringi_P(name, index)}
+var glGetStringi_P:@convention(c)(GLenum, GLuint) -> UnsafePointer<GLubyte> = glGetStringi_L
+public func glGetSubroutineIndex(_ program:GLuint, _ shadertype:GLenum, _ name:UnsafePointer<GLchar>) -> GLuint {return glGetSubroutineIndex_P(program, shadertype, name)}
+public func glGetSubroutineIndex(program:GLuint, shadertype:GLenum, name:UnsafePointer<GLchar>) -> GLuint {return glGetSubroutineIndex_P(program, shadertype, name)}
+var glGetSubroutineIndex_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLuint = glGetSubroutineIndex_L
+public func glGetSubroutineUniformLocation(_ program:GLuint, _ shadertype:GLenum, _ name:UnsafePointer<GLchar>) -> GLint {return glGetSubroutineUniformLocation_P(program, shadertype, name)}
+public func glGetSubroutineUniformLocation(program:GLuint, shadertype:GLenum, name:UnsafePointer<GLchar>) -> GLint {return glGetSubroutineUniformLocation_P(program, shadertype, name)}
+var glGetSubroutineUniformLocation_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLchar>) -> GLint = glGetSubroutineUniformLocation_L
+public func glGetSynciv(_ sync:GLsync, _ pname:GLenum, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ values:UnsafeMutablePointer<GLint>) {glGetSynciv_P(sync, pname, bufSize, length, values)}
+public func glGetSynciv(sync:GLsync, pname:GLenum, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, values:UnsafeMutablePointer<GLint>) {glGetSynciv_P(sync, pname, bufSize, length, values)}
+var glGetSynciv_P:@convention(c)(GLsync, GLenum, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLint>) -> Void = glGetSynciv_L
+public func glGetSyncivAPPLE(_ sync:GLsync, _ pname:GLenum, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ values:UnsafeMutablePointer<GLint>) {glGetSyncivAPPLE_P(sync, pname, bufSize, length, values)}
+public func glGetSyncivAPPLE(sync:GLsync, pname:GLenum, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, values:UnsafeMutablePointer<GLint>) {glGetSyncivAPPLE_P(sync, pname, bufSize, length, values)}
+var glGetSyncivAPPLE_P:@convention(c)(GLsync, GLenum, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLint>) -> Void = glGetSyncivAPPLE_L
+public func glGetTexBumpParameterfvATI(_ pname:GLenum, _ param:UnsafeMutablePointer<GLfloat>) {glGetTexBumpParameterfvATI_P(pname, param)}
+public func glGetTexBumpParameterfvATI(pname:GLenum, param:UnsafeMutablePointer<GLfloat>) {glGetTexBumpParameterfvATI_P(pname, param)}
+var glGetTexBumpParameterfvATI_P:@convention(c)(GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexBumpParameterfvATI_L
+public func glGetTexBumpParameterivATI(_ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetTexBumpParameterivATI_P(pname, param)}
+public func glGetTexBumpParameterivATI(pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetTexBumpParameterivATI_P(pname, param)}
+var glGetTexBumpParameterivATI_P:@convention(c)(GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexBumpParameterivATI_L
+public func glGetTexEnvfv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTexEnvfv_P(target, pname, params)}
+public func glGetTexEnvfv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTexEnvfv_P(target, pname, params)}
+var glGetTexEnvfv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexEnvfv_L
+public func glGetTexEnviv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexEnviv_P(target, pname, params)}
+public func glGetTexEnviv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexEnviv_P(target, pname, params)}
+var glGetTexEnviv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexEnviv_L
+public func glGetTexEnvxv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexEnvxv_P(target, pname, params)}
+public func glGetTexEnvxv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexEnvxv_P(target, pname, params)}
+var glGetTexEnvxv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexEnvxv_L
+public func glGetTexEnvxvOES(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexEnvxvOES_P(target, pname, params)}
+public func glGetTexEnvxvOES(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexEnvxvOES_P(target, pname, params)}
+var glGetTexEnvxvOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexEnvxvOES_L
+public func glGetTexFilterFuncSGIS(_ target:GLenum, _ filter:GLenum, _ weights:UnsafeMutablePointer<GLfloat>) {glGetTexFilterFuncSGIS_P(target, filter, weights)}
+public func glGetTexFilterFuncSGIS(target:GLenum, filter:GLenum, weights:UnsafeMutablePointer<GLfloat>) {glGetTexFilterFuncSGIS_P(target, filter, weights)}
+var glGetTexFilterFuncSGIS_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexFilterFuncSGIS_L
+public func glGetTexGendv(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetTexGendv_P(coord, pname, params)}
+public func glGetTexGendv(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetTexGendv_P(coord, pname, params)}
+var glGetTexGendv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetTexGendv_L
+public func glGetTexGenfv(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTexGenfv_P(coord, pname, params)}
+public func glGetTexGenfv(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTexGenfv_P(coord, pname, params)}
+var glGetTexGenfv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexGenfv_L
+public func glGetTexGenfvOES(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTexGenfvOES_P(coord, pname, params)}
+public func glGetTexGenfvOES(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTexGenfvOES_P(coord, pname, params)}
+var glGetTexGenfvOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexGenfvOES_L
+public func glGetTexGeniv(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexGeniv_P(coord, pname, params)}
+public func glGetTexGeniv(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexGeniv_P(coord, pname, params)}
+var glGetTexGeniv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexGeniv_L
+public func glGetTexGenivOES(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexGenivOES_P(coord, pname, params)}
+public func glGetTexGenivOES(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexGenivOES_P(coord, pname, params)}
+var glGetTexGenivOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexGenivOES_L
+public func glGetTexGenxvOES(_ coord:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexGenxvOES_P(coord, pname, params)}
+public func glGetTexGenxvOES(coord:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexGenxvOES_P(coord, pname, params)}
+var glGetTexGenxvOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexGenxvOES_L
+public func glGetTexImage(_ target:GLenum, _ level:GLint, _ format:GLenum, _ type:GLenum, _ pixels:UnsafeMutableRawPointer) {glGetTexImage_P(target, level, format, type, pixels)}
+public func glGetTexImage(target:GLenum, level:GLint, format:GLenum, type:GLenum, pixels:UnsafeMutableRawPointer) {glGetTexImage_P(target, level, format, type, pixels)}
+var glGetTexImage_P:@convention(c)(GLenum, GLint, GLenum, GLenum, UnsafeMutableRawPointer) -> Void = glGetTexImage_L
+public func glGetTexLevelParameterfv(_ target:GLenum, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTexLevelParameterfv_P(target, level, pname, params)}
+public func glGetTexLevelParameterfv(target:GLenum, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTexLevelParameterfv_P(target, level, pname, params)}
+var glGetTexLevelParameterfv_P:@convention(c)(GLenum, GLint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexLevelParameterfv_L
+public func glGetTexLevelParameteriv(_ target:GLenum, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexLevelParameteriv_P(target, level, pname, params)}
+public func glGetTexLevelParameteriv(target:GLenum, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexLevelParameteriv_P(target, level, pname, params)}
+var glGetTexLevelParameteriv_P:@convention(c)(GLenum, GLint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexLevelParameteriv_L
+public func glGetTexLevelParameterxvOES(_ target:GLenum, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexLevelParameterxvOES_P(target, level, pname, params)}
+public func glGetTexLevelParameterxvOES(target:GLenum, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexLevelParameterxvOES_P(target, level, pname, params)}
+var glGetTexLevelParameterxvOES_P:@convention(c)(GLenum, GLint, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexLevelParameterxvOES_L
+public func glGetTexParameterfv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTexParameterfv_P(target, pname, params)}
+public func glGetTexParameterfv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTexParameterfv_P(target, pname, params)}
+var glGetTexParameterfv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTexParameterfv_L
+public func glGetTexParameterIiv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexParameterIiv_P(target, pname, params)}
+public func glGetTexParameterIiv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexParameterIiv_P(target, pname, params)}
+var glGetTexParameterIiv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexParameterIiv_L
+public func glGetTexParameterIivEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexParameterIivEXT_P(target, pname, params)}
+public func glGetTexParameterIivEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexParameterIivEXT_P(target, pname, params)}
+var glGetTexParameterIivEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexParameterIivEXT_L
+public func glGetTexParameterIivOES(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexParameterIivOES_P(target, pname, params)}
+public func glGetTexParameterIivOES(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexParameterIivOES_P(target, pname, params)}
+var glGetTexParameterIivOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexParameterIivOES_L
+public func glGetTexParameterIuiv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuiv_P(target, pname, params)}
+public func glGetTexParameterIuiv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuiv_P(target, pname, params)}
+var glGetTexParameterIuiv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetTexParameterIuiv_L
+public func glGetTexParameterIuivEXT(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuivEXT_P(target, pname, params)}
+public func glGetTexParameterIuivEXT(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuivEXT_P(target, pname, params)}
+var glGetTexParameterIuivEXT_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetTexParameterIuivEXT_L
+public func glGetTexParameterIuivOES(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuivOES_P(target, pname, params)}
+public func glGetTexParameterIuivOES(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetTexParameterIuivOES_P(target, pname, params)}
+var glGetTexParameterIuivOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetTexParameterIuivOES_L
+public func glGetTexParameteriv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTexParameteriv_P(target, pname, params)}
+public func glGetTexParameteriv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTexParameteriv_P(target, pname, params)}
+var glGetTexParameteriv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTexParameteriv_L
+public func glGetTexParameterPointervAPPLE(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetTexParameterPointervAPPLE_P(target, pname, params)}
+public func glGetTexParameterPointervAPPLE(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetTexParameterPointervAPPLE_P(target, pname, params)}
+var glGetTexParameterPointervAPPLE_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetTexParameterPointervAPPLE_L
+public func glGetTexParameterxv(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexParameterxv_P(target, pname, params)}
+public func glGetTexParameterxv(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexParameterxv_P(target, pname, params)}
+var glGetTexParameterxv_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexParameterxv_L
+public func glGetTexParameterxvOES(_ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfixed>) {glGetTexParameterxvOES_P(target, pname, params)}
+public func glGetTexParameterxvOES(target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfixed>) {glGetTexParameterxvOES_P(target, pname, params)}
+var glGetTexParameterxvOES_P:@convention(c)(GLenum, GLenum, UnsafeMutablePointer<GLfixed>) -> Void = glGetTexParameterxvOES_L
+public func glGetTextureHandleARB(_ texture:GLuint) -> GLuint64 {return glGetTextureHandleARB_P(texture)}
+public func glGetTextureHandleARB(texture:GLuint) -> GLuint64 {return glGetTextureHandleARB_P(texture)}
+var glGetTextureHandleARB_P:@convention(c)(GLuint) -> GLuint64 = glGetTextureHandleARB_L
+public func glGetTextureHandleNV(_ texture:GLuint) -> GLuint64 {return glGetTextureHandleNV_P(texture)}
+public func glGetTextureHandleNV(texture:GLuint) -> GLuint64 {return glGetTextureHandleNV_P(texture)}
+var glGetTextureHandleNV_P:@convention(c)(GLuint) -> GLuint64 = glGetTextureHandleNV_L
+public func glGetTextureImage(_ texture:GLuint, _ level:GLint, _ format:GLenum, _ type:GLenum, _ bufSize:GLsizei, _ pixels:UnsafeMutableRawPointer) {glGetTextureImage_P(texture, level, format, type, bufSize, pixels)}
+public func glGetTextureImage(texture:GLuint, level:GLint, format:GLenum, type:GLenum, bufSize:GLsizei, pixels:UnsafeMutableRawPointer) {glGetTextureImage_P(texture, level, format, type, bufSize, pixels)}
+var glGetTextureImage_P:@convention(c)(GLuint, GLint, GLenum, GLenum, GLsizei, UnsafeMutableRawPointer) -> Void = glGetTextureImage_L
+public func glGetTextureImageEXT(_ texture:GLuint, _ target:GLenum, _ level:GLint, _ format:GLenum, _ type:GLenum, _ pixels:UnsafeMutableRawPointer) {glGetTextureImageEXT_P(texture, target, level, format, type, pixels)}
+public func glGetTextureImageEXT(texture:GLuint, target:GLenum, level:GLint, format:GLenum, type:GLenum, pixels:UnsafeMutableRawPointer) {glGetTextureImageEXT_P(texture, target, level, format, type, pixels)}
+var glGetTextureImageEXT_P:@convention(c)(GLuint, GLenum, GLint, GLenum, GLenum, UnsafeMutableRawPointer) -> Void = glGetTextureImageEXT_L
+public func glGetTextureLevelParameterfv(_ texture:GLuint, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTextureLevelParameterfv_P(texture, level, pname, params)}
+public func glGetTextureLevelParameterfv(texture:GLuint, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTextureLevelParameterfv_P(texture, level, pname, params)}
+var glGetTextureLevelParameterfv_P:@convention(c)(GLuint, GLint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTextureLevelParameterfv_L
+public func glGetTextureLevelParameterfvEXT(_ texture:GLuint, _ target:GLenum, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTextureLevelParameterfvEXT_P(texture, target, level, pname, params)}
+public func glGetTextureLevelParameterfvEXT(texture:GLuint, target:GLenum, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTextureLevelParameterfvEXT_P(texture, target, level, pname, params)}
+var glGetTextureLevelParameterfvEXT_P:@convention(c)(GLuint, GLenum, GLint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTextureLevelParameterfvEXT_L
+public func glGetTextureLevelParameteriv(_ texture:GLuint, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureLevelParameteriv_P(texture, level, pname, params)}
+public func glGetTextureLevelParameteriv(texture:GLuint, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureLevelParameteriv_P(texture, level, pname, params)}
+var glGetTextureLevelParameteriv_P:@convention(c)(GLuint, GLint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureLevelParameteriv_L
+public func glGetTextureLevelParameterivEXT(_ texture:GLuint, _ target:GLenum, _ level:GLint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureLevelParameterivEXT_P(texture, target, level, pname, params)}
+public func glGetTextureLevelParameterivEXT(texture:GLuint, target:GLenum, level:GLint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureLevelParameterivEXT_P(texture, target, level, pname, params)}
+var glGetTextureLevelParameterivEXT_P:@convention(c)(GLuint, GLenum, GLint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureLevelParameterivEXT_L
+public func glGetTextureParameterfv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTextureParameterfv_P(texture, pname, params)}
+public func glGetTextureParameterfv(texture:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTextureParameterfv_P(texture, pname, params)}
+var glGetTextureParameterfv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTextureParameterfv_L
+public func glGetTextureParameterfvEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetTextureParameterfvEXT_P(texture, target, pname, params)}
+public func glGetTextureParameterfvEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetTextureParameterfvEXT_P(texture, target, pname, params)}
+var glGetTextureParameterfvEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetTextureParameterfvEXT_L
+public func glGetTextureParameterIiv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureParameterIiv_P(texture, pname, params)}
+public func glGetTextureParameterIiv(texture:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureParameterIiv_P(texture, pname, params)}
+var glGetTextureParameterIiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureParameterIiv_L
+public func glGetTextureParameterIivEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureParameterIivEXT_P(texture, target, pname, params)}
+public func glGetTextureParameterIivEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureParameterIivEXT_P(texture, target, pname, params)}
+var glGetTextureParameterIivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureParameterIivEXT_L
+public func glGetTextureParameterIuiv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetTextureParameterIuiv_P(texture, pname, params)}
+public func glGetTextureParameterIuiv(texture:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetTextureParameterIuiv_P(texture, pname, params)}
+var glGetTextureParameterIuiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetTextureParameterIuiv_L
+public func glGetTextureParameterIuivEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetTextureParameterIuivEXT_P(texture, target, pname, params)}
+public func glGetTextureParameterIuivEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetTextureParameterIuivEXT_P(texture, target, pname, params)}
+var glGetTextureParameterIuivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetTextureParameterIuivEXT_L
+public func glGetTextureParameteriv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureParameteriv_P(texture, pname, params)}
+public func glGetTextureParameteriv(texture:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureParameteriv_P(texture, pname, params)}
+var glGetTextureParameteriv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureParameteriv_L
+public func glGetTextureParameterivEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTextureParameterivEXT_P(texture, target, pname, params)}
+public func glGetTextureParameterivEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTextureParameterivEXT_P(texture, target, pname, params)}
+var glGetTextureParameterivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTextureParameterivEXT_L
+public func glGetTextureSamplerHandleARB(_ texture:GLuint, _ sampler:GLuint) -> GLuint64 {return glGetTextureSamplerHandleARB_P(texture, sampler)}
+public func glGetTextureSamplerHandleARB(texture:GLuint, sampler:GLuint) -> GLuint64 {return glGetTextureSamplerHandleARB_P(texture, sampler)}
+var glGetTextureSamplerHandleARB_P:@convention(c)(GLuint, GLuint) -> GLuint64 = glGetTextureSamplerHandleARB_L
+public func glGetTextureSamplerHandleNV(_ texture:GLuint, _ sampler:GLuint) -> GLuint64 {return glGetTextureSamplerHandleNV_P(texture, sampler)}
+public func glGetTextureSamplerHandleNV(texture:GLuint, sampler:GLuint) -> GLuint64 {return glGetTextureSamplerHandleNV_P(texture, sampler)}
+var glGetTextureSamplerHandleNV_P:@convention(c)(GLuint, GLuint) -> GLuint64 = glGetTextureSamplerHandleNV_L
+public func glGetTextureSubImage(_ texture:GLuint, _ level:GLint, _ xoffset:GLint, _ yoffset:GLint, _ zoffset:GLint, _ width:GLsizei, _ height:GLsizei, _ depth:GLsizei, _ format:GLenum, _ type:GLenum, _ bufSize:GLsizei, _ pixels:UnsafeMutableRawPointer) {glGetTextureSubImage_P(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, pixels)}
+public func glGetTextureSubImage(texture:GLuint, level:GLint, xoffset:GLint, yoffset:GLint, zoffset:GLint, width:GLsizei, height:GLsizei, depth:GLsizei, format:GLenum, type:GLenum, bufSize:GLsizei, pixels:UnsafeMutableRawPointer) {glGetTextureSubImage_P(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, pixels)}
+var glGetTextureSubImage_P:@convention(c)(GLuint, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, GLsizei, UnsafeMutableRawPointer) -> Void = glGetTextureSubImage_L
+public func glGetTrackMatrixivNV(_ target:GLenum, _ address:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetTrackMatrixivNV_P(target, address, pname, params)}
+public func glGetTrackMatrixivNV(target:GLenum, address:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetTrackMatrixivNV_P(target, address, pname, params)}
+var glGetTrackMatrixivNV_P:@convention(c)(GLenum, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTrackMatrixivNV_L
+public func glGetTransformFeedbacki_v(_ xfb:GLuint, _ pname:GLenum, _ index:GLuint, _ param:UnsafeMutablePointer<GLint>) {glGetTransformFeedbacki_v_P(xfb, pname, index, param)}
+public func glGetTransformFeedbacki_v(xfb:GLuint, pname:GLenum, index:GLuint, param:UnsafeMutablePointer<GLint>) {glGetTransformFeedbacki_v_P(xfb, pname, index, param)}
+var glGetTransformFeedbacki_v_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetTransformFeedbacki_v_L
+public func glGetTransformFeedbacki64_v(_ xfb:GLuint, _ pname:GLenum, _ index:GLuint, _ param:UnsafeMutablePointer<GLint64>) {glGetTransformFeedbacki64_v_P(xfb, pname, index, param)}
+public func glGetTransformFeedbacki64_v(xfb:GLuint, pname:GLenum, index:GLuint, param:UnsafeMutablePointer<GLint64>) {glGetTransformFeedbacki64_v_P(xfb, pname, index, param)}
+var glGetTransformFeedbacki64_v_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeMutablePointer<GLint64>) -> Void = glGetTransformFeedbacki64_v_L
+public func glGetTransformFeedbackiv(_ xfb:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetTransformFeedbackiv_P(xfb, pname, param)}
+public func glGetTransformFeedbackiv(xfb:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetTransformFeedbackiv_P(xfb, pname, param)}
+var glGetTransformFeedbackiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetTransformFeedbackiv_L
+public func glGetTransformFeedbackVarying(_ program:GLuint, _ index:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ size:UnsafeMutablePointer<GLsizei>, _ type:UnsafeMutablePointer<GLenum>, _ name:UnsafeMutablePointer<GLchar>) {glGetTransformFeedbackVarying_P(program, index, bufSize, length, size, type, name)}
+public func glGetTransformFeedbackVarying(program:GLuint, index:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, size:UnsafeMutablePointer<GLsizei>, type:UnsafeMutablePointer<GLenum>, name:UnsafeMutablePointer<GLchar>) {glGetTransformFeedbackVarying_P(program, index, bufSize, length, size, type, name)}
+var glGetTransformFeedbackVarying_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLenum>, UnsafeMutablePointer<GLchar>) -> Void = glGetTransformFeedbackVarying_L
+public func glGetTransformFeedbackVaryingEXT(_ program:GLuint, _ index:GLuint, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ size:UnsafeMutablePointer<GLsizei>, _ type:UnsafeMutablePointer<GLenum>, _ name:UnsafeMutablePointer<GLchar>) {glGetTransformFeedbackVaryingEXT_P(program, index, bufSize, length, size, type, name)}
+public func glGetTransformFeedbackVaryingEXT(program:GLuint, index:GLuint, bufSize:GLsizei, length:UnsafeMutablePointer<GLsizei>, size:UnsafeMutablePointer<GLsizei>, type:UnsafeMutablePointer<GLenum>, name:UnsafeMutablePointer<GLchar>) {glGetTransformFeedbackVaryingEXT_P(program, index, bufSize, length, size, type, name)}
+var glGetTransformFeedbackVaryingEXT_P:@convention(c)(GLuint, GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLenum>, UnsafeMutablePointer<GLchar>) -> Void = glGetTransformFeedbackVaryingEXT_L
+public func glGetTransformFeedbackVaryingNV(_ program:GLuint, _ index:GLuint, _ location:UnsafeMutablePointer<GLint>) {glGetTransformFeedbackVaryingNV_P(program, index, location)}
+public func glGetTransformFeedbackVaryingNV(program:GLuint, index:GLuint, location:UnsafeMutablePointer<GLint>) {glGetTransformFeedbackVaryingNV_P(program, index, location)}
+var glGetTransformFeedbackVaryingNV_P:@convention(c)(GLuint, GLuint, UnsafeMutablePointer<GLint>) -> Void = glGetTransformFeedbackVaryingNV_L
+public func glGetTranslatedShaderSourceANGLE(_ shader:GLuint, _ bufsize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ source:UnsafeMutablePointer<GLchar>) {glGetTranslatedShaderSourceANGLE_P(shader, bufsize, length, source)}
+public func glGetTranslatedShaderSourceANGLE(shader:GLuint, bufsize:GLsizei, length:UnsafeMutablePointer<GLsizei>, source:UnsafeMutablePointer<GLchar>) {glGetTranslatedShaderSourceANGLE_P(shader, bufsize, length, source)}
+var glGetTranslatedShaderSourceANGLE_P:@convention(c)(GLuint, GLsizei, UnsafeMutablePointer<GLsizei>, UnsafeMutablePointer<GLchar>) -> Void = glGetTranslatedShaderSourceANGLE_L
+public func glGetUniformBlockIndex(_ program:GLuint, _ uniformBlockName:UnsafePointer<GLchar>) -> GLuint {return glGetUniformBlockIndex_P(program, uniformBlockName)}
+public func glGetUniformBlockIndex(program:GLuint, uniformBlockName:UnsafePointer<GLchar>) -> GLuint {return glGetUniformBlockIndex_P(program, uniformBlockName)}
+var glGetUniformBlockIndex_P:@convention(c)(GLuint, UnsafePointer<GLchar>) -> GLuint = glGetUniformBlockIndex_L
+public func glGetUniformBufferSizeEXT(_ program:GLuint, _ location:GLint) -> GLint {return glGetUniformBufferSizeEXT_P(program, location)}
+public func glGetUniformBufferSizeEXT(program:GLuint, location:GLint) -> GLint {return glGetUniformBufferSizeEXT_P(program, location)}
+var glGetUniformBufferSizeEXT_P:@convention(c)(GLuint, GLint) -> GLint = glGetUniformBufferSizeEXT_L
+public func glGetUniformdv(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLdouble>) {glGetUniformdv_P(program, location, params)}
+public func glGetUniformdv(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLdouble>) {glGetUniformdv_P(program, location, params)}
+var glGetUniformdv_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLdouble>) -> Void = glGetUniformdv_L
+public func glGetUniformfv(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLfloat>) {glGetUniformfv_P(program, location, params)}
+public func glGetUniformfv(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLfloat>) {glGetUniformfv_P(program, location, params)}
+var glGetUniformfv_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLfloat>) -> Void = glGetUniformfv_L
+public func glGetUniformfvARB(_ programObj:GLhandleARB, _ location:GLint, _ params:UnsafeMutablePointer<GLfloat>) {glGetUniformfvARB_P(programObj, location, params)}
+public func glGetUniformfvARB(programObj:GLhandleARB, location:GLint, params:UnsafeMutablePointer<GLfloat>) {glGetUniformfvARB_P(programObj, location, params)}
+var glGetUniformfvARB_P:@convention(c)(GLhandleARB, GLint, UnsafeMutablePointer<GLfloat>) -> Void = glGetUniformfvARB_L
+public func glGetUniformi64vARB(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLint64>) {glGetUniformi64vARB_P(program, location, params)}
+public func glGetUniformi64vARB(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLint64>) {glGetUniformi64vARB_P(program, location, params)}
+var glGetUniformi64vARB_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLint64>) -> Void = glGetUniformi64vARB_L
+public func glGetUniformi64vNV(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLint64EXT>) {glGetUniformi64vNV_P(program, location, params)}
+public func glGetUniformi64vNV(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLint64EXT>) {glGetUniformi64vNV_P(program, location, params)}
+var glGetUniformi64vNV_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLint64EXT>) -> Void = glGetUniformi64vNV_L
+public func glGetUniformIndices(_ program:GLuint, _ uniformCount:GLsizei, _ uniformNames:UnsafePointer<UnsafePointer<GLchar>>, _ uniformIndices:UnsafeMutablePointer<GLuint>) {glGetUniformIndices_P(program, uniformCount, uniformNames, uniformIndices)}
+public func glGetUniformIndices(program:GLuint, uniformCount:GLsizei, uniformNames:UnsafePointer<UnsafePointer<GLchar>>, uniformIndices:UnsafeMutablePointer<GLuint>) {glGetUniformIndices_P(program, uniformCount, uniformNames, uniformIndices)}
+var glGetUniformIndices_P:@convention(c)(GLuint, GLsizei, UnsafePointer<UnsafePointer<GLchar>>, UnsafeMutablePointer<GLuint>) -> Void = glGetUniformIndices_L
+public func glGetUniformiv(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLint>) {glGetUniformiv_P(program, location, params)}
+public func glGetUniformiv(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLint>) {glGetUniformiv_P(program, location, params)}
+var glGetUniformiv_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLint>) -> Void = glGetUniformiv_L
+public func glGetUniformivARB(_ programObj:GLhandleARB, _ location:GLint, _ params:UnsafeMutablePointer<GLint>) {glGetUniformivARB_P(programObj, location, params)}
+public func glGetUniformivARB(programObj:GLhandleARB, location:GLint, params:UnsafeMutablePointer<GLint>) {glGetUniformivARB_P(programObj, location, params)}
+var glGetUniformivARB_P:@convention(c)(GLhandleARB, GLint, UnsafeMutablePointer<GLint>) -> Void = glGetUniformivARB_L
+public func glGetUniformLocation(_ program:GLuint, _ name:UnsafePointer<GLchar>) -> GLint {return glGetUniformLocation_P(program, name)}
+public func glGetUniformLocation(program:GLuint, name:UnsafePointer<GLchar>) -> GLint {return glGetUniformLocation_P(program, name)}
+var glGetUniformLocation_P:@convention(c)(GLuint, UnsafePointer<GLchar>) -> GLint = glGetUniformLocation_L
+public func glGetUniformLocationARB(_ programObj:GLhandleARB, _ name:UnsafePointer<GLcharARB>) -> GLint {return glGetUniformLocationARB_P(programObj, name)}
+public func glGetUniformLocationARB(programObj:GLhandleARB, name:UnsafePointer<GLcharARB>) -> GLint {return glGetUniformLocationARB_P(programObj, name)}
+var glGetUniformLocationARB_P:@convention(c)(GLhandleARB, UnsafePointer<GLcharARB>) -> GLint = glGetUniformLocationARB_L
+public func glGetUniformOffsetEXT(_ program:GLuint, _ location:GLint) -> GLintptr {return glGetUniformOffsetEXT_P(program, location)}
+public func glGetUniformOffsetEXT(program:GLuint, location:GLint) -> GLintptr {return glGetUniformOffsetEXT_P(program, location)}
+var glGetUniformOffsetEXT_P:@convention(c)(GLuint, GLint) -> GLintptr = glGetUniformOffsetEXT_L
+public func glGetUniformSubroutineuiv(_ shadertype:GLenum, _ location:GLint, _ params:UnsafeMutablePointer<GLuint>) {glGetUniformSubroutineuiv_P(shadertype, location, params)}
+public func glGetUniformSubroutineuiv(shadertype:GLenum, location:GLint, params:UnsafeMutablePointer<GLuint>) {glGetUniformSubroutineuiv_P(shadertype, location, params)}
+var glGetUniformSubroutineuiv_P:@convention(c)(GLenum, GLint, UnsafeMutablePointer<GLuint>) -> Void = glGetUniformSubroutineuiv_L
+public func glGetUniformui64vARB(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLuint64>) {glGetUniformui64vARB_P(program, location, params)}
+public func glGetUniformui64vARB(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLuint64>) {glGetUniformui64vARB_P(program, location, params)}
+var glGetUniformui64vARB_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLuint64>) -> Void = glGetUniformui64vARB_L
+public func glGetUniformui64vNV(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLuint64EXT>) {glGetUniformui64vNV_P(program, location, params)}
+public func glGetUniformui64vNV(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLuint64EXT>) {glGetUniformui64vNV_P(program, location, params)}
+var glGetUniformui64vNV_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLuint64EXT>) -> Void = glGetUniformui64vNV_L
+public func glGetUniformuiv(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLuint>) {glGetUniformuiv_P(program, location, params)}
+public func glGetUniformuiv(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLuint>) {glGetUniformuiv_P(program, location, params)}
+var glGetUniformuiv_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLuint>) -> Void = glGetUniformuiv_L
+public func glGetUniformuivEXT(_ program:GLuint, _ location:GLint, _ params:UnsafeMutablePointer<GLuint>) {glGetUniformuivEXT_P(program, location, params)}
+public func glGetUniformuivEXT(program:GLuint, location:GLint, params:UnsafeMutablePointer<GLuint>) {glGetUniformuivEXT_P(program, location, params)}
+var glGetUniformuivEXT_P:@convention(c)(GLuint, GLint, UnsafeMutablePointer<GLuint>) -> Void = glGetUniformuivEXT_L
+public func glGetVariantArrayObjectfvATI(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVariantArrayObjectfvATI_P(id, pname, params)}
+public func glGetVariantArrayObjectfvATI(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVariantArrayObjectfvATI_P(id, pname, params)}
+var glGetVariantArrayObjectfvATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVariantArrayObjectfvATI_L
+public func glGetVariantArrayObjectivATI(_ id:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVariantArrayObjectivATI_P(id, pname, params)}
+public func glGetVariantArrayObjectivATI(id:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVariantArrayObjectivATI_P(id, pname, params)}
+var glGetVariantArrayObjectivATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVariantArrayObjectivATI_L
+public func glGetVariantBooleanvEXT(_ id:GLuint, _ value:GLenum, _ data:UnsafeMutablePointer<GLboolean>) {glGetVariantBooleanvEXT_P(id, value, data)}
+public func glGetVariantBooleanvEXT(id:GLuint, value:GLenum, data:UnsafeMutablePointer<GLboolean>) {glGetVariantBooleanvEXT_P(id, value, data)}
+var glGetVariantBooleanvEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLboolean>) -> Void = glGetVariantBooleanvEXT_L
+public func glGetVariantFloatvEXT(_ id:GLuint, _ value:GLenum, _ data:UnsafeMutablePointer<GLfloat>) {glGetVariantFloatvEXT_P(id, value, data)}
+public func glGetVariantFloatvEXT(id:GLuint, value:GLenum, data:UnsafeMutablePointer<GLfloat>) {glGetVariantFloatvEXT_P(id, value, data)}
+var glGetVariantFloatvEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVariantFloatvEXT_L
+public func glGetVariantIntegervEXT(_ id:GLuint, _ value:GLenum, _ data:UnsafeMutablePointer<GLint>) {glGetVariantIntegervEXT_P(id, value, data)}
+public func glGetVariantIntegervEXT(id:GLuint, value:GLenum, data:UnsafeMutablePointer<GLint>) {glGetVariantIntegervEXT_P(id, value, data)}
+var glGetVariantIntegervEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVariantIntegervEXT_L
+public func glGetVariantPointervEXT(_ id:GLuint, _ value:GLenum, _ data:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVariantPointervEXT_P(id, value, data)}
+public func glGetVariantPointervEXT(id:GLuint, value:GLenum, data:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVariantPointervEXT_P(id, value, data)}
+var glGetVariantPointervEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVariantPointervEXT_L
+public func glGetVaryingLocationNV(_ program:GLuint, _ name:UnsafePointer<GLchar>) -> GLint {return glGetVaryingLocationNV_P(program, name)}
+public func glGetVaryingLocationNV(program:GLuint, name:UnsafePointer<GLchar>) -> GLint {return glGetVaryingLocationNV_P(program, name)}
+var glGetVaryingLocationNV_P:@convention(c)(GLuint, UnsafePointer<GLchar>) -> GLint = glGetVaryingLocationNV_L
+public func glGetVertexArrayIndexed64iv(_ vaobj:GLuint, _ index:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint64>) {glGetVertexArrayIndexed64iv_P(vaobj, index, pname, param)}
+public func glGetVertexArrayIndexed64iv(vaobj:GLuint, index:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint64>) {glGetVertexArrayIndexed64iv_P(vaobj, index, pname, param)}
+var glGetVertexArrayIndexed64iv_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLint64>) -> Void = glGetVertexArrayIndexed64iv_L
+public func glGetVertexArrayIndexediv(_ vaobj:GLuint, _ index:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIndexediv_P(vaobj, index, pname, param)}
+public func glGetVertexArrayIndexediv(vaobj:GLuint, index:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIndexediv_P(vaobj, index, pname, param)}
+var glGetVertexArrayIndexediv_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexArrayIndexediv_L
+public func glGetVertexArrayIntegeri_vEXT(_ vaobj:GLuint, _ index:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIntegeri_vEXT_P(vaobj, index, pname, param)}
+public func glGetVertexArrayIntegeri_vEXT(vaobj:GLuint, index:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIntegeri_vEXT_P(vaobj, index, pname, param)}
+var glGetVertexArrayIntegeri_vEXT_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexArrayIntegeri_vEXT_L
+public func glGetVertexArrayIntegervEXT(_ vaobj:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIntegervEXT_P(vaobj, pname, param)}
+public func glGetVertexArrayIntegervEXT(vaobj:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetVertexArrayIntegervEXT_P(vaobj, pname, param)}
+var glGetVertexArrayIntegervEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexArrayIntegervEXT_L
+public func glGetVertexArrayiv(_ vaobj:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<GLint>) {glGetVertexArrayiv_P(vaobj, pname, param)}
+public func glGetVertexArrayiv(vaobj:GLuint, pname:GLenum, param:UnsafeMutablePointer<GLint>) {glGetVertexArrayiv_P(vaobj, pname, param)}
+var glGetVertexArrayiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexArrayiv_L
+public func glGetVertexArrayPointeri_vEXT(_ vaobj:GLuint, _ index:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexArrayPointeri_vEXT_P(vaobj, index, pname, param)}
+public func glGetVertexArrayPointeri_vEXT(vaobj:GLuint, index:GLuint, pname:GLenum, param:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexArrayPointeri_vEXT_P(vaobj, index, pname, param)}
+var glGetVertexArrayPointeri_vEXT_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVertexArrayPointeri_vEXT_L
+public func glGetVertexArrayPointervEXT(_ vaobj:GLuint, _ pname:GLenum, _ param:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexArrayPointervEXT_P(vaobj, pname, param)}
+public func glGetVertexArrayPointervEXT(vaobj:GLuint, pname:GLenum, param:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexArrayPointervEXT_P(vaobj, pname, param)}
+var glGetVertexArrayPointervEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVertexArrayPointervEXT_L
+public func glGetVertexAttribArrayObjectfvATI(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribArrayObjectfvATI_P(index, pname, params)}
+public func glGetVertexAttribArrayObjectfvATI(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribArrayObjectfvATI_P(index, pname, params)}
+var glGetVertexAttribArrayObjectfvATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVertexAttribArrayObjectfvATI_L
+public func glGetVertexAttribArrayObjectivATI(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribArrayObjectivATI_P(index, pname, params)}
+public func glGetVertexAttribArrayObjectivATI(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribArrayObjectivATI_P(index, pname, params)}
+var glGetVertexAttribArrayObjectivATI_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribArrayObjectivATI_L
+public func glGetVertexAttribdv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdv_P(index, pname, params)}
+public func glGetVertexAttribdv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdv_P(index, pname, params)}
+var glGetVertexAttribdv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVertexAttribdv_L
+public func glGetVertexAttribdvARB(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdvARB_P(index, pname, params)}
+public func glGetVertexAttribdvARB(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdvARB_P(index, pname, params)}
+var glGetVertexAttribdvARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVertexAttribdvARB_L
+public func glGetVertexAttribdvNV(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdvNV_P(index, pname, params)}
+public func glGetVertexAttribdvNV(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribdvNV_P(index, pname, params)}
+var glGetVertexAttribdvNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVertexAttribdvNV_L
+public func glGetVertexAttribfv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfv_P(index, pname, params)}
+public func glGetVertexAttribfv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfv_P(index, pname, params)}
+var glGetVertexAttribfv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVertexAttribfv_L
+public func glGetVertexAttribfvARB(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfvARB_P(index, pname, params)}
+public func glGetVertexAttribfvARB(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfvARB_P(index, pname, params)}
+var glGetVertexAttribfvARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVertexAttribfvARB_L
+public func glGetVertexAttribfvNV(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfvNV_P(index, pname, params)}
+public func glGetVertexAttribfvNV(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVertexAttribfvNV_P(index, pname, params)}
+var glGetVertexAttribfvNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVertexAttribfvNV_L
+public func glGetVertexAttribIiv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribIiv_P(index, pname, params)}
+public func glGetVertexAttribIiv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribIiv_P(index, pname, params)}
+var glGetVertexAttribIiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribIiv_L
+public func glGetVertexAttribIivEXT(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribIivEXT_P(index, pname, params)}
+public func glGetVertexAttribIivEXT(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribIivEXT_P(index, pname, params)}
+var glGetVertexAttribIivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribIivEXT_L
+public func glGetVertexAttribIuiv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetVertexAttribIuiv_P(index, pname, params)}
+public func glGetVertexAttribIuiv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetVertexAttribIuiv_P(index, pname, params)}
+var glGetVertexAttribIuiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetVertexAttribIuiv_L
+public func glGetVertexAttribIuivEXT(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetVertexAttribIuivEXT_P(index, pname, params)}
+public func glGetVertexAttribIuivEXT(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetVertexAttribIuivEXT_P(index, pname, params)}
+var glGetVertexAttribIuivEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetVertexAttribIuivEXT_L
+public func glGetVertexAttribiv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribiv_P(index, pname, params)}
+public func glGetVertexAttribiv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribiv_P(index, pname, params)}
+var glGetVertexAttribiv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribiv_L
+public func glGetVertexAttribivARB(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribivARB_P(index, pname, params)}
+public func glGetVertexAttribivARB(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribivARB_P(index, pname, params)}
+var glGetVertexAttribivARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribivARB_L
+public func glGetVertexAttribivNV(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVertexAttribivNV_P(index, pname, params)}
+public func glGetVertexAttribivNV(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVertexAttribivNV_P(index, pname, params)}
+var glGetVertexAttribivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVertexAttribivNV_L
+public func glGetVertexAttribLdv(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribLdv_P(index, pname, params)}
+public func glGetVertexAttribLdv(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribLdv_P(index, pname, params)}
+var glGetVertexAttribLdv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVertexAttribLdv_L
+public func glGetVertexAttribLdvEXT(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribLdvEXT_P(index, pname, params)}
+public func glGetVertexAttribLdvEXT(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVertexAttribLdvEXT_P(index, pname, params)}
+var glGetVertexAttribLdvEXT_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVertexAttribLdvEXT_L
+public func glGetVertexAttribLi64vNV(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint64EXT>) {glGetVertexAttribLi64vNV_P(index, pname, params)}
+public func glGetVertexAttribLi64vNV(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint64EXT>) {glGetVertexAttribLi64vNV_P(index, pname, params)}
+var glGetVertexAttribLi64vNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint64EXT>) -> Void = glGetVertexAttribLi64vNV_L
+public func glGetVertexAttribLui64vARB(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint64EXT>) {glGetVertexAttribLui64vARB_P(index, pname, params)}
+public func glGetVertexAttribLui64vARB(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint64EXT>) {glGetVertexAttribLui64vARB_P(index, pname, params)}
+var glGetVertexAttribLui64vARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint64EXT>) -> Void = glGetVertexAttribLui64vARB_L
+public func glGetVertexAttribLui64vNV(_ index:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint64EXT>) {glGetVertexAttribLui64vNV_P(index, pname, params)}
+public func glGetVertexAttribLui64vNV(index:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint64EXT>) {glGetVertexAttribLui64vNV_P(index, pname, params)}
+var glGetVertexAttribLui64vNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint64EXT>) -> Void = glGetVertexAttribLui64vNV_L
+public func glGetVertexAttribPointerv(_ index:GLuint, _ pname:GLenum, _ pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointerv_P(index, pname, pointer)}
+public func glGetVertexAttribPointerv(index:GLuint, pname:GLenum, pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointerv_P(index, pname, pointer)}
+var glGetVertexAttribPointerv_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVertexAttribPointerv_L
+public func glGetVertexAttribPointervARB(_ index:GLuint, _ pname:GLenum, _ pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointervARB_P(index, pname, pointer)}
+public func glGetVertexAttribPointervARB(index:GLuint, pname:GLenum, pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointervARB_P(index, pname, pointer)}
+var glGetVertexAttribPointervARB_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVertexAttribPointervARB_L
+public func glGetVertexAttribPointervNV(_ index:GLuint, _ pname:GLenum, _ pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointervNV_P(index, pname, pointer)}
+public func glGetVertexAttribPointervNV(index:GLuint, pname:GLenum, pointer:UnsafeMutablePointer<UnsafeMutableRawPointer>) {glGetVertexAttribPointervNV_P(index, pname, pointer)}
+var glGetVertexAttribPointervNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<UnsafeMutableRawPointer>) -> Void = glGetVertexAttribPointervNV_L
+public func glGetVideoCaptureivNV(_ video_capture_slot:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVideoCaptureivNV_P(video_capture_slot, pname, params)}
+public func glGetVideoCaptureivNV(video_capture_slot:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVideoCaptureivNV_P(video_capture_slot, pname, params)}
+var glGetVideoCaptureivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVideoCaptureivNV_L
+public func glGetVideoCaptureStreamdvNV(_ video_capture_slot:GLuint, _ stream:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLdouble>) {glGetVideoCaptureStreamdvNV_P(video_capture_slot, stream, pname, params)}
+public func glGetVideoCaptureStreamdvNV(video_capture_slot:GLuint, stream:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLdouble>) {glGetVideoCaptureStreamdvNV_P(video_capture_slot, stream, pname, params)}
+var glGetVideoCaptureStreamdvNV_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLdouble>) -> Void = glGetVideoCaptureStreamdvNV_L
+public func glGetVideoCaptureStreamfvNV(_ video_capture_slot:GLuint, _ stream:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLfloat>) {glGetVideoCaptureStreamfvNV_P(video_capture_slot, stream, pname, params)}
+public func glGetVideoCaptureStreamfvNV(video_capture_slot:GLuint, stream:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLfloat>) {glGetVideoCaptureStreamfvNV_P(video_capture_slot, stream, pname, params)}
+var glGetVideoCaptureStreamfvNV_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLfloat>) -> Void = glGetVideoCaptureStreamfvNV_L
+public func glGetVideoCaptureStreamivNV(_ video_capture_slot:GLuint, _ stream:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVideoCaptureStreamivNV_P(video_capture_slot, stream, pname, params)}
+public func glGetVideoCaptureStreamivNV(video_capture_slot:GLuint, stream:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVideoCaptureStreamivNV_P(video_capture_slot, stream, pname, params)}
+var glGetVideoCaptureStreamivNV_P:@convention(c)(GLuint, GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVideoCaptureStreamivNV_L
+public func glGetVideoi64vNV(_ video_slot:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint64EXT>) {glGetVideoi64vNV_P(video_slot, pname, params)}
+public func glGetVideoi64vNV(video_slot:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint64EXT>) {glGetVideoi64vNV_P(video_slot, pname, params)}
+var glGetVideoi64vNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint64EXT>) -> Void = glGetVideoi64vNV_L
+public func glGetVideoivNV(_ video_slot:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLint>) {glGetVideoivNV_P(video_slot, pname, params)}
+public func glGetVideoivNV(video_slot:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLint>) {glGetVideoivNV_P(video_slot, pname, params)}
+var glGetVideoivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLint>) -> Void = glGetVideoivNV_L
+public func glGetVideoui64vNV(_ video_slot:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint64EXT>) {glGetVideoui64vNV_P(video_slot, pname, params)}
+public func glGetVideoui64vNV(video_slot:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint64EXT>) {glGetVideoui64vNV_P(video_slot, pname, params)}
+var glGetVideoui64vNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint64EXT>) -> Void = glGetVideoui64vNV_L
+public func glGetVideouivNV(_ video_slot:GLuint, _ pname:GLenum, _ params:UnsafeMutablePointer<GLuint>) {glGetVideouivNV_P(video_slot, pname, params)}
+public func glGetVideouivNV(video_slot:GLuint, pname:GLenum, params:UnsafeMutablePointer<GLuint>) {glGetVideouivNV_P(video_slot, pname, params)}
+var glGetVideouivNV_P:@convention(c)(GLuint, GLenum, UnsafeMutablePointer<GLuint>) -> Void = glGetVideouivNV_L
 public func glGlobalAlphaFactorbSUN(_ factor:GLbyte) {glGlobalAlphaFactorbSUN_P(factor)}
 public func glGlobalAlphaFactorbSUN(factor:GLbyte) {glGlobalAlphaFactorbSUN_P(factor)}
 var glGlobalAlphaFactorbSUN_P:@convention(c)(GLbyte) -> Void = glGlobalAlphaFactorbSUN_L
@@ -3915,12 +3915,30 @@ var glImageTransformParameterivHP_P:@convention(c)(GLenum, GLenum, UnsafePointer
 public func glImportSyncEXT(_ external_sync_type:GLenum, _ external_sync:GLintptr, _ flags:GLbitfield) -> GLsync {return glImportSyncEXT_P(external_sync_type, external_sync, flags)}
 public func glImportSyncEXT(external_sync_type:GLenum, external_sync:GLintptr, flags:GLbitfield) -> GLsync {return glImportSyncEXT_P(external_sync_type, external_sync, flags)}
 var glImportSyncEXT_P:@convention(c)(GLenum, GLintptr, GLbitfield) -> GLsync = glImportSyncEXT_L
+public func glIndexd(_ c:GLdouble) {glIndexd_P(c)}
+public func glIndexd(c:GLdouble) {glIndexd_P(c)}
+var glIndexd_P:@convention(c)(GLdouble) -> Void = glIndexd_L
+public func glIndexdv(_ c:UnsafePointer<GLdouble>) {glIndexdv_P(c)}
+public func glIndexdv(c:UnsafePointer<GLdouble>) {glIndexdv_P(c)}
+var glIndexdv_P:@convention(c)(UnsafePointer<GLdouble>) -> Void = glIndexdv_L
+public func glIndexf(_ c:GLfloat) {glIndexf_P(c)}
+public func glIndexf(c:GLfloat) {glIndexf_P(c)}
+var glIndexf_P:@convention(c)(GLfloat) -> Void = glIndexf_L
 public func glIndexFormatNV(_ type:GLenum, _ stride:GLsizei) {glIndexFormatNV_P(type, stride)}
 public func glIndexFormatNV(type:GLenum, stride:GLsizei) {glIndexFormatNV_P(type, stride)}
 var glIndexFormatNV_P:@convention(c)(GLenum, GLsizei) -> Void = glIndexFormatNV_L
 public func glIndexFuncEXT(_ fn:GLenum, _ ref:GLclampf) {glIndexFuncEXT_P(fn, ref)}
 public func glIndexFuncEXT(fn:GLenum, ref:GLclampf) {glIndexFuncEXT_P(fn, ref)}
 var glIndexFuncEXT_P:@convention(c)(GLenum, GLclampf) -> Void = glIndexFuncEXT_L
+public func glIndexfv(_ c:UnsafePointer<GLfloat>) {glIndexfv_P(c)}
+public func glIndexfv(c:UnsafePointer<GLfloat>) {glIndexfv_P(c)}
+var glIndexfv_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glIndexfv_L
+public func glIndexi(_ c:GLint) {glIndexi_P(c)}
+public func glIndexi(c:GLint) {glIndexi_P(c)}
+var glIndexi_P:@convention(c)(GLint) -> Void = glIndexi_L
+public func glIndexiv(_ c:UnsafePointer<GLint>) {glIndexiv_P(c)}
+public func glIndexiv(c:UnsafePointer<GLint>) {glIndexiv_P(c)}
+var glIndexiv_P:@convention(c)(UnsafePointer<GLint>) -> Void = glIndexiv_L
 public func glIndexMask(_ mask:GLuint) {glIndexMask_P(mask)}
 public func glIndexMask(mask:GLuint) {glIndexMask_P(mask)}
 var glIndexMask_P:@convention(c)(GLuint) -> Void = glIndexMask_L
@@ -3936,24 +3954,6 @@ var glIndexPointerEXT_P:@convention(c)(GLenum, GLsizei, GLsizei, UnsafeRawPointe
 public func glIndexPointerListIBM(_ type:GLenum, _ stride:GLint, _ pointer:UnsafeMutablePointer<UnsafeRawPointer>, _ ptrstride:GLint) {glIndexPointerListIBM_P(type, stride, pointer, ptrstride)}
 public func glIndexPointerListIBM(type:GLenum, stride:GLint, pointer:UnsafeMutablePointer<UnsafeRawPointer>, ptrstride:GLint) {glIndexPointerListIBM_P(type, stride, pointer, ptrstride)}
 var glIndexPointerListIBM_P:@convention(c)(GLenum, GLint, UnsafeMutablePointer<UnsafeRawPointer>, GLint) -> Void = glIndexPointerListIBM_L
-public func glIndexd(_ c:GLdouble) {glIndexd_P(c)}
-public func glIndexd(c:GLdouble) {glIndexd_P(c)}
-var glIndexd_P:@convention(c)(GLdouble) -> Void = glIndexd_L
-public func glIndexdv(_ c:UnsafePointer<GLdouble>) {glIndexdv_P(c)}
-public func glIndexdv(c:UnsafePointer<GLdouble>) {glIndexdv_P(c)}
-var glIndexdv_P:@convention(c)(UnsafePointer<GLdouble>) -> Void = glIndexdv_L
-public func glIndexf(_ c:GLfloat) {glIndexf_P(c)}
-public func glIndexf(c:GLfloat) {glIndexf_P(c)}
-var glIndexf_P:@convention(c)(GLfloat) -> Void = glIndexf_L
-public func glIndexfv(_ c:UnsafePointer<GLfloat>) {glIndexfv_P(c)}
-public func glIndexfv(c:UnsafePointer<GLfloat>) {glIndexfv_P(c)}
-var glIndexfv_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glIndexfv_L
-public func glIndexi(_ c:GLint) {glIndexi_P(c)}
-public func glIndexi(c:GLint) {glIndexi_P(c)}
-var glIndexi_P:@convention(c)(GLint) -> Void = glIndexi_L
-public func glIndexiv(_ c:UnsafePointer<GLint>) {glIndexiv_P(c)}
-public func glIndexiv(c:UnsafePointer<GLint>) {glIndexiv_P(c)}
-var glIndexiv_P:@convention(c)(UnsafePointer<GLint>) -> Void = glIndexiv_L
 public func glIndexs(_ c:GLshort) {glIndexs_P(c)}
 public func glIndexs(c:GLshort) {glIndexs_P(c)}
 var glIndexs_P:@convention(c)(GLshort) -> Void = glIndexs_L
@@ -4031,15 +4031,15 @@ var glIsCommandListNV_P:@convention(c)(GLuint) -> GLboolean = glIsCommandListNV_
 public func glIsEnabled(_ cap:GLenum) -> GLboolean {return glIsEnabled_P(cap)}
 public func glIsEnabled(cap:GLenum) -> GLboolean {return glIsEnabled_P(cap)}
 var glIsEnabled_P:@convention(c)(GLenum) -> GLboolean = glIsEnabled_L
-public func glIsEnabledIndexedEXT(_ target:GLenum, _ index:GLuint) -> GLboolean {return glIsEnabledIndexedEXT_P(target, index)}
-public func glIsEnabledIndexedEXT(target:GLenum, index:GLuint) -> GLboolean {return glIsEnabledIndexedEXT_P(target, index)}
-var glIsEnabledIndexedEXT_P:@convention(c)(GLenum, GLuint) -> GLboolean = glIsEnabledIndexedEXT_L
 public func glIsEnabledi(_ target:GLenum, _ index:GLuint) -> GLboolean {return glIsEnabledi_P(target, index)}
 public func glIsEnabledi(target:GLenum, index:GLuint) -> GLboolean {return glIsEnabledi_P(target, index)}
 var glIsEnabledi_P:@convention(c)(GLenum, GLuint) -> GLboolean = glIsEnabledi_L
 public func glIsEnablediEXT(_ target:GLenum, _ index:GLuint) -> GLboolean {return glIsEnablediEXT_P(target, index)}
 public func glIsEnablediEXT(target:GLenum, index:GLuint) -> GLboolean {return glIsEnablediEXT_P(target, index)}
 var glIsEnablediEXT_P:@convention(c)(GLenum, GLuint) -> GLboolean = glIsEnablediEXT_L
+public func glIsEnabledIndexedEXT(_ target:GLenum, _ index:GLuint) -> GLboolean {return glIsEnabledIndexedEXT_P(target, index)}
+public func glIsEnabledIndexedEXT(target:GLenum, index:GLuint) -> GLboolean {return glIsEnabledIndexedEXT_P(target, index)}
+var glIsEnabledIndexedEXT_P:@convention(c)(GLenum, GLuint) -> GLboolean = glIsEnabledIndexedEXT_L
 public func glIsEnablediNV(_ target:GLenum, _ index:GLuint) -> GLboolean {return glIsEnablediNV_P(target, index)}
 public func glIsEnablediNV(target:GLenum, index:GLuint) -> GLboolean {return glIsEnablediNV_P(target, index)}
 var glIsEnablediNV_P:@convention(c)(GLenum, GLuint) -> GLboolean = glIsEnablediNV_L
@@ -4181,6 +4181,18 @@ var glLabelObjectEXT_P:@convention(c)(GLenum, GLuint, GLsizei, UnsafePointer<GLc
 public func glLightEnviSGIX(_ pname:GLenum, _ param:GLint) {glLightEnviSGIX_P(pname, param)}
 public func glLightEnviSGIX(pname:GLenum, param:GLint) {glLightEnviSGIX_P(pname, param)}
 var glLightEnviSGIX_P:@convention(c)(GLenum, GLint) -> Void = glLightEnviSGIX_L
+public func glLightf(_ light:GLenum, _ pname:GLenum, _ param:GLfloat) {glLightf_P(light, pname, param)}
+public func glLightf(light:GLenum, pname:GLenum, param:GLfloat) {glLightf_P(light, pname, param)}
+var glLightf_P:@convention(c)(GLenum, GLenum, GLfloat) -> Void = glLightf_L
+public func glLightfv(_ light:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLfloat>) {glLightfv_P(light, pname, params)}
+public func glLightfv(light:GLenum, pname:GLenum, params:UnsafePointer<GLfloat>) {glLightfv_P(light, pname, params)}
+var glLightfv_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLfloat>) -> Void = glLightfv_L
+public func glLighti(_ light:GLenum, _ pname:GLenum, _ param:GLint) {glLighti_P(light, pname, param)}
+public func glLighti(light:GLenum, pname:GLenum, param:GLint) {glLighti_P(light, pname, param)}
+var glLighti_P:@convention(c)(GLenum, GLenum, GLint) -> Void = glLighti_L
+public func glLightiv(_ light:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glLightiv_P(light, pname, params)}
+public func glLightiv(light:GLenum, pname:GLenum, params:UnsafePointer<GLint>) {glLightiv_P(light, pname, params)}
+var glLightiv_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLint>) -> Void = glLightiv_L
 public func glLightModelf(_ pname:GLenum, _ param:GLfloat) {glLightModelf_P(pname, param)}
 public func glLightModelf(pname:GLenum, param:GLfloat) {glLightModelf_P(pname, param)}
 var glLightModelf_P:@convention(c)(GLenum, GLfloat) -> Void = glLightModelf_L
@@ -4205,18 +4217,6 @@ var glLightModelxv_P:@convention(c)(GLenum, UnsafePointer<GLfixed>) -> Void = gl
 public func glLightModelxvOES(_ pname:GLenum, _ param:UnsafePointer<GLfixed>) {glLightModelxvOES_P(pname, param)}
 public func glLightModelxvOES(pname:GLenum, param:UnsafePointer<GLfixed>) {glLightModelxvOES_P(pname, param)}
 var glLightModelxvOES_P:@convention(c)(GLenum, UnsafePointer<GLfixed>) -> Void = glLightModelxvOES_L
-public func glLightf(_ light:GLenum, _ pname:GLenum, _ param:GLfloat) {glLightf_P(light, pname, param)}
-public func glLightf(light:GLenum, pname:GLenum, param:GLfloat) {glLightf_P(light, pname, param)}
-var glLightf_P:@convention(c)(GLenum, GLenum, GLfloat) -> Void = glLightf_L
-public func glLightfv(_ light:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLfloat>) {glLightfv_P(light, pname, params)}
-public func glLightfv(light:GLenum, pname:GLenum, params:UnsafePointer<GLfloat>) {glLightfv_P(light, pname, params)}
-var glLightfv_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLfloat>) -> Void = glLightfv_L
-public func glLighti(_ light:GLenum, _ pname:GLenum, _ param:GLint) {glLighti_P(light, pname, param)}
-public func glLighti(light:GLenum, pname:GLenum, param:GLint) {glLighti_P(light, pname, param)}
-var glLighti_P:@convention(c)(GLenum, GLenum, GLint) -> Void = glLighti_L
-public func glLightiv(_ light:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glLightiv_P(light, pname, params)}
-public func glLightiv(light:GLenum, pname:GLenum, params:UnsafePointer<GLint>) {glLightiv_P(light, pname, params)}
-var glLightiv_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLint>) -> Void = glLightiv_L
 public func glLightx(_ light:GLenum, _ pname:GLenum, _ param:GLfixed) {glLightx_P(light, pname, param)}
 public func glLightx(light:GLenum, pname:GLenum, param:GLfixed) {glLightx_P(light, pname, param)}
 var glLightx_P:@convention(c)(GLenum, GLenum, GLfixed) -> Void = glLightx_L
@@ -4485,6 +4485,12 @@ var glMatrixLoad3x2fNV_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void 
 public func glMatrixLoad3x3fNV(_ matrixMode:GLenum, _ m:UnsafePointer<GLfloat>) {glMatrixLoad3x3fNV_P(matrixMode, m)}
 public func glMatrixLoad3x3fNV(matrixMode:GLenum, m:UnsafePointer<GLfloat>) {glMatrixLoad3x3fNV_P(matrixMode, m)}
 var glMatrixLoad3x3fNV_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glMatrixLoad3x3fNV_L
+public func glMatrixLoaddEXT(_ mode:GLenum, _ m:UnsafePointer<GLdouble>) {glMatrixLoaddEXT_P(mode, m)}
+public func glMatrixLoaddEXT(mode:GLenum, m:UnsafePointer<GLdouble>) {glMatrixLoaddEXT_P(mode, m)}
+var glMatrixLoaddEXT_P:@convention(c)(GLenum, UnsafePointer<GLdouble>) -> Void = glMatrixLoaddEXT_L
+public func glMatrixLoadfEXT(_ mode:GLenum, _ m:UnsafePointer<GLfloat>) {glMatrixLoadfEXT_P(mode, m)}
+public func glMatrixLoadfEXT(mode:GLenum, m:UnsafePointer<GLfloat>) {glMatrixLoadfEXT_P(mode, m)}
+var glMatrixLoadfEXT_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glMatrixLoadfEXT_L
 public func glMatrixLoadIdentityEXT(_ mode:GLenum) {glMatrixLoadIdentityEXT_P(mode)}
 public func glMatrixLoadIdentityEXT(mode:GLenum) {glMatrixLoadIdentityEXT_P(mode)}
 var glMatrixLoadIdentityEXT_P:@convention(c)(GLenum) -> Void = glMatrixLoadIdentityEXT_L
@@ -4497,12 +4503,6 @@ var glMatrixLoadTransposedEXT_P:@convention(c)(GLenum, UnsafePointer<GLdouble>) 
 public func glMatrixLoadTransposefEXT(_ mode:GLenum, _ m:UnsafePointer<GLfloat>) {glMatrixLoadTransposefEXT_P(mode, m)}
 public func glMatrixLoadTransposefEXT(mode:GLenum, m:UnsafePointer<GLfloat>) {glMatrixLoadTransposefEXT_P(mode, m)}
 var glMatrixLoadTransposefEXT_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glMatrixLoadTransposefEXT_L
-public func glMatrixLoaddEXT(_ mode:GLenum, _ m:UnsafePointer<GLdouble>) {glMatrixLoaddEXT_P(mode, m)}
-public func glMatrixLoaddEXT(mode:GLenum, m:UnsafePointer<GLdouble>) {glMatrixLoaddEXT_P(mode, m)}
-var glMatrixLoaddEXT_P:@convention(c)(GLenum, UnsafePointer<GLdouble>) -> Void = glMatrixLoaddEXT_L
-public func glMatrixLoadfEXT(_ mode:GLenum, _ m:UnsafePointer<GLfloat>) {glMatrixLoadfEXT_P(mode, m)}
-public func glMatrixLoadfEXT(mode:GLenum, m:UnsafePointer<GLfloat>) {glMatrixLoadfEXT_P(mode, m)}
-var glMatrixLoadfEXT_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glMatrixLoadfEXT_L
 public func glMatrixMode(_ mode:GLenum) {glMatrixMode_P(mode)}
 public func glMatrixMode(mode:GLenum) {glMatrixMode_P(mode)}
 var glMatrixMode_P:@convention(c)(GLenum) -> Void = glMatrixMode_L
@@ -4512,6 +4512,12 @@ var glMatrixMult3x2fNV_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void 
 public func glMatrixMult3x3fNV(_ matrixMode:GLenum, _ m:UnsafePointer<GLfloat>) {glMatrixMult3x3fNV_P(matrixMode, m)}
 public func glMatrixMult3x3fNV(matrixMode:GLenum, m:UnsafePointer<GLfloat>) {glMatrixMult3x3fNV_P(matrixMode, m)}
 var glMatrixMult3x3fNV_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glMatrixMult3x3fNV_L
+public func glMatrixMultdEXT(_ mode:GLenum, _ m:UnsafePointer<GLdouble>) {glMatrixMultdEXT_P(mode, m)}
+public func glMatrixMultdEXT(mode:GLenum, m:UnsafePointer<GLdouble>) {glMatrixMultdEXT_P(mode, m)}
+var glMatrixMultdEXT_P:@convention(c)(GLenum, UnsafePointer<GLdouble>) -> Void = glMatrixMultdEXT_L
+public func glMatrixMultfEXT(_ mode:GLenum, _ m:UnsafePointer<GLfloat>) {glMatrixMultfEXT_P(mode, m)}
+public func glMatrixMultfEXT(mode:GLenum, m:UnsafePointer<GLfloat>) {glMatrixMultfEXT_P(mode, m)}
+var glMatrixMultfEXT_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glMatrixMultfEXT_L
 public func glMatrixMultTranspose3x3fNV(_ matrixMode:GLenum, _ m:UnsafePointer<GLfloat>) {glMatrixMultTranspose3x3fNV_P(matrixMode, m)}
 public func glMatrixMultTranspose3x3fNV(matrixMode:GLenum, m:UnsafePointer<GLfloat>) {glMatrixMultTranspose3x3fNV_P(matrixMode, m)}
 var glMatrixMultTranspose3x3fNV_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glMatrixMultTranspose3x3fNV_L
@@ -4521,12 +4527,6 @@ var glMatrixMultTransposedEXT_P:@convention(c)(GLenum, UnsafePointer<GLdouble>) 
 public func glMatrixMultTransposefEXT(_ mode:GLenum, _ m:UnsafePointer<GLfloat>) {glMatrixMultTransposefEXT_P(mode, m)}
 public func glMatrixMultTransposefEXT(mode:GLenum, m:UnsafePointer<GLfloat>) {glMatrixMultTransposefEXT_P(mode, m)}
 var glMatrixMultTransposefEXT_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glMatrixMultTransposefEXT_L
-public func glMatrixMultdEXT(_ mode:GLenum, _ m:UnsafePointer<GLdouble>) {glMatrixMultdEXT_P(mode, m)}
-public func glMatrixMultdEXT(mode:GLenum, m:UnsafePointer<GLdouble>) {glMatrixMultdEXT_P(mode, m)}
-var glMatrixMultdEXT_P:@convention(c)(GLenum, UnsafePointer<GLdouble>) -> Void = glMatrixMultdEXT_L
-public func glMatrixMultfEXT(_ mode:GLenum, _ m:UnsafePointer<GLfloat>) {glMatrixMultfEXT_P(mode, m)}
-public func glMatrixMultfEXT(mode:GLenum, m:UnsafePointer<GLfloat>) {glMatrixMultfEXT_P(mode, m)}
-var glMatrixMultfEXT_P:@convention(c)(GLenum, UnsafePointer<GLfloat>) -> Void = glMatrixMultfEXT_L
 public func glMatrixOrthoEXT(_ mode:GLenum, _ left:GLdouble, _ right:GLdouble, _ bottom:GLdouble, _ top:GLdouble, _ zNear:GLdouble, _ zFar:GLdouble) {glMatrixOrthoEXT_P(mode, left, right, bottom, top, zNear, zFar)}
 public func glMatrixOrthoEXT(mode:GLenum, left:GLdouble, right:GLdouble, bottom:GLdouble, top:GLdouble, zNear:GLdouble, zFar:GLdouble) {glMatrixOrthoEXT_P(mode, left, right, bottom, top, zNear, zFar)}
 var glMatrixOrthoEXT_P:@convention(c)(GLenum, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble) -> Void = glMatrixOrthoEXT_L
@@ -4566,6 +4566,12 @@ var glMemoryBarrierByRegion_P:@convention(c)(GLbitfield) -> Void = glMemoryBarri
 public func glMemoryBarrierEXT(_ barriers:GLbitfield) {glMemoryBarrierEXT_P(barriers)}
 public func glMemoryBarrierEXT(barriers:GLbitfield) {glMemoryBarrierEXT_P(barriers)}
 var glMemoryBarrierEXT_P:@convention(c)(GLbitfield) -> Void = glMemoryBarrierEXT_L
+public func glMinmax(_ target:GLenum, _ internalformat:GLenum, _ sink:GLboolean) {glMinmax_P(target, internalformat, sink)}
+public func glMinmax(target:GLenum, internalformat:GLenum, sink:GLboolean) {glMinmax_P(target, internalformat, sink)}
+var glMinmax_P:@convention(c)(GLenum, GLenum, GLboolean) -> Void = glMinmax_L
+public func glMinmaxEXT(_ target:GLenum, _ internalformat:GLenum, _ sink:GLboolean) {glMinmaxEXT_P(target, internalformat, sink)}
+public func glMinmaxEXT(target:GLenum, internalformat:GLenum, sink:GLboolean) {glMinmaxEXT_P(target, internalformat, sink)}
+var glMinmaxEXT_P:@convention(c)(GLenum, GLenum, GLboolean) -> Void = glMinmaxEXT_L
 public func glMinSampleShading(_ value:GLfloat) {glMinSampleShading_P(value)}
 public func glMinSampleShading(value:GLfloat) {glMinSampleShading_P(value)}
 var glMinSampleShading_P:@convention(c)(GLfloat) -> Void = glMinSampleShading_L
@@ -4575,39 +4581,6 @@ var glMinSampleShadingARB_P:@convention(c)(GLfloat) -> Void = glMinSampleShading
 public func glMinSampleShadingOES(_ value:GLfloat) {glMinSampleShadingOES_P(value)}
 public func glMinSampleShadingOES(value:GLfloat) {glMinSampleShadingOES_P(value)}
 var glMinSampleShadingOES_P:@convention(c)(GLfloat) -> Void = glMinSampleShadingOES_L
-public func glMinmax(_ target:GLenum, _ internalformat:GLenum, _ sink:GLboolean) {glMinmax_P(target, internalformat, sink)}
-public func glMinmax(target:GLenum, internalformat:GLenum, sink:GLboolean) {glMinmax_P(target, internalformat, sink)}
-var glMinmax_P:@convention(c)(GLenum, GLenum, GLboolean) -> Void = glMinmax_L
-public func glMinmaxEXT(_ target:GLenum, _ internalformat:GLenum, _ sink:GLboolean) {glMinmaxEXT_P(target, internalformat, sink)}
-public func glMinmaxEXT(target:GLenum, internalformat:GLenum, sink:GLboolean) {glMinmaxEXT_P(target, internalformat, sink)}
-var glMinmaxEXT_P:@convention(c)(GLenum, GLenum, GLboolean) -> Void = glMinmaxEXT_L
-public func glMultMatrixd(_ m:UnsafePointer<GLdouble>) {glMultMatrixd_P(m)}
-public func glMultMatrixd(m:UnsafePointer<GLdouble>) {glMultMatrixd_P(m)}
-var glMultMatrixd_P:@convention(c)(UnsafePointer<GLdouble>) -> Void = glMultMatrixd_L
-public func glMultMatrixf(_ m:UnsafePointer<GLfloat>) {glMultMatrixf_P(m)}
-public func glMultMatrixf(m:UnsafePointer<GLfloat>) {glMultMatrixf_P(m)}
-var glMultMatrixf_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glMultMatrixf_L
-public func glMultMatrixx(_ m:UnsafePointer<GLfixed>) {glMultMatrixx_P(m)}
-public func glMultMatrixx(m:UnsafePointer<GLfixed>) {glMultMatrixx_P(m)}
-var glMultMatrixx_P:@convention(c)(UnsafePointer<GLfixed>) -> Void = glMultMatrixx_L
-public func glMultMatrixxOES(_ m:UnsafePointer<GLfixed>) {glMultMatrixxOES_P(m)}
-public func glMultMatrixxOES(m:UnsafePointer<GLfixed>) {glMultMatrixxOES_P(m)}
-var glMultMatrixxOES_P:@convention(c)(UnsafePointer<GLfixed>) -> Void = glMultMatrixxOES_L
-public func glMultTransposeMatrixd(_ m:UnsafePointer<GLdouble>) {glMultTransposeMatrixd_P(m)}
-public func glMultTransposeMatrixd(m:UnsafePointer<GLdouble>) {glMultTransposeMatrixd_P(m)}
-var glMultTransposeMatrixd_P:@convention(c)(UnsafePointer<GLdouble>) -> Void = glMultTransposeMatrixd_L
-public func glMultTransposeMatrixdARB(_ m:UnsafePointer<GLdouble>) {glMultTransposeMatrixdARB_P(m)}
-public func glMultTransposeMatrixdARB(m:UnsafePointer<GLdouble>) {glMultTransposeMatrixdARB_P(m)}
-var glMultTransposeMatrixdARB_P:@convention(c)(UnsafePointer<GLdouble>) -> Void = glMultTransposeMatrixdARB_L
-public func glMultTransposeMatrixf(_ m:UnsafePointer<GLfloat>) {glMultTransposeMatrixf_P(m)}
-public func glMultTransposeMatrixf(m:UnsafePointer<GLfloat>) {glMultTransposeMatrixf_P(m)}
-var glMultTransposeMatrixf_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glMultTransposeMatrixf_L
-public func glMultTransposeMatrixfARB(_ m:UnsafePointer<GLfloat>) {glMultTransposeMatrixfARB_P(m)}
-public func glMultTransposeMatrixfARB(m:UnsafePointer<GLfloat>) {glMultTransposeMatrixfARB_P(m)}
-var glMultTransposeMatrixfARB_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glMultTransposeMatrixfARB_L
-public func glMultTransposeMatrixxOES(_ m:UnsafePointer<GLfixed>) {glMultTransposeMatrixxOES_P(m)}
-public func glMultTransposeMatrixxOES(m:UnsafePointer<GLfixed>) {glMultTransposeMatrixxOES_P(m)}
-var glMultTransposeMatrixxOES_P:@convention(c)(UnsafePointer<GLfixed>) -> Void = glMultTransposeMatrixxOES_L
 public func glMultiDrawArrays(_ mode:GLenum, _ first:UnsafePointer<GLint>, _ count:UnsafePointer<GLsizei>, _ drawcount:GLsizei) {glMultiDrawArrays_P(mode, first, count, drawcount)}
 public func glMultiDrawArrays(mode:GLenum, first:UnsafePointer<GLint>, count:UnsafePointer<GLsizei>, drawcount:GLsizei) {glMultiDrawArrays_P(mode, first, count, drawcount)}
 var glMultiDrawArrays_P:@convention(c)(GLenum, UnsafePointer<GLint>, UnsafePointer<GLsizei>, GLsizei) -> Void = glMultiDrawArrays_L
@@ -5013,12 +4986,6 @@ var glMultiTexImage2DEXT_P:@convention(c)(GLenum, GLenum, GLint, GLint, GLsizei,
 public func glMultiTexImage3DEXT(_ texunit:GLenum, _ target:GLenum, _ level:GLint, _ internalformat:GLint, _ width:GLsizei, _ height:GLsizei, _ depth:GLsizei, _ border:GLint, _ format:GLenum, _ type:GLenum, _ pixels:UnsafeRawPointer) {glMultiTexImage3DEXT_P(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels)}
 public func glMultiTexImage3DEXT(texunit:GLenum, target:GLenum, level:GLint, internalformat:GLint, width:GLsizei, height:GLsizei, depth:GLsizei, border:GLint, format:GLenum, type:GLenum, pixels:UnsafeRawPointer) {glMultiTexImage3DEXT_P(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels)}
 var glMultiTexImage3DEXT_P:@convention(c)(GLenum, GLenum, GLint, GLint, GLsizei, GLsizei, GLsizei, GLint, GLenum, GLenum, UnsafeRawPointer) -> Void = glMultiTexImage3DEXT_L
-public func glMultiTexParameterIivEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glMultiTexParameterIivEXT_P(texunit, target, pname, params)}
-public func glMultiTexParameterIivEXT(texunit:GLenum, target:GLenum, pname:GLenum, params:UnsafePointer<GLint>) {glMultiTexParameterIivEXT_P(texunit, target, pname, params)}
-var glMultiTexParameterIivEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafePointer<GLint>) -> Void = glMultiTexParameterIivEXT_L
-public func glMultiTexParameterIuivEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLuint>) {glMultiTexParameterIuivEXT_P(texunit, target, pname, params)}
-public func glMultiTexParameterIuivEXT(texunit:GLenum, target:GLenum, pname:GLenum, params:UnsafePointer<GLuint>) {glMultiTexParameterIuivEXT_P(texunit, target, pname, params)}
-var glMultiTexParameterIuivEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafePointer<GLuint>) -> Void = glMultiTexParameterIuivEXT_L
 public func glMultiTexParameterfEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ param:GLfloat) {glMultiTexParameterfEXT_P(texunit, target, pname, param)}
 public func glMultiTexParameterfEXT(texunit:GLenum, target:GLenum, pname:GLenum, param:GLfloat) {glMultiTexParameterfEXT_P(texunit, target, pname, param)}
 var glMultiTexParameterfEXT_P:@convention(c)(GLenum, GLenum, GLenum, GLfloat) -> Void = glMultiTexParameterfEXT_L
@@ -5028,6 +4995,12 @@ var glMultiTexParameterfvEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafePoin
 public func glMultiTexParameteriEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ param:GLint) {glMultiTexParameteriEXT_P(texunit, target, pname, param)}
 public func glMultiTexParameteriEXT(texunit:GLenum, target:GLenum, pname:GLenum, param:GLint) {glMultiTexParameteriEXT_P(texunit, target, pname, param)}
 var glMultiTexParameteriEXT_P:@convention(c)(GLenum, GLenum, GLenum, GLint) -> Void = glMultiTexParameteriEXT_L
+public func glMultiTexParameterIivEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glMultiTexParameterIivEXT_P(texunit, target, pname, params)}
+public func glMultiTexParameterIivEXT(texunit:GLenum, target:GLenum, pname:GLenum, params:UnsafePointer<GLint>) {glMultiTexParameterIivEXT_P(texunit, target, pname, params)}
+var glMultiTexParameterIivEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafePointer<GLint>) -> Void = glMultiTexParameterIivEXT_L
+public func glMultiTexParameterIuivEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLuint>) {glMultiTexParameterIuivEXT_P(texunit, target, pname, params)}
+public func glMultiTexParameterIuivEXT(texunit:GLenum, target:GLenum, pname:GLenum, params:UnsafePointer<GLuint>) {glMultiTexParameterIuivEXT_P(texunit, target, pname, params)}
+var glMultiTexParameterIuivEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafePointer<GLuint>) -> Void = glMultiTexParameterIuivEXT_L
 public func glMultiTexParameterivEXT(_ texunit:GLenum, _ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glMultiTexParameterivEXT_P(texunit, target, pname, params)}
 public func glMultiTexParameterivEXT(texunit:GLenum, target:GLenum, pname:GLenum, params:UnsafePointer<GLint>) {glMultiTexParameterivEXT_P(texunit, target, pname, params)}
 var glMultiTexParameterivEXT_P:@convention(c)(GLenum, GLenum, GLenum, UnsafePointer<GLint>) -> Void = glMultiTexParameterivEXT_L
@@ -5043,6 +5016,33 @@ var glMultiTexSubImage2DEXT_P:@convention(c)(GLenum, GLenum, GLint, GLint, GLint
 public func glMultiTexSubImage3DEXT(_ texunit:GLenum, _ target:GLenum, _ level:GLint, _ xoffset:GLint, _ yoffset:GLint, _ zoffset:GLint, _ width:GLsizei, _ height:GLsizei, _ depth:GLsizei, _ format:GLenum, _ type:GLenum, _ pixels:UnsafeRawPointer) {glMultiTexSubImage3DEXT_P(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels)}
 public func glMultiTexSubImage3DEXT(texunit:GLenum, target:GLenum, level:GLint, xoffset:GLint, yoffset:GLint, zoffset:GLint, width:GLsizei, height:GLsizei, depth:GLsizei, format:GLenum, type:GLenum, pixels:UnsafeRawPointer) {glMultiTexSubImage3DEXT_P(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels)}
 var glMultiTexSubImage3DEXT_P:@convention(c)(GLenum, GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, UnsafeRawPointer) -> Void = glMultiTexSubImage3DEXT_L
+public func glMultMatrixd(_ m:UnsafePointer<GLdouble>) {glMultMatrixd_P(m)}
+public func glMultMatrixd(m:UnsafePointer<GLdouble>) {glMultMatrixd_P(m)}
+var glMultMatrixd_P:@convention(c)(UnsafePointer<GLdouble>) -> Void = glMultMatrixd_L
+public func glMultMatrixf(_ m:UnsafePointer<GLfloat>) {glMultMatrixf_P(m)}
+public func glMultMatrixf(m:UnsafePointer<GLfloat>) {glMultMatrixf_P(m)}
+var glMultMatrixf_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glMultMatrixf_L
+public func glMultMatrixx(_ m:UnsafePointer<GLfixed>) {glMultMatrixx_P(m)}
+public func glMultMatrixx(m:UnsafePointer<GLfixed>) {glMultMatrixx_P(m)}
+var glMultMatrixx_P:@convention(c)(UnsafePointer<GLfixed>) -> Void = glMultMatrixx_L
+public func glMultMatrixxOES(_ m:UnsafePointer<GLfixed>) {glMultMatrixxOES_P(m)}
+public func glMultMatrixxOES(m:UnsafePointer<GLfixed>) {glMultMatrixxOES_P(m)}
+var glMultMatrixxOES_P:@convention(c)(UnsafePointer<GLfixed>) -> Void = glMultMatrixxOES_L
+public func glMultTransposeMatrixd(_ m:UnsafePointer<GLdouble>) {glMultTransposeMatrixd_P(m)}
+public func glMultTransposeMatrixd(m:UnsafePointer<GLdouble>) {glMultTransposeMatrixd_P(m)}
+var glMultTransposeMatrixd_P:@convention(c)(UnsafePointer<GLdouble>) -> Void = glMultTransposeMatrixd_L
+public func glMultTransposeMatrixdARB(_ m:UnsafePointer<GLdouble>) {glMultTransposeMatrixdARB_P(m)}
+public func glMultTransposeMatrixdARB(m:UnsafePointer<GLdouble>) {glMultTransposeMatrixdARB_P(m)}
+var glMultTransposeMatrixdARB_P:@convention(c)(UnsafePointer<GLdouble>) -> Void = glMultTransposeMatrixdARB_L
+public func glMultTransposeMatrixf(_ m:UnsafePointer<GLfloat>) {glMultTransposeMatrixf_P(m)}
+public func glMultTransposeMatrixf(m:UnsafePointer<GLfloat>) {glMultTransposeMatrixf_P(m)}
+var glMultTransposeMatrixf_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glMultTransposeMatrixf_L
+public func glMultTransposeMatrixfARB(_ m:UnsafePointer<GLfloat>) {glMultTransposeMatrixfARB_P(m)}
+public func glMultTransposeMatrixfARB(m:UnsafePointer<GLfloat>) {glMultTransposeMatrixfARB_P(m)}
+var glMultTransposeMatrixfARB_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glMultTransposeMatrixfARB_L
+public func glMultTransposeMatrixxOES(_ m:UnsafePointer<GLfixed>) {glMultTransposeMatrixxOES_P(m)}
+public func glMultTransposeMatrixxOES(m:UnsafePointer<GLfixed>) {glMultTransposeMatrixxOES_P(m)}
+var glMultTransposeMatrixxOES_P:@convention(c)(UnsafePointer<GLfixed>) -> Void = glMultTransposeMatrixxOES_L
 public func glNamedBufferData(_ buffer:GLuint, _ size:GLsizeiptr, _ data:UnsafeRawPointer, _ usage:GLenum) {glNamedBufferData_P(buffer, size, data, usage)}
 public func glNamedBufferData(buffer:GLuint, size:GLsizeiptr, data:UnsafeRawPointer, usage:GLenum) {glNamedBufferData_P(buffer, size, data, usage)}
 var glNamedBufferData_P:@convention(c)(GLuint, GLsizeiptr, UnsafeRawPointer, GLenum) -> Void = glNamedBufferData_L
@@ -5196,15 +5196,15 @@ var glNormal3dv_P:@convention(c)(UnsafePointer<GLdouble>) -> Void = glNormal3dv_
 public func glNormal3f(_ nx:GLfloat, _ ny:GLfloat, _ nz:GLfloat) {glNormal3f_P(nx, ny, nz)}
 public func glNormal3f(nx:GLfloat, ny:GLfloat, nz:GLfloat) {glNormal3f_P(nx, ny, nz)}
 var glNormal3f_P:@convention(c)(GLfloat, GLfloat, GLfloat) -> Void = glNormal3f_L
+public func glNormal3fv(_ v:UnsafePointer<GLfloat>) {glNormal3fv_P(v)}
+public func glNormal3fv(v:UnsafePointer<GLfloat>) {glNormal3fv_P(v)}
+var glNormal3fv_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glNormal3fv_L
 public func glNormal3fVertex3fSUN(_ nx:GLfloat, _ ny:GLfloat, _ nz:GLfloat, _ x:GLfloat, _ y:GLfloat, _ z:GLfloat) {glNormal3fVertex3fSUN_P(nx, ny, nz, x, y, z)}
 public func glNormal3fVertex3fSUN(nx:GLfloat, ny:GLfloat, nz:GLfloat, x:GLfloat, y:GLfloat, z:GLfloat) {glNormal3fVertex3fSUN_P(nx, ny, nz, x, y, z)}
 var glNormal3fVertex3fSUN_P:@convention(c)(GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat) -> Void = glNormal3fVertex3fSUN_L
 public func glNormal3fVertex3fvSUN(_ n:UnsafePointer<GLfloat>, _ v:UnsafePointer<GLfloat>) {glNormal3fVertex3fvSUN_P(n, v)}
 public func glNormal3fVertex3fvSUN(n:UnsafePointer<GLfloat>, v:UnsafePointer<GLfloat>) {glNormal3fVertex3fvSUN_P(n, v)}
 var glNormal3fVertex3fvSUN_P:@convention(c)(UnsafePointer<GLfloat>, UnsafePointer<GLfloat>) -> Void = glNormal3fVertex3fvSUN_L
-public func glNormal3fv(_ v:UnsafePointer<GLfloat>) {glNormal3fv_P(v)}
-public func glNormal3fv(v:UnsafePointer<GLfloat>) {glNormal3fv_P(v)}
-var glNormal3fv_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glNormal3fv_L
 public func glNormal3hNV(_ nx:GLhalfNV, _ ny:GLhalfNV, _ nz:GLhalfNV) {glNormal3hNV_P(nx, ny, nz)}
 public func glNormal3hNV(nx:GLhalfNV, ny:GLhalfNV, nz:GLhalfNV) {glNormal3hNV_P(nx, ny, nz)}
 var glNormal3hNV_P:@convention(c)(GLhalfNV, GLhalfNV, GLhalfNV) -> Void = glNormal3hNV_L
@@ -5316,12 +5316,6 @@ var glOrthox_P:@convention(c)(GLfixed, GLfixed, GLfixed, GLfixed, GLfixed, GLfix
 public func glOrthoxOES(_ l:GLfixed, _ r:GLfixed, _ b:GLfixed, _ t:GLfixed, _ n:GLfixed, _ f:GLfixed) {glOrthoxOES_P(l, r, b, t, n, f)}
 public func glOrthoxOES(l:GLfixed, r:GLfixed, b:GLfixed, t:GLfixed, n:GLfixed, f:GLfixed) {glOrthoxOES_P(l, r, b, t, n, f)}
 var glOrthoxOES_P:@convention(c)(GLfixed, GLfixed, GLfixed, GLfixed, GLfixed, GLfixed) -> Void = glOrthoxOES_L
-public func glPNTrianglesfATI(_ pname:GLenum, _ param:GLfloat) {glPNTrianglesfATI_P(pname, param)}
-public func glPNTrianglesfATI(pname:GLenum, param:GLfloat) {glPNTrianglesfATI_P(pname, param)}
-var glPNTrianglesfATI_P:@convention(c)(GLenum, GLfloat) -> Void = glPNTrianglesfATI_L
-public func glPNTrianglesiATI(_ pname:GLenum, _ param:GLint) {glPNTrianglesiATI_P(pname, param)}
-public func glPNTrianglesiATI(pname:GLenum, param:GLint) {glPNTrianglesiATI_P(pname, param)}
-var glPNTrianglesiATI_P:@convention(c)(GLenum, GLint) -> Void = glPNTrianglesiATI_L
 public func glPassTexCoordATI(_ dst:GLuint, _ coord:GLuint, _ swizzle:GLenum) {glPassTexCoordATI_P(dst, coord, swizzle)}
 public func glPassTexCoordATI(dst:GLuint, coord:GLuint, swizzle:GLenum) {glPassTexCoordATI_P(dst, coord, swizzle)}
 var glPassTexCoordATI_P:@convention(c)(GLuint, GLuint, GLenum) -> Void = glPassTexCoordATI_L
@@ -5476,6 +5470,12 @@ var glPixelZoom_P:@convention(c)(GLfloat, GLfloat) -> Void = glPixelZoom_L
 public func glPixelZoomxOES(_ xfactor:GLfixed, _ yfactor:GLfixed) {glPixelZoomxOES_P(xfactor, yfactor)}
 public func glPixelZoomxOES(xfactor:GLfixed, yfactor:GLfixed) {glPixelZoomxOES_P(xfactor, yfactor)}
 var glPixelZoomxOES_P:@convention(c)(GLfixed, GLfixed) -> Void = glPixelZoomxOES_L
+public func glPNTrianglesfATI(_ pname:GLenum, _ param:GLfloat) {glPNTrianglesfATI_P(pname, param)}
+public func glPNTrianglesfATI(pname:GLenum, param:GLfloat) {glPNTrianglesfATI_P(pname, param)}
+var glPNTrianglesfATI_P:@convention(c)(GLenum, GLfloat) -> Void = glPNTrianglesfATI_L
+public func glPNTrianglesiATI(_ pname:GLenum, _ param:GLint) {glPNTrianglesiATI_P(pname, param)}
+public func glPNTrianglesiATI(pname:GLenum, param:GLint) {glPNTrianglesiATI_P(pname, param)}
+var glPNTrianglesiATI_P:@convention(c)(GLenum, GLint) -> Void = glPNTrianglesiATI_L
 public func glPointAlongPathNV(_ path:GLuint, _ startSegment:GLsizei, _ numSegments:GLsizei, _ distance:GLfloat, _ x:UnsafeMutablePointer<GLfloat>, _ y:UnsafeMutablePointer<GLfloat>, _ tangentX:UnsafeMutablePointer<GLfloat>, _ tangentY:UnsafeMutablePointer<GLfloat>) -> GLboolean {return glPointAlongPathNV_P(path, startSegment, numSegments, distance, x, y, tangentX, tangentY)}
 public func glPointAlongPathNV(path:GLuint, startSegment:GLsizei, numSegments:GLsizei, distance:GLfloat, x:UnsafeMutablePointer<GLfloat>, y:UnsafeMutablePointer<GLfloat>, tangentX:UnsafeMutablePointer<GLfloat>, tangentY:UnsafeMutablePointer<GLfloat>) -> GLboolean {return glPointAlongPathNV_P(path, startSegment, numSegments, distance, x, y, tangentX, tangentY)}
 var glPointAlongPathNV_P:@convention(c)(GLuint, GLsizei, GLsizei, GLfloat, UnsafeMutablePointer<GLfloat>, UnsafeMutablePointer<GLfloat>, UnsafeMutablePointer<GLfloat>, UnsafeMutablePointer<GLfloat>) -> GLboolean = glPointAlongPathNV_L
@@ -5624,15 +5624,15 @@ var glProgramBinary_P:@convention(c)(GLuint, GLenum, UnsafeRawPointer, GLsizei) 
 public func glProgramBinaryOES(_ program:GLuint, _ binaryFormat:GLenum, _ binary:UnsafeRawPointer, _ length:GLint) {glProgramBinaryOES_P(program, binaryFormat, binary, length)}
 public func glProgramBinaryOES(program:GLuint, binaryFormat:GLenum, binary:UnsafeRawPointer, length:GLint) {glProgramBinaryOES_P(program, binaryFormat, binary, length)}
 var glProgramBinaryOES_P:@convention(c)(GLuint, GLenum, UnsafeRawPointer, GLint) -> Void = glProgramBinaryOES_L
+public func glProgramBufferParametersfvNV(_ target:GLenum, _ bindingIndex:GLuint, _ wordIndex:GLuint, _ count:GLsizei, _ params:UnsafePointer<GLfloat>) {glProgramBufferParametersfvNV_P(target, bindingIndex, wordIndex, count, params)}
+public func glProgramBufferParametersfvNV(target:GLenum, bindingIndex:GLuint, wordIndex:GLuint, count:GLsizei, params:UnsafePointer<GLfloat>) {glProgramBufferParametersfvNV_P(target, bindingIndex, wordIndex, count, params)}
+var glProgramBufferParametersfvNV_P:@convention(c)(GLenum, GLuint, GLuint, GLsizei, UnsafePointer<GLfloat>) -> Void = glProgramBufferParametersfvNV_L
 public func glProgramBufferParametersIivNV(_ target:GLenum, _ bindingIndex:GLuint, _ wordIndex:GLuint, _ count:GLsizei, _ params:UnsafePointer<GLint>) {glProgramBufferParametersIivNV_P(target, bindingIndex, wordIndex, count, params)}
 public func glProgramBufferParametersIivNV(target:GLenum, bindingIndex:GLuint, wordIndex:GLuint, count:GLsizei, params:UnsafePointer<GLint>) {glProgramBufferParametersIivNV_P(target, bindingIndex, wordIndex, count, params)}
 var glProgramBufferParametersIivNV_P:@convention(c)(GLenum, GLuint, GLuint, GLsizei, UnsafePointer<GLint>) -> Void = glProgramBufferParametersIivNV_L
 public func glProgramBufferParametersIuivNV(_ target:GLenum, _ bindingIndex:GLuint, _ wordIndex:GLuint, _ count:GLsizei, _ params:UnsafePointer<GLuint>) {glProgramBufferParametersIuivNV_P(target, bindingIndex, wordIndex, count, params)}
 public func glProgramBufferParametersIuivNV(target:GLenum, bindingIndex:GLuint, wordIndex:GLuint, count:GLsizei, params:UnsafePointer<GLuint>) {glProgramBufferParametersIuivNV_P(target, bindingIndex, wordIndex, count, params)}
 var glProgramBufferParametersIuivNV_P:@convention(c)(GLenum, GLuint, GLuint, GLsizei, UnsafePointer<GLuint>) -> Void = glProgramBufferParametersIuivNV_L
-public func glProgramBufferParametersfvNV(_ target:GLenum, _ bindingIndex:GLuint, _ wordIndex:GLuint, _ count:GLsizei, _ params:UnsafePointer<GLfloat>) {glProgramBufferParametersfvNV_P(target, bindingIndex, wordIndex, count, params)}
-public func glProgramBufferParametersfvNV(target:GLenum, bindingIndex:GLuint, wordIndex:GLuint, count:GLsizei, params:UnsafePointer<GLfloat>) {glProgramBufferParametersfvNV_P(target, bindingIndex, wordIndex, count, params)}
-var glProgramBufferParametersfvNV_P:@convention(c)(GLenum, GLuint, GLuint, GLsizei, UnsafePointer<GLfloat>) -> Void = glProgramBufferParametersfvNV_L
 public func glProgramEnvParameter4dARB(_ target:GLenum, _ index:GLuint, _ x:GLdouble, _ y:GLdouble, _ z:GLdouble, _ w:GLdouble) {glProgramEnvParameter4dARB_P(target, index, x, y, z, w)}
 public func glProgramEnvParameter4dARB(target:GLenum, index:GLuint, x:GLdouble, y:GLdouble, z:GLdouble, w:GLdouble) {glProgramEnvParameter4dARB_P(target, index, x, y, z, w)}
 var glProgramEnvParameter4dARB_P:@convention(c)(GLenum, GLuint, GLdouble, GLdouble, GLdouble, GLdouble) -> Void = glProgramEnvParameter4dARB_L
@@ -6310,9 +6310,6 @@ var glReadBufferNV_P:@convention(c)(GLenum) -> Void = glReadBufferNV_L
 public func glReadInstrumentsSGIX(_ marker:GLint) {glReadInstrumentsSGIX_P(marker)}
 public func glReadInstrumentsSGIX(marker:GLint) {glReadInstrumentsSGIX_P(marker)}
 var glReadInstrumentsSGIX_P:@convention(c)(GLint) -> Void = glReadInstrumentsSGIX_L
-public func glReadPixels(_ x:GLint, _ y:GLint, _ width:GLsizei, _ height:GLsizei, _ format:GLenum, _ type:GLenum, _ pixels:UnsafeMutableRawPointer) {glReadPixels_P(x, y, width, height, format, type, pixels)}
-public func glReadPixels(x:GLint, y:GLint, width:GLsizei, height:GLsizei, format:GLenum, type:GLenum, pixels:UnsafeMutableRawPointer) {glReadPixels_P(x, y, width, height, format, type, pixels)}
-var glReadPixels_P:@convention(c)(GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, UnsafeMutableRawPointer) -> Void = glReadPixels_L
 public func glReadnPixels(_ x:GLint, _ y:GLint, _ width:GLsizei, _ height:GLsizei, _ format:GLenum, _ type:GLenum, _ bufSize:GLsizei, _ data:UnsafeMutableRawPointer) {glReadnPixels_P(x, y, width, height, format, type, bufSize, data)}
 public func glReadnPixels(x:GLint, y:GLint, width:GLsizei, height:GLsizei, format:GLenum, type:GLenum, bufSize:GLsizei, data:UnsafeMutableRawPointer) {glReadnPixels_P(x, y, width, height, format, type, bufSize, data)}
 var glReadnPixels_P:@convention(c)(GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, GLsizei, UnsafeMutableRawPointer) -> Void = glReadnPixels_L
@@ -6325,6 +6322,9 @@ var glReadnPixelsEXT_P:@convention(c)(GLint, GLint, GLsizei, GLsizei, GLenum, GL
 public func glReadnPixelsKHR(_ x:GLint, _ y:GLint, _ width:GLsizei, _ height:GLsizei, _ format:GLenum, _ type:GLenum, _ bufSize:GLsizei, _ data:UnsafeMutableRawPointer) {glReadnPixelsKHR_P(x, y, width, height, format, type, bufSize, data)}
 public func glReadnPixelsKHR(x:GLint, y:GLint, width:GLsizei, height:GLsizei, format:GLenum, type:GLenum, bufSize:GLsizei, data:UnsafeMutableRawPointer) {glReadnPixelsKHR_P(x, y, width, height, format, type, bufSize, data)}
 var glReadnPixelsKHR_P:@convention(c)(GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, GLsizei, UnsafeMutableRawPointer) -> Void = glReadnPixelsKHR_L
+public func glReadPixels(_ x:GLint, _ y:GLint, _ width:GLsizei, _ height:GLsizei, _ format:GLenum, _ type:GLenum, _ pixels:UnsafeMutableRawPointer) {glReadPixels_P(x, y, width, height, format, type, pixels)}
+public func glReadPixels(x:GLint, y:GLint, width:GLsizei, height:GLsizei, format:GLenum, type:GLenum, pixels:UnsafeMutableRawPointer) {glReadPixels_P(x, y, width, height, format, type, pixels)}
+var glReadPixels_P:@convention(c)(GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, UnsafeMutableRawPointer) -> Void = glReadPixels_L
 public func glRectd(_ x1:GLdouble, _ y1:GLdouble, _ x2:GLdouble, _ y2:GLdouble) {glRectd_P(x1, y1, x2, y2)}
 public func glRectd(x1:GLdouble, y1:GLdouble, x2:GLdouble, y2:GLdouble) {glRectd_P(x1, y1, x2, y2)}
 var glRectd_P:@convention(c)(GLdouble, GLdouble, GLdouble, GLdouble) -> Void = glRectd_L
@@ -6360,9 +6360,6 @@ public func glReferencePlaneSGIX(equation:UnsafePointer<GLdouble>) {glReferenceP
 var glReferencePlaneSGIX_P:@convention(c)(UnsafePointer<GLdouble>) -> Void = glReferencePlaneSGIX_L
 public func glReleaseShaderCompiler() {glReleaseShaderCompiler_P()}
 var glReleaseShaderCompiler_P:@convention(c)() -> Void = glReleaseShaderCompiler_L
-public func glRenderMode(_ mode:GLenum) -> GLint {return glRenderMode_P(mode)}
-public func glRenderMode(mode:GLenum) -> GLint {return glRenderMode_P(mode)}
-var glRenderMode_P:@convention(c)(GLenum) -> GLint = glRenderMode_L
 public func glRenderbufferStorage(_ target:GLenum, _ internalformat:GLenum, _ width:GLsizei, _ height:GLsizei) {glRenderbufferStorage_P(target, internalformat, width, height)}
 public func glRenderbufferStorage(target:GLenum, internalformat:GLenum, width:GLsizei, height:GLsizei) {glRenderbufferStorage_P(target, internalformat, width, height)}
 var glRenderbufferStorage_P:@convention(c)(GLenum, GLenum, GLsizei, GLsizei) -> Void = glRenderbufferStorage_L
@@ -6393,6 +6390,9 @@ var glRenderbufferStorageMultisampleNV_P:@convention(c)(GLenum, GLsizei, GLenum,
 public func glRenderbufferStorageOES(_ target:GLenum, _ internalformat:GLenum, _ width:GLsizei, _ height:GLsizei) {glRenderbufferStorageOES_P(target, internalformat, width, height)}
 public func glRenderbufferStorageOES(target:GLenum, internalformat:GLenum, width:GLsizei, height:GLsizei) {glRenderbufferStorageOES_P(target, internalformat, width, height)}
 var glRenderbufferStorageOES_P:@convention(c)(GLenum, GLenum, GLsizei, GLsizei) -> Void = glRenderbufferStorageOES_L
+public func glRenderMode(_ mode:GLenum) -> GLint {return glRenderMode_P(mode)}
+public func glRenderMode(mode:GLenum) -> GLint {return glRenderMode_P(mode)}
+var glRenderMode_P:@convention(c)(GLenum) -> GLint = glRenderMode_L
 public func glReplacementCodePointerSUN(_ type:GLenum, _ stride:GLsizei, _ pointer:UnsafeMutablePointer<UnsafeRawPointer>) {glReplacementCodePointerSUN_P(type, stride, pointer)}
 public func glReplacementCodePointerSUN(type:GLenum, stride:GLsizei, pointer:UnsafeMutablePointer<UnsafeRawPointer>) {glReplacementCodePointerSUN_P(type, stride, pointer)}
 var glReplacementCodePointerSUN_P:@convention(c)(GLenum, GLsizei, UnsafeMutablePointer<UnsafeRawPointer>) -> Void = glReplacementCodePointerSUN_L
@@ -6517,21 +6517,30 @@ var glSampleMapATI_P:@convention(c)(GLuint, GLuint, GLenum) -> Void = glSampleMa
 public func glSampleMaskEXT(_ value:GLclampf, _ invert:GLboolean) {glSampleMaskEXT_P(value, invert)}
 public func glSampleMaskEXT(value:GLclampf, invert:GLboolean) {glSampleMaskEXT_P(value, invert)}
 var glSampleMaskEXT_P:@convention(c)(GLclampf, GLboolean) -> Void = glSampleMaskEXT_L
+public func glSampleMaski(_ maskNumber:GLuint, _ mask:GLbitfield) {glSampleMaski_P(maskNumber, mask)}
+public func glSampleMaski(maskNumber:GLuint, mask:GLbitfield) {glSampleMaski_P(maskNumber, mask)}
+var glSampleMaski_P:@convention(c)(GLuint, GLbitfield) -> Void = glSampleMaski_L
 public func glSampleMaskIndexedNV(_ index:GLuint, _ mask:GLbitfield) {glSampleMaskIndexedNV_P(index, mask)}
 public func glSampleMaskIndexedNV(index:GLuint, mask:GLbitfield) {glSampleMaskIndexedNV_P(index, mask)}
 var glSampleMaskIndexedNV_P:@convention(c)(GLuint, GLbitfield) -> Void = glSampleMaskIndexedNV_L
 public func glSampleMaskSGIS(_ value:GLclampf, _ invert:GLboolean) {glSampleMaskSGIS_P(value, invert)}
 public func glSampleMaskSGIS(value:GLclampf, invert:GLboolean) {glSampleMaskSGIS_P(value, invert)}
 var glSampleMaskSGIS_P:@convention(c)(GLclampf, GLboolean) -> Void = glSampleMaskSGIS_L
-public func glSampleMaski(_ maskNumber:GLuint, _ mask:GLbitfield) {glSampleMaski_P(maskNumber, mask)}
-public func glSampleMaski(maskNumber:GLuint, mask:GLbitfield) {glSampleMaski_P(maskNumber, mask)}
-var glSampleMaski_P:@convention(c)(GLuint, GLbitfield) -> Void = glSampleMaski_L
 public func glSamplePatternEXT(_ pattern:GLenum) {glSamplePatternEXT_P(pattern)}
 public func glSamplePatternEXT(pattern:GLenum) {glSamplePatternEXT_P(pattern)}
 var glSamplePatternEXT_P:@convention(c)(GLenum) -> Void = glSamplePatternEXT_L
 public func glSamplePatternSGIS(_ pattern:GLenum) {glSamplePatternSGIS_P(pattern)}
 public func glSamplePatternSGIS(pattern:GLenum) {glSamplePatternSGIS_P(pattern)}
 var glSamplePatternSGIS_P:@convention(c)(GLenum) -> Void = glSamplePatternSGIS_L
+public func glSamplerParameterf(_ sampler:GLuint, _ pname:GLenum, _ param:GLfloat) {glSamplerParameterf_P(sampler, pname, param)}
+public func glSamplerParameterf(sampler:GLuint, pname:GLenum, param:GLfloat) {glSamplerParameterf_P(sampler, pname, param)}
+var glSamplerParameterf_P:@convention(c)(GLuint, GLenum, GLfloat) -> Void = glSamplerParameterf_L
+public func glSamplerParameterfv(_ sampler:GLuint, _ pname:GLenum, _ param:UnsafePointer<GLfloat>) {glSamplerParameterfv_P(sampler, pname, param)}
+public func glSamplerParameterfv(sampler:GLuint, pname:GLenum, param:UnsafePointer<GLfloat>) {glSamplerParameterfv_P(sampler, pname, param)}
+var glSamplerParameterfv_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLfloat>) -> Void = glSamplerParameterfv_L
+public func glSamplerParameteri(_ sampler:GLuint, _ pname:GLenum, _ param:GLint) {glSamplerParameteri_P(sampler, pname, param)}
+public func glSamplerParameteri(sampler:GLuint, pname:GLenum, param:GLint) {glSamplerParameteri_P(sampler, pname, param)}
+var glSamplerParameteri_P:@convention(c)(GLuint, GLenum, GLint) -> Void = glSamplerParameteri_L
 public func glSamplerParameterIiv(_ sampler:GLuint, _ pname:GLenum, _ param:UnsafePointer<GLint>) {glSamplerParameterIiv_P(sampler, pname, param)}
 public func glSamplerParameterIiv(sampler:GLuint, pname:GLenum, param:UnsafePointer<GLint>) {glSamplerParameterIiv_P(sampler, pname, param)}
 var glSamplerParameterIiv_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLint>) -> Void = glSamplerParameterIiv_L
@@ -6550,15 +6559,6 @@ var glSamplerParameterIuivEXT_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLu
 public func glSamplerParameterIuivOES(_ sampler:GLuint, _ pname:GLenum, _ param:UnsafePointer<GLuint>) {glSamplerParameterIuivOES_P(sampler, pname, param)}
 public func glSamplerParameterIuivOES(sampler:GLuint, pname:GLenum, param:UnsafePointer<GLuint>) {glSamplerParameterIuivOES_P(sampler, pname, param)}
 var glSamplerParameterIuivOES_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLuint>) -> Void = glSamplerParameterIuivOES_L
-public func glSamplerParameterf(_ sampler:GLuint, _ pname:GLenum, _ param:GLfloat) {glSamplerParameterf_P(sampler, pname, param)}
-public func glSamplerParameterf(sampler:GLuint, pname:GLenum, param:GLfloat) {glSamplerParameterf_P(sampler, pname, param)}
-var glSamplerParameterf_P:@convention(c)(GLuint, GLenum, GLfloat) -> Void = glSamplerParameterf_L
-public func glSamplerParameterfv(_ sampler:GLuint, _ pname:GLenum, _ param:UnsafePointer<GLfloat>) {glSamplerParameterfv_P(sampler, pname, param)}
-public func glSamplerParameterfv(sampler:GLuint, pname:GLenum, param:UnsafePointer<GLfloat>) {glSamplerParameterfv_P(sampler, pname, param)}
-var glSamplerParameterfv_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLfloat>) -> Void = glSamplerParameterfv_L
-public func glSamplerParameteri(_ sampler:GLuint, _ pname:GLenum, _ param:GLint) {glSamplerParameteri_P(sampler, pname, param)}
-public func glSamplerParameteri(sampler:GLuint, pname:GLenum, param:GLint) {glSamplerParameteri_P(sampler, pname, param)}
-var glSamplerParameteri_P:@convention(c)(GLuint, GLenum, GLint) -> Void = glSamplerParameteri_L
 public func glSamplerParameteriv(_ sampler:GLuint, _ pname:GLenum, _ param:UnsafePointer<GLint>) {glSamplerParameteriv_P(sampler, pname, param)}
 public func glSamplerParameteriv(sampler:GLuint, pname:GLenum, param:UnsafePointer<GLint>) {glSamplerParameteriv_P(sampler, pname, param)}
 var glSamplerParameteriv_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLint>) -> Void = glSamplerParameteriv_L
@@ -7022,15 +7022,15 @@ var glTexCoord2fNormal3fVertex3fSUN_P:@convention(c)(GLfloat, GLfloat, GLfloat, 
 public func glTexCoord2fNormal3fVertex3fvSUN(_ tc:UnsafePointer<GLfloat>, _ n:UnsafePointer<GLfloat>, _ v:UnsafePointer<GLfloat>) {glTexCoord2fNormal3fVertex3fvSUN_P(tc, n, v)}
 public func glTexCoord2fNormal3fVertex3fvSUN(tc:UnsafePointer<GLfloat>, n:UnsafePointer<GLfloat>, v:UnsafePointer<GLfloat>) {glTexCoord2fNormal3fVertex3fvSUN_P(tc, n, v)}
 var glTexCoord2fNormal3fVertex3fvSUN_P:@convention(c)(UnsafePointer<GLfloat>, UnsafePointer<GLfloat>, UnsafePointer<GLfloat>) -> Void = glTexCoord2fNormal3fVertex3fvSUN_L
+public func glTexCoord2fv(_ v:UnsafePointer<GLfloat>) {glTexCoord2fv_P(v)}
+public func glTexCoord2fv(v:UnsafePointer<GLfloat>) {glTexCoord2fv_P(v)}
+var glTexCoord2fv_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glTexCoord2fv_L
 public func glTexCoord2fVertex3fSUN(_ s:GLfloat, _ t:GLfloat, _ x:GLfloat, _ y:GLfloat, _ z:GLfloat) {glTexCoord2fVertex3fSUN_P(s, t, x, y, z)}
 public func glTexCoord2fVertex3fSUN(s:GLfloat, t:GLfloat, x:GLfloat, y:GLfloat, z:GLfloat) {glTexCoord2fVertex3fSUN_P(s, t, x, y, z)}
 var glTexCoord2fVertex3fSUN_P:@convention(c)(GLfloat, GLfloat, GLfloat, GLfloat, GLfloat) -> Void = glTexCoord2fVertex3fSUN_L
 public func glTexCoord2fVertex3fvSUN(_ tc:UnsafePointer<GLfloat>, _ v:UnsafePointer<GLfloat>) {glTexCoord2fVertex3fvSUN_P(tc, v)}
 public func glTexCoord2fVertex3fvSUN(tc:UnsafePointer<GLfloat>, v:UnsafePointer<GLfloat>) {glTexCoord2fVertex3fvSUN_P(tc, v)}
 var glTexCoord2fVertex3fvSUN_P:@convention(c)(UnsafePointer<GLfloat>, UnsafePointer<GLfloat>) -> Void = glTexCoord2fVertex3fvSUN_L
-public func glTexCoord2fv(_ v:UnsafePointer<GLfloat>) {glTexCoord2fv_P(v)}
-public func glTexCoord2fv(v:UnsafePointer<GLfloat>) {glTexCoord2fv_P(v)}
-var glTexCoord2fv_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glTexCoord2fv_L
 public func glTexCoord2hNV(_ s:GLhalfNV, _ t:GLhalfNV) {glTexCoord2hNV_P(s, t)}
 public func glTexCoord2hNV(s:GLhalfNV, t:GLhalfNV) {glTexCoord2hNV_P(s, t)}
 var glTexCoord2hNV_P:@convention(c)(GLhalfNV, GLhalfNV) -> Void = glTexCoord2hNV_L
@@ -7118,15 +7118,15 @@ var glTexCoord4fColor4fNormal3fVertex4fSUN_P:@convention(c)(GLfloat, GLfloat, GL
 public func glTexCoord4fColor4fNormal3fVertex4fvSUN(_ tc:UnsafePointer<GLfloat>, _ c:UnsafePointer<GLfloat>, _ n:UnsafePointer<GLfloat>, _ v:UnsafePointer<GLfloat>) {glTexCoord4fColor4fNormal3fVertex4fvSUN_P(tc, c, n, v)}
 public func glTexCoord4fColor4fNormal3fVertex4fvSUN(tc:UnsafePointer<GLfloat>, c:UnsafePointer<GLfloat>, n:UnsafePointer<GLfloat>, v:UnsafePointer<GLfloat>) {glTexCoord4fColor4fNormal3fVertex4fvSUN_P(tc, c, n, v)}
 var glTexCoord4fColor4fNormal3fVertex4fvSUN_P:@convention(c)(UnsafePointer<GLfloat>, UnsafePointer<GLfloat>, UnsafePointer<GLfloat>, UnsafePointer<GLfloat>) -> Void = glTexCoord4fColor4fNormal3fVertex4fvSUN_L
+public func glTexCoord4fv(_ v:UnsafePointer<GLfloat>) {glTexCoord4fv_P(v)}
+public func glTexCoord4fv(v:UnsafePointer<GLfloat>) {glTexCoord4fv_P(v)}
+var glTexCoord4fv_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glTexCoord4fv_L
 public func glTexCoord4fVertex4fSUN(_ s:GLfloat, _ t:GLfloat, _ p:GLfloat, _ q:GLfloat, _ x:GLfloat, _ y:GLfloat, _ z:GLfloat, _ w:GLfloat) {glTexCoord4fVertex4fSUN_P(s, t, p, q, x, y, z, w)}
 public func glTexCoord4fVertex4fSUN(s:GLfloat, t:GLfloat, p:GLfloat, q:GLfloat, x:GLfloat, y:GLfloat, z:GLfloat, w:GLfloat) {glTexCoord4fVertex4fSUN_P(s, t, p, q, x, y, z, w)}
 var glTexCoord4fVertex4fSUN_P:@convention(c)(GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat) -> Void = glTexCoord4fVertex4fSUN_L
 public func glTexCoord4fVertex4fvSUN(_ tc:UnsafePointer<GLfloat>, _ v:UnsafePointer<GLfloat>) {glTexCoord4fVertex4fvSUN_P(tc, v)}
 public func glTexCoord4fVertex4fvSUN(tc:UnsafePointer<GLfloat>, v:UnsafePointer<GLfloat>) {glTexCoord4fVertex4fvSUN_P(tc, v)}
 var glTexCoord4fVertex4fvSUN_P:@convention(c)(UnsafePointer<GLfloat>, UnsafePointer<GLfloat>) -> Void = glTexCoord4fVertex4fvSUN_L
-public func glTexCoord4fv(_ v:UnsafePointer<GLfloat>) {glTexCoord4fv_P(v)}
-public func glTexCoord4fv(v:UnsafePointer<GLfloat>) {glTexCoord4fv_P(v)}
-var glTexCoord4fv_P:@convention(c)(UnsafePointer<GLfloat>) -> Void = glTexCoord4fv_L
 public func glTexCoord4hNV(_ s:GLhalfNV, _ t:GLhalfNV, _ r:GLhalfNV, _ q:GLhalfNV) {glTexCoord4hNV_P(s, t, r, q)}
 public func glTexCoord4hNV(s:GLhalfNV, t:GLhalfNV, r:GLhalfNV, q:GLhalfNV) {glTexCoord4hNV_P(s, t, r, q)}
 var glTexCoord4hNV_P:@convention(c)(GLhalfNV, GLhalfNV, GLhalfNV, GLhalfNV) -> Void = glTexCoord4hNV_L
@@ -7289,6 +7289,15 @@ var glTexPageCommitmentARB_P:@convention(c)(GLenum, GLint, GLint, GLint, GLint, 
 public func glTexPageCommitmentEXT(_ target:GLenum, _ level:GLint, _ xoffset:GLint, _ yoffset:GLint, _ zoffset:GLint, _ width:GLsizei, _ height:GLsizei, _ depth:GLsizei, _ commit:GLboolean) {glTexPageCommitmentEXT_P(target, level, xoffset, yoffset, zoffset, width, height, depth, commit)}
 public func glTexPageCommitmentEXT(target:GLenum, level:GLint, xoffset:GLint, yoffset:GLint, zoffset:GLint, width:GLsizei, height:GLsizei, depth:GLsizei, commit:GLboolean) {glTexPageCommitmentEXT_P(target, level, xoffset, yoffset, zoffset, width, height, depth, commit)}
 var glTexPageCommitmentEXT_P:@convention(c)(GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLboolean) -> Void = glTexPageCommitmentEXT_L
+public func glTexParameterf(_ target:GLenum, _ pname:GLenum, _ param:GLfloat) {glTexParameterf_P(target, pname, param)}
+public func glTexParameterf(target:GLenum, pname:GLenum, param:GLfloat) {glTexParameterf_P(target, pname, param)}
+var glTexParameterf_P:@convention(c)(GLenum, GLenum, GLfloat) -> Void = glTexParameterf_L
+public func glTexParameterfv(_ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLfloat>) {glTexParameterfv_P(target, pname, params)}
+public func glTexParameterfv(target:GLenum, pname:GLenum, params:UnsafePointer<GLfloat>) {glTexParameterfv_P(target, pname, params)}
+var glTexParameterfv_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLfloat>) -> Void = glTexParameterfv_L
+public func glTexParameteri(_ target:GLenum, _ pname:GLenum, _ param:GLint) {glTexParameteri_P(target, pname, param)}
+public func glTexParameteri(target:GLenum, pname:GLenum, param:GLint) {glTexParameteri_P(target, pname, param)}
+var glTexParameteri_P:@convention(c)(GLenum, GLenum, GLint) -> Void = glTexParameteri_L
 public func glTexParameterIiv(_ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glTexParameterIiv_P(target, pname, params)}
 public func glTexParameterIiv(target:GLenum, pname:GLenum, params:UnsafePointer<GLint>) {glTexParameterIiv_P(target, pname, params)}
 var glTexParameterIiv_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLint>) -> Void = glTexParameterIiv_L
@@ -7307,15 +7316,6 @@ var glTexParameterIuivEXT_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLuint>
 public func glTexParameterIuivOES(_ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLuint>) {glTexParameterIuivOES_P(target, pname, params)}
 public func glTexParameterIuivOES(target:GLenum, pname:GLenum, params:UnsafePointer<GLuint>) {glTexParameterIuivOES_P(target, pname, params)}
 var glTexParameterIuivOES_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLuint>) -> Void = glTexParameterIuivOES_L
-public func glTexParameterf(_ target:GLenum, _ pname:GLenum, _ param:GLfloat) {glTexParameterf_P(target, pname, param)}
-public func glTexParameterf(target:GLenum, pname:GLenum, param:GLfloat) {glTexParameterf_P(target, pname, param)}
-var glTexParameterf_P:@convention(c)(GLenum, GLenum, GLfloat) -> Void = glTexParameterf_L
-public func glTexParameterfv(_ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLfloat>) {glTexParameterfv_P(target, pname, params)}
-public func glTexParameterfv(target:GLenum, pname:GLenum, params:UnsafePointer<GLfloat>) {glTexParameterfv_P(target, pname, params)}
-var glTexParameterfv_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLfloat>) -> Void = glTexParameterfv_L
-public func glTexParameteri(_ target:GLenum, _ pname:GLenum, _ param:GLint) {glTexParameteri_P(target, pname, param)}
-public func glTexParameteri(target:GLenum, pname:GLenum, param:GLint) {glTexParameteri_P(target, pname, param)}
-var glTexParameteri_P:@convention(c)(GLenum, GLenum, GLint) -> Void = glTexParameteri_L
 public func glTexParameteriv(_ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glTexParameteriv_P(target, pname, params)}
 public func glTexParameteriv(target:GLenum, pname:GLenum, params:UnsafePointer<GLint>) {glTexParameteriv_P(target, pname, params)}
 var glTexParameteriv_P:@convention(c)(GLenum, GLenum, UnsafePointer<GLint>) -> Void = glTexParameteriv_L
@@ -7440,18 +7440,6 @@ var glTextureNormalEXT_P:@convention(c)(GLenum) -> Void = glTextureNormalEXT_L
 public func glTexturePageCommitmentEXT(_ texture:GLuint, _ level:GLint, _ xoffset:GLint, _ yoffset:GLint, _ zoffset:GLint, _ width:GLsizei, _ height:GLsizei, _ depth:GLsizei, _ commit:GLboolean) {glTexturePageCommitmentEXT_P(texture, level, xoffset, yoffset, zoffset, width, height, depth, commit)}
 public func glTexturePageCommitmentEXT(texture:GLuint, level:GLint, xoffset:GLint, yoffset:GLint, zoffset:GLint, width:GLsizei, height:GLsizei, depth:GLsizei, commit:GLboolean) {glTexturePageCommitmentEXT_P(texture, level, xoffset, yoffset, zoffset, width, height, depth, commit)}
 var glTexturePageCommitmentEXT_P:@convention(c)(GLuint, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLboolean) -> Void = glTexturePageCommitmentEXT_L
-public func glTextureParameterIiv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glTextureParameterIiv_P(texture, pname, params)}
-public func glTextureParameterIiv(texture:GLuint, pname:GLenum, params:UnsafePointer<GLint>) {glTextureParameterIiv_P(texture, pname, params)}
-var glTextureParameterIiv_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLint>) -> Void = glTextureParameterIiv_L
-public func glTextureParameterIivEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glTextureParameterIivEXT_P(texture, target, pname, params)}
-public func glTextureParameterIivEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafePointer<GLint>) {glTextureParameterIivEXT_P(texture, target, pname, params)}
-var glTextureParameterIivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafePointer<GLint>) -> Void = glTextureParameterIivEXT_L
-public func glTextureParameterIuiv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafePointer<GLuint>) {glTextureParameterIuiv_P(texture, pname, params)}
-public func glTextureParameterIuiv(texture:GLuint, pname:GLenum, params:UnsafePointer<GLuint>) {glTextureParameterIuiv_P(texture, pname, params)}
-var glTextureParameterIuiv_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLuint>) -> Void = glTextureParameterIuiv_L
-public func glTextureParameterIuivEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLuint>) {glTextureParameterIuivEXT_P(texture, target, pname, params)}
-public func glTextureParameterIuivEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafePointer<GLuint>) {glTextureParameterIuivEXT_P(texture, target, pname, params)}
-var glTextureParameterIuivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafePointer<GLuint>) -> Void = glTextureParameterIuivEXT_L
 public func glTextureParameterf(_ texture:GLuint, _ pname:GLenum, _ param:GLfloat) {glTextureParameterf_P(texture, pname, param)}
 public func glTextureParameterf(texture:GLuint, pname:GLenum, param:GLfloat) {glTextureParameterf_P(texture, pname, param)}
 var glTextureParameterf_P:@convention(c)(GLuint, GLenum, GLfloat) -> Void = glTextureParameterf_L
@@ -7470,6 +7458,18 @@ var glTextureParameteri_P:@convention(c)(GLuint, GLenum, GLint) -> Void = glText
 public func glTextureParameteriEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ param:GLint) {glTextureParameteriEXT_P(texture, target, pname, param)}
 public func glTextureParameteriEXT(texture:GLuint, target:GLenum, pname:GLenum, param:GLint) {glTextureParameteriEXT_P(texture, target, pname, param)}
 var glTextureParameteriEXT_P:@convention(c)(GLuint, GLenum, GLenum, GLint) -> Void = glTextureParameteriEXT_L
+public func glTextureParameterIiv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glTextureParameterIiv_P(texture, pname, params)}
+public func glTextureParameterIiv(texture:GLuint, pname:GLenum, params:UnsafePointer<GLint>) {glTextureParameterIiv_P(texture, pname, params)}
+var glTextureParameterIiv_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLint>) -> Void = glTextureParameterIiv_L
+public func glTextureParameterIivEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLint>) {glTextureParameterIivEXT_P(texture, target, pname, params)}
+public func glTextureParameterIivEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafePointer<GLint>) {glTextureParameterIivEXT_P(texture, target, pname, params)}
+var glTextureParameterIivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafePointer<GLint>) -> Void = glTextureParameterIivEXT_L
+public func glTextureParameterIuiv(_ texture:GLuint, _ pname:GLenum, _ params:UnsafePointer<GLuint>) {glTextureParameterIuiv_P(texture, pname, params)}
+public func glTextureParameterIuiv(texture:GLuint, pname:GLenum, params:UnsafePointer<GLuint>) {glTextureParameterIuiv_P(texture, pname, params)}
+var glTextureParameterIuiv_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLuint>) -> Void = glTextureParameterIuiv_L
+public func glTextureParameterIuivEXT(_ texture:GLuint, _ target:GLenum, _ pname:GLenum, _ params:UnsafePointer<GLuint>) {glTextureParameterIuivEXT_P(texture, target, pname, params)}
+public func glTextureParameterIuivEXT(texture:GLuint, target:GLenum, pname:GLenum, params:UnsafePointer<GLuint>) {glTextureParameterIuivEXT_P(texture, target, pname, params)}
+var glTextureParameterIuivEXT_P:@convention(c)(GLuint, GLenum, GLenum, UnsafePointer<GLuint>) -> Void = glTextureParameterIuivEXT_L
 public func glTextureParameteriv(_ texture:GLuint, _ pname:GLenum, _ param:UnsafePointer<GLint>) {glTextureParameteriv_P(texture, pname, param)}
 public func glTextureParameteriv(texture:GLuint, pname:GLenum, param:UnsafePointer<GLint>) {glTextureParameteriv_P(texture, pname, param)}
 var glTextureParameteriv_P:@convention(c)(GLuint, GLenum, UnsafePointer<GLint>) -> Void = glTextureParameteriv_L
@@ -7994,6 +7994,48 @@ var glUseProgramStagesEXT_P:@convention(c)(GLuint, GLbitfield, GLuint) -> Void =
 public func glUseShaderProgramEXT(_ type:GLenum, _ program:GLuint) {glUseShaderProgramEXT_P(type, program)}
 public func glUseShaderProgramEXT(type:GLenum, program:GLuint) {glUseShaderProgramEXT_P(type, program)}
 var glUseShaderProgramEXT_P:@convention(c)(GLenum, GLuint) -> Void = glUseShaderProgramEXT_L
+public func glValidateProgram(_ program:GLuint) {glValidateProgram_P(program)}
+public func glValidateProgram(program:GLuint) {glValidateProgram_P(program)}
+var glValidateProgram_P:@convention(c)(GLuint) -> Void = glValidateProgram_L
+public func glValidateProgramARB(_ programObj:GLhandleARB) {glValidateProgramARB_P(programObj)}
+public func glValidateProgramARB(programObj:GLhandleARB) {glValidateProgramARB_P(programObj)}
+var glValidateProgramARB_P:@convention(c)(GLhandleARB) -> Void = glValidateProgramARB_L
+public func glValidateProgramPipeline(_ pipeline:GLuint) {glValidateProgramPipeline_P(pipeline)}
+public func glValidateProgramPipeline(pipeline:GLuint) {glValidateProgramPipeline_P(pipeline)}
+var glValidateProgramPipeline_P:@convention(c)(GLuint) -> Void = glValidateProgramPipeline_L
+public func glValidateProgramPipelineEXT(_ pipeline:GLuint) {glValidateProgramPipelineEXT_P(pipeline)}
+public func glValidateProgramPipelineEXT(pipeline:GLuint) {glValidateProgramPipelineEXT_P(pipeline)}
+var glValidateProgramPipelineEXT_P:@convention(c)(GLuint) -> Void = glValidateProgramPipelineEXT_L
+public func glVariantArrayObjectATI(_ id:GLuint, _ type:GLenum, _ stride:GLsizei, _ buffer:GLuint, _ offset:GLuint) {glVariantArrayObjectATI_P(id, type, stride, buffer, offset)}
+public func glVariantArrayObjectATI(id:GLuint, type:GLenum, stride:GLsizei, buffer:GLuint, offset:GLuint) {glVariantArrayObjectATI_P(id, type, stride, buffer, offset)}
+var glVariantArrayObjectATI_P:@convention(c)(GLuint, GLenum, GLsizei, GLuint, GLuint) -> Void = glVariantArrayObjectATI_L
+public func glVariantbvEXT(_ id:GLuint, _ addr:UnsafePointer<GLbyte>) {glVariantbvEXT_P(id, addr)}
+public func glVariantbvEXT(id:GLuint, addr:UnsafePointer<GLbyte>) {glVariantbvEXT_P(id, addr)}
+var glVariantbvEXT_P:@convention(c)(GLuint, UnsafePointer<GLbyte>) -> Void = glVariantbvEXT_L
+public func glVariantdvEXT(_ id:GLuint, _ addr:UnsafePointer<GLdouble>) {glVariantdvEXT_P(id, addr)}
+public func glVariantdvEXT(id:GLuint, addr:UnsafePointer<GLdouble>) {glVariantdvEXT_P(id, addr)}
+var glVariantdvEXT_P:@convention(c)(GLuint, UnsafePointer<GLdouble>) -> Void = glVariantdvEXT_L
+public func glVariantfvEXT(_ id:GLuint, _ addr:UnsafePointer<GLfloat>) {glVariantfvEXT_P(id, addr)}
+public func glVariantfvEXT(id:GLuint, addr:UnsafePointer<GLfloat>) {glVariantfvEXT_P(id, addr)}
+var glVariantfvEXT_P:@convention(c)(GLuint, UnsafePointer<GLfloat>) -> Void = glVariantfvEXT_L
+public func glVariantivEXT(_ id:GLuint, _ addr:UnsafePointer<GLint>) {glVariantivEXT_P(id, addr)}
+public func glVariantivEXT(id:GLuint, addr:UnsafePointer<GLint>) {glVariantivEXT_P(id, addr)}
+var glVariantivEXT_P:@convention(c)(GLuint, UnsafePointer<GLint>) -> Void = glVariantivEXT_L
+public func glVariantPointerEXT(_ id:GLuint, _ type:GLenum, _ stride:GLuint, _ addr:UnsafeRawPointer) {glVariantPointerEXT_P(id, type, stride, addr)}
+public func glVariantPointerEXT(id:GLuint, type:GLenum, stride:GLuint, addr:UnsafeRawPointer) {glVariantPointerEXT_P(id, type, stride, addr)}
+var glVariantPointerEXT_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeRawPointer) -> Void = glVariantPointerEXT_L
+public func glVariantsvEXT(_ id:GLuint, _ addr:UnsafePointer<GLshort>) {glVariantsvEXT_P(id, addr)}
+public func glVariantsvEXT(id:GLuint, addr:UnsafePointer<GLshort>) {glVariantsvEXT_P(id, addr)}
+var glVariantsvEXT_P:@convention(c)(GLuint, UnsafePointer<GLshort>) -> Void = glVariantsvEXT_L
+public func glVariantubvEXT(_ id:GLuint, _ addr:UnsafePointer<GLubyte>) {glVariantubvEXT_P(id, addr)}
+public func glVariantubvEXT(id:GLuint, addr:UnsafePointer<GLubyte>) {glVariantubvEXT_P(id, addr)}
+var glVariantubvEXT_P:@convention(c)(GLuint, UnsafePointer<GLubyte>) -> Void = glVariantubvEXT_L
+public func glVariantuivEXT(_ id:GLuint, _ addr:UnsafePointer<GLuint>) {glVariantuivEXT_P(id, addr)}
+public func glVariantuivEXT(id:GLuint, addr:UnsafePointer<GLuint>) {glVariantuivEXT_P(id, addr)}
+var glVariantuivEXT_P:@convention(c)(GLuint, UnsafePointer<GLuint>) -> Void = glVariantuivEXT_L
+public func glVariantusvEXT(_ id:GLuint, _ addr:UnsafePointer<GLushort>) {glVariantusvEXT_P(id, addr)}
+public func glVariantusvEXT(id:GLuint, addr:UnsafePointer<GLushort>) {glVariantusvEXT_P(id, addr)}
+var glVariantusvEXT_P:@convention(c)(GLuint, UnsafePointer<GLushort>) -> Void = glVariantusvEXT_L
 public func glVDPAUFiniNV() {glVDPAUFiniNV_P()}
 var glVDPAUFiniNV_P:@convention(c)() -> Void = glVDPAUFiniNV_L
 public func glVDPAUGetSurfaceivNV(_ surface:GLvdpauSurfaceNV, _ pname:GLenum, _ bufSize:GLsizei, _ length:UnsafeMutablePointer<GLsizei>, _ values:UnsafeMutablePointer<GLint>) {glVDPAUGetSurfaceivNV_P(surface, pname, bufSize, length, values)}
@@ -8023,48 +8065,6 @@ var glVDPAUUnmapSurfacesNV_P:@convention(c)(GLsizei, UnsafePointer<GLvdpauSurfac
 public func glVDPAUUnregisterSurfaceNV(_ surface:GLvdpauSurfaceNV) {glVDPAUUnregisterSurfaceNV_P(surface)}
 public func glVDPAUUnregisterSurfaceNV(surface:GLvdpauSurfaceNV) {glVDPAUUnregisterSurfaceNV_P(surface)}
 var glVDPAUUnregisterSurfaceNV_P:@convention(c)(GLvdpauSurfaceNV) -> Void = glVDPAUUnregisterSurfaceNV_L
-public func glValidateProgram(_ program:GLuint) {glValidateProgram_P(program)}
-public func glValidateProgram(program:GLuint) {glValidateProgram_P(program)}
-var glValidateProgram_P:@convention(c)(GLuint) -> Void = glValidateProgram_L
-public func glValidateProgramARB(_ programObj:GLhandleARB) {glValidateProgramARB_P(programObj)}
-public func glValidateProgramARB(programObj:GLhandleARB) {glValidateProgramARB_P(programObj)}
-var glValidateProgramARB_P:@convention(c)(GLhandleARB) -> Void = glValidateProgramARB_L
-public func glValidateProgramPipeline(_ pipeline:GLuint) {glValidateProgramPipeline_P(pipeline)}
-public func glValidateProgramPipeline(pipeline:GLuint) {glValidateProgramPipeline_P(pipeline)}
-var glValidateProgramPipeline_P:@convention(c)(GLuint) -> Void = glValidateProgramPipeline_L
-public func glValidateProgramPipelineEXT(_ pipeline:GLuint) {glValidateProgramPipelineEXT_P(pipeline)}
-public func glValidateProgramPipelineEXT(pipeline:GLuint) {glValidateProgramPipelineEXT_P(pipeline)}
-var glValidateProgramPipelineEXT_P:@convention(c)(GLuint) -> Void = glValidateProgramPipelineEXT_L
-public func glVariantArrayObjectATI(_ id:GLuint, _ type:GLenum, _ stride:GLsizei, _ buffer:GLuint, _ offset:GLuint) {glVariantArrayObjectATI_P(id, type, stride, buffer, offset)}
-public func glVariantArrayObjectATI(id:GLuint, type:GLenum, stride:GLsizei, buffer:GLuint, offset:GLuint) {glVariantArrayObjectATI_P(id, type, stride, buffer, offset)}
-var glVariantArrayObjectATI_P:@convention(c)(GLuint, GLenum, GLsizei, GLuint, GLuint) -> Void = glVariantArrayObjectATI_L
-public func glVariantPointerEXT(_ id:GLuint, _ type:GLenum, _ stride:GLuint, _ addr:UnsafeRawPointer) {glVariantPointerEXT_P(id, type, stride, addr)}
-public func glVariantPointerEXT(id:GLuint, type:GLenum, stride:GLuint, addr:UnsafeRawPointer) {glVariantPointerEXT_P(id, type, stride, addr)}
-var glVariantPointerEXT_P:@convention(c)(GLuint, GLenum, GLuint, UnsafeRawPointer) -> Void = glVariantPointerEXT_L
-public func glVariantbvEXT(_ id:GLuint, _ addr:UnsafePointer<GLbyte>) {glVariantbvEXT_P(id, addr)}
-public func glVariantbvEXT(id:GLuint, addr:UnsafePointer<GLbyte>) {glVariantbvEXT_P(id, addr)}
-var glVariantbvEXT_P:@convention(c)(GLuint, UnsafePointer<GLbyte>) -> Void = glVariantbvEXT_L
-public func glVariantdvEXT(_ id:GLuint, _ addr:UnsafePointer<GLdouble>) {glVariantdvEXT_P(id, addr)}
-public func glVariantdvEXT(id:GLuint, addr:UnsafePointer<GLdouble>) {glVariantdvEXT_P(id, addr)}
-var glVariantdvEXT_P:@convention(c)(GLuint, UnsafePointer<GLdouble>) -> Void = glVariantdvEXT_L
-public func glVariantfvEXT(_ id:GLuint, _ addr:UnsafePointer<GLfloat>) {glVariantfvEXT_P(id, addr)}
-public func glVariantfvEXT(id:GLuint, addr:UnsafePointer<GLfloat>) {glVariantfvEXT_P(id, addr)}
-var glVariantfvEXT_P:@convention(c)(GLuint, UnsafePointer<GLfloat>) -> Void = glVariantfvEXT_L
-public func glVariantivEXT(_ id:GLuint, _ addr:UnsafePointer<GLint>) {glVariantivEXT_P(id, addr)}
-public func glVariantivEXT(id:GLuint, addr:UnsafePointer<GLint>) {glVariantivEXT_P(id, addr)}
-var glVariantivEXT_P:@convention(c)(GLuint, UnsafePointer<GLint>) -> Void = glVariantivEXT_L
-public func glVariantsvEXT(_ id:GLuint, _ addr:UnsafePointer<GLshort>) {glVariantsvEXT_P(id, addr)}
-public func glVariantsvEXT(id:GLuint, addr:UnsafePointer<GLshort>) {glVariantsvEXT_P(id, addr)}
-var glVariantsvEXT_P:@convention(c)(GLuint, UnsafePointer<GLshort>) -> Void = glVariantsvEXT_L
-public func glVariantubvEXT(_ id:GLuint, _ addr:UnsafePointer<GLubyte>) {glVariantubvEXT_P(id, addr)}
-public func glVariantubvEXT(id:GLuint, addr:UnsafePointer<GLubyte>) {glVariantubvEXT_P(id, addr)}
-var glVariantubvEXT_P:@convention(c)(GLuint, UnsafePointer<GLubyte>) -> Void = glVariantubvEXT_L
-public func glVariantuivEXT(_ id:GLuint, _ addr:UnsafePointer<GLuint>) {glVariantuivEXT_P(id, addr)}
-public func glVariantuivEXT(id:GLuint, addr:UnsafePointer<GLuint>) {glVariantuivEXT_P(id, addr)}
-var glVariantuivEXT_P:@convention(c)(GLuint, UnsafePointer<GLuint>) -> Void = glVariantuivEXT_L
-public func glVariantusvEXT(_ id:GLuint, _ addr:UnsafePointer<GLushort>) {glVariantusvEXT_P(id, addr)}
-public func glVariantusvEXT(id:GLuint, addr:UnsafePointer<GLushort>) {glVariantusvEXT_P(id, addr)}
-var glVariantusvEXT_P:@convention(c)(GLuint, UnsafePointer<GLushort>) -> Void = glVariantusvEXT_L
 public func glVertex2bOES(_ x:GLbyte, _ y:GLbyte) {glVertex2bOES_P(x, y)}
 public func glVertex2bOES(x:GLbyte, y:GLbyte) {glVertex2bOES_P(x, y)}
 var glVertex2bOES_P:@convention(c)(GLbyte, GLbyte) -> Void = glVertex2bOES_L
@@ -8203,12 +8203,12 @@ var glVertexArrayAttribIFormat_P:@convention(c)(GLuint, GLuint, GLint, GLenum, G
 public func glVertexArrayAttribLFormat(_ vaobj:GLuint, _ attribindex:GLuint, _ size:GLint, _ type:GLenum, _ relativeoffset:GLuint) {glVertexArrayAttribLFormat_P(vaobj, attribindex, size, type, relativeoffset)}
 public func glVertexArrayAttribLFormat(vaobj:GLuint, attribindex:GLuint, size:GLint, type:GLenum, relativeoffset:GLuint) {glVertexArrayAttribLFormat_P(vaobj, attribindex, size, type, relativeoffset)}
 var glVertexArrayAttribLFormat_P:@convention(c)(GLuint, GLuint, GLint, GLenum, GLuint) -> Void = glVertexArrayAttribLFormat_L
-public func glVertexArrayBindVertexBufferEXT(_ vaobj:GLuint, _ bindingindex:GLuint, _ buffer:GLuint, _ offset:GLintptr, _ stride:GLsizei) {glVertexArrayBindVertexBufferEXT_P(vaobj, bindingindex, buffer, offset, stride)}
-public func glVertexArrayBindVertexBufferEXT(vaobj:GLuint, bindingindex:GLuint, buffer:GLuint, offset:GLintptr, stride:GLsizei) {glVertexArrayBindVertexBufferEXT_P(vaobj, bindingindex, buffer, offset, stride)}
-var glVertexArrayBindVertexBufferEXT_P:@convention(c)(GLuint, GLuint, GLuint, GLintptr, GLsizei) -> Void = glVertexArrayBindVertexBufferEXT_L
 public func glVertexArrayBindingDivisor(_ vaobj:GLuint, _ bindingindex:GLuint, _ divisor:GLuint) {glVertexArrayBindingDivisor_P(vaobj, bindingindex, divisor)}
 public func glVertexArrayBindingDivisor(vaobj:GLuint, bindingindex:GLuint, divisor:GLuint) {glVertexArrayBindingDivisor_P(vaobj, bindingindex, divisor)}
 var glVertexArrayBindingDivisor_P:@convention(c)(GLuint, GLuint, GLuint) -> Void = glVertexArrayBindingDivisor_L
+public func glVertexArrayBindVertexBufferEXT(_ vaobj:GLuint, _ bindingindex:GLuint, _ buffer:GLuint, _ offset:GLintptr, _ stride:GLsizei) {glVertexArrayBindVertexBufferEXT_P(vaobj, bindingindex, buffer, offset, stride)}
+public func glVertexArrayBindVertexBufferEXT(vaobj:GLuint, bindingindex:GLuint, buffer:GLuint, offset:GLintptr, stride:GLsizei) {glVertexArrayBindVertexBufferEXT_P(vaobj, bindingindex, buffer, offset, stride)}
+var glVertexArrayBindVertexBufferEXT_P:@convention(c)(GLuint, GLuint, GLuint, GLintptr, GLsizei) -> Void = glVertexArrayBindVertexBufferEXT_L
 public func glVertexArrayColorOffsetEXT(_ vaobj:GLuint, _ buffer:GLuint, _ size:GLint, _ type:GLenum, _ stride:GLsizei, _ offset:GLintptr) {glVertexArrayColorOffsetEXT_P(vaobj, buffer, size, type, stride, offset)}
 public func glVertexArrayColorOffsetEXT(vaobj:GLuint, buffer:GLuint, size:GLint, type:GLenum, stride:GLsizei, offset:GLintptr) {glVertexArrayColorOffsetEXT_P(vaobj, buffer, size, type, stride, offset)}
 var glVertexArrayColorOffsetEXT_P:@convention(c)(GLuint, GLuint, GLint, GLenum, GLsizei, GLintptr) -> Void = glVertexArrayColorOffsetEXT_L
@@ -8461,48 +8461,6 @@ var glVertexAttrib3svARB_P:@convention(c)(GLuint, UnsafePointer<GLshort>) -> Voi
 public func glVertexAttrib3svNV(_ index:GLuint, _ v:UnsafePointer<GLshort>) {glVertexAttrib3svNV_P(index, v)}
 public func glVertexAttrib3svNV(index:GLuint, v:UnsafePointer<GLshort>) {glVertexAttrib3svNV_P(index, v)}
 var glVertexAttrib3svNV_P:@convention(c)(GLuint, UnsafePointer<GLshort>) -> Void = glVertexAttrib3svNV_L
-public func glVertexAttrib4Nbv(_ index:GLuint, _ v:UnsafePointer<GLbyte>) {glVertexAttrib4Nbv_P(index, v)}
-public func glVertexAttrib4Nbv(index:GLuint, v:UnsafePointer<GLbyte>) {glVertexAttrib4Nbv_P(index, v)}
-var glVertexAttrib4Nbv_P:@convention(c)(GLuint, UnsafePointer<GLbyte>) -> Void = glVertexAttrib4Nbv_L
-public func glVertexAttrib4NbvARB(_ index:GLuint, _ v:UnsafePointer<GLbyte>) {glVertexAttrib4NbvARB_P(index, v)}
-public func glVertexAttrib4NbvARB(index:GLuint, v:UnsafePointer<GLbyte>) {glVertexAttrib4NbvARB_P(index, v)}
-var glVertexAttrib4NbvARB_P:@convention(c)(GLuint, UnsafePointer<GLbyte>) -> Void = glVertexAttrib4NbvARB_L
-public func glVertexAttrib4Niv(_ index:GLuint, _ v:UnsafePointer<GLint>) {glVertexAttrib4Niv_P(index, v)}
-public func glVertexAttrib4Niv(index:GLuint, v:UnsafePointer<GLint>) {glVertexAttrib4Niv_P(index, v)}
-var glVertexAttrib4Niv_P:@convention(c)(GLuint, UnsafePointer<GLint>) -> Void = glVertexAttrib4Niv_L
-public func glVertexAttrib4NivARB(_ index:GLuint, _ v:UnsafePointer<GLint>) {glVertexAttrib4NivARB_P(index, v)}
-public func glVertexAttrib4NivARB(index:GLuint, v:UnsafePointer<GLint>) {glVertexAttrib4NivARB_P(index, v)}
-var glVertexAttrib4NivARB_P:@convention(c)(GLuint, UnsafePointer<GLint>) -> Void = glVertexAttrib4NivARB_L
-public func glVertexAttrib4Nsv(_ index:GLuint, _ v:UnsafePointer<GLshort>) {glVertexAttrib4Nsv_P(index, v)}
-public func glVertexAttrib4Nsv(index:GLuint, v:UnsafePointer<GLshort>) {glVertexAttrib4Nsv_P(index, v)}
-var glVertexAttrib4Nsv_P:@convention(c)(GLuint, UnsafePointer<GLshort>) -> Void = glVertexAttrib4Nsv_L
-public func glVertexAttrib4NsvARB(_ index:GLuint, _ v:UnsafePointer<GLshort>) {glVertexAttrib4NsvARB_P(index, v)}
-public func glVertexAttrib4NsvARB(index:GLuint, v:UnsafePointer<GLshort>) {glVertexAttrib4NsvARB_P(index, v)}
-var glVertexAttrib4NsvARB_P:@convention(c)(GLuint, UnsafePointer<GLshort>) -> Void = glVertexAttrib4NsvARB_L
-public func glVertexAttrib4Nub(_ index:GLuint, _ x:GLubyte, _ y:GLubyte, _ z:GLubyte, _ w:GLubyte) {glVertexAttrib4Nub_P(index, x, y, z, w)}
-public func glVertexAttrib4Nub(index:GLuint, x:GLubyte, y:GLubyte, z:GLubyte, w:GLubyte) {glVertexAttrib4Nub_P(index, x, y, z, w)}
-var glVertexAttrib4Nub_P:@convention(c)(GLuint, GLubyte, GLubyte, GLubyte, GLubyte) -> Void = glVertexAttrib4Nub_L
-public func glVertexAttrib4NubARB(_ index:GLuint, _ x:GLubyte, _ y:GLubyte, _ z:GLubyte, _ w:GLubyte) {glVertexAttrib4NubARB_P(index, x, y, z, w)}
-public func glVertexAttrib4NubARB(index:GLuint, x:GLubyte, y:GLubyte, z:GLubyte, w:GLubyte) {glVertexAttrib4NubARB_P(index, x, y, z, w)}
-var glVertexAttrib4NubARB_P:@convention(c)(GLuint, GLubyte, GLubyte, GLubyte, GLubyte) -> Void = glVertexAttrib4NubARB_L
-public func glVertexAttrib4Nubv(_ index:GLuint, _ v:UnsafePointer<GLubyte>) {glVertexAttrib4Nubv_P(index, v)}
-public func glVertexAttrib4Nubv(index:GLuint, v:UnsafePointer<GLubyte>) {glVertexAttrib4Nubv_P(index, v)}
-var glVertexAttrib4Nubv_P:@convention(c)(GLuint, UnsafePointer<GLubyte>) -> Void = glVertexAttrib4Nubv_L
-public func glVertexAttrib4NubvARB(_ index:GLuint, _ v:UnsafePointer<GLubyte>) {glVertexAttrib4NubvARB_P(index, v)}
-public func glVertexAttrib4NubvARB(index:GLuint, v:UnsafePointer<GLubyte>) {glVertexAttrib4NubvARB_P(index, v)}
-var glVertexAttrib4NubvARB_P:@convention(c)(GLuint, UnsafePointer<GLubyte>) -> Void = glVertexAttrib4NubvARB_L
-public func glVertexAttrib4Nuiv(_ index:GLuint, _ v:UnsafePointer<GLuint>) {glVertexAttrib4Nuiv_P(index, v)}
-public func glVertexAttrib4Nuiv(index:GLuint, v:UnsafePointer<GLuint>) {glVertexAttrib4Nuiv_P(index, v)}
-var glVertexAttrib4Nuiv_P:@convention(c)(GLuint, UnsafePointer<GLuint>) -> Void = glVertexAttrib4Nuiv_L
-public func glVertexAttrib4NuivARB(_ index:GLuint, _ v:UnsafePointer<GLuint>) {glVertexAttrib4NuivARB_P(index, v)}
-public func glVertexAttrib4NuivARB(index:GLuint, v:UnsafePointer<GLuint>) {glVertexAttrib4NuivARB_P(index, v)}
-var glVertexAttrib4NuivARB_P:@convention(c)(GLuint, UnsafePointer<GLuint>) -> Void = glVertexAttrib4NuivARB_L
-public func glVertexAttrib4Nusv(_ index:GLuint, _ v:UnsafePointer<GLushort>) {glVertexAttrib4Nusv_P(index, v)}
-public func glVertexAttrib4Nusv(index:GLuint, v:UnsafePointer<GLushort>) {glVertexAttrib4Nusv_P(index, v)}
-var glVertexAttrib4Nusv_P:@convention(c)(GLuint, UnsafePointer<GLushort>) -> Void = glVertexAttrib4Nusv_L
-public func glVertexAttrib4NusvARB(_ index:GLuint, _ v:UnsafePointer<GLushort>) {glVertexAttrib4NusvARB_P(index, v)}
-public func glVertexAttrib4NusvARB(index:GLuint, v:UnsafePointer<GLushort>) {glVertexAttrib4NusvARB_P(index, v)}
-var glVertexAttrib4NusvARB_P:@convention(c)(GLuint, UnsafePointer<GLushort>) -> Void = glVertexAttrib4NusvARB_L
 public func glVertexAttrib4bv(_ index:GLuint, _ v:UnsafePointer<GLbyte>) {glVertexAttrib4bv_P(index, v)}
 public func glVertexAttrib4bv(index:GLuint, v:UnsafePointer<GLbyte>) {glVertexAttrib4bv_P(index, v)}
 var glVertexAttrib4bv_P:@convention(c)(GLuint, UnsafePointer<GLbyte>) -> Void = glVertexAttrib4bv_L
@@ -8557,6 +8515,48 @@ var glVertexAttrib4iv_P:@convention(c)(GLuint, UnsafePointer<GLint>) -> Void = g
 public func glVertexAttrib4ivARB(_ index:GLuint, _ v:UnsafePointer<GLint>) {glVertexAttrib4ivARB_P(index, v)}
 public func glVertexAttrib4ivARB(index:GLuint, v:UnsafePointer<GLint>) {glVertexAttrib4ivARB_P(index, v)}
 var glVertexAttrib4ivARB_P:@convention(c)(GLuint, UnsafePointer<GLint>) -> Void = glVertexAttrib4ivARB_L
+public func glVertexAttrib4Nbv(_ index:GLuint, _ v:UnsafePointer<GLbyte>) {glVertexAttrib4Nbv_P(index, v)}
+public func glVertexAttrib4Nbv(index:GLuint, v:UnsafePointer<GLbyte>) {glVertexAttrib4Nbv_P(index, v)}
+var glVertexAttrib4Nbv_P:@convention(c)(GLuint, UnsafePointer<GLbyte>) -> Void = glVertexAttrib4Nbv_L
+public func glVertexAttrib4NbvARB(_ index:GLuint, _ v:UnsafePointer<GLbyte>) {glVertexAttrib4NbvARB_P(index, v)}
+public func glVertexAttrib4NbvARB(index:GLuint, v:UnsafePointer<GLbyte>) {glVertexAttrib4NbvARB_P(index, v)}
+var glVertexAttrib4NbvARB_P:@convention(c)(GLuint, UnsafePointer<GLbyte>) -> Void = glVertexAttrib4NbvARB_L
+public func glVertexAttrib4Niv(_ index:GLuint, _ v:UnsafePointer<GLint>) {glVertexAttrib4Niv_P(index, v)}
+public func glVertexAttrib4Niv(index:GLuint, v:UnsafePointer<GLint>) {glVertexAttrib4Niv_P(index, v)}
+var glVertexAttrib4Niv_P:@convention(c)(GLuint, UnsafePointer<GLint>) -> Void = glVertexAttrib4Niv_L
+public func glVertexAttrib4NivARB(_ index:GLuint, _ v:UnsafePointer<GLint>) {glVertexAttrib4NivARB_P(index, v)}
+public func glVertexAttrib4NivARB(index:GLuint, v:UnsafePointer<GLint>) {glVertexAttrib4NivARB_P(index, v)}
+var glVertexAttrib4NivARB_P:@convention(c)(GLuint, UnsafePointer<GLint>) -> Void = glVertexAttrib4NivARB_L
+public func glVertexAttrib4Nsv(_ index:GLuint, _ v:UnsafePointer<GLshort>) {glVertexAttrib4Nsv_P(index, v)}
+public func glVertexAttrib4Nsv(index:GLuint, v:UnsafePointer<GLshort>) {glVertexAttrib4Nsv_P(index, v)}
+var glVertexAttrib4Nsv_P:@convention(c)(GLuint, UnsafePointer<GLshort>) -> Void = glVertexAttrib4Nsv_L
+public func glVertexAttrib4NsvARB(_ index:GLuint, _ v:UnsafePointer<GLshort>) {glVertexAttrib4NsvARB_P(index, v)}
+public func glVertexAttrib4NsvARB(index:GLuint, v:UnsafePointer<GLshort>) {glVertexAttrib4NsvARB_P(index, v)}
+var glVertexAttrib4NsvARB_P:@convention(c)(GLuint, UnsafePointer<GLshort>) -> Void = glVertexAttrib4NsvARB_L
+public func glVertexAttrib4Nub(_ index:GLuint, _ x:GLubyte, _ y:GLubyte, _ z:GLubyte, _ w:GLubyte) {glVertexAttrib4Nub_P(index, x, y, z, w)}
+public func glVertexAttrib4Nub(index:GLuint, x:GLubyte, y:GLubyte, z:GLubyte, w:GLubyte) {glVertexAttrib4Nub_P(index, x, y, z, w)}
+var glVertexAttrib4Nub_P:@convention(c)(GLuint, GLubyte, GLubyte, GLubyte, GLubyte) -> Void = glVertexAttrib4Nub_L
+public func glVertexAttrib4NubARB(_ index:GLuint, _ x:GLubyte, _ y:GLubyte, _ z:GLubyte, _ w:GLubyte) {glVertexAttrib4NubARB_P(index, x, y, z, w)}
+public func glVertexAttrib4NubARB(index:GLuint, x:GLubyte, y:GLubyte, z:GLubyte, w:GLubyte) {glVertexAttrib4NubARB_P(index, x, y, z, w)}
+var glVertexAttrib4NubARB_P:@convention(c)(GLuint, GLubyte, GLubyte, GLubyte, GLubyte) -> Void = glVertexAttrib4NubARB_L
+public func glVertexAttrib4Nubv(_ index:GLuint, _ v:UnsafePointer<GLubyte>) {glVertexAttrib4Nubv_P(index, v)}
+public func glVertexAttrib4Nubv(index:GLuint, v:UnsafePointer<GLubyte>) {glVertexAttrib4Nubv_P(index, v)}
+var glVertexAttrib4Nubv_P:@convention(c)(GLuint, UnsafePointer<GLubyte>) -> Void = glVertexAttrib4Nubv_L
+public func glVertexAttrib4NubvARB(_ index:GLuint, _ v:UnsafePointer<GLubyte>) {glVertexAttrib4NubvARB_P(index, v)}
+public func glVertexAttrib4NubvARB(index:GLuint, v:UnsafePointer<GLubyte>) {glVertexAttrib4NubvARB_P(index, v)}
+var glVertexAttrib4NubvARB_P:@convention(c)(GLuint, UnsafePointer<GLubyte>) -> Void = glVertexAttrib4NubvARB_L
+public func glVertexAttrib4Nuiv(_ index:GLuint, _ v:UnsafePointer<GLuint>) {glVertexAttrib4Nuiv_P(index, v)}
+public func glVertexAttrib4Nuiv(index:GLuint, v:UnsafePointer<GLuint>) {glVertexAttrib4Nuiv_P(index, v)}
+var glVertexAttrib4Nuiv_P:@convention(c)(GLuint, UnsafePointer<GLuint>) -> Void = glVertexAttrib4Nuiv_L
+public func glVertexAttrib4NuivARB(_ index:GLuint, _ v:UnsafePointer<GLuint>) {glVertexAttrib4NuivARB_P(index, v)}
+public func glVertexAttrib4NuivARB(index:GLuint, v:UnsafePointer<GLuint>) {glVertexAttrib4NuivARB_P(index, v)}
+var glVertexAttrib4NuivARB_P:@convention(c)(GLuint, UnsafePointer<GLuint>) -> Void = glVertexAttrib4NuivARB_L
+public func glVertexAttrib4Nusv(_ index:GLuint, _ v:UnsafePointer<GLushort>) {glVertexAttrib4Nusv_P(index, v)}
+public func glVertexAttrib4Nusv(index:GLuint, v:UnsafePointer<GLushort>) {glVertexAttrib4Nusv_P(index, v)}
+var glVertexAttrib4Nusv_P:@convention(c)(GLuint, UnsafePointer<GLushort>) -> Void = glVertexAttrib4Nusv_L
+public func glVertexAttrib4NusvARB(_ index:GLuint, _ v:UnsafePointer<GLushort>) {glVertexAttrib4NusvARB_P(index, v)}
+public func glVertexAttrib4NusvARB(index:GLuint, v:UnsafePointer<GLushort>) {glVertexAttrib4NusvARB_P(index, v)}
+var glVertexAttrib4NusvARB_P:@convention(c)(GLuint, UnsafePointer<GLushort>) -> Void = glVertexAttrib4NusvARB_L
 public func glVertexAttrib4s(_ index:GLuint, _ x:GLshort, _ y:GLshort, _ z:GLshort, _ w:GLshort) {glVertexAttrib4s_P(index, x, y, z, w)}
 public func glVertexAttrib4s(index:GLuint, x:GLshort, y:GLshort, z:GLshort, w:GLshort) {glVertexAttrib4s_P(index, x, y, z, w)}
 var glVertexAttrib4s_P:@convention(c)(GLuint, GLshort, GLshort, GLshort, GLshort) -> Void = glVertexAttrib4s_L
@@ -9100,9 +9100,6 @@ var glVertexStream4sATI_P:@convention(c)(GLenum, GLshort, GLshort, GLshort, GLsh
 public func glVertexStream4svATI(_ stream:GLenum, _ coords:UnsafePointer<GLshort>) {glVertexStream4svATI_P(stream, coords)}
 public func glVertexStream4svATI(stream:GLenum, coords:UnsafePointer<GLshort>) {glVertexStream4svATI_P(stream, coords)}
 var glVertexStream4svATI_P:@convention(c)(GLenum, UnsafePointer<GLshort>) -> Void = glVertexStream4svATI_L
-public func glVertexWeightPointerEXT(_ size:GLint, _ type:GLenum, _ stride:GLsizei, _ pointer:UnsafeRawPointer) {glVertexWeightPointerEXT_P(size, type, stride, pointer)}
-public func glVertexWeightPointerEXT(size:GLint, type:GLenum, stride:GLsizei, pointer:UnsafeRawPointer) {glVertexWeightPointerEXT_P(size, type, stride, pointer)}
-var glVertexWeightPointerEXT_P:@convention(c)(GLint, GLenum, GLsizei, UnsafeRawPointer) -> Void = glVertexWeightPointerEXT_L
 public func glVertexWeightfEXT(_ weight:GLfloat) {glVertexWeightfEXT_P(weight)}
 public func glVertexWeightfEXT(weight:GLfloat) {glVertexWeightfEXT_P(weight)}
 var glVertexWeightfEXT_P:@convention(c)(GLfloat) -> Void = glVertexWeightfEXT_L
@@ -9115,6 +9112,9 @@ var glVertexWeighthNV_P:@convention(c)(GLhalfNV) -> Void = glVertexWeighthNV_L
 public func glVertexWeighthvNV(_ weight:UnsafePointer<GLhalfNV>) {glVertexWeighthvNV_P(weight)}
 public func glVertexWeighthvNV(weight:UnsafePointer<GLhalfNV>) {glVertexWeighthvNV_P(weight)}
 var glVertexWeighthvNV_P:@convention(c)(UnsafePointer<GLhalfNV>) -> Void = glVertexWeighthvNV_L
+public func glVertexWeightPointerEXT(_ size:GLint, _ type:GLenum, _ stride:GLsizei, _ pointer:UnsafeRawPointer) {glVertexWeightPointerEXT_P(size, type, stride, pointer)}
+public func glVertexWeightPointerEXT(size:GLint, type:GLenum, stride:GLsizei, pointer:UnsafeRawPointer) {glVertexWeightPointerEXT_P(size, type, stride, pointer)}
+var glVertexWeightPointerEXT_P:@convention(c)(GLint, GLenum, GLsizei, UnsafeRawPointer) -> Void = glVertexWeightPointerEXT_L
 public func glVideoCaptureNV(_ video_capture_slot:GLuint, _ sequence_num:UnsafeMutablePointer<GLuint>, _ capture_time:UnsafeMutablePointer<GLuint64EXT>) -> GLenum {return glVideoCaptureNV_P(video_capture_slot, sequence_num, capture_time)}
 public func glVideoCaptureNV(video_capture_slot:GLuint, sequence_num:UnsafeMutablePointer<GLuint>, capture_time:UnsafeMutablePointer<GLuint64EXT>) -> GLenum {return glVideoCaptureNV_P(video_capture_slot, sequence_num, capture_time)}
 var glVideoCaptureNV_P:@convention(c)(GLuint, UnsafeMutablePointer<GLuint>, UnsafeMutablePointer<GLuint64EXT>) -> GLenum = glVideoCaptureNV_L
@@ -9154,15 +9154,6 @@ var glWaitSync_P:@convention(c)(GLsync, GLbitfield, GLuint64) -> Void = glWaitSy
 public func glWaitSyncAPPLE(_ sync:GLsync, _ flags:GLbitfield, _ timeout:GLuint64) {glWaitSyncAPPLE_P(sync, flags, timeout)}
 public func glWaitSyncAPPLE(sync:GLsync, flags:GLbitfield, timeout:GLuint64) {glWaitSyncAPPLE_P(sync, flags, timeout)}
 var glWaitSyncAPPLE_P:@convention(c)(GLsync, GLbitfield, GLuint64) -> Void = glWaitSyncAPPLE_L
-public func glWeightPathsNV(_ resultPath:GLuint, _ numPaths:GLsizei, _ paths:UnsafePointer<GLuint>, _ weights:UnsafePointer<GLfloat>) {glWeightPathsNV_P(resultPath, numPaths, paths, weights)}
-public func glWeightPathsNV(resultPath:GLuint, numPaths:GLsizei, paths:UnsafePointer<GLuint>, weights:UnsafePointer<GLfloat>) {glWeightPathsNV_P(resultPath, numPaths, paths, weights)}
-var glWeightPathsNV_P:@convention(c)(GLuint, GLsizei, UnsafePointer<GLuint>, UnsafePointer<GLfloat>) -> Void = glWeightPathsNV_L
-public func glWeightPointerARB(_ size:GLint, _ type:GLenum, _ stride:GLsizei, _ pointer:UnsafeRawPointer) {glWeightPointerARB_P(size, type, stride, pointer)}
-public func glWeightPointerARB(size:GLint, type:GLenum, stride:GLsizei, pointer:UnsafeRawPointer) {glWeightPointerARB_P(size, type, stride, pointer)}
-var glWeightPointerARB_P:@convention(c)(GLint, GLenum, GLsizei, UnsafeRawPointer) -> Void = glWeightPointerARB_L
-public func glWeightPointerOES(_ size:GLint, _ type:GLenum, _ stride:GLsizei, _ pointer:UnsafeRawPointer) {glWeightPointerOES_P(size, type, stride, pointer)}
-public func glWeightPointerOES(size:GLint, type:GLenum, stride:GLsizei, pointer:UnsafeRawPointer) {glWeightPointerOES_P(size, type, stride, pointer)}
-var glWeightPointerOES_P:@convention(c)(GLint, GLenum, GLsizei, UnsafeRawPointer) -> Void = glWeightPointerOES_L
 public func glWeightbvARB(_ size:GLint, _ weights:UnsafePointer<GLbyte>) {glWeightbvARB_P(size, weights)}
 public func glWeightbvARB(size:GLint, weights:UnsafePointer<GLbyte>) {glWeightbvARB_P(size, weights)}
 var glWeightbvARB_P:@convention(c)(GLint, UnsafePointer<GLbyte>) -> Void = glWeightbvARB_L
@@ -9175,6 +9166,15 @@ var glWeightfvARB_P:@convention(c)(GLint, UnsafePointer<GLfloat>) -> Void = glWe
 public func glWeightivARB(_ size:GLint, _ weights:UnsafePointer<GLint>) {glWeightivARB_P(size, weights)}
 public func glWeightivARB(size:GLint, weights:UnsafePointer<GLint>) {glWeightivARB_P(size, weights)}
 var glWeightivARB_P:@convention(c)(GLint, UnsafePointer<GLint>) -> Void = glWeightivARB_L
+public func glWeightPathsNV(_ resultPath:GLuint, _ numPaths:GLsizei, _ paths:UnsafePointer<GLuint>, _ weights:UnsafePointer<GLfloat>) {glWeightPathsNV_P(resultPath, numPaths, paths, weights)}
+public func glWeightPathsNV(resultPath:GLuint, numPaths:GLsizei, paths:UnsafePointer<GLuint>, weights:UnsafePointer<GLfloat>) {glWeightPathsNV_P(resultPath, numPaths, paths, weights)}
+var glWeightPathsNV_P:@convention(c)(GLuint, GLsizei, UnsafePointer<GLuint>, UnsafePointer<GLfloat>) -> Void = glWeightPathsNV_L
+public func glWeightPointerARB(_ size:GLint, _ type:GLenum, _ stride:GLsizei, _ pointer:UnsafeRawPointer) {glWeightPointerARB_P(size, type, stride, pointer)}
+public func glWeightPointerARB(size:GLint, type:GLenum, stride:GLsizei, pointer:UnsafeRawPointer) {glWeightPointerARB_P(size, type, stride, pointer)}
+var glWeightPointerARB_P:@convention(c)(GLint, GLenum, GLsizei, UnsafeRawPointer) -> Void = glWeightPointerARB_L
+public func glWeightPointerOES(_ size:GLint, _ type:GLenum, _ stride:GLsizei, _ pointer:UnsafeRawPointer) {glWeightPointerOES_P(size, type, stride, pointer)}
+public func glWeightPointerOES(size:GLint, type:GLenum, stride:GLsizei, pointer:UnsafeRawPointer) {glWeightPointerOES_P(size, type, stride, pointer)}
+var glWeightPointerOES_P:@convention(c)(GLint, GLenum, GLsizei, UnsafeRawPointer) -> Void = glWeightPointerOES_L
 public func glWeightsvARB(_ size:GLint, _ weights:UnsafePointer<GLshort>) {glWeightsvARB_P(size, weights)}
 public func glWeightsvARB(size:GLint, weights:UnsafePointer<GLshort>) {glWeightsvARB_P(size, weights)}
 var glWeightsvARB_P:@convention(c)(GLint, UnsafePointer<GLshort>) -> Void = glWeightsvARB_L
