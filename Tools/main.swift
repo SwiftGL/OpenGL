@@ -379,23 +379,23 @@ func paramType(x:KhronosXmlDelegate.paramTuple) -> String
     } else if type == "struct _cl_event" {
         type = "OpaquePointer"
     } else if x.ptr == "const!*?" {
-        type = "UnsafePointer<\(type)>"
+        type = "UnsafePointer<\(type)>?"
     } else if x.ptr == "!*?" {
-        type = type == "Void" ? "UnsafeMutableRawPointer" : "UnsafeMutablePointer<\(type)>"
+        type = type == "Void" ? "UnsafeMutableRawPointer?" : "UnsafeMutablePointer<\(type)>?"
     } else if x.ptr == "void*?" {
-        type = "UnsafeMutableRawPointer"
+        type = "UnsafeMutableRawPointer?"
     } else if x.ptr == "constvoid*?" {
-        type = "UnsafeRawPointer"
+        type = "UnsafeRawPointer?"
     } else if x.ptr == "constvoid**?" {
-        type = "UnsafeMutablePointer<UnsafeRawPointer>"
+        type = "UnsafeMutablePointer<UnsafeRawPointer>?"
     } else if x.ptr == "const!*const*?" {
-        type = "UnsafePointer<UnsafePointer<\(type)>>"
+        type = "UnsafePointer<UnsafePointer<\(type)>>?"
     } else if x.ptr == "const!**?" {
-        type = "UnsafeMutablePointer<UnsafePointer<\(type)>>"
+        type = "UnsafeMutablePointer<UnsafePointer<\(type)>>?"
     } else if x.ptr == "void**?" {
-        type = "UnsafeMutablePointer<UnsafeMutableRawPointer>"
+        type = "UnsafeMutablePointer<UnsafeMutableRawPointer>?"
     } else if x.ptr == "constvoid*const*?" {
-        type = "UnsafePointer<UnsafeRawPointer>"
+        type = "UnsafePointer<UnsafeRawPointer>?"
     }
     // Helper to find new pointer types
     // else if x.ptr != "!?" {
