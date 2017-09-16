@@ -4,7 +4,7 @@ To use, include dependency in your `Package.swift`:
 ```swift
 let package = Package(
     dependencies: [
-        .Package(url: "https://github.com/SwiftGL/OpenGL.git", majorVersion: 1)
+        .Package(url: "https://github.com/SwiftGL/OpenGL.git", majorVersion: 2)
     ]
 )
 ```
@@ -42,3 +42,8 @@ glViewport(x: 0, y: 0, width: 800, height: 600)
 The SwiftGL OpenGL loader provides you with direct calls to the OpenGL functions. There's
 no translation layer required to provide the syntactical sugar. Because Swift has first-class
 support for working with C, there's no performance penalty for crossing languages.
+
+## Regenerate OpenGL loading code
+
+From the root directory of the package execute:
+`./.build/x86_64-unknown-linux/debug/glgen .`

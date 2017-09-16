@@ -228,7 +228,7 @@ class KhronosXmlDelegate : NSObject, XMLParserDelegate
             } else {
                 let el = "." + elementName
                 assert(path.hasSuffix(el))
-                let range = path.index(path.endIndex, offsetBy: -el.characters.count)..<path.endIndex
+                let range = path.index(path.endIndex, offsetBy: -el.count)..<path.endIndex
                 path.removeSubrange(range)
             }
         }
@@ -526,10 +526,7 @@ func writeLoaders(outstream:OutputStream, _ delegate:KhronosXmlDelegate)
         outstream.write("func \(cmd)_L(")
         count = 0
         for t in types {
-            if count > 0 {
-                outstream.write("_ ")
-            }
-            outstream.write("\(t.0):\(t.1)")
+            outstream.write("_ \(t.0):\(t.1)")
             count += 1
             if count < params.count {
                 outstream.write(", ")
@@ -565,7 +562,7 @@ func writeLoaders(outstream:OutputStream, _ delegate:KhronosXmlDelegate)
         }
 
 
-        outstream.write("])), to: type(of: \(cmd)_P))\n")
+        outstream.write("])), to: Swift.type(of: \(cmd)_P))\n")
         
         if returns == "Void" {
             outstream.write("    \(cmd)_P(")
@@ -628,7 +625,7 @@ func tidyDelegate(delegate:KhronosXmlDelegate)
             delegate.values[key] = "\(valInt)"
         } else {
             var valStr = String(valInt, radix:16, uppercase:true)
-            switch(valStr.characters.count) {
+            switch(valStr.count) {
             case 1,5:
                 valStr = "000" + valStr
             case 2,6:
@@ -647,7 +644,7 @@ func tidyDelegate(delegate:KhronosXmlDelegate)
         let value = delegate.values[key]!
         let valInt = strtoll(value,nil,0)
         var valStr = String(valInt, radix:16, uppercase:true)
-        var addZeros = 8 - valStr.characters.count
+        var addZeros = 8 - valStr.count
         while addZeros > 0 {
             valStr = "0" + valStr
             addZeros -= 1
@@ -694,10 +691,10 @@ if (CommandLine.argc != 2) {
 let pathPrefix = CommandLine.arguments[1]
 var khronosDelegate = KhronosXmlDelegate()
 print("Working...")
-chomper(delegate: khronosDelegate, pathPrefix + "/Tools/gl.xml")
+chomper(delegate: khronosDelegate, pathPrefix + "/Data/gl.xml")
 tidyDelegate(delegate: khronosDelegate)
 saneDelegate(delegate: khronosDelegate)
-spitter(khronosDelegate, pathPrefix + "/Sources/Constants.swift", writeConstants)
-spitter(khronosDelegate, pathPrefix + "/Sources/Commands.swift", writeCommands)
-spitter(khronosDelegate, pathPrefix + "/Sources/Loaders.swift", writeLoaders)
+spitter(khronosDelegate, pathPrefix + "/Sources/SGLOpenGL/Constants.swift", writeConstants)
+spitter(khronosDelegate, pathPrefix + "/Sources/SGLOpenGL/Commands.swift", writeCommands)
+spitter(khronosDelegate, pathPrefix + "/Sources/SGLOpenGL/Loaders.swift", writeLoaders)
 print("Success")

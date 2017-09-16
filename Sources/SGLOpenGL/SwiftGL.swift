@@ -62,7 +62,6 @@ public typealias GLDEBUGPROCARB = @convention(c)
 public typealias GLDEBUGPROCKHR = @convention(c)
     (GLenum, GLenum, GLuint, GLenum, GLsizei, UnsafePointer<GLchar>, UnsafeRawPointer) -> Void
 public typealias GLDEBUGPROCAMD = @convention(c)
-
     (GLuint, GLenum, GLenum, GLsizei, UnsafePointer<GLchar>, UnsafeMutableRawPointer) -> Void
 
 class CommandInfo : CustomStringConvertible {
@@ -84,17 +83,17 @@ private func buildError(info: CommandInfo) -> Never {
     for support in info.support {
         let short = support[support.index(support.startIndex, offsetBy: 1)..<support.endIndex]
         if support[support.startIndex] == "+" {
-            if adds.characters.count > 0 {
+            if adds.count > 0 {
                 adds += ", "
             }
             adds += short
         } else if support[support.startIndex] == "-" {
-            if rems.characters.count > 0 {
+            if rems.count > 0 {
                 rems += ", "
             }
             rems += short
         } else {
-            if exts.characters.count > 0 {
+            if exts.count > 0 {
                 exts += ", "
             }
             exts += "GL_\(support)"
@@ -104,13 +103,13 @@ private func buildError(info: CommandInfo) -> Never {
     if info.support.count > 0 {
         s += "\n"
     }
-    if adds.characters.count > 0 {
+    if adds.count > 0 {
         s += "Added in OpenGL \(adds)\n"
     }
-    if rems.characters.count > 0 {
+    if rems.count > 0 {
         s += "Removed in OpenGL \(rems)\n"
     }
-    if exts.characters.count > 0 {
+    if exts.count > 0 {
         s += "Extensions: \(exts)\n"
     }
     fatalError(s)
