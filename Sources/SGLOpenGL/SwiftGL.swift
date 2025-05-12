@@ -173,7 +173,72 @@ func getAddress(_ info: CommandInfo) -> UnsafeMutableRawPointer {
         }
         return glXGetProcAddress!(info.name)
     }
-    
+
+#elseif os(Windows) 
+
+    import WinSDK
+    typealias wglGetProcAddressType = @convention(c) (LPCSTR) -> UnsafeMutableRawPointer?
+    typealias wglGetCurrentContextType = @convention(c) () -> HGLRC
+
+    var opengl32Handle: HMODULE? = {
+        LoadLibraryA("opengl32.dll")
+    }()
+
+    func loadSymbol(named: String) -> FARPROC? {
+        guard let opengl32Handle else {
+            fatalError("[ERROR]: COULD NOT LOAD opengl32.dll")
+        }
+        
+        guard let symbol = GetProcAddress(opengl32Handle, named) else {
+            fatalError("[ERROR]: GetProcAddress(opengl32Handle, \"\(named)\") returned nil")
+        }
+
+        return symbol
+    }
+
+    func loadSymbol<T>(named: String, as _: T.Type = T.self) -> T? {
+        guard let symbol = loadSymbol(named: named) else {
+            return nil
+        }
+
+        return unsafeBitCast(symbol, to: T.self)
+    }
+
+    var wglGetCurrentContext: Optional<wglGetCurrentContextType> = {
+        let result = loadSymbol(named: "wglGetCurrentContext", as: wglGetCurrentContextType.self)
+        return result
+    }()
+
+    var wglGetProcAddress: Optional<wglGetProcAddressType> = { // parse issue with 'wglGetProcAddressType?'
+        let result = loadSymbol(named: "wglGetProcAddress", as: wglGetProcAddressType.self)
+        return result
+    }()
+
+    func lookupAddress(info: CommandInfo) -> UnsafeMutableRawPointer? {
+        guard let wglGetProcAddress else {
+            fatalError("[ERROR]: wglGetProcAddress not initialized!")
+        }
+
+        if let result = wglGetProcAddress(info.name) {
+            return result
+        } else {
+            guard let symbol = loadSymbol(named: info.name), 
+                  let result = UnsafeMutableRawPointer(bitPattern: unsafeBitCast(symbol, to: UInt.self)) else {
+                    let error = "[ERROR]: Could not find address for \(info.name)\n" + {
+                        if let currentContext = wglGetCurrentContext?() {
+                            "Current context handle: \(currentContext)"
+                        } else {
+                            "Current context handle unavailable"
+                        }
+                    }();
+
+                    fatalError(error)
+            }
+
+            return result
+        }
+    }
+
 #else
 
     func lookupAddress(info: commandInfo) -> UnsafeMutableRawPointer? {
